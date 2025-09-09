@@ -24,20 +24,16 @@ namespace SimpleCalculator_v2
             do
             {
                 Console.WriteLine("Enter a number");
-                firstNumber = Console.ReadLine();
-                //Display first entered value
-                Console.WriteLine($"Number 1: {firstNumber}");
+                firstNumber = Console.ReadLine();                
+                Console.WriteLine($"Number 1: {firstNumber}"); //Display first entered value
 
-                //Add visual break
-                Console.WriteLine();
+                Console.WriteLine(); //Add visual break
 
                 Console.WriteLine("Enter another number");
-                secondNumber = Console.ReadLine();
-                //Display second entered value
-                Console.WriteLine($"Number 2: {secondNumber}");
+                secondNumber = Console.ReadLine();                
+                Console.WriteLine($"Number 2: {secondNumber}"); //Display second entered value
 
-                //Add visual break
-                Console.WriteLine();
+                Console.WriteLine(); //Add visual break
 
                 //Ask user for operation type
                 Console.WriteLine("Select Operation:");
@@ -57,19 +53,16 @@ namespace SimpleCalculator_v2
                 {
                     Console.WriteLine($"{firstNumber} * {secondNumber} = {result_1}");
                 }
-
                 else if (operationSelect == "2")
                 {
                     Console.WriteLine($"{firstNumber} + {secondNumber} = {result_2}");
                 }
-
                 else
                 {
                     Console.WriteLine("Error. Please enter a valid number.");
                 }
-
-                //Add visual break
-                Console.WriteLine();
+                                
+                Console.WriteLine(); //Add visual break
 
                 Console.WriteLine($"Press 'q' to exit, or any other key to run again");
                 userInput = Console.ReadLine();
