@@ -28,20 +28,16 @@ namespace SimpleCalculator_v2
                 //Display first entered value
                 Console.WriteLine($"Number 1: {firstNumber}");
 
-
                 //Add visual break
                 Console.WriteLine();
-
 
                 Console.WriteLine("Enter another number");
                 secondNumber = Console.ReadLine();
                 //Display second entered value
                 Console.WriteLine($"Number 2: {secondNumber}");
 
-
                 //Add visual break
                 Console.WriteLine();
-
 
                 //Ask user for operation type
                 Console.WriteLine("Select Operation:");
@@ -57,7 +53,6 @@ namespace SimpleCalculator_v2
 
 
                 operationSelect = Console.ReadLine();
-
                 if (operationSelect == "1")
                 {
                     Console.WriteLine($"{firstNumber} * {secondNumber} = {result_1}");
@@ -72,7 +67,6 @@ namespace SimpleCalculator_v2
                 {
                     Console.WriteLine("Error. Please enter a valid number.");
                 }
-
 
                 //Add visual break
                 Console.WriteLine();
