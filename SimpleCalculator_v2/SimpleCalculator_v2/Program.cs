@@ -2,7 +2,7 @@
 //RCET 2265
 //Fall 2025
 //Robotics and Comm. Sys. Engineering Tech.
-//TODO: add GitHub URL
+//https://github.com/JonCra/RCET_2265-Assignments_Projects/blob/2c71ecfa30ad25f0943478affc9552c9f50715ef/SimpleCalculator_v2
 
 using System.Data;
 
