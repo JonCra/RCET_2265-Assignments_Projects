@@ -14,8 +14,8 @@ namespace SimpleCalculator_v2
         {
 
             //Text Data
-            nint firstNumber;
-            nint secondNumber;
+            string firstNumber;
+            string secondNumber;
             nint result_1;
             nint result_2;
             string operationSelect;
@@ -23,7 +23,7 @@ namespace SimpleCalculator_v2
 
             do
             {
-                Console.WriteLine("Enter a number.");
+                Console.WriteLine("Enter a number");
                 firstNumber = Console.ReadLine();
                 //Display first entered value
                 Console.WriteLine($"Number 1: {firstNumber}");
@@ -33,7 +33,7 @@ namespace SimpleCalculator_v2
                 Console.WriteLine();
 
 
-                Console.WriteLine("Enter another number.");
+                Console.WriteLine("Enter another number");
                 secondNumber = Console.ReadLine();
                 //Display second entered value
                 Console.WriteLine($"Number 2: {secondNumber}");
@@ -78,6 +78,7 @@ namespace SimpleCalculator_v2
                 Console.WriteLine();
 
                 Console.WriteLine($"Press 'q' to exit, or any other key to run again");
+                userInput = Console.ReadLine();
                                 
             } while (userInput != "q");
         }
