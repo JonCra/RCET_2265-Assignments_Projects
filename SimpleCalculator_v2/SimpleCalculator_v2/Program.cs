@@ -48,6 +48,7 @@ namespace SimpleCalculator_v2
                 Console.WriteLine($"{firstNumber} + {secondNumber} = {result_2}");
 
 
+                //Math operation control(s)
                 operationSelect = Console.ReadLine();
                 if (operationSelect == "1")
                 {
