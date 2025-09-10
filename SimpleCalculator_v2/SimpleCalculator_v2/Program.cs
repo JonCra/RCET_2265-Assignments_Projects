@@ -41,12 +41,10 @@ namespace SimpleCalculator_v2
                 Console.WriteLine($"2. Sum ({firstNumber} + {secondNumber})");
 
                 //TODO: Error is a conversion type... It's formatted as a string, but needs to be a numerical "base". Fix it.
-                result_1 = firstNumber * secondNumber;
-                Console.WriteLine($"{firstNumber} * {secondNumber} = {result_1}");
+                result_1 = (firstNumber * secondNumber);
+                result_2 = (firstNumber + secondNumber);                
 
-                result_2 = firstNumber + secondNumber;
-                Console.WriteLine($"{firstNumber} + {secondNumber} = {result_2}");
-
+                Console.WriteLine(); //Add visual break
 
                 //Math operation control(s)
                 operationSelect = Console.ReadLine();
