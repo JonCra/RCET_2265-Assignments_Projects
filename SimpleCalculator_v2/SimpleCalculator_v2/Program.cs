@@ -14,12 +14,12 @@ namespace SimpleCalculator_v2
         static void Main(string[] args)
         {
             //Text Data
-            nint firstNumber;
-            nint secondNumber;
-            nint result_1;
-            nint result_2;
-            string operationSelect;
-            string userInput;
+            nint firstNumber = 0;
+            nint secondNumber = 0;
+            nint result_1 = 0;
+            nint result_2 = 0;
+            string operationSelect = "";
+            string userInput = "";
 
             do
             {
@@ -36,9 +36,9 @@ namespace SimpleCalculator_v2
                 Console.WriteLine(); //Add visual break
 
                 //Ask user for operation type
-                Console.WriteLine("Select Operation:");
-                Console.WriteLine($"1. Product ({firstNumber} * {secondNumber})");
-                Console.WriteLine($"2. Sum ({firstNumber} + {secondNumber})");
+                Console.WriteLine("Select an operation:\n"
+                + "1. Sum\n"
+                + "2. Product"); //'\n' acts like a carriage return
 
                 //TODO: Error is a conversion type... It's formatted as a string, but needs to be a numerical "base". Fix it.
                 result_1 = (firstNumber * secondNumber);
@@ -58,12 +58,12 @@ namespace SimpleCalculator_v2
                 }
                 else
                 {
-                    Console.WriteLine("Error. Please enter a valid number.");
+                    Console.WriteLine("Error. Enter a valid number.");
                 }
 
                 Console.WriteLine(); //Add visual break
 
-                Console.WriteLine($"Press 'q' to exit, or any other key to run again");
+                Console.WriteLine($"Press 'q' to exit, or 'Enter' to run again");
                 userInput = Console.ReadLine();
 
             } while (userInput != "q");
