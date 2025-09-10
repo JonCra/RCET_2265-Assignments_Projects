@@ -12,10 +12,9 @@ namespace SimpleCalculator_v2
     {
         static void Main(string[] args)
         {
-
             //Text Data
-            string firstNumber;
-            string secondNumber;
+            nint firstNumber;
+            nint secondNumber;
             nint result_1;
             nint result_2;
             string operationSelect;
@@ -62,12 +61,12 @@ namespace SimpleCalculator_v2
                 {
                     Console.WriteLine("Error. Please enter a valid number.");
                 }
-                                
+
                 Console.WriteLine(); //Add visual break
 
                 Console.WriteLine($"Press 'q' to exit, or any other key to run again");
                 userInput = Console.ReadLine();
-                                
+
             } while (userInput != "q");
         }
     }
