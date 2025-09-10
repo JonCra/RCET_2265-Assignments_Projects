@@ -22,22 +22,20 @@ namespace SimpleCalculator_v2
 
             do
             {
-                Console.WriteLine("Enter a number");
+                Console.Write("Choose a number: ");
                 userInput = Console.ReadLine();
                 firstNumber = int.Parse(userInput);
-                Console.WriteLine($"Number 1: {firstNumber}\n"); //Display first entered value
+                
 
-
-                Console.WriteLine("Enter another number");
+                Console.Write("Choose a number: ");
                 userInput = Console.ReadLine();
                 secondNumber = int.Parse(userInput);
-                Console.WriteLine($"Number 2: {secondNumber}\n"); //Display second entered value
-
+                
 
                 //Ask user for operation type
                 Console.WriteLine("Select an operation:\n"
                 + "1. Sum\n"
-                + "2. Product\n");
+                + "2. Product");
                 
                 //Math operation control(s)
                 userInput = Console.ReadLine();
