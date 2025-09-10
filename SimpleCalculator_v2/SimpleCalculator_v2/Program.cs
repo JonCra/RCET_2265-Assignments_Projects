@@ -23,16 +23,16 @@ namespace SimpleCalculator_v2
             do
             {
                 Console.WriteLine("Enter a number");
-                firstNumber = Console.Read();
-                Console.WriteLine($"Number 1: {firstNumber}"); //Display first entered value
+                userInput = Console.ReadLine();
+                firstNumber = int.Parse(userInput);
+                Console.WriteLine($"Number 1: {firstNumber}\n"); //Display first entered value
 
-                Console.WriteLine(); //Add visual break
 
                 Console.WriteLine("Enter another number");
-                secondNumber = Console.Read();
-                Console.WriteLine($"Number 2: {secondNumber}"); //Display second entered value
+                userInput = Console.ReadLine();
+                secondNumber = int.Parse(userInput);
+                Console.WriteLine($"Number 2: {secondNumber}\n"); //Display second entered value
 
-                Console.WriteLine(); //Add visual break
 
                 //Ask user for operation type
                 Console.WriteLine("Select an operation:\n"
@@ -43,11 +43,13 @@ namespace SimpleCalculator_v2
                 userInput = Console.ReadLine();
                 if (userInput == "1")
                 {
-                    Console.WriteLine($"{firstNumber} * {secondNumber} = {result_1}");
+                    result_1 = firstNumber + secondNumber;
+                    Console.WriteLine($"{firstNumber} + {secondNumber} = {result_1}");
                 }
                 else if (userInput == "2")
                 {
-                    Console.WriteLine($"{firstNumber} + {secondNumber} = {result_2}");
+                    result_2 = firstNumber * secondNumber;
+                    Console.WriteLine($"{firstNumber} * {secondNumber} = {result_2}");
                 }
                 else
                 {
