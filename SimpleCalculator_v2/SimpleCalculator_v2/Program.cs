@@ -18,19 +18,18 @@ namespace SimpleCalculator_v2
             nint secondNumber = 0;
             nint result_1 = 0;
             nint result_2 = 0;
-            string operationSelect = "";
             string userInput = "";
 
             do
             {
                 Console.WriteLine("Enter a number");
-                firstNumber = Console.ReadLine();
+                firstNumber = Console.Read();
                 Console.WriteLine($"Number 1: {firstNumber}"); //Display first entered value
 
                 Console.WriteLine(); //Add visual break
 
                 Console.WriteLine("Enter another number");
-                secondNumber = Console.ReadLine();
+                secondNumber = Console.Read();
                 Console.WriteLine($"Number 2: {secondNumber}"); //Display second entered value
 
                 Console.WriteLine(); //Add visual break
@@ -38,21 +37,15 @@ namespace SimpleCalculator_v2
                 //Ask user for operation type
                 Console.WriteLine("Select an operation:\n"
                 + "1. Sum\n"
-                + "2. Product"); //'\n' acts like a carriage return
-
-                //TODO: Error is a conversion type... It's formatted as a string, but needs to be a numerical "base". Fix it.
-                result_1 = (firstNumber * secondNumber);
-                result_2 = (firstNumber + secondNumber);                
-
-                Console.WriteLine(); //Add visual break
-
+                + "2. Product\n");
+                
                 //Math operation control(s)
-                operationSelect = Console.ReadLine();
-                if (operationSelect == "1")
+                userInput = Console.ReadLine();
+                if (userInput == "1")
                 {
                     Console.WriteLine($"{firstNumber} * {secondNumber} = {result_1}");
                 }
-                else if (operationSelect == "2")
+                else if (userInput == "2")
                 {
                     Console.WriteLine($"{firstNumber} + {secondNumber} = {result_2}");
                 }
