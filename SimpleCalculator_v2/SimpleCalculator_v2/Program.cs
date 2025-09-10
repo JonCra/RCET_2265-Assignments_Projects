@@ -24,13 +24,13 @@ namespace SimpleCalculator_v2
             do
             {
                 Console.WriteLine("Enter a number");
-                firstNumber = Console.ReadLine();                
+                firstNumber = Console.ReadLine();
                 Console.WriteLine($"Number 1: {firstNumber}"); //Display first entered value
 
                 Console.WriteLine(); //Add visual break
 
                 Console.WriteLine("Enter another number");
-                secondNumber = Console.ReadLine();                
+                secondNumber = Console.ReadLine();
                 Console.WriteLine($"Number 2: {secondNumber}"); //Display second entered value
 
                 Console.WriteLine(); //Add visual break
