@@ -56,6 +56,8 @@ namespace SayMyNameAgain
                             "C:/Windows/system32...");
                         userInput = Console.ReadLine();
                     }
+                    Console.WriteLine();
+
                 }
 
                 else
