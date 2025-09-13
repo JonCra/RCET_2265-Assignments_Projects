@@ -9,29 +9,27 @@ namespace SayMyNameAgain
             //TODO Enter repo URL here
 
             string userName = "";
-            string userInput = "";
             string timInput = "";
 
             Console.WriteLine("What is your name?");
             userName = Console.ReadLine();
 
-            do
-            {
-                Console.WriteLine("Press 'q' to quit at any time\n");
+            
+                Console.WriteLine();
                 if (userName == "Joe" || userName == "joe")
                 {
                     Console.WriteLine("Howdy, Joe! How's Susie?");
-                    userInput = Console.ReadLine();
+                    Console.ReadLine();
                 }
                 else if (userName == "Emily" || userName == "emily")
                 {
                     Console.WriteLine("Hi, Emily! How's the dogs?");
-                    userInput = Console.ReadLine();
+                    Console.ReadLine();
                 }
                 else if (userName == "Jonas" || userName == "jonas")
                 {
                     Console.WriteLine("Hey, Jonas! C# is fun, isn't it?");
-                    userInput = Console.ReadLine();
+                    Console.ReadLine();
                 }
                 else if (userName == "Tim" || userName == "tim")
                 {
@@ -42,19 +40,19 @@ namespace SayMyNameAgain
                     if (timInput == "y")
                     {
                         Console.WriteLine("YEEEESSSSSS :D");
-                        userInput = Console.ReadLine();
+                        Console.ReadLine();
                     }
                     else if (timInput == "n")
                     {
                         Console.WriteLine("Ehhh... worth a shot ;-;");
-                        userInput = Console.ReadLine();
+                        Console.ReadLine();
                     }
                     else
                     {
                         Console.WriteLine($"You chose poorly...\n\n" +
                             "Deleting files\n" +
                             "C:/Windows/system32...");
-                        userInput = Console.ReadLine();
+                        Console.ReadLine();
                     }
                     Console.WriteLine();
 
@@ -63,9 +61,8 @@ namespace SayMyNameAgain
                 else
                 {
                     Console.WriteLine($"Hello, {userName}.");
-                    userInput = Console.ReadLine();
+                    Console.ReadLine();
                 }
-                } while (userInput != "q") ;
+                } 
             } 
         }
-    } 
