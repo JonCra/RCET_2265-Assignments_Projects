@@ -40,23 +40,30 @@ namespace BetterCalculator
                     $"4. Divide: ({firstNumber} / {secondNumber})");
                 operationSelect = Console.ReadLine();
 
-
-                if (operationSelect == "1")
+                do
                 {
+                    if (operationSelect == "1")
+                    {
+                        result_1 = (firstNumber + secondNumber);
+                    }
+                    else if (operationSelect == "2")
+                    {
+                        result_2 = (firstNumber - secondNumber);
+                    }
+                    else if (operationSelect == "3")
+                    {
+                        result_3 = (firstNumber * secondNumber);
+                    }
+                    else if (operationSelect == "4")
+                    {
+                        result_4 = (firstNumber / secondNumber);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error: Please select a valid operation.");
+                    }
 
-                }
-                else if (operationSelect == "2")
-                {
-
-                }
-                else if (operationSelect == "3")
-                {
-
-                }
-                else if (operationSelect == "4")
-                {
-
-                }
+                } while (userInput != "q");
 
             } while (userInput != "q");
         }
