@@ -21,17 +21,17 @@ namespace SayMyNameAgain
                 if (userName == "Joe" || userName == "joe")
                 {
                     Console.WriteLine("Howdy, Joe! How's Susie?");
-                    Console.ReadLine();
+                    userInput = Console.ReadLine();
                 }
                 else if (userName == "Emily" || userName == "emily")
                 {
                     Console.WriteLine("Hi, Emily! How's the dogs?");
-                    Console.ReadLine();
+                    userInput = Console.ReadLine();
                 }
                 else if (userName == "Jonas" || userName == "jonas")
                 {
                     Console.WriteLine("Hey, Jonas! C# is fun, isn't it?");
-                    Console.ReadLine();
+                    userInput = Console.ReadLine();
                 }
                 else if (userName == "Tim" || userName == "tim")
                 {
@@ -64,8 +64,6 @@ namespace SayMyNameAgain
                     userInput = Console.ReadLine();
                 }
                 } while (userInput != "q") ;
-
-
             } 
         }
     } 
