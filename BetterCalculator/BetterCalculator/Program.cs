@@ -37,35 +37,50 @@ namespace BetterCalculator
                     $"1. Add: ({firstNumber} + {secondNumber})\n" +
                     $"2. Subtract: ({firstNumber} - {secondNumber})\n" +
                     $"3. Multiply: ({firstNumber} * {secondNumber})\n" +
-                    $"4. Divide: ({firstNumber} / {secondNumber})");
+                    $"4. Divide: ({firstNumber} / {secondNumber})\n");
                 operationSelect = Console.ReadLine();
+                Console.WriteLine($"Operation selected: '{operationSelect}'\n");
 
-                do
-                {
                     if (operationSelect == "1")
                     {
                         result_1 = (firstNumber + secondNumber);
+                        Console.WriteLine($"{firstNumber} + {secondNumber} = {result_1}");
+                        Console.ReadLine();
                     }
+
                     else if (operationSelect == "2")
                     {
                         result_2 = (firstNumber - secondNumber);
+                        Console.WriteLine($"{firstNumber} - {secondNumber} = {result_2}");
+                        Console.ReadLine();
                     }
+
                     else if (operationSelect == "3")
                     {
                         result_3 = (firstNumber * secondNumber);
+                        Console.WriteLine($"{firstNumber} * {secondNumber} = {result_3}");
+                        Console.ReadLine();
                     }
+
                     else if (operationSelect == "4")
                     {
                         result_4 = (firstNumber / secondNumber);
+                        Console.WriteLine($"{firstNumber} / {secondNumber} = {result_4}");
+                        Console.ReadLine();
                     }
+
                     else
                     {
                         Console.WriteLine("Error: Please select a valid operation.");
+                        Console.ReadLine();
                     }
 
-                } while (userInput != "q");
-
+                    Console.ReadLine();
+                    
             } while (userInput != "q");
+            Console.WriteLine("Stop command detected. Have a nice day.\n" +
+                "Press 'enter' to close this window.");
+            Console.ReadLine();
         }
     }
 }
