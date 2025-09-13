@@ -56,16 +56,16 @@ namespace SayMyNameAgain
                             "C:/Windows/system32...");
                         userInput = Console.ReadLine();
                     }
+                }
 
                 else
-                    {
-                        Console.WriteLine($"Hello, {userName}.");
-                        userInput = Console.ReadLine();
-                    }
+                {
+                    Console.WriteLine($"Hello, {userName}.");
+                    userInput = Console.ReadLine();
+                }
                 } while (userInput != "q") ;
 
 
-            } while (userInput != "q");
+            } 
         }
     } 
-}
