@@ -11,7 +11,7 @@ namespace SayMyNameAgain
             //RCET 2265
             //Fall 2025
             //Robotics and Comm. Sys. Engineering Tech.
-            //TODO: https://github.com/JonCra/RCET_2265-Assignments_Projects/tree/fa0ea4834dc3d16e1c302b91000ba961daeb470c/SayMyNameAgain
+            //https://github.com/JonCra/RCET_2265-Assignments_Projects/tree/fa0ea4834dc3d16e1c302b91000ba961daeb470c/SayMyNameAgain
 
             string userName = "";
             string timInput = "";
