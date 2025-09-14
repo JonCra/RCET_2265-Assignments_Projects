@@ -5,6 +5,8 @@
 //Robotics and Comm. Sys. Engineering Tech.
 //TODO: insert GitHub URL
 
+using System.Xml.Schema;
+
 namespace BetterCalculator
 {
     internal class Program
@@ -19,20 +21,24 @@ namespace BetterCalculator
             nint result_4 = 0;
             string userInput = "";
             string operationSelect = "";
+            bool operationValid = false;
 
             do
             {
+                //First Number Input
                 Console.Write("Press 'q' to quit at any time.\n" +
                     "Choose a number: ");
                 userInput = Console.ReadLine();
                 firstNumber = int.Parse(userInput);
                 Console.WriteLine($"First number: {firstNumber}\n");
 
+                //Second Number Input
                 Console.Write("Choose another number: ");
                 userInput = Console.ReadLine();
                 secondNumber = int.Parse(userInput);
                 Console.WriteLine($"Second number: {secondNumber}\n");
 
+                //Operation Select
                 Console.WriteLine("Select an operation type:\n" +
                     $"1. Add: ({firstNumber} + {secondNumber})\n" +
                     $"2. Subtract: ({firstNumber} - {secondNumber})\n" +
@@ -41,9 +47,11 @@ namespace BetterCalculator
                 operationSelect = Console.ReadLine();
                 Console.WriteLine($"Operation selected: '{operationSelect}'\n");
 
+                do
+                {
                     if (operationSelect == "1")
                     {
-                        result_1 = (firstNumber + secondNumber);
+                        result_1 = (firstNumber + secondNumber);    
                         Console.WriteLine($"{firstNumber} + {secondNumber} = {result_1}");
                         Console.ReadLine();
                     }
@@ -75,9 +83,10 @@ namespace BetterCalculator
                         Console.ReadLine();
                     }
 
-                    Console.ReadLine();
-                    
+                } while (operationSelect != "q");
+                                    
             } while (userInput != "q");
+
             Console.WriteLine("Stop command detected. Have a nice day.\n" +
                 "Press 'enter' to close this window.");
             Console.ReadLine();
