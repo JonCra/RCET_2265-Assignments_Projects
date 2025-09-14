@@ -49,38 +49,43 @@ namespace BetterCalculator
 
                 do
                 {
+                    userInput = operationSelect;
+
                     if (operationSelect == "1")
                     {
                         result_1 = (firstNumber + secondNumber);    
                         Console.WriteLine($"{firstNumber} + {secondNumber} = {result_1}");
-                        Console.ReadLine();
+                        userInput = Console.ReadLine();
+                        operationSelect = "q";
                     }
 
                     else if (operationSelect == "2")
                     {
                         result_2 = (firstNumber - secondNumber);
                         Console.WriteLine($"{firstNumber} - {secondNumber} = {result_2}");
-                        Console.ReadLine();
+                        userInput = Console.ReadLine();
+                        operationSelect = "q";
                     }
 
                     else if (operationSelect == "3")
                     {
                         result_3 = (firstNumber * secondNumber);
                         Console.WriteLine($"{firstNumber} * {secondNumber} = {result_3}");
-                        Console.ReadLine();
+                        userInput = Console.ReadLine();
+                        operationSelect = "q";
                     }
 
                     else if (operationSelect == "4")
                     {
                         result_4 = (firstNumber / secondNumber);
                         Console.WriteLine($"{firstNumber} / {secondNumber} = {result_4}");
-                        Console.ReadLine();
+                        userInput = Console.ReadLine();
+                        operationSelect = "q";
                     }
 
                     else
                     {
-                        Console.WriteLine("Error: Please select a valid operation.");
-                        Console.ReadLine();
+                        Console.WriteLine("Error: Please select a valid operation.");                        
                     }
 
                 } while (operationSelect != "q");
