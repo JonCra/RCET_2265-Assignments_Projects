@@ -47,6 +47,7 @@ namespace BetterCalculator
                 {
                     secondNumber = decimal.Parse(userInput);
                     Console.WriteLine($"Second number: {secondNumber}\n");
+                    userHasQuit = false;
                 }
                 else if (userInput == "q")
                 {
