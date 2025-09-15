@@ -11,7 +11,19 @@ namespace MultiplicationTable
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            int x = 12;
+            int y = 12;
+
+
+            for (x = 1; x < 13; x++)
+            {
+                for (y = 1; y < 13; y++)
+                {
+                    Console.Write((x * y).ToString().PadLeft(3) + " | ");
+
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
