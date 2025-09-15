@@ -21,6 +21,7 @@ namespace BetterCalculator
             decimal result_4 = 0;
             string userInput = "";
             string operationSelect = "";
+            bool userHasQuit = false;
             
             do
             {
@@ -28,14 +29,29 @@ namespace BetterCalculator
                 Console.Write("Press 'q' to quit at any time.\n" +
                     "Choose a number: ");
                 userInput = Console.ReadLine();
-                firstNumber = decimal.Parse(userInput);
-                Console.WriteLine($"First number: {firstNumber}\n");
+                if (userInput != "q")
+                {
+                    firstNumber = decimal.Parse(userInput);
+                    Console.WriteLine($"First number: {firstNumber}\n");
+                    userHasQuit = false;
+                }
+                else if (userInput == "q")
+                {
+                    userHasQuit = true;
+                }
 
                 //Second Number Input
                 Console.Write("Choose another number: ");
                 userInput = Console.ReadLine();
-                secondNumber = decimal.Parse(userInput);
-                Console.WriteLine($"Second number: {secondNumber}\n");
+                if (userInput != "q")
+                {
+                    secondNumber = decimal.Parse(userInput);
+                    Console.WriteLine($"Second number: {secondNumber}\n");
+                }
+                else if (userInput == "q")
+                {
+                    userHasQuit = true;
+                }
 
                 //Operation Select
                 Console.WriteLine("Select an operation type:\n" +
@@ -51,10 +67,10 @@ namespace BetterCalculator
 
                     if (operationSelect == "1")
                     {
-                        result_1 = (firstNumber + secondNumber);    
+                        result_1 = (firstNumber + secondNumber);
                         Console.WriteLine($"{firstNumber} + {secondNumber} = {result_1}");
                         userInput = Console.ReadLine();
-                        operationSelect = "q";
+                        userHasQuit = false;
                     }
 
                     else if (operationSelect == "2")
@@ -62,7 +78,7 @@ namespace BetterCalculator
                         result_2 = (firstNumber - secondNumber);
                         Console.WriteLine($"{firstNumber} - {secondNumber} = {result_2}");
                         userInput = Console.ReadLine();
-                        operationSelect = "q";
+                        userHasQuit = false;
                     }
 
                     else if (operationSelect == "3")
@@ -70,7 +86,7 @@ namespace BetterCalculator
                         result_3 = (firstNumber * secondNumber);
                         Console.WriteLine($"{firstNumber} * {secondNumber} = {result_3}");
                         userInput = Console.ReadLine();
-                        operationSelect = "q";
+                        userHasQuit = false;
                     }
 
                     else if (operationSelect == "4")
@@ -78,19 +94,24 @@ namespace BetterCalculator
                         result_4 = (firstNumber / secondNumber);
                         Console.WriteLine($"{firstNumber} / {secondNumber} = {result_4}");
                         userInput = Console.ReadLine();
-                        operationSelect = "q";
+                        userHasQuit = false;
+                    }
+
+                    else if (operationSelect == "q")
+                    {
+                        userHasQuit = true;
                     }
 
                     else
                     {
                         Console.WriteLine("Error: Please select a valid operation.");
                         Console.ReadLine();
-                        operationSelect = "q";
+                        userHasQuit = false;
                     }
 
-                } while (operationSelect != "q");
-                                    
-            } while (userInput != "q");
+                } while (userHasQuit = false);
+
+            } while (userHasQuit = false);
 
             Console.WriteLine("Stop command detected. Have a nice day.\n" +
                 "Press 'enter' to close this window.");
