@@ -22,7 +22,7 @@ namespace BetterCalculator
             string userInput = "";
             string operationSelect = "";
             bool userHasQuit = false;
-            
+
             do
             {
                 //First Number Input
@@ -38,6 +38,7 @@ namespace BetterCalculator
                 else if (userInput == "q")
                 {
                     userHasQuit = true;
+                    goto exit_program;
                 }
 
                 //Second Number Input
@@ -52,6 +53,7 @@ namespace BetterCalculator
                 else if (userInput == "q")
                 {
                     userHasQuit = true;
+                    goto exit_program;
                 }
 
                 //Operation Select
@@ -101,6 +103,7 @@ namespace BetterCalculator
                     else if (operationSelect == "q")
                     {
                         userHasQuit = true;
+                        goto exit_program;
                     }
 
                     else
@@ -114,9 +117,10 @@ namespace BetterCalculator
 
             } while (userHasQuit = false);
 
-            Console.WriteLine("Stop command detected. Have a nice day.\n" +
+            exit_program:
+                Console.WriteLine("Stop command detected. Have a nice day.\n" +
                 "Press 'enter' to close this window.");
-            Console.ReadLine();
+                Console.ReadLine();
         }
     }
 }
