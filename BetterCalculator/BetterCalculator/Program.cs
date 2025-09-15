@@ -26,16 +26,16 @@ namespace BetterCalculator
             do
             {
                 //First Number Input
-                Console.Write("Press 'q' to quit at any time.\n" +
+                Console.Write("Press 'Q' to quit at any time.\n" +
                     "Choose a number: ");
                 userInput = Console.ReadLine();
-                if (userInput != "q")
+                if (userInput != "Q")
                 {
                     firstNumber = decimal.Parse(userInput);
                     Console.WriteLine($"First number: {firstNumber}\n");
                     userHasQuit = false;
                 }
-                else if (userInput == "q")
+                else if (userInput == "Q")
                 {
                     userHasQuit = true;
                     goto exit_program;
@@ -44,13 +44,13 @@ namespace BetterCalculator
                 //Second Number Input
                 Console.Write("Choose another number: ");
                 userInput = Console.ReadLine();
-                if (userInput != "q")
+                if (userInput != "Q")
                 {
                     secondNumber = decimal.Parse(userInput);
                     Console.WriteLine($"Second number: {secondNumber}\n");
                     userHasQuit = false;
                 }
-                else if (userInput == "q")
+                else if (userInput == "Q")
                 {
                     userHasQuit = true;
                     goto exit_program;
@@ -100,7 +100,7 @@ namespace BetterCalculator
                         userHasQuit = false;
                     }
 
-                    else if (operationSelect == "q")
+                    else if (operationSelect == "Q")
                     {
                         userHasQuit = true;
                         goto exit_program;
