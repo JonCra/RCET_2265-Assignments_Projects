@@ -55,13 +55,18 @@ namespace BetterCalculator
                     userHasQuit = true;
                     goto exit_program;
                 }
+                else if (userInput == "q")
+                {
+                    userHasQuit = true;
+                    goto exit_program;
+                }
 
-                //Operation Select
-                Console.WriteLine("Select an operation type:\n" +
-                    $"1. Add: ({firstNumber} + {secondNumber})\n" +
-                    $"2. Subtract: ({firstNumber} - {secondNumber})\n" +
-                    $"3. Multiply: ({firstNumber} * {secondNumber})\n" +
-                    $"4. Divide: ({firstNumber} / {secondNumber})\n");
+                    //Operation Select
+                    Console.WriteLine("Select an operation type:\n" +
+                        $"1. Add: ({firstNumber} + {secondNumber})\n" +
+                        $"2. Subtract: ({firstNumber} - {secondNumber})\n" +
+                        $"3. Multiply: ({firstNumber} * {secondNumber})\n" +
+                        $"4. Divide: ({firstNumber} / {secondNumber})\n");
                 operationSelect = Console.ReadLine();
                 Console.WriteLine($"Operation selected: '{operationSelect}'\n");
 
@@ -101,6 +106,12 @@ namespace BetterCalculator
                     }
 
                     else if (operationSelect == "Q")
+                    {
+                        userHasQuit = true;
+                        goto exit_program;
+                    }
+
+                    else if (operationSelect == "q")
                     {
                         userHasQuit = true;
                         goto exit_program;
