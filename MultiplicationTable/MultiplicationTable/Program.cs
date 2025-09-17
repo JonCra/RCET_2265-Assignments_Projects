@@ -14,6 +14,25 @@ namespace MultiplicationTable
             //Acts like an x/y graph, 12 values left/down
             int x = 12;
             int y = 12;
+            string userConfigure = "";
+            string userInput = "";
+
+            Console.WriteLine("Would you like to change the table's range?" +
+                "(Default: 12x12)\n" + "y/n");
+            userConfigure = Console.ReadLine();
+
+            if (userConfigure == "y")
+            {
+                Console.WriteLine("Enter a value");
+                userInput = Console.ReadLine();
+                Console.WriteLine($"Entered value: {userInput}");
+                x = int.Parse(userInput);
+
+                Console.WriteLine("Enter another number");
+                userInput = Console.ReadLine();
+                Console.WriteLine($"Entered value: {userInput}");
+                y = int.Parse(userInput);
+            }
 
             //Each value starts at 1 and will stop when the iteration is NOT less than 13... i.e: 12
             for (x = 1; x < 13; x++)
