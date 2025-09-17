@@ -50,8 +50,8 @@ namespace MultiplicationTable
                 goto userPrompt;
             }
 
-                //Visual break
-                Console.WriteLine();
+            //Visual break
+            Console.WriteLine();
 
             //Each value starts at 1 and will stop when the iteration is NOT less than 13... i.e: 12
             for (x = 1; x < (a + 1); x++)
