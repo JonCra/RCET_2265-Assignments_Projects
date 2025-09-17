@@ -12,12 +12,16 @@ namespace MultiplicationTable
         static void Main(string[] args)
         {
             //Acts like an x/y graph, 12 values left/down
-            int x = 12;
-            int y = 12;
+            int x = 0;
+            int y = 0;
+            int a = 0;
+            int b = 0;
             string userConfigure = "";
             string userInput = "";
 
-            Console.WriteLine("Would you like to change the table's range?" +
+
+        userPrompt:
+            Console.WriteLine("Would you like to change the table's range? " +
                 "(Default: 12x12)\n" + "y/n");
             userConfigure = Console.ReadLine();
 
@@ -26,18 +30,33 @@ namespace MultiplicationTable
                 Console.WriteLine("Enter a value");
                 userInput = Console.ReadLine();
                 Console.WriteLine($"Entered value: {userInput}");
-                x = int.Parse(userInput);
+                a = int.Parse(userInput);
 
                 Console.WriteLine("Enter another number");
                 userInput = Console.ReadLine();
                 Console.WriteLine($"Entered value: {userInput}");
-                y = int.Parse(userInput);
+                b = int.Parse(userInput);
             }
 
-            //Each value starts at 1 and will stop when the iteration is NOT less than 13... i.e: 12
-            for (x = 1; x < 13; x++)
+            else if (userConfigure == "n")
             {
-                for (y = 1; y < 13; y++)
+                a = 12;
+                b = 12;
+            }
+
+            else
+            {
+                Console.WriteLine("Please select a valid option.\n");
+                goto userPrompt;
+            }
+
+                //Visual break
+                Console.WriteLine();
+
+            //Each value starts at 1 and will stop when the iteration is NOT less than 13... i.e: 12
+            for (x = 1; x < (a + 1); x++)
+            {
+                for (y = 1; y < (b + 1); y++)
                 {
                     //Multiplies each value together, and "pads" each sequence with 3 spaces and a divider
                     Console.Write((x * y).ToString().PadLeft(3) + " | ");
@@ -45,8 +64,11 @@ namespace MultiplicationTable
                 //Breaks after each sequence
                 Console.WriteLine();
             }
-                //Pause
-                Console.ReadLine();            
+
+            Console.WriteLine("\nPress 'Enter' to quit");
+
+            //Pause
+            Console.ReadLine();
         }
     }
 }
