@@ -19,7 +19,6 @@ namespace MultiplicationTable
             string userConfigure = "";
             string userInput = "";
 
-
         userPrompt:
             Console.WriteLine("Would you like to change the table's range? " +
                 "(Default: 12x12)\n" + "y/n");
