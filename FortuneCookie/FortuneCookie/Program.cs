@@ -56,32 +56,32 @@ namespace FortuneCookie
 
         static void fortuneZero()
         {
-            Console.WriteLine("1) You will (obscure action even) in the future.\n");
+            Console.WriteLine("Fortune 1/6:\nYou will (obscure action even) in the future.\n");
         }
 
         static void fortuneOne()
         {
-            Console.WriteLine("2) Error 404: File 'Fortune_Cookie.exe' not found.\n");
+            Console.WriteLine("Fortune 2/6:\nError 404: File 'Fortune_Cookie.exe' not found.\n");
         }
 
         static void fortuneTwo()
         {
-            Console.WriteLine("3) A candle loses nothing by lighting another candle.\n");
+            Console.WriteLine("Fortune 3/6:\nA candle loses nothing by lighting another candle.\n");
         }
 
         static void fortuneThree()
         {
-            Console.WriteLine("4) Every exit is an entrance to new experiences.\n");
+            Console.WriteLine("Fortune 4/6:\nEvery exit is an entrance to new experiences.\n");
         }
 
         static void fortuneFour()
         {
-            Console.WriteLine("5) The best revenge is to not be like your enemy.\n");
+            Console.WriteLine("Fortune 5/6:\nThe best revenge is to not be like your enemy.\n");
         }
 
         static void fortuneFive()
         {
-            Console.WriteLine("6) You will soon witness a miracle in the form of a paycheck.\n");
+            Console.WriteLine("Fortune 6/6:\nYou will soon witness a miracle in the form of a paycheck.\n");
         }                
     }
 }
