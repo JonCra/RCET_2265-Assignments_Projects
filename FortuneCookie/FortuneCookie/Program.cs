@@ -11,16 +11,78 @@ namespace FortuneCookie
     {
         static void Main(string[] args)
         {
-            string fortZero = "Yesterday is history, tomorrow is a mystery, but today is a gift..."
-                + "\nThat is why it is called the Present.";
-            string fortOne = "If a situation is out of your hands, why is it in your head?";
-            string fortTwo = "A candle loses nothing by lighting another candle.";
-            string fortThree = "You can't control the wind, but you can adjust your sails.";
-            string fortFive = "The best revenge is to not be like your enemy.";
-
-            //TODO: insert/finalize random roll checker (0-5 or 1-6)
-
-
+            Random roll = new Random();            
+            for (int i = 0; i < 100; i ++)
+            {
+                //sets the roll parameters (min, max)
+                switch (roll.Next(0, 6))
+                {
+                    case 0:
+                        {
+                            fortuneZero();
+                            break;
+                        }
+                    case 1:
+                        {
+                            fortuneOne();
+                            break;
+                        }
+                    case 2:
+                        {
+                            fortuneTwo();
+                            break;
+                        }
+                    case 3:
+                        {
+                            fortuneThree();
+                            break;
+                        }
+                    case 4:
+                        {
+                            fortuneFour();
+                            break;
+                        }
+                    case 5:
+                        {
+                            fortuneFive();
+                            break;
+                        }
+                }
+            }
+            Console.WriteLine("Press 'Enter' to exit.");
+                //Pause
+                Console.ReadLine();
         }
+
+        static void fortuneZero()
+        {
+            Console.WriteLine("1) Yesterday is history, tomorrow is a mystery, but today is a gift..."
+                + "\n   That is why it is called the Present.\n");
+        }
+
+        static void fortuneOne()
+        {
+            Console.WriteLine("2) If a situation is out of your hands, why is it in your head?\n");
+        }
+
+        static void fortuneTwo()
+        {
+            Console.WriteLine("3) A candle loses nothing by lighting another candle.\n");
+        }
+
+        static void fortuneThree()
+        {
+            Console.WriteLine("4) You can't control the wind, but you can adjust your sails.\n");
+        }
+
+        static void fortuneFour()
+        {
+            Console.WriteLine("5) The best revenge is to not be like your enemy.\n");
+        }
+
+        static void fortuneFive()
+        {
+            Console.WriteLine("6) Today is a good day to \n");
+        }                
     }
 }
