@@ -12,7 +12,7 @@ namespace FortuneCookie
         static void Main(string[] args)
         {
             Random roll = new Random();            
-            for (int i = 0; i < 100; i ++)
+            for (int i = 0; i < 1; i ++)
             {
                 //sets the roll parameters (min, max)
                 switch (roll.Next(0, 6))
@@ -56,13 +56,12 @@ namespace FortuneCookie
 
         static void fortuneZero()
         {
-            Console.WriteLine("1) Yesterday is history, tomorrow is a mystery, but today is a gift..."
-                + "\n   That is why it is called the Present.\n");
+            Console.WriteLine("1) You will (obscure action even) in the future.\n");
         }
 
         static void fortuneOne()
         {
-            Console.WriteLine("2) If a situation is out of your hands, why is it in your head?\n");
+            Console.WriteLine("2) Error 404: File 'Fortune_Cookie.exe' not found.\n");
         }
 
         static void fortuneTwo()
@@ -72,7 +71,7 @@ namespace FortuneCookie
 
         static void fortuneThree()
         {
-            Console.WriteLine("4) You can't control the wind, but you can adjust your sails.\n");
+            Console.WriteLine("4) Every exit is an entrance to new experiences.\n");
         }
 
         static void fortuneFour()
@@ -82,7 +81,7 @@ namespace FortuneCookie
 
         static void fortuneFive()
         {
-            Console.WriteLine("6) Today is a good day to \n");
+            Console.WriteLine("6) You will soon witness a miracle in the form of a paycheck.\n");
         }                
     }
 }
