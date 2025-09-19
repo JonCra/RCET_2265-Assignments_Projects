@@ -11,47 +11,59 @@ namespace FortuneCookie
     {
         static void Main(string[] args)
         {
-            Random roll = new Random();            
-            for (int i = 0; i < 1; i ++)
-            {
-                //sets the roll parameters (min, max)
-                switch (roll.Next(0, 6))
+            string userInput = "";
+
+            Console.WriteLine("Press 'Enter' to get your fortune!");
+            Console.ReadLine();
+
+            while (userInput != "q")
+            {                
+                Random roll = new Random();
+                for (int i = 0; i < 1; i++)
                 {
-                    case 0:
-                        {
-                            fortuneZero();
-                            break;
-                        }
-                    case 1:
-                        {
-                            fortuneOne();
-                            break;
-                        }
-                    case 2:
-                        {
-                            fortuneTwo();
-                            break;
-                        }
-                    case 3:
-                        {
-                            fortuneThree();
-                            break;
-                        }
-                    case 4:
-                        {
-                            fortuneFour();
-                            break;
-                        }
-                    case 5:
-                        {
-                            fortuneFive();
-                            break;
-                        }
+                    //sets the roll parameters (min, max)
+                    switch (roll.Next(0, 6))
+                    {
+                        case 0:
+                            {
+                                fortuneZero();
+                                break;
+                            }
+                        case 1:
+                            {
+                                fortuneOne();
+                                break;
+                            }
+                        case 2:
+                            {
+                                fortuneTwo();
+                                break;
+                            }
+                        case 3:
+                            {
+                                fortuneThree();
+                                break;
+                            }
+                        case 4:
+                            {
+                                fortuneFour();
+                                break;
+                            }
+                        case 5:
+                            {
+                                fortuneFive();
+                                break;
+                            }
+                    }
                 }
+
+                Console.WriteLine("Press 'Enter' to get another fortune or press 'q' to exit.");
+                userInput = Console.ReadLine();
+
             }
-            Console.WriteLine("Press 'Enter' to exit.");
-                //Pause
-                Console.ReadLine();
+                        
+        EndProgram:
+            Console.WriteLine();
         }
 
         static void fortuneZero()
