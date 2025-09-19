@@ -3,7 +3,7 @@
 //RCET 2265
 //Fall 2025
 //Robotics and Comm. Sys. Engineering Tech.
-//https://github.com/JonCra/RCET_2265-Assignments_Projects/tree/3c11c303950eded48c6825826adc3fac8d94586f/FortuneCookie
+//https://github.com/JonCra/RCET_2265-Assignments_Projects.git
 
 namespace FortuneCookie
 {
