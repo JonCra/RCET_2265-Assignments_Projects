@@ -9,9 +9,9 @@ namespace ConvertAndValidate
 {
     /* TODO:
         [ ] Take two arguments: a string value to be converted, and an out integer variable to store the result.
-        [ ] Return a boolean indicating if the conversion was successful.
-        [ ] If successful, update the out integer variable with the converted value.
-        [ ] If not, do not update the integer variable.
+        [X] Return a boolean indicating if the conversion was successful.
+        [X] If successful, update the out integer variable with the converted value.
+        [X] If not, do not update the integer variable.
      */
     internal class Program
     {
