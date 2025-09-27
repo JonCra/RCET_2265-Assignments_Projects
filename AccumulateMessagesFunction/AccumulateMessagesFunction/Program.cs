@@ -54,7 +54,9 @@ namespace AccumulateMessagesFunction
                 {
                     //clear all messages
                     Messages("", true);
-                    Console.WriteLine("Messages erased.");                   
+                    Console.WriteLine("Messages erased.");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
                 else
                 {
