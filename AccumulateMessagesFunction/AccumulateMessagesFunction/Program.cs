@@ -20,9 +20,9 @@ namespace AccumulateMessagesFunction
         private static string _messages = "";
         static void Main(string[] args)
         {
-
+            MessagesManual();
         }
-        static void TestMessagesManual()
+        static void MessagesManual()
         {
             string userMessage = "this is important";
             bool userHasQuit = false;
