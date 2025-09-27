@@ -25,9 +25,13 @@ namespace ConvertAndValidate
             do
             {
                 Console.WriteLine("Press 'Q' or 'q' to quit.\n" +
-                    "Enter a number");
-                string userData = Console.ReadLine();
-                if (userData != "q" || userData != "Q")
+                    "Enter a number\n");
+                userData = Console.ReadLine();
+                if (userData == "q" || userData == "Q")
+                {
+                    userHasQuit = true;
+                }
+                else if (userData != "q" || userData != "Q")
                 {                    
                     if (ConvertAndValidate(userData, ref theNumber) == true)
                     {
@@ -37,12 +41,16 @@ namespace ConvertAndValidate
                     {
                         Console.WriteLine($"'{userData}' is not a number");
                     }
-                }
-                if (userData == "q" || userData == "Q")
-                {
-                    userHasQuit = true;
+                    userHasQuit = false;
                 }
             } while (userHasQuit == false);
+
+            //Clear terminal
+            Console.Clear();
+
+            //Exit dialogue
+            Console.WriteLine("Quit command detected.\n" +
+                "Have a nice day.");
 
             //Pause
             Console.ReadLine();
