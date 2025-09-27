@@ -15,29 +15,48 @@ namespace ConvertAndValidate
      */
     internal class Program
     {
+        //static void Main(string[] args)
+        //{
+
+        //}
         static void Main(string[] args)
         {
             int theNumber = 0;
-            string userData = "5";
+            string userData = "";
+            string userCommand = "";
+            bool userHasQuit = false;
 
-            if (ConvertAndValidate(userData, ref theNumber) == true)
+            do
             {
-                Console.WriteLine($"{theNumber} + 5 = {theNumber + 5}");
-            }
-            else
-            {
-                Console.WriteLine($"'{userData}' is not a number");
-            }
+                Console.WriteLine("Press 'Q' or 'q' to quit.\n" +
+                    "Enter a number");
+                string userData = Console.ReadLine();
+                if (userData != "q" || userData != "Q")
+                {                    
+                    if (ConvertAndValidate(userData, ref theNumber) == true)
+                    {
+                        Console.WriteLine($"{theNumber} + 5 = {theNumber + 5}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"'{userData}' is not a number");
+                    }
+                }
+                if (userData == "q" || userData == "Q")
+                {
+                    userHasQuit = true;
+                }
+            } while (userHasQuit == false);
 
             //Pause
             Console.ReadLine();
         }
-        static bool ConvertAndValidate(string convertThis, ref int toThisNumber)
+        static bool ConvertAndValidate(string convertThis, ref int toThat)
         {
             try
             {
                 //Try to convert and assign ByRef variable
-                toThisNumber = int.Parse(convertThis);
+                toThat = int.Parse(convertThis);
                 //Success!
                 return true;
             }
