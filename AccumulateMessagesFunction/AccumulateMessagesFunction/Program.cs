@@ -10,10 +10,10 @@ namespace AccumulateMessagesFunction
 {
     /*
     TODO:
-        Define a function that takes a string message and appends it to an accumulating result (e.g., a log or transcript).
-        Allow the user to enter multiple messages, accumulating them until the user chooses to stop.
-        Display the accumulated messages at the end.
-        Wait for the user to press Enter before closing the console window.
+        [X] Define a function that takes a string message and appends it to an accumulating result (e.g., a log or transcript).
+        [X] Allow the user to enter multiple messages, accumulating them until the user chooses to stop.
+        [X] Display the accumulated messages at the end.
+        [X] Wait for the user to press Enter before closing the console window.
     */
     internal class Program
     {
@@ -29,11 +29,21 @@ namespace AccumulateMessagesFunction
             do
             {
                 Console.WriteLine("Press 'q' or 'Q' any time to quit.\n" +
+                    "Press 'f' or 'F' to list available functions\n" + 
                     "Enter a message:\n");
                 userMessage = Console.ReadLine();
                 if (userMessage == "q" || userMessage == "Q")
                 {
                     userHasQuit = true;
+                }
+                if (userMessage == "f" || userMessage == "F")
+                {
+                    Console.WriteLine($"Command List:\n" + 
+                        "[] 'Q'/'q' - Quit and exit the program\n" +
+                        "[] 'M'/'m' - Display stored messages\n" +
+                        "[] 'C'/'c' - Clear all stored messages\n");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
                 else if (userMessage == "m" || userMessage == "M")
                 {
@@ -44,7 +54,7 @@ namespace AccumulateMessagesFunction
                 {
                     //clear all messages
                     Messages("", true);
-                    //TODO add clear flag                    
+                    Console.WriteLine("Messages erased.");                   
                 }
                 else
                 {
