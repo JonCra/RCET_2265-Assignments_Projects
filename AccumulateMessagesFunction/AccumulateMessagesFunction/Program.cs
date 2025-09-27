@@ -7,16 +7,10 @@
  */
 
 namespace AccumulateMessagesFunction
-{
-    /*
-    TODO:
-        [X] Define a function that takes a string message and appends it to an accumulating result (e.g., a log or transcript).
-        [X] Allow the user to enter multiple messages, accumulating them until the user chooses to stop.
-        [X] Display the accumulated messages at the end.
-        [X] Wait for the user to press Enter before closing the console window.
-    */
+{    
     internal class Program
     {
+        //"Global" variable that allows User Message/string data to be stored/recalled
         private static string _messages = "";
         static void Main(string[] args)
         {
@@ -71,6 +65,8 @@ namespace AccumulateMessagesFunction
             Console.WriteLine("The messages are:\n\n" + Messages());
             Console.WriteLine("\nPress 'enter' to quit.");
         }
+
+        //User message formatter Method
         static string Messages(string currentMessage = "", bool clear = false)
         {
             //removes leading/lagging whitespace
@@ -104,11 +100,11 @@ namespace AccumulateMessagesFunction
         {
             Messages("Hello!");
             Messages("Bye!");
-            Messages("");
+            Messages("");   //Tests if blank message clear function is working
             Messages("Punch!");
             Messages("Pie!");
             Messages("Dog!");
-            Console.WriteLine(Messages("Pony"));
+            Console.WriteLine(Messages("GNOMES"));
         }
     }
 }
