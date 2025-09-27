@@ -35,11 +35,15 @@ namespace ConvertAndValidate
                 {                    
                     if (ConvertAndValidate(userData, ref theNumber) == true)
                     {
-                        Console.WriteLine($"{theNumber} + 5 = {theNumber + 5}");
+                        Console.WriteLine($"\nConversion successful!");
+                        Console.ReadLine();
+                        Console.Clear();
                     }
                     else
                     {
-                        Console.WriteLine($"'{userData}' is not a number");
+                        Console.WriteLine($"\nERROR: '{userData}' is not a number");
+                        Console.ReadLine();
+                        Console.Clear();
                     }
                     userHasQuit = false;
                 }
