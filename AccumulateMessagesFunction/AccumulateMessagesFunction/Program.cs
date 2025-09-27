@@ -29,7 +29,7 @@ namespace AccumulateMessagesFunction
             do
             {
                 Console.WriteLine("Press 'q' or 'Q' any time to quit.\n" +
-                    "Press 'f' or 'F' to list available functions\n" + 
+                    "Press 'f' or 'F' to list available functions.\n\n" + 
                     "Enter a message:\n");
                 userMessage = Console.ReadLine();
                 if (userMessage == "q" || userMessage == "Q")
@@ -49,6 +49,8 @@ namespace AccumulateMessagesFunction
                 {
                     Console.Clear();
                     Console.WriteLine("The Messages are:\n\n" + Messages() + "\n");
+                    Console.ReadLine();
+                    Console.Clear();
                 }
                 else if (userMessage == "c" || userMessage == "C")
                 {
