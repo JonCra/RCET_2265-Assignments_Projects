@@ -14,11 +14,7 @@ namespace ConvertAndValidate
         [X] If not, do not update the integer variable.
      */
     internal class Program
-    {
-        //static void Main(string[] args)
-        //{
-
-        //}
+    {       
         static void Main(string[] args)
         {
             int theNumber = 0;
