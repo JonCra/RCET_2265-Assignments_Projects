@@ -18,6 +18,10 @@ namespace AccumulateMessagesFunction
     internal class Program
     {
         private static string _messages = "";
+        static void Main(string[] args)
+        {
+
+        }
         static void TestMessagesManual()
         {
             string userMessage = "this is important";
