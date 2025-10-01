@@ -18,6 +18,7 @@ namespace RollOfTheDice
         }
         static void DiceRoller()
         {
+            Console.WriteLine("*Rolls die*");
             //Roll two 1d6 Die
             //tally the total sum of each roll
         }
@@ -30,21 +31,19 @@ namespace RollOfTheDice
                 //Display rolls 2-12
                 //Display roll results
 
-            int padding = 2;
-            int totalWidth =  6 * (padding + 1);
+            int padding = 3;
+            int totalWidth =  6 * (padding);
             string hDivider = new string('-', totalWidth);
+            string otherDivider = new string('-', (totalWidth * 3));
             Console.WriteLine(hDivider + " Roll of the Dice " + hDivider);
             for (int roll = 2; roll < 13; roll++)
             {
-                Console.Write((roll).ToString().PadRight(padding) + " | ");                
+                Console.Write((roll).ToString().PadLeft(padding) + "| ");                
             }
                 //create an array to index the tallies of each roll?
-            Console.WriteLine();
-            for (int a = 0; a < 66; a++)
-            {
-                Console.Write("-");
-            }
-            Console.WriteLine();
+            Console.WriteLine("\n" + otherDivider);
+            //Write the roll results
+            DiceRoller();
         }
     }
 }
