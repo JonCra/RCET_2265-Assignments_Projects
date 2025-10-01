@@ -12,7 +12,9 @@ namespace RollOfTheDice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Roll of the Dice");
+            //Console.WriteLine("Roll of the Dice");
+            Display();
+            Console.ReadLine();
         }
         static void DiceRoller()
         {
@@ -29,11 +31,21 @@ namespace RollOfTheDice
                 //Display roll results
 
             string vDivider = " |"; //Column Seperator
-            int padding = 3;
-            int totalWidth =  5 * (padding + vDivider.Length);
+            int padding = 2;
+            int totalWidth =  6 * (padding + vDivider.Length);
             string hDivider = new string('-', totalWidth);  //Dynamic length horizontal divider
-
-
+            Console.WriteLine(hDivider + " Roll of the Dice " + hDivider);
+            for (int roll = 2; roll < 13; roll++)
+            {
+                //create an array to index the tallies of each roll
+                Console.Write((roll).ToString().PadRight(padding) + " | ");                
+            }
+            Console.WriteLine();
+            for (int a = 0; a < 66; a++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine();
         }
     }
 }
