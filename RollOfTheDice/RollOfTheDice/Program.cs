@@ -30,16 +30,15 @@ namespace RollOfTheDice
                 //Display rolls 2-12
                 //Display roll results
 
-            string vDivider = " |"; //Column Seperator
             int padding = 2;
-            int totalWidth =  6 * (padding + vDivider.Length);
-            string hDivider = new string('-', totalWidth);  //Dynamic length horizontal divider
+            int totalWidth =  6 * (padding + 1);
+            string hDivider = new string('-', totalWidth);
             Console.WriteLine(hDivider + " Roll of the Dice " + hDivider);
             for (int roll = 2; roll < 13; roll++)
             {
-                //create an array to index the tallies of each roll
                 Console.Write((roll).ToString().PadRight(padding) + " | ");                
             }
+                //create an array to index the tallies of each roll?
             Console.WriteLine();
             for (int a = 0; a < 66; a++)
             {
