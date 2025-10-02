@@ -18,6 +18,19 @@ namespace RollOfTheDice
         }
         static void DiceRoller()
         {
+            int roll1 = 0;
+            int roll2 = 0;
+            int roll3 = 0;
+            int roll4 = 0;
+            int roll5 = 0;
+            int roll6 = 0;
+            int roll7 = 0;
+            int roll8 = 0;
+            int roll9 = 0;
+            int roll10 = 0;
+            int roll11 = 0;
+            int roll12 = 0;
+
             int sum1 = 0;
             int sum2 = 0;
             int sum3 = 0;
@@ -31,10 +44,10 @@ namespace RollOfTheDice
             int sum11 = 0;
             int sum12 = 0;
 
-            //Rolls First 1d6
-            Random rollOne = new Random();
-            for (int i = 0; i < 500; i++)
+            for (int i = 0; i < 10; i++)
             {
+                //Rolls First 1d6
+                Random rollOne = new Random();
                 switch (rollOne.Next(1, 6))
                 {
                     case 1:
@@ -65,11 +78,8 @@ namespace RollOfTheDice
                         Console.WriteLine("out of bounds");
                         break;
                 }
-            }
-            //Rolls Second 1d6
-            Random rollTwo = new Random();
-            for (int i = 0; i < 500; i++)
-            {
+                //Rolls Second 1d6
+                Random rollTwo = new Random();
                 switch (rollTwo.Next(1, 6))
                 {
                     case 1:
@@ -100,13 +110,17 @@ namespace RollOfTheDice
                         Console.WriteLine("out of bounds");
                         break;
                 }
+                if (rollOne + rollTwo == 2)
+                {
+
+                }
             }
             //BUG: Does not tally sums correctly
             Console.WriteLine($"{sum1} + {sum2} + {sum3} + {sum4} + {sum5} + {sum6} + {sum7} + {sum8} + {sum9} + {sum10} + {sum11} + {sum12}");
-            
+
             //tally the total sum of each roll
 
-            Console.WriteLine("*Rolls die*");
+            Console.WriteLine("*Rolls die*");            
         }
         static void Display()
         {
