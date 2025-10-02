@@ -35,16 +35,78 @@ namespace RollOfTheDice
             Random rollOne = new Random();
             for (int i = 0; i < 500; i++)
             {
-                Console.WriteLine(rollOne.Next(1, 7));
+                switch (rollOne.Next(1, 6))
+                {
+                    case 1:
+                        rollOne.Next(1);
+                        sum1++;
+                        break;
+                    case 2:
+                        rollOne.Next(2);
+                        sum2++;
+                        break;
+                    case 3:
+                        rollOne.Next(3);
+                        sum3++;
+                        break;
+                    case 4:
+                        rollOne.Next(4);
+                        sum4++;
+                        break;
+                    case 5:
+                        rollOne.Next(5);
+                        sum5++;
+                        break;
+                    case 6:
+                        rollOne.Next(6);
+                        sum6++;
+                        break;
+                    default:
+                        Console.WriteLine("out of bounds");
+                        break;
+                }
             }
             //Rolls Second 1d6
             Random rollTwo = new Random();
-            
-                        
-            //tally the total sum of each roll
-            
-            
-            Console.WriteLine("*Rolls die*");
+            for (int i = 0; i < 500; i++)
+            {
+                switch (rollTwo.Next(1, 6))
+                {
+                    case 1:
+                        rollTwo.Next(1);
+                        sum1++;
+                        break;
+                    case 2:
+                        rollTwo.Next(2);
+                        sum2++;
+                        break;
+                    case 3:
+                        rollTwo.Next(3);
+                        sum3++;
+                        break;
+                    case 4:
+                        rollTwo.Next(4);
+                        sum4++;
+                        break;
+                    case 5:
+                        rollTwo.Next(5);
+                        sum5++;
+                        break;
+                    case 6:
+                        rollTwo.Next(6);
+                        sum6++;
+                        break;
+                    default:
+                        Console.WriteLine("out of bounds");
+                        break;
+                }
+            }
+            Console.WriteLine($"{sum1} + {sum2} + {sum3} + {sum4} + {sum5} + {sum6} + {sum7} + {sum8} + {sum9} + {sum10} + {sum11} + {sum12}");
+
+                    //tally the total sum of each roll
+
+
+                    Console.WriteLine("*Rolls die*");
         }
         static void Display()
         {
