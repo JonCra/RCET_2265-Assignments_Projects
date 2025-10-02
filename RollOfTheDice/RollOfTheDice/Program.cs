@@ -18,24 +18,32 @@ namespace RollOfTheDice
         }
         static void DiceRoller()
         {
-            int sumRollOne = 0;
-            int sumRollTwo = 0;
+            int sum1 = 0;
+            int sum2 = 0;
+            int sum3 = 0;
+            int sum4 = 0;
+            int sum5 = 0;
+            int sum6 = 0;
+            int sum7 = 0;
+            int sum8 = 0;
+            int sum9 = 0;
+            int sum10 = 0;
+            int sum11 = 0;
+            int sum12 = 0;
 
             //Rolls First 1d6
             Random rollOne = new Random();
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 500; i++)
             {
-                Console.WriteLine(rollOne.Next(1, 6));
+                Console.WriteLine(rollOne.Next(1, 7));
             }
             //Rolls Second 1d6
             Random rollTwo = new Random();
-            for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine(rollTwo.Next(1, 6));
-            }
-
-            //Roll two 1d6 Die
+            
+                        
             //tally the total sum of each roll
+            
+            
             Console.WriteLine("*Rolls die*");
         }
         static void Display()
