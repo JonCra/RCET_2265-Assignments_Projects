@@ -101,30 +101,31 @@ namespace RollOfTheDice
                         break;
                 }
             }
+            //BUG: Does not tally sums correctly
             Console.WriteLine($"{sum1} + {sum2} + {sum3} + {sum4} + {sum5} + {sum6} + {sum7} + {sum8} + {sum9} + {sum10} + {sum11} + {sum12}");
+            
+            //tally the total sum of each roll
 
-                    //tally the total sum of each roll
-
-
-                    Console.WriteLine("*Rolls die*");
+            Console.WriteLine("*Rolls die*");
         }
         static void Display()
         {
             //TODO
             //Format results in a "table" - Make it look good
-                //Try using something similar to the Bingo Cage???
-            //Display results
-                //Display rolls 2-12
-                //Display roll results
+            //Try using something similar to the Bingo Cage???
+            //Display rolls 2-12
+            //Display roll results
 
+            string header = "Roll of the Dice";
             int padding = 3;
             int totalWidth =  6 * (padding);
             string hDivider = new string('-', totalWidth);
             string otherDivider = new string('-', (totalWidth * 3));
-            Console.WriteLine(hDivider + " Roll of the Dice " + hDivider);
+            Console.WriteLine(header.PadLeft(35));
+            Console.WriteLine(hDivider + hDivider + hDivider);
             for (int roll = 2; roll < 13; roll++)
             {
-                Console.Write((roll).ToString().PadLeft(padding) + "| ");                
+                Console.Write((roll).ToString().PadLeft(padding) + "| ");
             }
                 //create an array to index the tallies of each roll?
             Console.WriteLine("\n" + otherDivider);
