@@ -95,7 +95,7 @@ namespace RollOfTheDice
 
             //Console.WriteLine("*Rolls die*");            
         }
-        static int DiceTally()
+        static void DiceTally()
         {
             //Initialize results array and local variables
             int[] results = new int[13];
@@ -172,8 +172,7 @@ namespace RollOfTheDice
             results[10] = sum10;
             results[11] = sum11;
             results[12] = sum12;
-            return results[12];
-            Console.WriteLine();
+            Console.WriteLine(results);
         }
         static void Display()
         {
@@ -183,7 +182,7 @@ namespace RollOfTheDice
             int totalWidth =  6 * (padding);
             string hDivider = new string('-', totalWidth);
             string otherDivider = new string('-', (totalWidth * 3));
-            Console.WriteLine(header.PadLeft(35));
+            Console.WriteLine(header.PadLeft(hDivider.Length));
             Console.WriteLine(hDivider + hDivider + hDivider);
             for (int roll = 2; roll < 13; roll++)
             {
@@ -191,7 +190,7 @@ namespace RollOfTheDice
             }
             Console.WriteLine("\n" + otherDivider);
             //Write the roll results
-            DiceTally(results[12]);
+            DiceTally();
         }
     }
 }
