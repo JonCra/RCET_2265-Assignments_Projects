@@ -5,33 +5,98 @@ namespace RollOfTheDice
     /*
      TODO:
         [ ] Display the results in the console in formatted columns with headers.
-        [ ] The header row should show the roll result numbers 2 to 12 (2d6).
+        [X] The header row should show the roll result numbers 2 to 12 (2d6).
         [ ] The data row should show the total count of how many times each number came up.
      */
     internal class Program
     {
+        private static int rollOneValue;
+        private static int rollTwoValue;
         static void Main(string[] args)
         {
             //Console.WriteLine("Roll of the Dice");
             Display();
             Console.ReadLine();
         }
-        static void DiceRoller()
+        static int DiceRollerOne()
         {
-            int roll1 = 0;
-            int roll2 = 0;
-            int roll3 = 0;
-            int roll4 = 0;
-            int roll5 = 0;
-            int roll6 = 0;
-            int roll7 = 0;
-            int roll8 = 0;
-            int roll9 = 0;
-            int roll10 = 0;
-            int roll11 = 0;
-            int roll12 = 0;
+            //Rolls First 1d6
+            Random rollTwo = new Random();
+            switch (rollTwo.Next(1, 7))
+            {
+                case 1:
+                    rollTwo.Next(1);
+                    rollOneValue = 1;
+                    break;
+                case 2:
+                    rollTwo.Next(2);
+                    rollOneValue = 2;
+                    break;
+                case 3:
+                    rollTwo.Next(3);
+                    rollOneValue = 3;
+                    break;
+                case 4:
+                    rollTwo.Next(4);
+                    rollOneValue = 4;
+                    break;
+                case 5:
+                    rollTwo.Next(5);
+                    rollOneValue = 5;
+                    break;
+                case 6:
+                    rollTwo.Next(6);
+                    rollOneValue = 6;
+                    break;
+                default:
+                    Console.WriteLine("out of bounds");
+                    break;
+            }
+            return rollOneValue;
+        }
+        static int DiceRollerTwo()
+        {           
+            //Rolls Second 1d6
+            Random rollOne = new Random();
+            switch (rollOne.Next(1, 7))
+            {
+                case 1:
+                    rollOne.Next(1);
+                    rollTwoValue = 1;
+                    break;
+                case 2:
+                    rollOne.Next(2);
+                    rollTwoValue = 2;
+                    break;
+                case 3:
+                    rollOne.Next(3);
+                    rollTwoValue = 3;
+                    break;
+                case 4:
+                    rollOne.Next(4);
+                    rollTwoValue = 4;
+                    break;
+                case 5:
+                    rollOne.Next(5);
+                    rollTwoValue = 5;
+                    break;
+                case 6:
+                    rollOne.Next(6);
+                    rollTwoValue = 6;
+                    break;
+                default:
+                    Console.WriteLine("out of bounds");
+                    break;                                               
+            }
+            return rollTwoValue;
+            //BUG: Does not tally sums correctly
+            //tally the total sum of each roll
+            //Console.WriteLine($"{sum1} + {sum2} + {sum3} + {sum4} + {sum5} + {sum6} + {sum7} + {sum8} + {sum9} + {sum10} + {sum11} + {sum12}");
 
-            int sum1 = 0;
+            //Console.WriteLine("*Rolls die*");            
+        }
+        static void DiceTally()
+        {
             int sum2 = 0;
             int sum3 = 0;
             int sum4 = 0;
@@ -43,84 +108,58 @@ namespace RollOfTheDice
             int sum10 = 0;
             int sum11 = 0;
             int sum12 = 0;
-
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 1000; i++)
             {
-                //Rolls First 1d6
-                Random rollOne = new Random();
-                switch (rollOne.Next(1, 6))
+                DiceRollerOne();
+                DiceRollerTwo();
+                int rollResults = rollOneValue + rollTwoValue;
+                if (rollResults == 2)
                 {
-                    case 1:
-                        rollOne.Next(1);
-                        sum1++;
-                        break;
-                    case 2:
-                        rollOne.Next(2);
-                        sum2++;
-                        break;
-                    case 3:
-                        rollOne.Next(3);
-                        sum3++;
-                        break;
-                    case 4:
-                        rollOne.Next(4);
-                        sum4++;
-                        break;
-                    case 5:
-                        rollOne.Next(5);
-                        sum5++;
-                        break;
-                    case 6:
-                        rollOne.Next(6);
-                        sum6++;
-                        break;
-                    default:
-                        Console.WriteLine("out of bounds");
-                        break;
+                    sum2++;
                 }
-                //Rolls Second 1d6
-                Random rollTwo = new Random();
-                switch (rollTwo.Next(1, 6))
+                else if (rollResults == 3)
                 {
-                    case 1:
-                        rollTwo.Next(1);
-                        sum1++;
-                        break;
-                    case 2:
-                        rollTwo.Next(2);
-                        sum2++;
-                        break;
-                    case 3:
-                        rollTwo.Next(3);
-                        sum3++;
-                        break;
-                    case 4:
-                        rollTwo.Next(4);
-                        sum4++;
-                        break;
-                    case 5:
-                        rollTwo.Next(5);
-                        sum5++;
-                        break;
-                    case 6:
-                        rollTwo.Next(6);
-                        sum6++;
-                        break;
-                    default:
-                        Console.WriteLine("out of bounds");
-                        break;
+                    sum3++;
                 }
-                if (rollOne + rollTwo == 2)
+                else if (rollResults == 4)
                 {
-
+                    sum4++;
+                }
+                else if (rollResults == 5)
+                {
+                    sum5++;
+                }
+                else if (rollResults == 6)
+                {
+                    sum6++;
+                }
+                else if (rollResults == 7)
+                {
+                    sum7++;
+                }
+                else if (rollResults == 8)
+                {
+                    sum8++;
+                }
+                else if (rollResults == 9)
+                {
+                    sum9++;
+                }
+                else if (rollResults == 10)
+                {
+                    sum10++;
+                }
+                else if (rollResults == 11)
+                {
+                    sum11++;
+                }
+                else if (rollResults == 12)
+                {
+                    sum12++;
                 }
             }
-            //BUG: Does not tally sums correctly
-            Console.WriteLine($"{sum1} + {sum2} + {sum3} + {sum4} + {sum5} + {sum6} + {sum7} + {sum8} + {sum9} + {sum10} + {sum11} + {sum12}");
 
-            //tally the total sum of each roll
-
-            Console.WriteLine("*Rolls die*");            
+            Console.WriteLine($"{sum2} | {sum3} | {sum4} | {sum5} | {sum6} | {sum7} | {sum8} | {sum9} | {sum10} | {sum11} | {sum12}");
         }
         static void Display()
         {
@@ -144,7 +183,7 @@ namespace RollOfTheDice
                 //create an array to index the tallies of each roll?
             Console.WriteLine("\n" + otherDivider);
             //Write the roll results
-            DiceRoller();
+            DiceTally();
         }
     }
 }
