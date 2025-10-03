@@ -95,8 +95,10 @@ namespace RollOfTheDice
 
             //Console.WriteLine("*Rolls die*");            
         }
-        static void DiceTally()
+        static int DiceTally()
         {
+            //Initialize results array and local variables
+            int[] results = new int[13];
             int sum2 = 0;
             int sum3 = 0;
             int sum4 = 0;
@@ -158,17 +160,24 @@ namespace RollOfTheDice
                     sum12++;
                 }
             }
-
-            Console.WriteLine($"{sum2} | {sum3} | {sum4} | {sum5} | {sum6} | {sum7} | {sum8} | {sum9} | {sum10} | {sum11} | {sum12}");
+            //Index results into 1-D array
+            results[2] = sum2;
+            results[3] = sum3;
+            results[4] = sum4;
+            results[5] = sum5;
+            results[6] = sum6;
+            results[7] = sum7;
+            results[8] = sum8;
+            results[9] = sum9;
+            results[10] = sum10;
+            results[11] = sum11;
+            results[12] = sum12;
+            return results[12];
+            Console.WriteLine();
         }
         static void Display()
         {
-            //TODO
-            //Format results in a "table" - Make it look good
-            //Try using something similar to the Bingo Cage???
-            //Display rolls 2-12
-            //Display roll results
-
+            int[] results = new int[13];
             string header = "Roll of the Dice";
             int padding = 3;
             int totalWidth =  6 * (padding);
@@ -180,10 +189,9 @@ namespace RollOfTheDice
             {
                 Console.Write((roll).ToString().PadLeft(padding) + "| ");
             }
-                //create an array to index the tallies of each roll?
             Console.WriteLine("\n" + otherDivider);
             //Write the roll results
-            DiceTally();
+            DiceTally(results[12]);
         }
     }
 }
