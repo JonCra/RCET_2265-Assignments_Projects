@@ -12,7 +12,6 @@ namespace RollOfTheDice
     {
         private static int rollOneValue;
         private static int rollTwoValue;
-        private static int[] results;
         static void Main(string[] args)
         {
             //Console.WriteLine("Roll of the Dice");
@@ -183,13 +182,16 @@ namespace RollOfTheDice
             int totalWidth =  6 * (padding);
             string hDivider = new string('-', totalWidth);
             string otherDivider = new string('-', (totalWidth * 3));
+
             Console.WriteLine(header.PadLeft(35));
             Console.WriteLine(hDivider + hDivider + hDivider);
+
             for (int roll = 2; roll < 13; roll++)
             {
                 Console.Write((roll).ToString().PadLeft(padding) + "| ");
             }
             Console.WriteLine("\n" + otherDivider);
+
             //Write the roll results
             DiceTally();
         }
