@@ -12,6 +12,7 @@ namespace RollOfTheDice
     {
         private static int rollOneValue;
         private static int rollTwoValue;
+        private static int[] results;
         static void Main(string[] args)
         {
             //Console.WriteLine("Roll of the Dice");
@@ -172,7 +173,12 @@ namespace RollOfTheDice
             results[10] = sum10;
             results[11] = sum11;
             results[12] = sum12;
-            Console.WriteLine(results);
+                        
+            for (int i = 2; i < 13; i++)
+            {
+                Console.Write(" " + $"{results[i]}|");
+            }
+            
         }
         static void Display()
         {
