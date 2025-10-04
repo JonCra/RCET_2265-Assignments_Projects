@@ -1,13 +1,13 @@
 ﻿using System.Security.Cryptography;
-
+/*
+    Jonas Cram
+    RCET 2265
+    Fall 2025
+    Robotics and Comm. Sys. Engineering Tech.
+    https://github.com/JonCra/RCET_2265-Assignments_Projects
+*/
 namespace RollOfTheDice
-{
-    /*
-     TODO:
-        [ ] Display the results in the console in formatted columns with headers.
-        [X] The header row should show the roll result numbers 2 to 12 (2d6).
-        [ ] The data row should show the total count of how many times each number came up.
-     */
+{    
     internal class Program
     {
         private static int rollOneValue;
@@ -89,12 +89,7 @@ namespace RollOfTheDice
                     Console.WriteLine("out of bounds");
                     break;                                               
             }
-            return rollTwoValue;
-            //BUG: Does not tally sums correctly
-            //tally the total sum of each roll
-            //Console.WriteLine($"{sum1} + {sum2} + {sum3} + {sum4} + {sum5} + {sum6} + {sum7} + {sum8} + {sum9} + {sum10} + {sum11} + {sum12}");
-
-            //Console.WriteLine("*Rolls die*");            
+            return rollTwoValue;            
         }
         static void DiceTally()
         {
@@ -173,12 +168,12 @@ namespace RollOfTheDice
             results[10] = sum10;
             results[11] = sum11;
             results[12] = sum12;
-                        
+
+            int padding = 3;
             for (int i = 2; i < 13; i++)
             {
-                Console.Write(" " + $"{results[i]}|");
+                Console.Write((results[i]).ToString().PadLeft(padding) + "| ");
             }
-            
         }
         static void Display()
         {
@@ -188,7 +183,7 @@ namespace RollOfTheDice
             int totalWidth =  6 * (padding);
             string hDivider = new string('-', totalWidth);
             string otherDivider = new string('-', (totalWidth * 3));
-            Console.WriteLine(header.PadLeft(hDivider.Length));
+            Console.WriteLine(header.PadLeft(35));
             Console.WriteLine(hDivider + hDivider + hDivider);
             for (int roll = 2; roll < 13; roll++)
             {
