@@ -18,7 +18,64 @@ namespace ShuffleTheDeck
     {
         static void Main(string[] args)
         {
-            
+            string userInput = "";
+            bool userQuit = false;
+            int count = 0;
+
+            do
+            {
+                Display();
+                Console.WriteLine($"The count is {count}");
+                userInput = Console.ReadLine();
+
+                if (userInput == "q" || userInput == "Q")
+                {
+                    Console.WriteLine("Have a nice day!");
+                    Console.ReadLine();
+                    userQuit = true;
+                }
+                else if (userInput == "c" || userInput == "C")
+                {
+                    //Restart
+                    NewDeck();
+                    count = 0;
+                    userQuit = false;
+                }
+                else
+                {
+                    if (count >= 75)
+                    {
+                        Console.WriteLine("All cards have been drawn.\n" +
+                            "Press Q to quit or C to start again.");
+                        userInput = Console.ReadLine();
+                        if (userInput == "Q" ||  userInput == "q")
+                        {
+                            userQuit = true;
+                            break;
+                        }
+                        else if (userInput == "c" || userInput == "C")
+                        {
+                            NewDeck();
+                            count = 0;
+                            userQuit= false;
+                        }
+                    }
+                }
+
+
+            }while (userQuit == false);
+        }
+        static void Display()
+        {
+
+        }
+        static void DrawCard()
+        {
+
+        }
+        static void NewDeck()
+        {
+
         }
     }
 }
