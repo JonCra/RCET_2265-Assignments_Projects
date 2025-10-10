@@ -97,7 +97,7 @@ namespace ShuffleTheDeck
             do
             {
                 //Get random column
-                column = RandomSuitBetween(0, 4);
+                column = RandomSuitBetween(0, 3);
 
                 //Get random row
                 row = RandomSuitBetween(0, 12);
@@ -143,14 +143,14 @@ namespace ShuffleTheDeck
             Console.WriteLine(hDivider);
 
             //Display UI
-            for (int row = 0; row < 15; row++)
+            for (int row = 0; row < 13; row++)
             {
-                for (int column = 0; column < 5; column++)
+                for (int column = 0; column < 4; column++)
                 {
                     if (CardIsDrawn(row, column))
                     {
                         //currentLocation = "00"; //TODO resolve actual number
-                        currentLocation = ((column * 15) + row + 1).ToString();
+                        currentLocation = ((column * 13) + row + 1).ToString();
                     }
                     else
                     {
