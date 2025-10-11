@@ -17,6 +17,8 @@ namespace ShuffleTheDeck
     internal class Program
     {
         private static bool[,] deck = new bool[13, 4];
+        private static string[] cardValue = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+        private static string[] cardSuit = { "Spades", "Clubs", "Hearts", "Diamonds" };
         static void Main(string[] args)
         {
             string userInput = "";
@@ -49,7 +51,7 @@ namespace ShuffleTheDeck
                         Console.WriteLine("All cards have been drawn.\n" +
                             "Press Q to quit or C to start again.");
                         userInput = Console.ReadLine();
-                        if (userInput == "Q" ||  userInput == "q")
+                        if (userInput == "Q" || userInput == "q")
                         {
                             userQuit = true;
                             break;
@@ -58,7 +60,7 @@ namespace ShuffleTheDeck
                         {
                             NewDeck();
                             count = 0;
-                            userQuit= false;
+                            userQuit = false;
                         }
                     }
                     else
@@ -69,14 +71,14 @@ namespace ShuffleTheDeck
                     }
                 }
                 Console.Clear();
-            }while (userQuit == false);
+            } while (userQuit == false);
         }
         static bool CardIsDrawn(int row, int column)
         {
             bool status = false;
             try
             {
-                status = deck[row, column];
+                status = deck[string cardValue, string cardSuit];
             }
             catch (Exception)
             {
@@ -143,14 +145,14 @@ namespace ShuffleTheDeck
             Console.WriteLine(hDivider);
 
             //Display UI
-            for (int row = 0; row < 13; row++)
+            for (int row = 0; row < 15; row++)
             {
-                for (int column = 0; column < 4; column++)
+                for (int column = 0; column < 5; column++)
                 {
                     if (CardIsDrawn(row, column))
                     {
                         //currentLocation = "00"; //TODO resolve actual number
-                        currentLocation = ((column * 13) + row + 1).ToString();
+                        currentLocation = ((column * 15) + row + 1).ToString();
                     }
                     else
                     {
