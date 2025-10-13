@@ -78,7 +78,7 @@ namespace ShuffleTheDeck
             bool status = false;
             try
             {
-                status = deck[string cardValue, string cardSuit];
+                status = deck[row, column];
             }
             catch (Exception)
             {
@@ -110,7 +110,6 @@ namespace ShuffleTheDeck
             test = deck;
 
             deck[row, column] = true;
-
         }
         static void NewDeck()
         {
@@ -132,27 +131,16 @@ namespace ShuffleTheDeck
             string vDivider = " |"; //Column seperator
             int totalWidth = 5 * (padding + vDivider.Length);   //Calculate total width
             string hDivider = new string('-', totalWidth);  //Dynamic length horizontal divider
-
-            //Print header row
-            foreach (string letter in header)
-            {
-                Console.Write(letter.PadLeft(padding) + vDivider);
-            }
-
-            //Visual break
-            Console.WriteLine();
-            //Horizontal divider
-            Console.WriteLine(hDivider);
-
+                        
             //Display UI
-            for (int row = 0; row < 15; row++)
+            for (int row = 0; row < 13; row++)
             {
-                for (int column = 0; column < 5; column++)
+                for (int column = 0; column < 4; column++)
                 {
                     if (CardIsDrawn(row, column))
                     {
                         //currentLocation = "00"; //TODO resolve actual number
-                        currentLocation = ((column * 15) + row + 1).ToString();
+                        currentLocation = ((column * 13) + row + 1).ToString();
                     }
                     else
                     {
