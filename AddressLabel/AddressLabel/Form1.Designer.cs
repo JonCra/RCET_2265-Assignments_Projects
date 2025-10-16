@@ -39,7 +39,9 @@
             ExitButton = new Button();
             MailingAddressGroupBox = new GroupBox();
             AddressLabelGroupBox = new GroupBox();
+            AddressLabelTextBox = new RichTextBox();
             MailingAddressGroupBox.SuspendLayout();
+            AddressLabelGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // FirstNameTextBox
@@ -143,12 +145,22 @@
             // 
             // AddressLabelGroupBox
             // 
+            AddressLabelGroupBox.Controls.Add(AddressLabelTextBox);
             AddressLabelGroupBox.Location = new Point(310, 12);
             AddressLabelGroupBox.Name = "AddressLabelGroupBox";
             AddressLabelGroupBox.Size = new Size(478, 367);
             AddressLabelGroupBox.TabIndex = 10;
             AddressLabelGroupBox.TabStop = false;
             AddressLabelGroupBox.Text = "Address Label";
+            // 
+            // AddressLabelTextBox
+            // 
+            AddressLabelTextBox.Location = new Point(6, 30);
+            AddressLabelTextBox.Name = "AddressLabelTextBox";
+            AddressLabelTextBox.Size = new Size(466, 331);
+            AddressLabelTextBox.TabIndex = 0;
+            AddressLabelTextBox.Text = "";
+            AddressLabelTextBox.TextChanged += AddressLabelTextBox_TextChanged;
             // 
             // Form1
             // 
@@ -164,6 +176,7 @@
             Text = "Address Label Viewer";
             MailingAddressGroupBox.ResumeLayout(false);
             MailingAddressGroupBox.PerformLayout();
+            AddressLabelGroupBox.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -180,5 +193,6 @@
         private Button ExitButton;
         private GroupBox MailingAddressGroupBox;
         private GroupBox AddressLabelGroupBox;
+        private RichTextBox AddressLabelTextBox;
     }
 }

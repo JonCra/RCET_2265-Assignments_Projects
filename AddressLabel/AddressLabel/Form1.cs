@@ -18,6 +18,19 @@ namespace AddressLabel
         private void DisplayLabelButton_Click(object sender, EventArgs e)
         {
             // Display entered information
+            if ()
+            {
+
+            }
+            else
+            {
+                // Displays entered data
+                AddressLabelTextBox.Text = $"{FirstNameTextBox.Text} {LastNameTextBox.Text}\n" +
+                    $"{StreetAddressTextBox.Text}\n" +
+                    $"{CityTextBox.Text}" +
+                    $"{StateTextBox.Text}" +
+                    $"{ZipCodeTextBox.Text}";
+            }
         }
         private void FirstNameTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -40,6 +53,10 @@ namespace AddressLabel
 
         }
         private void ZipCodeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void AddressLabelTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
