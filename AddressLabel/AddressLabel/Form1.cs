@@ -14,12 +14,12 @@ namespace AddressLabel
             if (ZipCodeTextBox.Text == "")
             {
                 ZipCodeTextBox.Focus();
-                message += "Zip Code is Required";
+                message += "Zip Code is Required\n";
             }
             if (StateTextBox.Text == "")
             {
                 StateTextBox.Focus();
-                message += "State is Required";
+                message += "State is Required\n";
             }
             if (CityTextBox.Text == "")
             {
@@ -57,7 +57,11 @@ namespace AddressLabel
             }
             else
             {
-
+                // Displays user-input data
+                AddressLabelTextBox.Text = $"{FirstNameTextBox.Text} {LastNameTextBox.Text}\n" +
+                        $"{StreetAddressTextBox.Text}\n" +
+                        $"{CityTextBox.Text}, {StateTextBox.Text}\n" +
+                        $"{ZipCodeTextBox.Text}";
             }
         }
         private void ExitButton_Click(object sender, EventArgs e)
