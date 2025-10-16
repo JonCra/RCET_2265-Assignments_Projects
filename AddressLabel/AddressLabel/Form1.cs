@@ -6,6 +6,60 @@ namespace AddressLabel
         {
             InitializeComponent();
         }
+        string EvaluateFields()
+        {
+            string message = "";
+
+            // If text boxes are blank, focuses on them for user input
+            if (ZipCodeTextBox.Text == "")
+            {
+                ZipCodeTextBox.Focus();
+                message += "Zip Code is Required";
+            }
+            if (StateTextBox.Text == "")
+            {
+                StateTextBox.Focus();
+                message += "State is Required";
+            }
+            if (CityTextBox.Text == "")
+            {
+                CityTextBox.Focus();
+                message += "Phone number is Required.\n";
+            }
+            if (StreetAddressTextBox.Text == "")
+            {
+                StreetAddressTextBox.Focus();
+                message += "Age is Required.\n";
+            }
+            if (LastNameTextBox.Text == "")
+            {
+                LastNameTextBox.Focus();
+                message += "Last Name is Required.\n";
+            }
+            if (FirstNameTextBox.Text == "")
+            {
+                //MessageBox.Show("Please Enter a First Name.");
+                FirstNameTextBox.Focus();
+                message += "First Name is Required.\n";
+            }
+            if (message != "")
+            {
+                // Displays message if not empty
+                MessageBox.Show($"ERROR:\n{message}");
+            }
+            return message;
+        }
+        void DisplayContent()
+        {
+            if (EvaluateFields() != "")
+            {
+                MessageBox.Show(EvaluateFields());
+            }
+            else
+            {
+
+            }
+        }
         private void ExitButton_Click(object sender, EventArgs e)
         {
             // Close window/program when pressed
@@ -14,23 +68,17 @@ namespace AddressLabel
         private void ClearButton_Click(object sender, EventArgs e)
         {
             // Clear all text when pressed
+            FirstNameTextBox.Text = string.Empty;
+            LastNameTextBox.Text = string.Empty;
+            StreetAddressTextBox.Text = string.Empty;
+            CityTextBox.Text = string.Empty;
+            StateTextBox.Text = string.Empty;
+            ZipCodeTextBox.Text = string.Empty;
         }
         private void DisplayLabelButton_Click(object sender, EventArgs e)
         {
             // Display entered information
-            if ()
-            {
-
-            }
-            else
-            {
-                // Displays entered data
-                AddressLabelTextBox.Text = $"{FirstNameTextBox.Text} {LastNameTextBox.Text}\n" +
-                    $"{StreetAddressTextBox.Text}\n" +
-                    $"{CityTextBox.Text}" +
-                    $"{StateTextBox.Text}" +
-                    $"{ZipCodeTextBox.Text}";
-            }
+            DisplayContent();
         }
         private void FirstNameTextBox_TextChanged(object sender, EventArgs e)
         {
