@@ -39,44 +39,45 @@
             ExitButton = new Button();
             MailingAddressGroupBox = new GroupBox();
             AddressLabelGroupBox = new GroupBox();
+            MailingAddressGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // FirstNameTextBox
             // 
             FirstNameTextBox.BorderStyle = BorderStyle.FixedSingle;
-            FirstNameTextBox.Location = new Point(70, 74);
+            FirstNameTextBox.Location = new Point(21, 108);
             FirstNameTextBox.Name = "FirstNameTextBox";
-            FirstNameTextBox.Size = new Size(150, 31);
+            FirstNameTextBox.Size = new Size(229, 31);
             FirstNameTextBox.TabIndex = 0;
             // 
             // LastNameTextBox
             // 
             LastNameTextBox.BorderStyle = BorderStyle.FixedSingle;
-            LastNameTextBox.Location = new Point(70, 111);
+            LastNameTextBox.Location = new Point(21, 164);
             LastNameTextBox.Name = "LastNameTextBox";
-            LastNameTextBox.Size = new Size(150, 31);
+            LastNameTextBox.Size = new Size(229, 31);
             LastNameTextBox.TabIndex = 1;
             // 
             // CityTextBox
             // 
             CityTextBox.BorderStyle = BorderStyle.FixedSingle;
-            CityTextBox.Location = new Point(70, 212);
+            CityTextBox.Location = new Point(21, 282);
             CityTextBox.Name = "CityTextBox";
-            CityTextBox.Size = new Size(150, 31);
+            CityTextBox.Size = new Size(229, 31);
             CityTextBox.TabIndex = 3;
             // 
             // StreetAddressTextBox
             // 
             StreetAddressTextBox.BorderStyle = BorderStyle.FixedSingle;
-            StreetAddressTextBox.Location = new Point(70, 164);
+            StreetAddressTextBox.Location = new Point(21, 217);
             StreetAddressTextBox.Name = "StreetAddressTextBox";
-            StreetAddressTextBox.Size = new Size(150, 31);
+            StreetAddressTextBox.Size = new Size(229, 31);
             StreetAddressTextBox.TabIndex = 2;
             // 
             // ZipCodeTextBox
             // 
             ZipCodeTextBox.BorderStyle = BorderStyle.FixedSingle;
-            ZipCodeTextBox.Location = new Point(70, 320);
+            ZipCodeTextBox.Location = new Point(21, 385);
             ZipCodeTextBox.Name = "ZipCodeTextBox";
             ZipCodeTextBox.Size = new Size(150, 31);
             ZipCodeTextBox.TabIndex = 5;
@@ -84,7 +85,7 @@
             // StateTextBox
             // 
             StateTextBox.BorderStyle = BorderStyle.FixedSingle;
-            StateTextBox.Location = new Point(70, 283);
+            StateTextBox.Location = new Point(21, 336);
             StateTextBox.Name = "StateTextBox";
             StateTextBox.Size = new Size(150, 31);
             StateTextBox.TabIndex = 4;
@@ -118,18 +119,24 @@
             // 
             // MailingAddressGroupBox
             // 
-            MailingAddressGroupBox.Location = new Point(27, 47);
+            MailingAddressGroupBox.Controls.Add(StateTextBox);
+            MailingAddressGroupBox.Controls.Add(FirstNameTextBox);
+            MailingAddressGroupBox.Controls.Add(ZipCodeTextBox);
+            MailingAddressGroupBox.Controls.Add(LastNameTextBox);
+            MailingAddressGroupBox.Controls.Add(StreetAddressTextBox);
+            MailingAddressGroupBox.Controls.Add(CityTextBox);
+            MailingAddressGroupBox.Location = new Point(12, 12);
             MailingAddressGroupBox.Name = "MailingAddressGroupBox";
-            MailingAddressGroupBox.Size = new Size(264, 366);
+            MailingAddressGroupBox.Size = new Size(279, 426);
             MailingAddressGroupBox.TabIndex = 9;
             MailingAddressGroupBox.TabStop = false;
             MailingAddressGroupBox.Text = "Mailing Address";
             // 
             // AddressLabelGroupBox
             // 
-            AddressLabelGroupBox.Location = new Point(310, 47);
+            AddressLabelGroupBox.Location = new Point(310, 12);
             AddressLabelGroupBox.Name = "AddressLabelGroupBox";
-            AddressLabelGroupBox.Size = new Size(478, 332);
+            AddressLabelGroupBox.Size = new Size(478, 367);
             AddressLabelGroupBox.TabIndex = 10;
             AddressLabelGroupBox.TabStop = false;
             AddressLabelGroupBox.Text = "Address Label";
@@ -143,17 +150,12 @@
             Controls.Add(ExitButton);
             Controls.Add(ClearButton);
             Controls.Add(DisplayLabelButton);
-            Controls.Add(ZipCodeTextBox);
-            Controls.Add(StateTextBox);
-            Controls.Add(CityTextBox);
-            Controls.Add(StreetAddressTextBox);
-            Controls.Add(LastNameTextBox);
-            Controls.Add(FirstNameTextBox);
             Controls.Add(MailingAddressGroupBox);
             Name = "Form1";
             Text = "Address Label Viewer";
+            MailingAddressGroupBox.ResumeLayout(false);
+            MailingAddressGroupBox.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
