@@ -19,6 +19,7 @@ namespace ShuffleTheDeck
         private static bool[,] deck = new bool[13, 4];
         private static string[] cardValue = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
         private static string[] cardSuit = { "Spades", "Clubs", "Hearts", "Diamonds" };
+        private static string NameOfCard = "";
         static void Main(string[] args)
         {
             string userInput = "";
@@ -29,6 +30,7 @@ namespace ShuffleTheDeck
             {
                 Display();
                 Console.WriteLine($"The count is {count}");
+                Console.WriteLine($"You drew {NameOfCard}");
                 userInput = Console.ReadLine();
 
                 if (userInput == "q" || userInput == "Q")
@@ -46,7 +48,7 @@ namespace ShuffleTheDeck
                 }
                 else
                 {
-                    if (count >= 75)
+                    if (count >= 52)
                     {
                         Console.WriteLine("All cards have been drawn.\n" +
                             "Press Q to quit or C to start again.");
@@ -91,11 +93,6 @@ namespace ShuffleTheDeck
         {
             int column = 0;
             int row = 0;
-
-            //Draw random ball
-            //Check if drawn already
-            //Yes: Draw nother
-            //No: Success! Mark as drawn
             do
             {
                 //Get random column
@@ -105,11 +102,11 @@ namespace ShuffleTheDeck
                 row = RandomSuitBetween(0, 12);
             } while (deck[row, column] == true);
 
-
-            bool[,] test = new bool[13, 4];
-            test = deck;
-
+            //Mark drawn card as true
             deck[row, column] = true;
+
+            string cardName = $"{cardValue[row]} of {cardValue[column]}";
+            NameOfCard = cardName;
         }
         static void NewDeck()
         {
@@ -126,7 +123,6 @@ namespace ShuffleTheDeck
         static void Display()
         {
             string currentLocation = "  ";  //show spaces for not drawn, number for drawn
-            string[] header = { "B", "I", "N", "G", "O" };  //Bingo header title
             int padding = 3;    //Right justify amount
             string vDivider = " |"; //Column seperator
             int totalWidth = 5 * (padding + vDivider.Length);   //Calculate total width
