@@ -49,6 +49,7 @@
             FirstNameTextBox.Name = "FirstNameTextBox";
             FirstNameTextBox.Size = new Size(229, 31);
             FirstNameTextBox.TabIndex = 0;
+            FirstNameTextBox.TextChanged += FirstNameTextBox_TextChanged;
             // 
             // LastNameTextBox
             // 
@@ -57,6 +58,7 @@
             LastNameTextBox.Name = "LastNameTextBox";
             LastNameTextBox.Size = new Size(229, 31);
             LastNameTextBox.TabIndex = 1;
+            LastNameTextBox.TextChanged += LastNameTextBox_TextChanged;
             // 
             // CityTextBox
             // 
@@ -65,6 +67,7 @@
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(229, 31);
             CityTextBox.TabIndex = 3;
+            CityTextBox.TextChanged += CityTextBox_TextChanged;
             // 
             // StreetAddressTextBox
             // 
@@ -73,6 +76,7 @@
             StreetAddressTextBox.Name = "StreetAddressTextBox";
             StreetAddressTextBox.Size = new Size(229, 31);
             StreetAddressTextBox.TabIndex = 2;
+            StreetAddressTextBox.TextChanged += StreetAddressTextBox_TextChanged;
             // 
             // ZipCodeTextBox
             // 
@@ -81,6 +85,7 @@
             ZipCodeTextBox.Name = "ZipCodeTextBox";
             ZipCodeTextBox.Size = new Size(150, 31);
             ZipCodeTextBox.TabIndex = 5;
+            ZipCodeTextBox.TextChanged += ZipCodeTextBox_TextChanged;
             // 
             // StateTextBox
             // 
@@ -89,6 +94,7 @@
             StateTextBox.Name = "StateTextBox";
             StateTextBox.Size = new Size(150, 31);
             StateTextBox.TabIndex = 4;
+            StateTextBox.TextChanged += StateTextBox_TextChanged;
             // 
             // DisplayLabelButton
             // 
@@ -98,6 +104,7 @@
             DisplayLabelButton.TabIndex = 6;
             DisplayLabelButton.Text = "Display Label";
             DisplayLabelButton.UseVisualStyleBackColor = true;
+            DisplayLabelButton.Click += DisplayLabelButton_Click;
             // 
             // ClearButton
             // 
@@ -107,6 +114,7 @@
             ClearButton.TabIndex = 7;
             ClearButton.Text = "Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // ExitButton
             // 
@@ -116,6 +124,7 @@
             ExitButton.TabIndex = 8;
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
             // MailingAddressGroupBox
             // 
