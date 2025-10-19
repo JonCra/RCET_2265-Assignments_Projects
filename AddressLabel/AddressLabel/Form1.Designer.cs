@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             FirstNameTextBox = new TextBox();
             LastNameTextBox = new TextBox();
             CityTextBox = new TextBox();
@@ -38,14 +39,15 @@
             ClearButton = new Button();
             ExitButton = new Button();
             MailingAddressGroupBox = new GroupBox();
+            ZipCodeLabel = new Label();
+            StateLabel = new Label();
             CityLabel = new Label();
             StreetAddressLabel = new Label();
             LastNameLabel = new Label();
             FirstNameLabel = new Label();
             AddressLabelGroupBox = new GroupBox();
             AddressLabelTextBox = new RichTextBox();
-            StateLabel = new Label();
-            ZipCodeLabel = new Label();
+            toolTip1 = new ToolTip(components);
             MailingAddressGroupBox.SuspendLayout();
             AddressLabelGroupBox.SuspendLayout();
             SuspendLayout();
@@ -57,6 +59,7 @@
             FirstNameTextBox.Name = "FirstNameTextBox";
             FirstNameTextBox.Size = new Size(229, 31);
             FirstNameTextBox.TabIndex = 0;
+            toolTip1.SetToolTip(FirstNameTextBox, "First Name");
             FirstNameTextBox.TextChanged += FirstNameTextBox_TextChanged;
             // 
             // LastNameTextBox
@@ -66,6 +69,7 @@
             LastNameTextBox.Name = "LastNameTextBox";
             LastNameTextBox.Size = new Size(229, 31);
             LastNameTextBox.TabIndex = 1;
+            toolTip1.SetToolTip(LastNameTextBox, "Last Name");
             LastNameTextBox.TextChanged += LastNameTextBox_TextChanged;
             // 
             // CityTextBox
@@ -75,6 +79,7 @@
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(229, 31);
             CityTextBox.TabIndex = 3;
+            toolTip1.SetToolTip(CityTextBox, "City");
             CityTextBox.TextChanged += CityTextBox_TextChanged;
             // 
             // StreetAddressTextBox
@@ -84,6 +89,7 @@
             StreetAddressTextBox.Name = "StreetAddressTextBox";
             StreetAddressTextBox.Size = new Size(229, 31);
             StreetAddressTextBox.TabIndex = 2;
+            toolTip1.SetToolTip(StreetAddressTextBox, "Street Address");
             StreetAddressTextBox.TextChanged += StreetAddressTextBox_TextChanged;
             // 
             // ZipCodeTextBox
@@ -93,6 +99,7 @@
             ZipCodeTextBox.Name = "ZipCodeTextBox";
             ZipCodeTextBox.Size = new Size(150, 31);
             ZipCodeTextBox.TabIndex = 5;
+            toolTip1.SetToolTip(ZipCodeTextBox, "US Zip/Postal Code");
             ZipCodeTextBox.TextChanged += ZipCodeTextBox_TextChanged;
             // 
             // StateTextBox
@@ -102,6 +109,7 @@
             StateTextBox.Name = "StateTextBox";
             StateTextBox.Size = new Size(150, 31);
             StateTextBox.TabIndex = 4;
+            toolTip1.SetToolTip(StateTextBox, "US State");
             StateTextBox.TextChanged += StateTextBox_TextChanged;
             // 
             // DisplayLabelButton
@@ -111,6 +119,7 @@
             DisplayLabelButton.Size = new Size(148, 53);
             DisplayLabelButton.TabIndex = 6;
             DisplayLabelButton.Text = "Display Label";
+            toolTip1.SetToolTip(DisplayLabelButton, "Displays entered data");
             DisplayLabelButton.UseVisualStyleBackColor = true;
             DisplayLabelButton.Click += DisplayLabelButton_Click;
             // 
@@ -121,6 +130,7 @@
             ClearButton.Size = new Size(148, 53);
             ClearButton.TabIndex = 7;
             ClearButton.Text = "Clear";
+            toolTip1.SetToolTip(ClearButton, "Clears all user-inputted fields");
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
@@ -131,6 +141,7 @@
             ExitButton.Size = new Size(148, 53);
             ExitButton.TabIndex = 8;
             ExitButton.Text = "Exit";
+            toolTip1.SetToolTip(ExitButton, "Exits program");
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -154,6 +165,24 @@
             MailingAddressGroupBox.TabIndex = 9;
             MailingAddressGroupBox.TabStop = false;
             MailingAddressGroupBox.Text = "Mailing Address";
+            // 
+            // ZipCodeLabel
+            // 
+            ZipCodeLabel.AutoSize = true;
+            ZipCodeLabel.Location = new Point(24, 351);
+            ZipCodeLabel.Name = "ZipCodeLabel";
+            ZipCodeLabel.Size = new Size(84, 25);
+            ZipCodeLabel.TabIndex = 11;
+            ZipCodeLabel.Text = "Zip Code";
+            // 
+            // StateLabel
+            // 
+            StateLabel.AutoSize = true;
+            StateLabel.Location = new Point(24, 289);
+            StateLabel.Name = "StateLabel";
+            StateLabel.Size = new Size(51, 25);
+            StateLabel.TabIndex = 10;
+            StateLabel.Text = "State";
             // 
             // CityLabel
             // 
@@ -203,30 +232,15 @@
             // 
             // AddressLabelTextBox
             // 
+            AddressLabelTextBox.BorderStyle = BorderStyle.FixedSingle;
+            AddressLabelTextBox.Enabled = false;
             AddressLabelTextBox.Location = new Point(6, 30);
             AddressLabelTextBox.Name = "AddressLabelTextBox";
             AddressLabelTextBox.Size = new Size(466, 331);
             AddressLabelTextBox.TabIndex = 0;
             AddressLabelTextBox.Text = "";
+            toolTip1.SetToolTip(AddressLabelTextBox, "Displays entered data");
             AddressLabelTextBox.TextChanged += AddressLabelTextBox_TextChanged;
-            // 
-            // StateLabel
-            // 
-            StateLabel.AutoSize = true;
-            StateLabel.Location = new Point(24, 289);
-            StateLabel.Name = "StateLabel";
-            StateLabel.Size = new Size(51, 25);
-            StateLabel.TabIndex = 10;
-            StateLabel.Text = "State";
-            // 
-            // ZipCodeLabel
-            // 
-            ZipCodeLabel.AutoSize = true;
-            ZipCodeLabel.Location = new Point(24, 351);
-            ZipCodeLabel.Name = "ZipCodeLabel";
-            ZipCodeLabel.Size = new Size(84, 25);
-            ZipCodeLabel.TabIndex = 11;
-            ZipCodeLabel.Text = "Zip Code";
             // 
             // Form1
             // 
@@ -259,12 +273,13 @@
         private Button ExitButton;
         private GroupBox MailingAddressGroupBox;
         private GroupBox AddressLabelGroupBox;
-        private RichTextBox AddressLabelTextBox;
         private Label LastNameLabel;
         private Label FirstNameLabel;
         private Label StreetAddressLabel;
         private Label CityLabel;
         private Label StateLabel;
         private Label ZipCodeLabel;
+        private ToolTip toolTip1;
+        private RichTextBox AddressLabelTextBox;
     }
 }

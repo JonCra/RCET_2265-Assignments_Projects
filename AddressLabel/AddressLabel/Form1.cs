@@ -78,6 +78,7 @@ namespace AddressLabel
             CityTextBox.Text = string.Empty;
             StateTextBox.Text = string.Empty;
             ZipCodeTextBox.Text = string.Empty;
+            AddressLabelTextBox.Text = string.Empty;
         }
         private void DisplayLabelButton_Click(object sender, EventArgs e)
         {
