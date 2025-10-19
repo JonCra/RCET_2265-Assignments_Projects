@@ -1,5 +1,10 @@
 namespace AddressLabel
 {
+    /*
+     BUG(S)
+        1) Error List displays out of order
+        2) Error List displays 3x, not 1x
+    */
     public partial class Form1 : Form
     {
         public Form1()
