@@ -265,7 +265,6 @@
             DivideRadioButton.TabStop = true;
             DivideRadioButton.Text = "Divide";
             DivideRadioButton.UseVisualStyleBackColor = true;
-            DivideRadioButton.Checked = false;
             // 
             // MultiplyRadioButton
             // 
@@ -277,7 +276,6 @@
             MultiplyRadioButton.TabStop = true;
             MultiplyRadioButton.Text = "Multiply";
             MultiplyRadioButton.UseVisualStyleBackColor = true;
-            MultiplyRadioButton.Checked = false;
             // 
             // SubtractRadioButton
             // 
@@ -289,7 +287,6 @@
             SubtractRadioButton.TabStop = true;
             SubtractRadioButton.Text = "Subtract";
             SubtractRadioButton.UseVisualStyleBackColor = true;
-            SubtractRadioButton.Checked = false;
             // 
             // AddRadioButton
             // 
@@ -301,7 +298,6 @@
             AddRadioButton.TabStop = true;
             AddRadioButton.Text = "Add";
             AddRadioButton.UseVisualStyleBackColor = true;
-            AddRadioButton.Checked = true;
             // 
             // Form1
             // 
