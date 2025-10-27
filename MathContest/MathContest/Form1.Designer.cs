@@ -28,12 +28,252 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            components = new System.ComponentModel.Container();
+            toolTip1 = new ToolTip(components);
+            StudentNameTextBox = new TextBox();
+            StudentInformationGroupBox = new GroupBox();
+            StudentNameTextLabel = new Label();
+            StudentAgeTextBox = new TextBox();
+            StudentGradeTextBox = new TextBox();
+            StudentAgeLabel = new Label();
+            StudentGradeTextLabel = new Label();
+            UserButtonGroupBox = new GroupBox();
+            CurrentMathProblemGroupBox = new GroupBox();
+            MathProblemTypeGroupBox = new GroupBox();
+            AddRadioButton = new RadioButton();
+            SubtractRadioButton = new RadioButton();
+            MultiplyRadioButton = new RadioButton();
+            DivideRadioButton = new RadioButton();
+            SubmitButton = new Button();
+            ClearButton = new Button();
+            SummaryButton = new Button();
+            ExitButton = new Button();
+            StudentInformationGroupBox.SuspendLayout();
+            UserButtonGroupBox.SuspendLayout();
+            MathProblemTypeGroupBox.SuspendLayout();
+            SuspendLayout();
+            // 
+            // StudentNameTextBox
+            // 
+            StudentNameTextBox.Location = new Point(6, 83);
+            StudentNameTextBox.Name = "StudentNameTextBox";
+            StudentNameTextBox.Size = new Size(164, 31);
+            StudentNameTextBox.TabIndex = 0;
+            // 
+            // StudentInformationGroupBox
+            // 
+            StudentInformationGroupBox.Controls.Add(StudentGradeTextLabel);
+            StudentInformationGroupBox.Controls.Add(StudentGradeTextBox);
+            StudentInformationGroupBox.Controls.Add(StudentAgeLabel);
+            StudentInformationGroupBox.Controls.Add(StudentAgeTextBox);
+            StudentInformationGroupBox.Controls.Add(StudentNameTextLabel);
+            StudentInformationGroupBox.Controls.Add(StudentNameTextBox);
+            StudentInformationGroupBox.Location = new Point(12, 12);
+            StudentInformationGroupBox.Name = "StudentInformationGroupBox";
+            StudentInformationGroupBox.Size = new Size(449, 124);
+            StudentInformationGroupBox.TabIndex = 1;
+            StudentInformationGroupBox.TabStop = false;
+            StudentInformationGroupBox.Text = "Student Information";
+            // 
+            // StudentNameTextLabel
+            // 
+            StudentNameTextLabel.AutoSize = true;
+            StudentNameTextLabel.Location = new Point(6, 55);
+            StudentNameTextLabel.Name = "StudentNameTextLabel";
+            StudentNameTextLabel.Size = new Size(125, 25);
+            StudentNameTextLabel.TabIndex = 1;
+            StudentNameTextLabel.Text = "Student Name";
+            // 
+            // StudentAgeTextBox
+            // 
+            StudentAgeTextBox.Location = new Point(203, 83);
+            StudentAgeTextBox.Name = "StudentAgeTextBox";
+            StudentAgeTextBox.Size = new Size(102, 31);
+            StudentAgeTextBox.TabIndex = 2;
+            // 
+            // StudentGradeTextBox
+            // 
+            StudentGradeTextBox.Location = new Point(341, 83);
+            StudentGradeTextBox.Name = "StudentGradeTextBox";
+            StudentGradeTextBox.Size = new Size(102, 31);
+            StudentGradeTextBox.TabIndex = 3;
+            // 
+            // StudentAgeLabel
+            // 
+            StudentAgeLabel.AutoSize = true;
+            StudentAgeLabel.Location = new Point(203, 55);
+            StudentAgeLabel.Name = "StudentAgeLabel";
+            StudentAgeLabel.Size = new Size(44, 25);
+            StudentAgeLabel.TabIndex = 4;
+            StudentAgeLabel.Text = "Age";
+            // 
+            // StudentGradeTextLabel
+            // 
+            StudentGradeTextLabel.AutoSize = true;
+            StudentGradeTextLabel.Location = new Point(341, 55);
+            StudentGradeTextLabel.Name = "StudentGradeTextLabel";
+            StudentGradeTextLabel.Size = new Size(59, 25);
+            StudentGradeTextLabel.TabIndex = 5;
+            StudentGradeTextLabel.Text = "Grade";
+            // 
+            // UserButtonGroupBox
+            // 
+            UserButtonGroupBox.Controls.Add(ExitButton);
+            UserButtonGroupBox.Controls.Add(SummaryButton);
+            UserButtonGroupBox.Controls.Add(ClearButton);
+            UserButtonGroupBox.Controls.Add(SubmitButton);
+            UserButtonGroupBox.Location = new Point(467, 12);
+            UserButtonGroupBox.Name = "UserButtonGroupBox";
+            UserButtonGroupBox.Size = new Size(321, 426);
+            UserButtonGroupBox.TabIndex = 2;
+            UserButtonGroupBox.TabStop = false;
+            // 
+            // CurrentMathProblemGroupBox
+            // 
+            CurrentMathProblemGroupBox.Location = new Point(12, 142);
+            CurrentMathProblemGroupBox.Name = "CurrentMathProblemGroupBox";
+            CurrentMathProblemGroupBox.Size = new Size(220, 296);
+            CurrentMathProblemGroupBox.TabIndex = 3;
+            CurrentMathProblemGroupBox.TabStop = false;
+            CurrentMathProblemGroupBox.Text = "Current Math Problem";
+            // 
+            // MathProblemTypeGroupBox
+            // 
+            MathProblemTypeGroupBox.Controls.Add(DivideRadioButton);
+            MathProblemTypeGroupBox.Controls.Add(MultiplyRadioButton);
+            MathProblemTypeGroupBox.Controls.Add(SubtractRadioButton);
+            MathProblemTypeGroupBox.Controls.Add(AddRadioButton);
+            MathProblemTypeGroupBox.Location = new Point(238, 142);
+            MathProblemTypeGroupBox.Name = "MathProblemTypeGroupBox";
+            MathProblemTypeGroupBox.Size = new Size(223, 296);
+            MathProblemTypeGroupBox.TabIndex = 4;
+            MathProblemTypeGroupBox.TabStop = false;
+            MathProblemTypeGroupBox.Text = "Math Problem Type";
+            // 
+            // AddRadioButton
+            // 
+            AddRadioButton.AutoSize = true;
+            AddRadioButton.Location = new Point(6, 68);
+            AddRadioButton.Name = "AddRadioButton";
+            AddRadioButton.Size = new Size(71, 29);
+            AddRadioButton.TabIndex = 0;
+            AddRadioButton.TabStop = true;
+            AddRadioButton.Text = "Add";
+            AddRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // SubtractRadioButton
+            // 
+            SubtractRadioButton.AutoSize = true;
+            SubtractRadioButton.Location = new Point(6, 103);
+            SubtractRadioButton.Name = "SubtractRadioButton";
+            SubtractRadioButton.Size = new Size(103, 29);
+            SubtractRadioButton.TabIndex = 1;
+            SubtractRadioButton.TabStop = true;
+            SubtractRadioButton.Text = "Subtract";
+            SubtractRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // MultiplyRadioButton
+            // 
+            MultiplyRadioButton.AutoSize = true;
+            MultiplyRadioButton.Location = new Point(6, 138);
+            MultiplyRadioButton.Name = "MultiplyRadioButton";
+            MultiplyRadioButton.Size = new Size(101, 29);
+            MultiplyRadioButton.TabIndex = 2;
+            MultiplyRadioButton.TabStop = true;
+            MultiplyRadioButton.Text = "Multiply";
+            MultiplyRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // DivideRadioButton
+            // 
+            DivideRadioButton.AutoSize = true;
+            DivideRadioButton.Location = new Point(6, 173);
+            DivideRadioButton.Name = "DivideRadioButton";
+            DivideRadioButton.Size = new Size(87, 29);
+            DivideRadioButton.TabIndex = 3;
+            DivideRadioButton.TabStop = true;
+            DivideRadioButton.Text = "Divide";
+            DivideRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // SubmitButton
+            // 
+            SubmitButton.Font = new Font("Segoe UI", 12F);
+            SubmitButton.Location = new Point(6, 22);
+            SubmitButton.Name = "SubmitButton";
+            SubmitButton.Size = new Size(309, 95);
+            SubmitButton.TabIndex = 0;
+            SubmitButton.Text = "Submit";
+            SubmitButton.UseVisualStyleBackColor = true;
+            SubmitButton.Click += SubmitButton_Click;
+            // 
+            // ClearButton
+            // 
+            ClearButton.Font = new Font("Segoe UI", 12F);
+            ClearButton.Location = new Point(6, 123);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(309, 95);
+            ClearButton.TabIndex = 1;
+            ClearButton.Text = "Clear";
+            ClearButton.UseVisualStyleBackColor = true;
+            // 
+            // SummaryButton
+            // 
+            SummaryButton.Font = new Font("Segoe UI", 12F);
+            SummaryButton.Location = new Point(6, 224);
+            SummaryButton.Name = "SummaryButton";
+            SummaryButton.Size = new Size(309, 95);
+            SummaryButton.TabIndex = 2;
+            SummaryButton.Text = "Summary";
+            SummaryButton.UseVisualStyleBackColor = true;
+            // 
+            // ExitButton
+            // 
+            ExitButton.Font = new Font("Segoe UI", 12F);
+            ExitButton.Location = new Point(6, 325);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(309, 95);
+            ExitButton.TabIndex = 3;
+            ExitButton.Text = "Exit";
+            ExitButton.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(MathProblemTypeGroupBox);
+            Controls.Add(CurrentMathProblemGroupBox);
+            Controls.Add(UserButtonGroupBox);
+            Controls.Add(StudentInformationGroupBox);
+            Name = "Form1";
+            Text = "Math Contest";
+            StudentInformationGroupBox.ResumeLayout(false);
+            StudentInformationGroupBox.PerformLayout();
+            UserButtonGroupBox.ResumeLayout(false);
+            MathProblemTypeGroupBox.ResumeLayout(false);
+            MathProblemTypeGroupBox.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private ToolTip toolTip1;
+        private TextBox StudentNameTextBox;
+        private GroupBox StudentInformationGroupBox;
+        private Label StudentNameTextLabel;
+        private Label StudentGradeTextLabel;
+        private TextBox StudentGradeTextBox;
+        private Label StudentAgeLabel;
+        private TextBox StudentAgeTextBox;
+        private GroupBox UserButtonGroupBox;
+        private GroupBox CurrentMathProblemGroupBox;
+        private GroupBox MathProblemTypeGroupBox;
+        private RadioButton DivideRadioButton;
+        private RadioButton MultiplyRadioButton;
+        private RadioButton SubtractRadioButton;
+        private RadioButton AddRadioButton;
+        private Button ExitButton;
+        private Button SummaryButton;
+        private Button ClearButton;
+        private Button SubmitButton;
     }
 }

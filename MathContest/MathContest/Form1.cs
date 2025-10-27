@@ -6,5 +6,10 @@ namespace MathContest
         {
             InitializeComponent();
         }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
