@@ -9,6 +9,26 @@ namespace MathContest
             // Sets default options after initialization
             setDefaults();
         }
+        void setDefaults()
+        {
+            AddRadioButton.Checked = true;
+            AddRadioButton.Enabled = false;
+
+            SubtractRadioButton.Checked = false;
+            SubtractRadioButton.Enabled = false;
+
+            MultiplyRadioButton.Checked = false;
+            MultiplyRadioButton.Enabled = false;
+
+            DivideRadioButton.Checked = false;
+            DivideRadioButton.Enabled = false;
+
+            SubmitButton.Enabled = false;
+            ClearButton.Enabled = true;
+            SummaryButton.Enabled = false;
+            ExitButton.Enabled = true;
+        }
+
         // Event Handlers --------------------------------------------------------------
         private void SubmitButton_Click(object sender, EventArgs e)
         {
@@ -29,24 +49,5 @@ namespace MathContest
         }
 
         // Program Logic ---------------------------------------------------------------
-        void setDefaults()
-        {
-            AddRadioButton.Checked = true;
-            AddRadioButton.Enabled = false;
-
-            SubtractRadioButton.Checked = false;
-            SubtractRadioButton.Enabled = false;
-
-            MultiplyRadioButton.Checked = false;
-            MultiplyRadioButton.Enabled = false;
-
-            DivideRadioButton.Checked = false;
-            DivideRadioButton.Enabled = false;
-
-            SubmitButton.Enabled = false;
-            ClearButton.Enabled = true;
-            SummaryButton.Enabled = false;
-            ExitButton.Enabled = true;
-        }
     }
 }
