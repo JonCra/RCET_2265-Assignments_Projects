@@ -4,17 +4,24 @@ namespace MathContest
     {
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
-
         private void SubmitButton_Click(object sender, EventArgs e)
         {
-
+            // Enters/saves user inputs
         }
-
-        private void StudentAnswerTextBox_TextChanged(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
         {
-
+            // Close program/solution
+            this.Close();
+        }
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            // Clear all text fields
+        }
+        private void SummaryButton_Click(object sender, EventArgs e)
+        {
+            // Display summary
         }
     }
 }
