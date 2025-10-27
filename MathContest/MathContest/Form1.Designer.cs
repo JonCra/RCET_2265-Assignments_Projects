@@ -48,8 +48,15 @@
             ClearButton = new Button();
             SummaryButton = new Button();
             ExitButton = new Button();
+            FirstNumberTextBox = new TextBox();
+            SecondNumberTextBox = new TextBox();
+            StudentAnswerTextBox = new TextBox();
+            FirstNumberLabel = new Label();
+            SecondNumberLabel = new Label();
+            StudentAnswerLabel = new Label();
             StudentInformationGroupBox.SuspendLayout();
             UserButtonGroupBox.SuspendLayout();
+            CurrentMathProblemGroupBox.SuspendLayout();
             MathProblemTypeGroupBox.SuspendLayout();
             SuspendLayout();
             // 
@@ -130,6 +137,12 @@
             // 
             // CurrentMathProblemGroupBox
             // 
+            CurrentMathProblemGroupBox.Controls.Add(StudentAnswerLabel);
+            CurrentMathProblemGroupBox.Controls.Add(SecondNumberLabel);
+            CurrentMathProblemGroupBox.Controls.Add(FirstNumberLabel);
+            CurrentMathProblemGroupBox.Controls.Add(StudentAnswerTextBox);
+            CurrentMathProblemGroupBox.Controls.Add(SecondNumberTextBox);
+            CurrentMathProblemGroupBox.Controls.Add(FirstNumberTextBox);
             CurrentMathProblemGroupBox.Location = new Point(12, 142);
             CurrentMathProblemGroupBox.Name = "CurrentMathProblemGroupBox";
             CurrentMathProblemGroupBox.Size = new Size(220, 296);
@@ -235,6 +248,56 @@
             ExitButton.Text = "Exit";
             ExitButton.UseVisualStyleBackColor = true;
             // 
+            // FirstNumberTextBox
+            // 
+            FirstNumberTextBox.Location = new Point(6, 68);
+            FirstNumberTextBox.Name = "FirstNumberTextBox";
+            FirstNumberTextBox.Size = new Size(208, 31);
+            FirstNumberTextBox.TabIndex = 0;
+            // 
+            // SecondNumberTextBox
+            // 
+            SecondNumberTextBox.Location = new Point(6, 158);
+            SecondNumberTextBox.Name = "SecondNumberTextBox";
+            SecondNumberTextBox.Size = new Size(208, 31);
+            SecondNumberTextBox.TabIndex = 1;
+            // 
+            // StudentAnswerTextBox
+            // 
+            StudentAnswerTextBox.Location = new Point(6, 259);
+            StudentAnswerTextBox.Name = "StudentAnswerTextBox";
+            StudentAnswerTextBox.Size = new Size(208, 31);
+            StudentAnswerTextBox.TabIndex = 2;
+            StudentAnswerTextBox.TextChanged += StudentAnswerTextBox_TextChanged;
+            // 
+            // FirstNumberLabel
+            // 
+            FirstNumberLabel.AutoSize = true;
+            FirstNumberLabel.Location = new Point(6, 39);
+            FirstNumberLabel.Name = "FirstNumberLabel";
+            FirstNumberLabel.Size = new Size(115, 25);
+            FirstNumberLabel.TabIndex = 3;
+            FirstNumberLabel.Text = "First Number";
+            // 
+            // SecondNumberLabel
+            // 
+            SecondNumberLabel.AutoSize = true;
+            SecondNumberLabel.Location = new Point(6, 130);
+            SecondNumberLabel.Name = "SecondNumberLabel";
+            SecondNumberLabel.Size = new Size(141, 25);
+            SecondNumberLabel.TabIndex = 4;
+            SecondNumberLabel.Text = "Second Number";
+            // 
+            // StudentAnswerLabel
+            // 
+            StudentAnswerLabel.AutoSize = true;
+            StudentAnswerLabel.Location = new Point(6, 232);
+            StudentAnswerLabel.Name = "StudentAnswerLabel";
+            StudentAnswerLabel.Size = new Size(131, 25);
+            StudentAnswerLabel.TabIndex = 5;
+            StudentAnswerLabel.Text = "StudentAnswer";
+            StudentAnswerLabel.Click += this.StudentAnswerLabel_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -249,6 +312,8 @@
             StudentInformationGroupBox.ResumeLayout(false);
             StudentInformationGroupBox.PerformLayout();
             UserButtonGroupBox.ResumeLayout(false);
+            CurrentMathProblemGroupBox.ResumeLayout(false);
+            CurrentMathProblemGroupBox.PerformLayout();
             MathProblemTypeGroupBox.ResumeLayout(false);
             MathProblemTypeGroupBox.PerformLayout();
             ResumeLayout(false);
@@ -275,5 +340,11 @@
         private Button SummaryButton;
         private Button ClearButton;
         private Button SubmitButton;
+        private TextBox StudentAnswerTextBox;
+        private TextBox SecondNumberTextBox;
+        private TextBox FirstNumberTextBox;
+        private Label StudentAnswerLabel;
+        private Label SecondNumberLabel;
+        private Label FirstNumberLabel;
     }
 }

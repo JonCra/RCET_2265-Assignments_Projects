@@ -11,5 +11,10 @@ namespace MathContest
         {
 
         }
+
+        private void StudentAnswerTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
