@@ -1,6 +1,6 @@
 ﻿namespace MathContest
 {
-    partial class Form1
+    partial class MathContestForm
     {
         /// <summary>
         ///  Required designer variable.

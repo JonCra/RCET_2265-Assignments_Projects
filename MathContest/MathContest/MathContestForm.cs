@@ -1,8 +1,8 @@
 namespace MathContest
 {
-    public partial class Form1 : Form
+    public partial class MathContestForm : Form
     {
-        public Form1()
+        public MathContestForm()
         {
             InitializeComponent();
 
