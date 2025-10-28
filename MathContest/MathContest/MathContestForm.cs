@@ -43,6 +43,7 @@ namespace MathContest
             bool allFieldsAreValid = false;
             // Actual validation here
             int _age;
+
             try
             {
                 _age = int.Parse(StudentAgeTextBox.Text);
