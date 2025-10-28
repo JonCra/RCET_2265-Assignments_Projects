@@ -113,6 +113,7 @@
             StudentAgeTextBox.Name = "StudentAgeTextBox";
             StudentAgeTextBox.Size = new Size(102, 31);
             StudentAgeTextBox.TabIndex = 2;
+            //StudentAgeTextBox.TextChanged += Text_changed();
             // 
             // StudentNameTextLabel
             // 
@@ -142,7 +143,7 @@
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(309, 95);
             ExitButton.TabIndex = 3;
-            ExitButton.Text = "Exit";
+            ExitButton.Text = "E&xit";
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -164,7 +165,7 @@
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(309, 95);
             ClearButton.TabIndex = 1;
-            ClearButton.Text = "Clear";
+            ClearButton.Text = "&Clear";
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
@@ -175,7 +176,7 @@
             SubmitButton.Name = "SubmitButton";
             SubmitButton.Size = new Size(309, 95);
             SubmitButton.TabIndex = 0;
-            SubmitButton.Text = "Submit";
+            SubmitButton.Text = "&Submit";
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
             // 
@@ -232,13 +233,16 @@
             // 
             SecondNumberTextBox.Location = new Point(6, 158);
             SecondNumberTextBox.Name = "SecondNumberTextBox";
+            SecondNumberTextBox.ReadOnly = true;
             SecondNumberTextBox.Size = new Size(208, 31);
             SecondNumberTextBox.TabIndex = 1;
             // 
             // FirstNumberTextBox
             // 
+            FirstNumberTextBox.AccessibleRole = AccessibleRole.None;
             FirstNumberTextBox.Location = new Point(6, 68);
             FirstNumberTextBox.Name = "FirstNumberTextBox";
+            FirstNumberTextBox.ReadOnly = true;
             FirstNumberTextBox.Size = new Size(208, 31);
             FirstNumberTextBox.TabIndex = 0;
             // 
@@ -299,7 +303,7 @@
             AddRadioButton.Text = "Add";
             AddRadioButton.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // MathContestForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -308,7 +312,8 @@
             Controls.Add(CurrentMathProblemGroupBox);
             Controls.Add(UserButtonGroupBox);
             Controls.Add(StudentInformationGroupBox);
-            Name = "Form1";
+            Name = "MathContestForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Math Contest";
             StudentInformationGroupBox.ResumeLayout(false);
             StudentInformationGroupBox.PerformLayout();

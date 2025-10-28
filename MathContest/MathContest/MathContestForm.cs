@@ -4,13 +4,23 @@ namespace MathContest
     {
         public MathContestForm()
         {
-            InitializeComponent();
-
-            // Sets default options after initialization
+            InitializeComponent();            
             setDefaults();
+            if (StudentNameTextBox.Text != "" && StudentAgeTextBox.Text != "" && StudentGradeTextBox.Text != "")
+            {
+                ValidateInputFields();
+            }
         }
         void setDefaults()
         {
+            // Clears and disables specified items
+            StudentNameTextBox.Text = "";
+            StudentAgeTextBox.Text = "";
+            StudentGradeTextBox.Text = "";
+            FirstNumberTextBox.Text = "";
+            SecondNumberTextBox.Text = "";
+            StudentAnswerTextBox.Text = "";
+
             AddRadioButton.Checked = true;
             AddRadioButton.Enabled = false;
 
@@ -28,6 +38,61 @@ namespace MathContest
             SummaryButton.Enabled = false;
             ExitButton.Enabled = true;
         }
+        bool ValidateInputFields()
+        {
+            bool allFieldsAreValid = false;
+            // Actual validation here
+            int _age;
+            try
+            {
+                _age = int.Parse(StudentAgeTextBox.Text);
+                if (_age <= 0 || _age >= 80)
+                {
+                    allFieldsAreValid = false;
+                    StudentAgeTextBox.BackColor = Color.LightYellow;
+                }
+            }
+            catch (Exception)
+            {
+                allFieldsAreValid = false;
+                StudentAgeTextBox.BackColor = Color.LightYellow;
+                StudentAgeTextBox.Focus();
+            }
+
+            // Age shoudl not be empty
+            if (StudentAgeTextBox.Text == "")
+            {
+                allFieldsAreValid = false;
+                StudentNameTextBox.BackColor = Color.LightYellow;
+                StudentAgeTextBox.Focus();
+            }
+            // Name should not be empty
+            if (StudentNameTextBox.Text == "")
+            {
+                allFieldsAreValid = false;
+                StudentNameTextBox.BackColor = Color.LightYellow;
+                StudentNameTextBox.Focus();
+            }
+            if (allFieldsAreValid)
+            {
+                StudentNameTextBox.BackColor = Color.White;
+                StudentAgeTextBox.BackColor = Color.White;
+                StudentAnswerTextBox.BackColor = Color.White;
+            }
+            else
+            {
+
+            }
+            SubmitButton.Enabled = allFieldsAreValid;
+            return allFieldsAreValid;
+        }
+        //private void Text_Changed(object sender, EventArgs e)
+        //{
+        //    if (StudentNameTextBox.Text != "" && StudentAgeTextBox.Text != "" && StudentGradeTextBox.Text != "")
+        //    {
+        //        ValidateInputFields();
+        //    }
+        //}
 
         // Event Handlers --------------------------------------------------------------
         private void SubmitButton_Click(object sender, EventArgs e)
@@ -42,6 +107,7 @@ namespace MathContest
         private void ClearButton_Click(object sender, EventArgs e)
         {
             // Clear all text fields
+            setDefaults();
         }
         private void SummaryButton_Click(object sender, EventArgs e)
         {
