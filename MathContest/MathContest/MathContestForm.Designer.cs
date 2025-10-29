@@ -60,6 +60,14 @@
             MathProblemTypeGroupBox.SuspendLayout();
             SuspendLayout();
             // 
+            // StudentNameTextBox
+            // 
+            StudentNameTextBox.Location = new Point(6, 83);
+            StudentNameTextBox.Name = "StudentNameTextBox";
+            StudentNameTextBox.Size = new Size(164, 31);
+            StudentNameTextBox.TabIndex = 0;
+            StudentNameTextBox.TextChanged += NameText_Changed;
+            // 
             // StudentInformationGroupBox
             // 
             StudentInformationGroupBox.Controls.Add(StudentGradeTextLabel);
@@ -71,7 +79,7 @@
             StudentInformationGroupBox.Location = new Point(12, 12);
             StudentInformationGroupBox.Name = "StudentInformationGroupBox";
             StudentInformationGroupBox.Size = new Size(449, 124);
-            StudentInformationGroupBox.TabIndex = 1;
+            StudentInformationGroupBox.TabIndex = 0;
             StudentInformationGroupBox.TabStop = false;
             StudentInformationGroupBox.Text = "Student Information";
             // 
@@ -89,8 +97,8 @@
             StudentGradeTextBox.Location = new Point(341, 83);
             StudentGradeTextBox.Name = "StudentGradeTextBox";
             StudentGradeTextBox.Size = new Size(102, 31);
-            StudentGradeTextBox.TabIndex = 3;
-            StudentGradeTextBox.TextChanged += Text_Changed;
+            StudentGradeTextBox.TabIndex = 2;
+            StudentGradeTextBox.TextChanged += GradeText_Changed;
             // 
             // StudentAgeLabel
             // 
@@ -106,8 +114,8 @@
             StudentAgeTextBox.Location = new Point(203, 83);
             StudentAgeTextBox.Name = "StudentAgeTextBox";
             StudentAgeTextBox.Size = new Size(102, 31);
-            StudentAgeTextBox.TabIndex = 2;
-            StudentAgeTextBox.TextChanged += Text_Changed;
+            StudentAgeTextBox.TabIndex = 1;
+            StudentAgeTextBox.TextChanged += AgeText_Changed;
             // 
             // StudentNameTextLabel
             // 
@@ -117,15 +125,7 @@
             StudentNameTextLabel.Size = new Size(125, 25);
             StudentNameTextLabel.TabIndex = 1;
             StudentNameTextLabel.Text = "Student Name";
-            //
-            //// StudentNameTextBox
             // 
-            StudentNameTextBox.Location = new Point(6, 83);
-            StudentNameTextBox.Name = "StudentNameTextBox";
-            StudentNameTextBox.Size = new Size(164, 31);
-            StudentNameTextBox.TabIndex = 0;
-            StudentNameTextBox.TextChanged += Text_Changed;
-            //
             // UserButtonGroupBox
             // 
             UserButtonGroupBox.Controls.Add(ExitButton);
@@ -135,7 +135,7 @@
             UserButtonGroupBox.Location = new Point(467, 12);
             UserButtonGroupBox.Name = "UserButtonGroupBox";
             UserButtonGroupBox.Size = new Size(321, 426);
-            UserButtonGroupBox.TabIndex = 2;
+            UserButtonGroupBox.TabIndex = 1;
             UserButtonGroupBox.TabStop = false;
             // 
             // ExitButton
@@ -193,7 +193,7 @@
             CurrentMathProblemGroupBox.Location = new Point(12, 142);
             CurrentMathProblemGroupBox.Name = "CurrentMathProblemGroupBox";
             CurrentMathProblemGroupBox.Size = new Size(220, 296);
-            CurrentMathProblemGroupBox.TabIndex = 3;
+            CurrentMathProblemGroupBox.TabIndex = 2;
             CurrentMathProblemGroupBox.TabStop = false;
             CurrentMathProblemGroupBox.Text = "Current Math Problem";
             // 
@@ -229,7 +229,7 @@
             StudentAnswerTextBox.Location = new Point(6, 259);
             StudentAnswerTextBox.Name = "StudentAnswerTextBox";
             StudentAnswerTextBox.Size = new Size(208, 31);
-            StudentAnswerTextBox.TabIndex = 2;
+            StudentAnswerTextBox.TabIndex = 1;
             // 
             // SecondNumberTextBox
             // 
@@ -237,7 +237,8 @@
             SecondNumberTextBox.Name = "SecondNumberTextBox";
             SecondNumberTextBox.ReadOnly = true;
             SecondNumberTextBox.Size = new Size(208, 31);
-            SecondNumberTextBox.TabIndex = 1;
+            SecondNumberTextBox.TabIndex = 0;
+            SecondNumberTextBox.TabStop = false;
             // 
             // FirstNumberTextBox
             // 
@@ -247,6 +248,7 @@
             FirstNumberTextBox.ReadOnly = true;
             FirstNumberTextBox.Size = new Size(208, 31);
             FirstNumberTextBox.TabIndex = 0;
+            FirstNumberTextBox.TabStop = false;
             // 
             // MathProblemTypeGroupBox
             // 
@@ -257,7 +259,7 @@
             MathProblemTypeGroupBox.Location = new Point(238, 142);
             MathProblemTypeGroupBox.Name = "MathProblemTypeGroupBox";
             MathProblemTypeGroupBox.Size = new Size(223, 296);
-            MathProblemTypeGroupBox.TabIndex = 4;
+            MathProblemTypeGroupBox.TabIndex = 3;
             MathProblemTypeGroupBox.TabStop = false;
             MathProblemTypeGroupBox.Text = "Math Problem Type";
             // 

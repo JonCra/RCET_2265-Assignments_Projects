@@ -1,3 +1,5 @@
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 namespace MathContest
 {
     public partial class MathContestForm : Form
@@ -45,37 +47,57 @@ namespace MathContest
             SummaryButton.Enabled = false;
             ExitButton.Enabled = true;
         }
-        private void Text_Changed(object sender, EventArgs e)
-        {
-            ValidateInputFields();
-        }
-        bool ValidateInputFields()
-        {
-            bool allFieldsAreValid = false;
-            int _age;
-            int _grade;
 
+        // Event Handlers
+        // Triggers independantly when text changes
+        private void NameText_Changed(object sender, EventArgs e)
+        {
+            NameValidator();
+        }
+        private void AgeText_Changed(object sender, EventArgs e)
+        {
+            AgeValidator();
+        }
+        private void GradeText_Changed(Object sender, EventArgs e)
+        {
+            GradeValidator();
+        }
+
+        // Independantly validate Input Fields
+        bool NameValidator()
+        {
+            bool NameIsValid = false;
             // Name should not be empty
             if (StudentNameTextBox.Text == "")
             {
-                allFieldsAreValid = false;
+                NameIsValid = false;
                 StudentNameTextBox.BackColor = Color.LightYellow;
                 StudentNameTextBox.Focus();
             }
+            else
+            {
+                NameIsValid = true;
+                StudentNameTextBox.BackColor = Color.White;
+            }
+                return NameIsValid;
+        }
+        bool AgeValidator()
+        {
+            bool AgeIsValid = false;
+            int _age;
 
-            // Age Validator
             try
             {
                 _age = int.Parse(StudentAgeTextBox.Text);
                 if (_age <= 7 || _age >= 11)
                 {
-                    allFieldsAreValid = true;
+                    AgeIsValid = true;
                     StudentAgeTextBox.BackColor = Color.White;
                 }
             }
             catch (Exception)
             {
-                allFieldsAreValid = false;
+                AgeIsValid = false;
                 StudentAgeTextBox.BackColor = Color.LightYellow;
                 StudentAgeTextBox.Clear();
                 StudentAgeTextBox.Focus();
@@ -84,29 +106,42 @@ namespace MathContest
             // Age shoudl not be empty
             if (StudentAgeTextBox.Text == "")
             {
-                allFieldsAreValid = false;
+                AgeIsValid = false;
                 StudentNameTextBox.BackColor = Color.LightYellow;
                 StudentAgeTextBox.Focus();
             }
+                return AgeIsValid;
+        }
+        bool GradeValidator()
+        {
+            int _grade;
+            bool GradeIsValid = false;
 
-            // Grade Validator
             try
             {
                 _grade = int.Parse(StudentGradeTextBox.Text);
                 if (_grade <= 1 || _grade >= 4)
                 {
-                    allFieldsAreValid = true;
+                    GradeIsValid = true;
                     StudentGradeTextBox.BackColor = Color.White;
                 }
             }
             catch (Exception)
             {
-                allFieldsAreValid = false;
+                GradeIsValid = false;
                 StudentGradeTextBox.BackColor = Color.LightYellow;
                 StudentGradeTextBox.Clear();
                 StudentGradeTextBox.Focus();
             }
-
+                return GradeIsValid;
+        }
+        bool VerifyFieldsAreValid()
+        {
+            bool allFieldsAreValid = false;
+            if (things are true)
+            {
+                allFieldsAreValid = true;
+            }
             if (allFieldsAreValid)
             {
                 StudentNameTextBox.BackColor = Color.White;
