@@ -4,6 +4,9 @@ namespace MathContest
 {
     public partial class MathContestForm : Form
     {
+        private bool NameIsValidated;
+        private bool AgeIsValidated;
+        private bool GradeIsValidated;
         public MathContestForm()
         {
             InitializeComponent();            
@@ -80,6 +83,7 @@ namespace MathContest
                 StudentNameTextBox.BackColor = Color.White;
             }
                 return NameIsValid;
+            NameIsValidated = NameIsValid;
         }
         bool AgeValidator()
         {
@@ -111,6 +115,7 @@ namespace MathContest
                 StudentAgeTextBox.Focus();
             }
                 return AgeIsValid;
+            AgeIsValidated = AgeIsValid;
         }
         bool GradeValidator()
         {
@@ -134,6 +139,7 @@ namespace MathContest
                 StudentGradeTextBox.Focus();
             }
                 return GradeIsValid;
+            GradeIsValidated = GradeIsValid;
         }
         bool VerifyFieldsAreValid()
         {
