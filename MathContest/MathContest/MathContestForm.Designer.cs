@@ -60,13 +60,6 @@
             MathProblemTypeGroupBox.SuspendLayout();
             SuspendLayout();
             // 
-            // StudentNameTextBox
-            // 
-            StudentNameTextBox.Location = new Point(6, 83);
-            StudentNameTextBox.Name = "StudentNameTextBox";
-            StudentNameTextBox.Size = new Size(164, 31);
-            StudentNameTextBox.TabIndex = 0;
-            // 
             // StudentInformationGroupBox
             // 
             StudentInformationGroupBox.Controls.Add(StudentGradeTextLabel);
@@ -97,6 +90,7 @@
             StudentGradeTextBox.Name = "StudentGradeTextBox";
             StudentGradeTextBox.Size = new Size(102, 31);
             StudentGradeTextBox.TabIndex = 3;
+            StudentGradeTextBox.TextChanged += Text_Changed;
             // 
             // StudentAgeLabel
             // 
@@ -113,7 +107,7 @@
             StudentAgeTextBox.Name = "StudentAgeTextBox";
             StudentAgeTextBox.Size = new Size(102, 31);
             StudentAgeTextBox.TabIndex = 2;
-            //StudentAgeTextBox.TextChanged += Text_changed();
+            StudentAgeTextBox.TextChanged += Text_Changed;
             // 
             // StudentNameTextLabel
             // 
@@ -123,7 +117,15 @@
             StudentNameTextLabel.Size = new Size(125, 25);
             StudentNameTextLabel.TabIndex = 1;
             StudentNameTextLabel.Text = "Student Name";
+            //
+            //// StudentNameTextBox
             // 
+            StudentNameTextBox.Location = new Point(6, 83);
+            StudentNameTextBox.Name = "StudentNameTextBox";
+            StudentNameTextBox.Size = new Size(164, 31);
+            StudentNameTextBox.TabIndex = 0;
+            StudentNameTextBox.TextChanged += Text_Changed;
+            //
             // UserButtonGroupBox
             // 
             UserButtonGroupBox.Controls.Add(ExitButton);

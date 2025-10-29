@@ -38,6 +38,10 @@ namespace MathContest
             SummaryButton.Enabled = false;
             ExitButton.Enabled = true;
         }
+        private void Text_Changed(object sender, EventArgs e)
+        {
+            ValidateInputFields();
+        }
         bool ValidateInputFields()
         {
             bool allFieldsAreValid = false;
