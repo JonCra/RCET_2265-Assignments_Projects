@@ -52,18 +52,25 @@ namespace MathContest
         bool ValidateInputFields()
         {
             bool allFieldsAreValid = false;
-            // Actual validation here
             int _age;
             int _grade;
+
+            // Name should not be empty
+            if (StudentNameTextBox.Text == "")
+            {
+                allFieldsAreValid = false;
+                StudentNameTextBox.BackColor = Color.LightYellow;
+                StudentNameTextBox.Focus();
+            }
 
             // Age Validator
             try
             {
                 _age = int.Parse(StudentAgeTextBox.Text);
-                if (_age <= 0 || _age >= 80)
+                if (_age <= 7 || _age >= 11)
                 {
-                    allFieldsAreValid = false;
-                    StudentAgeTextBox.BackColor = Color.LightYellow;
+                    allFieldsAreValid = true;
+                    StudentAgeTextBox.BackColor = Color.White;
                 }
             }
             catch (Exception)
@@ -73,14 +80,23 @@ namespace MathContest
                 StudentAgeTextBox.Clear();
                 StudentAgeTextBox.Focus();
             }
+
+            // Age shoudl not be empty
+            if (StudentAgeTextBox.Text == "")
+            {
+                allFieldsAreValid = false;
+                StudentNameTextBox.BackColor = Color.LightYellow;
+                StudentAgeTextBox.Focus();
+            }
+
             // Grade Validator
             try
             {
                 _grade = int.Parse(StudentGradeTextBox.Text);
                 if (_grade <= 1 || _grade >= 4)
                 {
-                    allFieldsAreValid = false;
-                    StudentGradeTextBox.BackColor = Color.LightYellow;
+                    allFieldsAreValid = true;
+                    StudentGradeTextBox.BackColor = Color.White;
                 }
             }
             catch (Exception)
@@ -91,31 +107,16 @@ namespace MathContest
                 StudentGradeTextBox.Focus();
             }
 
-            // Age shoudl not be empty
-            if (StudentAgeTextBox.Text == "")
-            {
-                allFieldsAreValid = false;
-                StudentNameTextBox.BackColor = Color.LightYellow;
-                StudentAgeTextBox.Focus();
-            }
-            // Name should not be empty
-            if (StudentNameTextBox.Text == "")
-            {
-                allFieldsAreValid = false;
-                StudentNameTextBox.BackColor = Color.LightYellow;
-                StudentNameTextBox.Focus();
-            }
             if (allFieldsAreValid)
             {
                 StudentNameTextBox.BackColor = Color.White;
                 StudentAgeTextBox.BackColor = Color.White;
                 StudentAnswerTextBox.BackColor = Color.White;
             }
-            else
-            {
 
-            }
+            // Enables submit button when Bool is TRUE
             SubmitButton.Enabled = allFieldsAreValid;
+
             return allFieldsAreValid;
         }
         
