@@ -15,10 +15,16 @@ namespace MathContest
         {
             // Clears and disables specified items
             StudentNameTextBox.Text = "";
+            StudentNameTextBox.BackColor = Color.White;
+
             StudentAgeTextBox.Text = "";
+            StudentAgeTextBox.BackColor = Color.White;
+
             StudentGradeTextBox.Text = "";
-            FirstNumberTextBox.Text = "";
-            SecondNumberTextBox.Text = "";
+            StudentGradeTextBox.BackColor = Color.White;
+
+            FirstNumberTextBox.Text = "";          
+            SecondNumberTextBox.Text = "";            
             StudentAnswerTextBox.Text = "";
 
             AddRadioButton.Checked = true;
