@@ -11,6 +11,7 @@ namespace MathContest
                 ValidateInputFields();
             }
         }
+        // Program Logic ---------------------------------------------------------------
         void setDefaults()
         {
             // Clears and disables specified items
@@ -53,7 +54,9 @@ namespace MathContest
             bool allFieldsAreValid = false;
             // Actual validation here
             int _age;
+            int _grade;
 
+            // Age Validator
             try
             {
                 _age = int.Parse(StudentAgeTextBox.Text);
@@ -67,7 +70,25 @@ namespace MathContest
             {
                 allFieldsAreValid = false;
                 StudentAgeTextBox.BackColor = Color.LightYellow;
+                StudentAgeTextBox.Clear();
                 StudentAgeTextBox.Focus();
+            }
+            // Grade Validator
+            try
+            {
+                _grade = int.Parse(StudentGradeTextBox.Text);
+                if (_grade <= 1 || _grade >= 4)
+                {
+                    allFieldsAreValid = false;
+                    StudentGradeTextBox.BackColor = Color.LightYellow;
+                }
+            }
+            catch (Exception)
+            {
+                allFieldsAreValid = false;
+                StudentGradeTextBox.BackColor = Color.LightYellow;
+                StudentGradeTextBox.Clear();
+                StudentGradeTextBox.Focus();
             }
 
             // Age shoudl not be empty
@@ -97,14 +118,7 @@ namespace MathContest
             SubmitButton.Enabled = allFieldsAreValid;
             return allFieldsAreValid;
         }
-        //private void Text_Changed(object sender, EventArgs e)
-        //{
-        //    if (StudentNameTextBox.Text != "" && StudentAgeTextBox.Text != "" && StudentGradeTextBox.Text != "")
-        //    {
-        //        ValidateInputFields();
-        //    }
-        //}
-
+        
         // Event Handlers --------------------------------------------------------------
         private void SubmitButton_Click(object sender, EventArgs e)
         {
@@ -124,7 +138,5 @@ namespace MathContest
         {
             // Display summary
         }
-
-        // Program Logic ---------------------------------------------------------------
     }
 }
