@@ -66,6 +66,7 @@
             StudentNameTextBox.Name = "StudentNameTextBox";
             StudentNameTextBox.Size = new Size(164, 31);
             StudentNameTextBox.TabIndex = 0;
+            toolTip1.SetToolTip(StudentNameTextBox, "Enter student's name");
             StudentNameTextBox.TextChanged += NameText_Changed;
             // 
             // StudentInformationGroupBox
@@ -98,6 +99,7 @@
             StudentGradeTextBox.Name = "StudentGradeTextBox";
             StudentGradeTextBox.Size = new Size(102, 31);
             StudentGradeTextBox.TabIndex = 2;
+            toolTip1.SetToolTip(StudentGradeTextBox, "Enter student's grade level (1-4)");
             StudentGradeTextBox.TextChanged += GradeText_Changed;
             // 
             // StudentAgeLabel
@@ -115,6 +117,7 @@
             StudentAgeTextBox.Name = "StudentAgeTextBox";
             StudentAgeTextBox.Size = new Size(102, 31);
             StudentAgeTextBox.TabIndex = 1;
+            toolTip1.SetToolTip(StudentAgeTextBox, "Enter Student's age (7-11)");
             StudentAgeTextBox.TextChanged += AgeText_Changed;
             // 
             // StudentNameTextLabel
@@ -146,6 +149,7 @@
             ExitButton.Size = new Size(309, 95);
             ExitButton.TabIndex = 3;
             ExitButton.Text = "E&xit";
+            toolTip1.SetToolTip(ExitButton, "Exit program");
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -157,6 +161,7 @@
             SummaryButton.Size = new Size(309, 95);
             SummaryButton.TabIndex = 2;
             SummaryButton.Text = "Summary";
+            toolTip1.SetToolTip(SummaryButton, "Display summary of last attempts");
             SummaryButton.UseVisualStyleBackColor = true;
             SummaryButton.Click += SummaryButton_Click;
             // 
@@ -168,6 +173,7 @@
             ClearButton.Size = new Size(309, 95);
             ClearButton.TabIndex = 1;
             ClearButton.Text = "&Clear";
+            toolTip1.SetToolTip(ClearButton, "Clear all user-inputted fields");
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
@@ -179,6 +185,7 @@
             SubmitButton.Size = new Size(309, 95);
             SubmitButton.TabIndex = 0;
             SubmitButton.Text = "&Submit";
+            toolTip1.SetToolTip(SubmitButton, "Record/submit answer and student information");
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
             // 
