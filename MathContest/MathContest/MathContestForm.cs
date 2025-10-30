@@ -11,10 +11,10 @@ namespace MathContest
         {
             InitializeComponent();            
             setDefaults();
-            if (StudentNameTextBox.Text != "" && StudentAgeTextBox.Text != "" && StudentGradeTextBox.Text != "")
-            {
-                ValidateInputFields();
-            }
+            //if (StudentNameTextBox.Text != "" && StudentAgeTextBox.Text != "" && StudentGradeTextBox.Text != "")
+            //{
+            //    VerifyFieldsAreValid();
+            //}
         }
         // Program Logic ---------------------------------------------------------------
         void setDefaults()
@@ -55,6 +55,7 @@ namespace MathContest
         // Triggers independantly when text changes
         private void NameText_Changed(object sender, EventArgs e)
         {
+            // BUG: Name validates regardless of character, fix so that leading blank "spaces" are trimmed
             NameValidator();
         }
         private void AgeText_Changed(object sender, EventArgs e)
@@ -82,8 +83,8 @@ namespace MathContest
                 NameIsValid = true;
                 StudentNameTextBox.BackColor = Color.White;
             }
-                return NameIsValid;
             NameIsValidated = NameIsValid;
+                return NameIsValidated;
         }
         bool AgeValidator()
         {
@@ -93,15 +94,21 @@ namespace MathContest
             try
             {
                 _age = int.Parse(StudentAgeTextBox.Text);
-                if (_age <= 7 || _age >= 11)
+                if (_age >= 7 && _age <= 11)
                 {
                     AgeIsValid = true;
                     StudentAgeTextBox.BackColor = Color.White;
                 }
+                else
+                {
+                    AgeIsValid = false;
+                    StudentAgeTextBox.BackColor = Color.LightYellow;
+                    StudentAgeTextBox.Clear();
+                    StudentAgeTextBox.Focus();
+                }
             }
             catch (Exception)
             {
-                AgeIsValid = false;
                 StudentAgeTextBox.BackColor = Color.LightYellow;
                 StudentAgeTextBox.Clear();
                 StudentAgeTextBox.Focus();
@@ -114,8 +121,8 @@ namespace MathContest
                 StudentNameTextBox.BackColor = Color.LightYellow;
                 StudentAgeTextBox.Focus();
             }
-                return AgeIsValid;
             AgeIsValidated = AgeIsValid;
+                return AgeIsValidated;
         }
         bool GradeValidator()
         {
@@ -125,7 +132,7 @@ namespace MathContest
             try
             {
                 _grade = int.Parse(StudentGradeTextBox.Text);
-                if (_grade <= 1 || _grade >= 4)
+                if (_grade >= 1 || _grade <= 4)
                 {
                     GradeIsValid = true;
                     StudentGradeTextBox.BackColor = Color.White;
@@ -138,17 +145,17 @@ namespace MathContest
                 StudentGradeTextBox.Clear();
                 StudentGradeTextBox.Focus();
             }
-                return GradeIsValid;
             GradeIsValidated = GradeIsValid;
+                return GradeIsValidated;
         }
         bool VerifyFieldsAreValid()
         {
             bool allFieldsAreValid = false;
-            if (things are true)
+            if (NameIsValidated && GradeIsValidated && AgeIsValidated == true)
             {
                 allFieldsAreValid = true;
             }
-            if (allFieldsAreValid)
+            if (allFieldsAreValid == true)
             {
                 StudentNameTextBox.BackColor = Color.White;
                 StudentAgeTextBox.BackColor = Color.White;
