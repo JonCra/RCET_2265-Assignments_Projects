@@ -34,6 +34,8 @@
             SoupButton = new Button();
             SaladButton = new Button();
             FishButton = new Button();
+            DinerNameTextbox = new TextBox();
+            MenuDisplayRichTextBox = new RichTextBox();
             SuspendLayout();
             // 
             // ExitButton
@@ -43,6 +45,7 @@
             ExitButton.Size = new Size(112, 34);
             ExitButton.TabIndex = 0;
             ExitButton.Text = "E&xit";
+            toolTip1.SetToolTip(ExitButton, "Exit interface");
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -53,6 +56,7 @@
             SoupButton.Size = new Size(112, 34);
             SoupButton.TabIndex = 1;
             SoupButton.Text = "Soup";
+            toolTip1.SetToolTip(SoupButton, "Display Soup menu");
             SoupButton.UseVisualStyleBackColor = true;
             SoupButton.Click += SoupButton_Click;
             // 
@@ -63,6 +67,7 @@
             SaladButton.Size = new Size(112, 34);
             SaladButton.TabIndex = 2;
             SaladButton.Text = "Salad";
+            toolTip1.SetToolTip(SaladButton, "Display Salad menu");
             SaladButton.UseVisualStyleBackColor = true;
             SaladButton.Click += SaladButton_Click;
             // 
@@ -73,21 +78,50 @@
             FishButton.Size = new Size(112, 34);
             FishButton.TabIndex = 3;
             FishButton.Text = "Fish";
+            toolTip1.SetToolTip(FishButton, "Display Fish menu");
             FishButton.UseVisualStyleBackColor = true;
             FishButton.Click += FishButton_Click;
+            // 
+            // DinerNameTextbox
+            // 
+            DinerNameTextbox.BackColor = SystemColors.Menu;
+            DinerNameTextbox.BorderStyle = BorderStyle.None;
+            DinerNameTextbox.Font = new Font("Book Antiqua", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DinerNameTextbox.Location = new Point(224, 12);
+            DinerNameTextbox.Name = "DinerNameTextbox";
+            DinerNameTextbox.Size = new Size(355, 37);
+            DinerNameTextbox.TabIndex = 4;
+            DinerNameTextbox.Text = "Ma & Pa's Corner Diner";
+            DinerNameTextbox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // MenuDisplayRichTextBox
+            // 
+            MenuDisplayRichTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            MenuDisplayRichTextBox.BackColor = SystemColors.Menu;
+            MenuDisplayRichTextBox.BorderStyle = BorderStyle.None;
+            MenuDisplayRichTextBox.Location = new Point(145, 55);
+            MenuDisplayRichTextBox.Name = "MenuDisplayRichTextBox";
+            MenuDisplayRichTextBox.ReadOnly = true;
+            MenuDisplayRichTextBox.Size = new Size(500, 275);
+            MenuDisplayRichTextBox.TabIndex = 5;
+            MenuDisplayRichTextBox.Text = "";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(MenuDisplayRichTextBox);
+            Controls.Add(DinerNameTextbox);
             Controls.Add(FishButton);
             Controls.Add(SaladButton);
             Controls.Add(SoupButton);
             Controls.Add(ExitButton);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Ma & Pa's Corner Diner";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -97,5 +131,7 @@
         private Button SoupButton;
         private Button SaladButton;
         private Button FishButton;
+        private TextBox DinerNameTextbox;
+        private RichTextBox MenuDisplayRichTextBox;
     }
 }

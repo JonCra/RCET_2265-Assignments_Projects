@@ -5,12 +5,11 @@ namespace DinerMenu_Fixed
         public Form1()
         {
             InitializeComponent();
-            
+
             // Ensures "menu" is empty on startup
         }
 
         // Program Logic -------------------------------------------
-        
         void SoupDisplay()
         {
             // Display Soup menu
