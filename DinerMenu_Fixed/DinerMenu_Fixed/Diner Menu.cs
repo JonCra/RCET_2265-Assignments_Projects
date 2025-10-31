@@ -5,9 +5,7 @@ namespace DinerMenu_Fixed
         public Form1()
         {
             InitializeComponent();
-
-            // Ensures "menu" is empty on startup
-            MenuBottomTextBox.Text = MenuTopTextBox.Text = "";
+            DefaultMenuText();
         }
 
         // Program Logic -------------------------------------------
@@ -16,18 +14,21 @@ namespace DinerMenu_Fixed
             // Display Soup menu
             MenuTopTextBox.Text = "~ Soup of the Day ~";
             MenuBottomTextBox.Text = "Ma's Homemade Chicken Noodle Soup";
+            MenuVeryBottomTextBox.Text = "";
         }
         void SaladDisplay()
         {
             // Display Salad menu
-            MenuTopTextBox.Text = "Salad Menu";
-            MenuBottomTextBox.Text = "";
+            MenuTopTextBox.Text = "~ Salad Menu ~";
+            MenuBottomTextBox.Text = "Grilled Chicken Salad";
+            MenuVeryBottomTextBox.Text = "";
         }
         void FishDisplay()
         {
             // Display Fish menu
-            MenuTopTextBox.Text = "Fish Menu";
-            MenuBottomTextBox.Text = "";
+            MenuTopTextBox.Text = "~ Fish Menu ~";
+            MenuBottomTextBox.Text = "World Famous Fish and Chips";
+            MenuVeryBottomTextBox.Text = "Fresh Rainbow Trout caught locally";
         }
 
         // Event Handlers ------------------------------------------
@@ -49,6 +50,14 @@ namespace DinerMenu_Fixed
         {
             // Display Soup menu
             SoupDisplay();
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void DefaultMenuText()
+        {
+            MenuTopTextBox.Text = MenuBottomTextBox.Text = MenuVeryBottomTextBox.Text = "";
         }
     }
 }

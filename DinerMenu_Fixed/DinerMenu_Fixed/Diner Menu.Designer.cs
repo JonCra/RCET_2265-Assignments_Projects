@@ -27,7 +27,7 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
-        {
+        {            
             components = new System.ComponentModel.Container();
             toolTip1 = new ToolTip(components);
             ExitButton = new Button();
@@ -37,6 +37,7 @@
             DinerNameTextbox = new TextBox();
             MenuTopTextBox = new TextBox();
             MenuBottomTextBox = new TextBox();
+            MenuVeryBottomTextBox = new TextBox();
             SuspendLayout();
             // 
             // ExitButton
@@ -87,10 +88,10 @@
             // 
             DinerNameTextbox.BackColor = SystemColors.Menu;
             DinerNameTextbox.BorderStyle = BorderStyle.None;
-            DinerNameTextbox.Font = new Font("Book Antiqua", 15F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            DinerNameTextbox.Location = new Point(224, 12);
+            DinerNameTextbox.Font = new Font("Book Antiqua", 20F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
+            DinerNameTextbox.Location = new Point(154, 12);
             DinerNameTextbox.Name = "DinerNameTextbox";
-            DinerNameTextbox.Size = new Size(355, 37);
+            DinerNameTextbox.Size = new Size(500, 49);
             DinerNameTextbox.TabIndex = 4;
             DinerNameTextbox.Text = "Ma & Pa's Corner Diner";
             DinerNameTextbox.TextAlign = HorizontalAlignment.Center;
@@ -99,10 +100,10 @@
             // 
             MenuTopTextBox.BackColor = SystemColors.Menu;
             MenuTopTextBox.BorderStyle = BorderStyle.None;
-            MenuTopTextBox.Font = new Font("Book Antiqua", 12F, FontStyle.Bold | FontStyle.Italic);
-            MenuTopTextBox.Location = new Point(224, 144);
+            MenuTopTextBox.Font = new Font("Book Antiqua", 17F, FontStyle.Bold | FontStyle.Italic);
+            MenuTopTextBox.Location = new Point(154, 145);
             MenuTopTextBox.Name = "MenuTopTextBox";
-            MenuTopTextBox.Size = new Size(355, 35);
+            MenuTopTextBox.Size = new Size(500, 37);
             MenuTopTextBox.TabIndex = 5;
             MenuTopTextBox.TextAlign = HorizontalAlignment.Center;
             // 
@@ -112,18 +113,30 @@
             MenuBottomTextBox.AutoCompleteMode = AutoCompleteMode.Suggest;
             MenuBottomTextBox.BackColor = SystemColors.Menu;
             MenuBottomTextBox.BorderStyle = BorderStyle.None;
-            MenuBottomTextBox.Font = new Font("Book Antiqua", 12F, FontStyle.Italic);
-            MenuBottomTextBox.Location = new Point(154, 252);
+            MenuBottomTextBox.Font = new Font("Book Antiqua", 15F, FontStyle.Italic);
+            MenuBottomTextBox.Location = new Point(154, 215);
             MenuBottomTextBox.Name = "MenuBottomTextBox";
-            MenuBottomTextBox.Size = new Size(500, 35);
+            MenuBottomTextBox.Size = new Size(500, 29);
             MenuBottomTextBox.TabIndex = 6;
             MenuBottomTextBox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // MenuVeryBottomTextBox
+            // 
+            MenuVeryBottomTextBox.BackColor = SystemColors.Menu;
+            MenuVeryBottomTextBox.BorderStyle = BorderStyle.None;
+            MenuVeryBottomTextBox.Font = new Font("Book Antiqua", 12F, FontStyle.Italic);
+            MenuVeryBottomTextBox.Location = new Point(154, 271);
+            MenuVeryBottomTextBox.Name = "MenuVeryBottomTextBox";
+            MenuVeryBottomTextBox.Size = new Size(500, 25);
+            MenuVeryBottomTextBox.TabIndex = 7;
+            MenuVeryBottomTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(MenuVeryBottomTextBox);
             Controls.Add(MenuBottomTextBox);
             Controls.Add(MenuTopTextBox);
             Controls.Add(DinerNameTextbox);
@@ -148,5 +161,6 @@
         private TextBox DinerNameTextbox;
         private TextBox MenuTopTextBox;
         private TextBox MenuBottomTextBox;
+        private TextBox MenuVeryBottomTextBox;
     }
 }
