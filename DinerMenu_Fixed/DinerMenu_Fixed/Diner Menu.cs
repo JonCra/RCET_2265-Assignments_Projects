@@ -7,23 +7,27 @@ namespace DinerMenu_Fixed
             InitializeComponent();
 
             // Ensures "menu" is empty on startup
+            MenuBottomTextBox.Text = MenuTopTextBox.Text = "";
         }
 
         // Program Logic -------------------------------------------
         void SoupDisplay()
         {
             // Display Soup menu
-
+            MenuTopTextBox.Text = "~ Soup of the Day ~";
+            MenuBottomTextBox.Text = "Ma's Homemade Chicken Noodle Soup";
         }
         void SaladDisplay()
         {
             // Display Salad menu
-
+            MenuTopTextBox.Text = "Salad Menu";
+            MenuBottomTextBox.Text = "";
         }
         void FishDisplay()
         {
             // Display Fish menu
-
+            MenuTopTextBox.Text = "Fish Menu";
+            MenuBottomTextBox.Text = "";
         }
 
         // Event Handlers ------------------------------------------

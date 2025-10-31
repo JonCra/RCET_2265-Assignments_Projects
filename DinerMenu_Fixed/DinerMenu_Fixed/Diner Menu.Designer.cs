@@ -35,7 +35,8 @@
             SaladButton = new Button();
             FishButton = new Button();
             DinerNameTextbox = new TextBox();
-            MenuDisplayRichTextBox = new RichTextBox();
+            MenuTopTextBox = new TextBox();
+            MenuBottomTextBox = new TextBox();
             SuspendLayout();
             // 
             // ExitButton
@@ -86,7 +87,7 @@
             // 
             DinerNameTextbox.BackColor = SystemColors.Menu;
             DinerNameTextbox.BorderStyle = BorderStyle.None;
-            DinerNameTextbox.Font = new Font("Book Antiqua", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DinerNameTextbox.Font = new Font("Book Antiqua", 15F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
             DinerNameTextbox.Location = new Point(224, 12);
             DinerNameTextbox.Name = "DinerNameTextbox";
             DinerNameTextbox.Size = new Size(355, 37);
@@ -94,24 +95,37 @@
             DinerNameTextbox.Text = "Ma & Pa's Corner Diner";
             DinerNameTextbox.TextAlign = HorizontalAlignment.Center;
             // 
-            // MenuDisplayRichTextBox
+            // MenuTopTextBox
             // 
-            MenuDisplayRichTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            MenuDisplayRichTextBox.BackColor = SystemColors.Menu;
-            MenuDisplayRichTextBox.BorderStyle = BorderStyle.None;
-            MenuDisplayRichTextBox.Location = new Point(145, 55);
-            MenuDisplayRichTextBox.Name = "MenuDisplayRichTextBox";
-            MenuDisplayRichTextBox.ReadOnly = true;
-            MenuDisplayRichTextBox.Size = new Size(500, 275);
-            MenuDisplayRichTextBox.TabIndex = 5;
-            MenuDisplayRichTextBox.Text = "";
+            MenuTopTextBox.BackColor = SystemColors.Menu;
+            MenuTopTextBox.BorderStyle = BorderStyle.None;
+            MenuTopTextBox.Font = new Font("Book Antiqua", 12F, FontStyle.Bold | FontStyle.Italic);
+            MenuTopTextBox.Location = new Point(224, 144);
+            MenuTopTextBox.Name = "MenuTopTextBox";
+            MenuTopTextBox.Size = new Size(355, 35);
+            MenuTopTextBox.TabIndex = 5;
+            MenuTopTextBox.TextAlign = HorizontalAlignment.Center;
+            // 
+            // MenuBottomTextBox
+            // 
+            MenuBottomTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            MenuBottomTextBox.AutoCompleteMode = AutoCompleteMode.Suggest;
+            MenuBottomTextBox.BackColor = SystemColors.Menu;
+            MenuBottomTextBox.BorderStyle = BorderStyle.None;
+            MenuBottomTextBox.Font = new Font("Book Antiqua", 12F, FontStyle.Italic);
+            MenuBottomTextBox.Location = new Point(154, 252);
+            MenuBottomTextBox.Name = "MenuBottomTextBox";
+            MenuBottomTextBox.Size = new Size(500, 35);
+            MenuBottomTextBox.TabIndex = 6;
+            MenuBottomTextBox.TextAlign = HorizontalAlignment.Center;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(MenuDisplayRichTextBox);
+            Controls.Add(MenuBottomTextBox);
+            Controls.Add(MenuTopTextBox);
             Controls.Add(DinerNameTextbox);
             Controls.Add(FishButton);
             Controls.Add(SaladButton);
@@ -132,6 +146,7 @@
         private Button SaladButton;
         private Button FishButton;
         private TextBox DinerNameTextbox;
-        private RichTextBox MenuDisplayRichTextBox;
+        private TextBox MenuTopTextBox;
+        private TextBox MenuBottomTextBox;
     }
 }
