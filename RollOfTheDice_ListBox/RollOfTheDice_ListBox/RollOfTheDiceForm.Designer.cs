@@ -33,6 +33,9 @@
             menuStrip1 = new MenuStrip();
             menuToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
+            ClearButton = new Button();
+            ExitButton = new Button();
+            RollButton = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,14 +61,47 @@
             helpToolStripMenuItem.Size = new Size(65, 29);
             helpToolStripMenuItem.Text = "Help";
             // 
-            // Form1
+            // ClearButton
+            // 
+            ClearButton.Location = new Point(464, 381);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(137, 57);
+            ClearButton.TabIndex = 1;
+            ClearButton.Text = "&Clear";
+            ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
+            // 
+            // ExitButton
+            // 
+            ExitButton.Location = new Point(651, 381);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(137, 57);
+            ExitButton.TabIndex = 2;
+            ExitButton.Text = "E&xit";
+            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
+            // 
+            // RollButton
+            // 
+            RollButton.Location = new Point(278, 381);
+            RollButton.Name = "RollButton";
+            RollButton.Size = new Size(137, 57);
+            RollButton.TabIndex = 3;
+            RollButton.Text = "&Roll";
+            RollButton.UseVisualStyleBackColor = true;
+            RollButton.Click += this.RollButton_Click;
+            // 
+            // RollOfTheDiceForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(RollButton);
+            Controls.Add(ExitButton);
+            Controls.Add(ClearButton);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Name = "Form1";
+            Name = "RollOfTheDiceForm";
             Text = "Roll of the Dice";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -79,5 +115,8 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem menuToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
+        private Button ClearButton;
+        private Button ExitButton;
+        private Button RollButton;
     }
 }
