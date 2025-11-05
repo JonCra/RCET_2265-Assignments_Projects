@@ -36,6 +36,7 @@
             ClearButton = new Button();
             ExitButton = new Button();
             RollButton = new Button();
+            DisplayRichTextBox = new RichTextBox();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -89,13 +90,23 @@
             RollButton.TabIndex = 3;
             RollButton.Text = "&Roll";
             RollButton.UseVisualStyleBackColor = true;
-            RollButton.Click += this.RollButton_Click;
+            RollButton.Click += RollButton_Click;
+            // 
+            // DisplayRichTextBox
+            // 
+            DisplayRichTextBox.BorderStyle = BorderStyle.None;
+            DisplayRichTextBox.Location = new Point(12, 36);
+            DisplayRichTextBox.Name = "DisplayRichTextBox";
+            DisplayRichTextBox.Size = new Size(776, 339);
+            DisplayRichTextBox.TabIndex = 0;
+            DisplayRichTextBox.Text = "";
             // 
             // RollOfTheDiceForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(DisplayRichTextBox);
             Controls.Add(RollButton);
             Controls.Add(ExitButton);
             Controls.Add(ClearButton);
@@ -118,5 +129,6 @@
         private Button ClearButton;
         private Button ExitButton;
         private Button RollButton;
+        private RichTextBox DisplayRichTextBox;
     }
 }
