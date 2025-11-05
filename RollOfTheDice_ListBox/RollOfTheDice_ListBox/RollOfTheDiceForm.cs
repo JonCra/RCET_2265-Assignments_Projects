@@ -22,7 +22,7 @@ namespace RollOfTheDice_ListBox
         private static int rollTwoValue;
         static void DiceTally()
         {
-            //Initialize results array and local variables
+            // Initialize results array and local variables
             int[] results = new int[13];
             int sum2 = 0;
             int sum3 = 0;
@@ -101,12 +101,13 @@ namespace RollOfTheDice_ListBox
             int padding = 3;
             for (int i = 2; i < 13; i++)
             {
-                Console.Write((results[i]).ToString().PadLeft(padding) + "| ");
+                // TODO / BUG: Concatenate this string path to show in DisplayRichTextBox.Text
+                DisplayRichTextBox.Text = ((results[i]).ToString().PadLeft(padding) + "| ");
             }
         }
         static int DiceRollerOne()
         {
-            //Rolls First 1d6
+            // Rolls First 1d6
             Random rollTwo = new Random();
             switch (rollTwo.Next(1, 7))
             {
@@ -142,7 +143,7 @@ namespace RollOfTheDice_ListBox
         }
         static int DiceRollerTwo()
         {
-            //Rolls Second 1d6
+            // Rolls Second 1d6
             Random rollOne = new Random();
             switch (rollOne.Next(1, 7))
             {
