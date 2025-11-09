@@ -12,6 +12,7 @@ namespace RollOfTheDice_ListBox
         private static int rollOneValue;
         private static int rollTwoValue;
         string Line4 = "";
+        private int padding = 4;
 
         private void SetDefaults()
         {
@@ -27,18 +28,17 @@ namespace RollOfTheDice_ListBox
         {            
             int[] results = new int[13];
             string header = "Roll of the Dice";
-            int padding = 3;
             int totalWidth = 6 * (padding);
             string hDivider = new string('-', totalWidth);
             string otherDivider = new string('-', (totalWidth * 3));
 
-            string Line0 = header.PadLeft(35);
+            string Line0 = header.PadLeft(55);
             string Line1 = (hDivider + hDivider + hDivider);
             string Line2 = "";
 
             for (int roll = 2; roll < 13; roll++)
             {
-                Line2 += ((roll).ToString().PadLeft(padding) + "| ");
+                Line2 += ((roll).ToString().PadLeft(padding + 1) + "| ");
             }
             string Line3 = otherDivider;
 
@@ -64,6 +64,7 @@ namespace RollOfTheDice_ListBox
             int sum10 = 0;
             int sum11 = 0;
             int sum12 = 0;
+
             for (int i = 0; i < 1000; i++)
             {
                 DiceRollerOne();
@@ -112,8 +113,9 @@ namespace RollOfTheDice_ListBox
                 else if (rollResults == 12)
                 {
                     sum12++;
-                }
+                }                
             }
+
             // Index results into 1-D array
             results[2] = sum2;
             results[3] = sum3;
@@ -127,11 +129,9 @@ namespace RollOfTheDice_ListBox
             results[11] = sum11;
             results[12] = sum12;
 
-            int padding = 3;
             for (int i = 2; i < 13; i++)
             {
-                // TODO / BUG: Concatenate this string path to show in DisplayRichTextBox.Text
-                DisplayRichTextBox.Text = ((results[i]).ToString().PadLeft(padding) + "| ");
+                Line4 += ((results[i]).ToString().PadLeft(padding) + "| ");
             }
         }
 

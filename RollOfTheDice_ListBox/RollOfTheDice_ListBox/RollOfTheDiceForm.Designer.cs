@@ -95,8 +95,12 @@
             // DisplayRichTextBox
             // 
             DisplayRichTextBox.BorderStyle = BorderStyle.None;
+            DisplayRichTextBox.Enabled = false;
+            DisplayRichTextBox.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DisplayRichTextBox.Location = new Point(12, 36);
             DisplayRichTextBox.Name = "DisplayRichTextBox";
+            DisplayRichTextBox.ReadOnly = true;
+            DisplayRichTextBox.ScrollBars = RichTextBoxScrollBars.None;
             DisplayRichTextBox.Size = new Size(776, 339);
             DisplayRichTextBox.TabIndex = 0;
             DisplayRichTextBox.Text = "";
