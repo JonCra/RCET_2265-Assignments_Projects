@@ -15,12 +15,36 @@ namespace RollOfTheDice_ListBox
         }
         private void InitiateRoll()
         {
-            DiceTally();
-
+            Display();
         }
+        
+        // TODO: Reformat this code to display in the Display text
+        void Display()
+        {
+            int[] results = new int[13];
+            string header = "Roll of the Dice";
+            int padding = 3;
+            int totalWidth = 6 * (padding);
+            string hDivider = new string('-', totalWidth);
+            string otherDivider = new string('-', (totalWidth * 3));
+
+            Console.WriteLine(header.PadLeft(35));
+            Console.WriteLine(hDivider + hDivider + hDivider);
+
+            for (int roll = 2; roll < 13; roll++)
+            {
+                Console.Write((roll).ToString().PadLeft(padding) + "| ");
+            }
+            Console.WriteLine("\n" + otherDivider);
+
+            //Write the roll results
+            DiceTally();
+        }
+
         private static int rollOneValue;
         private static int rollTwoValue;
-        static void DiceTally()
+
+        void DiceTally()
         {
             // Initialize results array and local variables
             int[] results = new int[13];
@@ -176,28 +200,6 @@ namespace RollOfTheDice_ListBox
                     break;
             }
             return rollTwoValue;
-        }
-        // TODO: Transpose this code to display in the Display text
-        static void Display()
-        {
-            int[] results = new int[13];
-            string header = "Roll of the Dice";
-            int padding = 3;
-            int totalWidth = 6 * (padding);
-            string hDivider = new string('-', totalWidth);
-            string otherDivider = new string('-', (totalWidth * 3));
-
-            Console.WriteLine(header.PadLeft(35));
-            Console.WriteLine(hDivider + hDivider + hDivider);
-
-            for (int roll = 2; roll < 13; roll++)
-            {
-                Console.Write((roll).ToString().PadLeft(padding) + "| ");
-            }
-            Console.WriteLine("\n" + otherDivider);
-
-            //Write the roll results
-            DiceTally();
         }
 
         // Event Handlers ----------------------------------------
