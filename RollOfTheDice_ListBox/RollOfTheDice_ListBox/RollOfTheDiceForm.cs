@@ -17,6 +17,7 @@ namespace RollOfTheDice_ListBox
         private void SetDefaults()
         {
             DisplayRichTextBox.Text = "";
+            Line4 = "";
         }
         private void InitiateRoll()
         {
@@ -38,7 +39,7 @@ namespace RollOfTheDice_ListBox
 
             for (int roll = 2; roll < 13; roll++)
             {
-                Line2 += ((roll).ToString().PadLeft(padding + 1) + "| ");
+                Line2 += ((roll).ToString().PadLeft(padding + 2) + "| ");
             }
             string Line3 = otherDivider;
 
@@ -131,7 +132,7 @@ namespace RollOfTheDice_ListBox
 
             for (int i = 2; i < 13; i++)
             {
-                Line4 += ((results[i]).ToString().PadLeft(padding) + "| ");
+                Line4 += ((results[i]).ToString().PadLeft(padding + 1) + "| ");
             }
         }
 
