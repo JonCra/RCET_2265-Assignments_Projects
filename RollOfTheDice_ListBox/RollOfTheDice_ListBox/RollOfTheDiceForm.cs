@@ -11,13 +11,13 @@ namespace RollOfTheDice_ListBox
         // Program Logic -----------------------------------------
         private static int rollOneValue;
         private static int rollTwoValue;
-        string Line4 = "";
+        string Line3 = "";
         private int padding = 4;
 
         private void SetDefaults()
         {
             DisplayRichTextBox.Text = "";
-            Line4 = "";
+            Line3 = "";
         }
         private void InitiateRoll()
         {
@@ -41,12 +41,11 @@ namespace RollOfTheDice_ListBox
             {
                 Line2 += ((roll).ToString().PadLeft(padding + 2) + "| ");
             }
-            string Line3 = otherDivider;
 
             DiceTally();
 
             // Write the roll results
-            string[] text = {Line0, Line1, Line2, Line3, Line4};
+            string[] text = {Line0, Line1, Line2, Line1, Line3, Line1};
             DisplayRichTextBox.Lines = text;
         }
 
@@ -132,7 +131,7 @@ namespace RollOfTheDice_ListBox
 
             for (int i = 2; i < 13; i++)
             {
-                Line4 += ((results[i]).ToString().PadLeft(padding + 1) + "| ");
+                Line3 += ((results[i]).ToString().PadLeft(padding + 1) + "| ");
             }
         }
 
