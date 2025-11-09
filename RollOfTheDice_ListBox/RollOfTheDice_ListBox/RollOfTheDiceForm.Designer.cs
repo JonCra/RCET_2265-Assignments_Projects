@@ -113,6 +113,7 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "RollOfTheDiceForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Roll of the Dice";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

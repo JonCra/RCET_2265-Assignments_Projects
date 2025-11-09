@@ -9,6 +9,10 @@ namespace RollOfTheDice_ListBox
         }
 
         // Program Logic -----------------------------------------
+        private static int rollOneValue;
+        private static int rollTwoValue;
+        string Line4 = "";
+
         private void SetDefaults()
         {
             DisplayRichTextBox.Text = "";
@@ -20,7 +24,7 @@ namespace RollOfTheDice_ListBox
         
         // TODO: Reformat this code to display in the Display text
         void Display()
-        {
+        {            
             int[] results = new int[13];
             string header = "Roll of the Dice";
             int padding = 3;
@@ -28,21 +32,22 @@ namespace RollOfTheDice_ListBox
             string hDivider = new string('-', totalWidth);
             string otherDivider = new string('-', (totalWidth * 3));
 
-            Console.WriteLine(header.PadLeft(35));
-            Console.WriteLine(hDivider + hDivider + hDivider);
+            string Line0 = header.PadLeft(35);
+            string Line1 = (hDivider + hDivider + hDivider);
+            string Line2 = "";
 
             for (int roll = 2; roll < 13; roll++)
             {
-                Console.Write((roll).ToString().PadLeft(padding) + "| ");
+                Line2 += ((roll).ToString().PadLeft(padding) + "| ");
             }
-            Console.WriteLine("\n" + otherDivider);
+            string Line3 = otherDivider;
 
-            //Write the roll results
             DiceTally();
-        }
 
-        private static int rollOneValue;
-        private static int rollTwoValue;
+            // Write the roll results
+            string[] text = {Line0, Line1, Line2, Line3, Line4};
+            DisplayRichTextBox.Lines = text;
+        }
 
         void DiceTally()
         {
@@ -129,6 +134,7 @@ namespace RollOfTheDice_ListBox
                 DisplayRichTextBox.Text = ((results[i]).ToString().PadLeft(padding) + "| ");
             }
         }
+
         static int DiceRollerOne()
         {
             // Rolls First 1d6
@@ -165,6 +171,7 @@ namespace RollOfTheDice_ListBox
             }
             return rollOneValue;
         }
+
         static int DiceRollerTwo()
         {
             // Rolls Second 1d6
@@ -207,11 +214,13 @@ namespace RollOfTheDice_ListBox
         {
             this.Close();
         }
+
         private void ClearButton_Click(object sender, EventArgs e)
         {
             // Clear display
             SetDefaults();
         }
+
         private void RollButton_Click(object sender, EventArgs e)
         {
             // Start again
