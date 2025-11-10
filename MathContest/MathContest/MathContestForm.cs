@@ -53,122 +53,75 @@ namespace MathContest
         }
 
         // Triggers independantly when text changes
-        private void NameText_Changed(object sender, EventArgs e)
-        {
-            // BUG: Name validates regardless of character, fix so that leading blank "spaces" are trimmed?
-            NameValidator();
-        }
-        private void AgeText_Changed(object sender, EventArgs e)
-        {
-            AgeValidator();
-        }
-        private void GradeText_Changed(object sender, EventArgs e)
-        {
-            GradeValidator();
-        }
 
-        // Independantly validate Input Fields
-        bool NameValidator()
+        bool ValidateInputFields()
         {
-            bool NameIsValid = false;
-            // Name should not be empty
-            if (StudentNameTextBox.Text == "")
+            bool allFieldsAreValid = true;
+            StudentNameTextBox.BackColor = Color.White;
+            StudentAgeTextBox.BackColor = Color.White;
+            StudentGradeTextBox.BackColor = Color.White;
+            int _grade;
+            int _age;
+
+           
+            if (StudentGradeTextBox.Text == "")
             {
-                NameIsValid = false;
+                allFieldsAreValid = false;
                 StudentNameTextBox.BackColor = Color.LightYellow;
-                StudentNameTextBox.Focus();
             }
             else
             {
-                NameIsValid = true;
-                StudentNameTextBox.BackColor = Color.White;
-            }
-            NameIsValidated = NameIsValid;
-                return NameIsValidated;
-        }
-        bool AgeValidator()
-        {
-            bool AgeIsValid = false;
-            int _age;
-
-            try
-            {
-                _age = int.Parse(StudentAgeTextBox.Text);
-                if (_age >= 7 && _age <= 11)
+                try
                 {
-                    AgeIsValid = true;
-                    StudentAgeTextBox.BackColor = Color.White;
+                    _grade = int.Parse(StudentGradeTextBox.Text);
+                    if (_grade <= 3 || _grade >= 5)
+                    {
+                        allFieldsAreValid = false;
+                        StudentAgeTextBox.BackColor = Color.LightYellow;
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    AgeIsValid = false;
-                    StudentAgeTextBox.BackColor = Color.LightYellow;
-                    StudentAgeTextBox.Clear();
-                    StudentAgeTextBox.Focus();
+                    allFieldsAreValid = false;
+                    StudentGradeTextBox.BackColor = Color.LightYellow;
                 }
             }
-            catch (Exception)
-            {
-                StudentAgeTextBox.BackColor = Color.LightYellow;
-                //StudentAgeTextBox.Clear();
-                StudentAgeTextBox.Focus();
-            }
 
-            // Age shoudl not be empty
+            // Student's age should be an integer number between 7-11 AND NOT empty
             if (StudentAgeTextBox.Text == "")
             {
-                AgeIsValid = false;
-                StudentNameTextBox.BackColor = Color.LightYellow;
-                StudentAgeTextBox.Focus();
+                allFieldsAreValid = false;
+                StudentAgeTextBox.BackColor = Color.LightYellow;
             }
-            AgeIsValidated = AgeIsValid;
-                return AgeIsValidated;
-        }
-        bool GradeValidator()
-        {
-            int _grade;
-            bool GradeIsValid = false;
-
-            try
+            else if (StudentAgeTextBox.Text != "")
             {
-                _grade = int.Parse(StudentGradeTextBox.Text);
-                if (_grade >= 1 || _grade <= 4)
+                try
                 {
-                    GradeIsValid = true;
-                    StudentGradeTextBox.BackColor = Color.White;
+                    _age = int.Parse(StudentAgeTextBox.Text);
+                    if (_age <= 7 || _age >= 11)
+                    {
+                        allFieldsAreValid = false;
+                        StudentAgeTextBox.BackColor = Color.LightYellow;
+                    }
+                }
+                catch (Exception)
+                {
+                    allFieldsAreValid = false;
+                    StudentAgeTextBox.BackColor = Color.LightYellow;
                 }
             }
-            catch (Exception)
-            {
-                GradeIsValid = false;
-                StudentGradeTextBox.BackColor = Color.LightYellow;
-                StudentGradeTextBox.Clear();
-                StudentGradeTextBox.Focus();
-            }
-            GradeIsValidated = GradeIsValid;
-                return GradeIsValidated;
-        }
-        bool VerifyFieldsAreValid()
-        {
-            bool allFieldsAreValid = false;
-            if (NameIsValidated && GradeIsValidated && AgeIsValidated == true)
-            {
-                allFieldsAreValid = true;
-            }
-            if (allFieldsAreValid == true)
-            {
-                StudentNameTextBox.BackColor = Color.White;
-                StudentAgeTextBox.BackColor = Color.White;
-                StudentAnswerTextBox.BackColor = Color.White;
-            }
 
-            // Enables submit button when Bool is TRUE
-            SubmitButton.Enabled = allFieldsAreValid;
+
 
             return allFieldsAreValid;
         }
         
         // Event Handlers --------------------------------------------------------------
+        private void Text_Changed(object sender, EventArgs e)
+        {
+            ValidateInputFields();
+        }
+
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             // Enters/saves user inputs

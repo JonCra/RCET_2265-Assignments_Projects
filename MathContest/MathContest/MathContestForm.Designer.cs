@@ -67,7 +67,7 @@
             StudentNameTextBox.Size = new Size(164, 31);
             StudentNameTextBox.TabIndex = 0;
             toolTip1.SetToolTip(StudentNameTextBox, "Enter student's name");
-            StudentNameTextBox.TextChanged += NameText_Changed;
+            StudentNameTextBox.TextChanged += Text_Changed;
             // 
             // StudentInformationGroupBox
             // 
@@ -101,7 +101,7 @@
             StudentGradeTextBox.TabIndex = 2;
             toolTip1.SetToolTip(StudentGradeTextBox, "Enter student's grade level (1-4)");
             // Evaluates user data when not focused... when user is done typing
-            StudentGradeTextBox.TextChanged += GradeText_Changed;
+            StudentGradeTextBox.TextChanged += Text_Changed;
             // 
             // StudentAgeLabel
             // 
@@ -119,7 +119,7 @@
             StudentAgeTextBox.Size = new Size(102, 31);
             StudentAgeTextBox.TabIndex = 1;
             toolTip1.SetToolTip(StudentAgeTextBox, "Enter Student's age (7-11)");
-            StudentAgeTextBox.TextChanged += AgeText_Changed;            
+            StudentAgeTextBox.TextChanged += Text_Changed;            
             // 
             // StudentNameTextLabel
             // 
