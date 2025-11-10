@@ -16,6 +16,7 @@ namespace MathContest
             //    VerifyFieldsAreValid();
             //}
         }
+
         // Program Logic ---------------------------------------------------------------
         void setDefaults()
         {
@@ -51,18 +52,17 @@ namespace MathContest
             ExitButton.Enabled = true;
         }
 
-        // Event Handlers
         // Triggers independantly when text changes
         private void NameText_Changed(object sender, EventArgs e)
         {
-            // BUG: Name validates regardless of character, fix so that leading blank "spaces" are trimmed
+            // BUG: Name validates regardless of character, fix so that leading blank "spaces" are trimmed?
             NameValidator();
         }
         private void AgeText_Changed(object sender, EventArgs e)
         {
             AgeValidator();
         }
-        private void GradeText_Changed(Object sender, EventArgs e)
+        private void GradeText_Changed(object sender, EventArgs e)
         {
             GradeValidator();
         }
@@ -110,7 +110,7 @@ namespace MathContest
             catch (Exception)
             {
                 StudentAgeTextBox.BackColor = Color.LightYellow;
-                StudentAgeTextBox.Clear();
+                //StudentAgeTextBox.Clear();
                 StudentAgeTextBox.Focus();
             }
 
@@ -181,6 +181,7 @@ namespace MathContest
         private void ClearButton_Click(object sender, EventArgs e)
         {
             // Clear all text fields
+            setDefaults();
             setDefaults();
         }
         private void SummaryButton_Click(object sender, EventArgs e)
