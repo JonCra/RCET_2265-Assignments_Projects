@@ -5,6 +5,19 @@ namespace MathContest
     public partial class MathContestForm : Form
     {
         private bool allFieldsAreValid;
+
+        // Error list
+        public string ErrorMessage = "";
+        private string GradeError0 = "Grade_Error0: Student grade level must not be blank";
+        private string GradeError1 = "Grade_Error1: Student grade level must be a number";
+        private string GradeError2 = "Grade_Error2: Student grade level must be a number between 3 and 5";
+
+        private string AgeError0 = "Age_Error0: Student age must not be blank";
+        private string AgeError1 = "Age_Error1: Student age must be a number.";
+        private string AgeError2 = "Age_Error2: Student age must be a between 7 and 11.";
+
+        private string NameError = "Name_Error: Name must not be blank.";
+
         public MathContestForm()
         {
             InitializeComponent();
@@ -39,6 +52,8 @@ namespace MathContest
             ClearButton.Enabled = true;
             SummaryButton.Enabled = false;
             ExitButton.Enabled = true;
+
+            ErrorMessage = "";
         }
 
         // Triggers independantly when text changes
@@ -51,11 +66,15 @@ namespace MathContest
             int _grade;
             int _age;
 
+            // Resets error message each itteration
+            ErrorMessage = "";
+
             // Student's Grade Level should be a number between 3-5 AND NOT empty
             if (string.IsNullOrEmpty(StudentGradeTextBox.Text))
             {
                 GradeIsValid = false;
                 StudentGradeTextBox.BackColor = Color.LightYellow;
+                ErrorMessage += GradeError0;
             }
             else
             {
@@ -71,12 +90,14 @@ namespace MathContest
                     {
                         GradeIsValid = false;
                         StudentGradeTextBox.BackColor = Color.LightYellow;
+                        ErrorMessage += GradeError2;
                     }
                 }
                 catch (Exception)
                 {
                     allFieldsAreValid = false;
                     StudentGradeTextBox.BackColor = Color.LightYellow;
+                    ErrorMessage += GradeError1;
                 }
             }
 
@@ -85,6 +106,7 @@ namespace MathContest
             {
                 AgeIsValid = false;
                 StudentAgeTextBox.BackColor = Color.LightYellow;
+                ErrorMessage += AgeError0;
             }
             else
             {
@@ -100,12 +122,14 @@ namespace MathContest
                     {
                         AgeIsValid = false;
                         StudentAgeTextBox.BackColor = Color.LightYellow;
+                        ErrorMessage += AgeError2;
                     }
                 }
                 catch (Exception)
                 {
                     AgeIsValid = false;
                     StudentAgeTextBox.BackColor = Color.LightYellow;
+                    ErrorMessage += AgeError1;
                 }
             }
 
@@ -114,6 +138,7 @@ namespace MathContest
             {
                 NameIsValid = false;
                 StudentNameTextBox.BackColor = Color.LightYellow;
+                ErrorMessage += NameError;
             }
             else
             {
@@ -124,6 +149,7 @@ namespace MathContest
             // Verifies all fields are valid before returning final bool value and enabling Submit button
             if (GradeIsValid == true && AgeIsValid == true && NameIsValid == true)
             {
+                ErrorMessage = "No errors detected";
                 allFieldsAreValid = SubmitButton.Enabled = MathProblemTypeGroupBox.Enabled = true;
             }
             else
@@ -167,6 +193,12 @@ namespace MathContest
         private void manualValidateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ValidateInputFields();
+        }
+
+        private void showErrorsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Allow user to view error list
+            //ErrorMessage.ToString() = MessageBox;
         }
     }
 }

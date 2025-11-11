@@ -57,6 +57,7 @@
             menuStrip1 = new MenuStrip();
             toolsToolStripMenuItem = new ToolStripMenuItem();
             manualValidateToolStripMenuItem = new ToolStripMenuItem();
+            showErrorsToolStripMenuItem = new ToolStripMenuItem();
             StudentInformationGroupBox.SuspendLayout();
             UserButtonGroupBox.SuspendLayout();
             CurrentMathProblemGroupBox.SuspendLayout();
@@ -337,10 +338,17 @@
             // 
             // manualValidateToolStripMenuItem
             // 
+            manualValidateToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { showErrorsToolStripMenuItem });
             manualValidateToolStripMenuItem.Name = "manualValidateToolStripMenuItem";
             manualValidateToolStripMenuItem.Size = new Size(270, 34);
             manualValidateToolStripMenuItem.Text = "Manual Validate";
             manualValidateToolStripMenuItem.Click += manualValidateToolStripMenuItem_Click;
+            // 
+            // showErrorsToolStripMenuItem
+            // 
+            showErrorsToolStripMenuItem.Name = "showErrorsToolStripMenuItem";
+            showErrorsToolStripMenuItem.Size = new Size(270, 34);
+            showErrorsToolStripMenuItem.Text = "Show Errors";
             // 
             // MathContestForm
             // 
@@ -399,5 +407,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem toolsToolStripMenuItem;
         private ToolStripMenuItem manualValidateToolStripMenuItem;
+        private ToolStripMenuItem showErrorsToolStripMenuItem;
     }
 }
