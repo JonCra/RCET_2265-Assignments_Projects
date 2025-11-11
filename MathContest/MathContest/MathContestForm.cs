@@ -209,6 +209,7 @@ namespace MathContest
 
         private void AnswerValidator()
         {
+            // POTENTIAL BUG: Only accepts whole number (integer) answers
             if (string.IsNullOrEmpty(StudentAnswerTextBox.Text))
             {
                 // Student answer is blank
