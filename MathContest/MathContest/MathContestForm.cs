@@ -57,9 +57,6 @@ namespace MathContest
         bool ValidateInputFields()
         {
             bool allFieldsAreValid = true;
-            StudentNameTextBox.BackColor = Color.White;
-            StudentAgeTextBox.BackColor = Color.White;
-            StudentGradeTextBox.BackColor = Color.White;
             int _grade;
             int _age;
 
@@ -67,7 +64,7 @@ namespace MathContest
             if (string.IsNullOrEmpty(StudentGradeTextBox.Text))
             {
                 allFieldsAreValid = false;
-                StudentNameTextBox.BackColor = Color.LightYellow;
+                StudentGradeTextBox.BackColor = Color.LightYellow;
             }
             else
             {
@@ -77,12 +74,12 @@ namespace MathContest
                     if (_grade >= 3 && _grade <= 5)
                     {
                         allFieldsAreValid = true;
-                        StudentAgeTextBox.BackColor = Color.White;
+                        StudentGradeTextBox.BackColor = Color.White;
                     }
                     else
                     {
                         allFieldsAreValid = false;
-                        StudentAgeTextBox.BackColor = Color.LightYellow;
+                        StudentGradeTextBox.BackColor = Color.LightYellow;
                     }
                 }
                 catch (Exception)
