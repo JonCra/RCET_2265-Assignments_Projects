@@ -6,18 +6,19 @@ namespace MathContest
     {
         private bool allFieldsAreValid;
 
-        // Error list
-        public string ErrorMessage = "";
-        private string GradeError0 = "Grade_Error0: Student grade level must not be blank";
-        private string GradeError1 = "Grade_Error1: Student grade level must be a number";
-        private string GradeError2 = "Grade_Error2: Student grade level must be a number between 3 and 5";
+        // Error list:
+            public string ErrorMessage = "";
 
-        private string AgeError0 = "Age_Error0: Student age must not be blank";
-        private string AgeError1 = "Age_Error1: Student age must be a number.";
-        private string AgeError2 = "Age_Error2: Student age must be a between 7 and 11.";
+            private string GradeError0 = "Grade_Error0: Student grade level must not be blank";
+            private string GradeError1 = "Grade_Error1: Student grade level must be a number";
+            private string GradeError2 = "Grade_Error2: Student grade level must be a number between 3 and 5";
 
-        private string NameError = "Name_Error: Name must not be blank.";
+            private string AgeError0 = "Age_Error0: Student age must not be blank";
+            private string AgeError1 = "Age_Error1: Student age must be a number.";
+            private string AgeError2 = "Age_Error2: Student age must be a between 7 and 11.";
 
+            private string NameError = "Name_Error: Name must not be blank.";
+        
         public MathContestForm()
         {
             InitializeComponent();
@@ -170,6 +171,7 @@ namespace MathContest
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             // Enters/saves user inputs
+            SummaryButton.Enabled = true;
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
