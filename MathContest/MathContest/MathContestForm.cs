@@ -18,6 +18,13 @@ namespace MathContest
             private string AgeError2 = "Age_Error2: Student age must be a between 7 and 11.";
 
             private string NameError = "Name_Error: Name must not be blank.";
+
+            private string AnswerError0 = "Answer_Error0: Answer cannot be blank";
+            private string AnswerError1 = "Answer_Error1: Answer must be a number";
+
+        private int FirstNumber;
+        private int SecondNumber;
+        public int CorrectAnswer;
         
         public MathContestForm()
         {
@@ -42,7 +49,7 @@ namespace MathContest
             SecondNumberTextBox.Text = "";
             StudentAnswerTextBox.Text = "";
 
-            MathProblemTypeGroupBox.Enabled = false;
+            StudentAnswerTextBox.Enabled = MathProblemTypeGroupBox.Enabled = false;            
 
             AddRadioButton.Checked = true;
             SubtractRadioButton.Checked = false;
@@ -150,8 +157,9 @@ namespace MathContest
             // Verifies all fields are valid before returning final bool value and enabling Submit button
             if (GradeIsValid == true && AgeIsValid == true && NameIsValid == true)
             {
+                allFieldsAreValid = SubmitButton.Enabled = MathProblemTypeGroupBox.Enabled = StudentAnswerTextBox.Enabled = true;
                 ErrorMessage = "No errors detected";
-                allFieldsAreValid = SubmitButton.Enabled = MathProblemTypeGroupBox.Enabled = true;
+                MathContestor();
             }
             else
             {
@@ -161,6 +169,79 @@ namespace MathContest
                 return allFieldsAreValid;
         }
 
+        private void MathContestor()
+        {
+            // Generate two integers
+            FirstNumberGenerator();
+            SecondNumberGenerator();
+
+            // Calculate correct answer
+            if (AddRadioButton.Checked)
+            {
+                CorrectAnswer = (FirstNumber + SecondNumber);
+            }
+            else if (SubtractRadioButton.Checked)
+            {
+                CorrectAnswer = (FirstNumber - SecondNumber);
+            }
+            else if (MultiplyRadioButton.Checked)
+            {
+                CorrectAnswer = (FirstNumber * SecondNumber);
+            }
+            else if (DivideRadioButton.Checked)
+            {
+                CorrectAnswer = (FirstNumber / SecondNumber);
+            }
+
+            // Record/judge user answer
+            AnswerValidator();
+        }
+
+        private void FirstNumberGenerator()
+        {
+            FirstNumber = 0;
+        }
+
+        private void SecondNumberGenerator()
+        {
+            SecondNumber = 0;
+        }
+
+        private void AnswerValidator()
+        {
+            if (string.IsNullOrEmpty(StudentAnswerTextBox.Text))
+            {
+                // Student answer is blank
+                StudentAnswerTextBox.BackColor = Color.LightYellow;
+                ErrorMessage += AnswerError0;
+                SubmitButton.Enabled = false;
+            }
+            else
+            {
+                // Student answer is NOT blank
+                try
+                {
+                    int.Parse(StudentAnswerTextBox.Text);
+                    {
+                        // Student answer meets all requirements and can submit answer
+                        StudentAnswerTextBox.BackColor = Color.White;
+                        SubmitButton.Enabled = true;
+                    }
+                }
+                catch (Exception)
+                {
+                    // Student answer is NOT a number
+                    StudentAnswerTextBox.BackColor = Color.LightYellow;
+                    SubmitButton.Enabled = false;
+                    ErrorMessage += AnswerError1;
+                }
+            }
+        }
+
+        private void ContestJudge()
+        {
+            // Record correct answers vs number of provided questions
+        }
 
         // Event Handlers --------------------------------------------------------------
         private void Text_Changed(object sender, EventArgs e)
@@ -168,9 +249,15 @@ namespace MathContest
             ValidateInputFields();
         }
 
+        private void Answer_Changed(object sender, EventArgs e)
+        {
+            AnswerValidator();
+        }
+
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             // Enters/saves user inputs
+            ContestJudge();
             SummaryButton.Enabled = true;
         }
 

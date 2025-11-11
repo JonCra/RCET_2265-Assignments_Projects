@@ -242,6 +242,7 @@
             StudentAnswerTextBox.Name = "StudentAnswerTextBox";
             StudentAnswerTextBox.Size = new Size(208, 31);
             StudentAnswerTextBox.TabIndex = 1;
+            StudentAnswerTextBox.TextChanged += Answer_Changed;
             // 
             // SecondNumberTextBox
             // 
