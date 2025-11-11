@@ -31,17 +31,17 @@
             components = new System.ComponentModel.Container();
             toolTip1 = new ToolTip(components);
             StudentNameTextBox = new TextBox();
-            StudentInformationGroupBox = new GroupBox();
-            StudentGradeTextLabel = new Label();
             StudentGradeTextBox = new TextBox();
-            StudentAgeLabel = new Label();
             StudentAgeTextBox = new TextBox();
-            StudentNameTextLabel = new Label();
-            UserButtonGroupBox = new GroupBox();
             ExitButton = new Button();
             SummaryButton = new Button();
             ClearButton = new Button();
             SubmitButton = new Button();
+            StudentInformationGroupBox = new GroupBox();
+            StudentGradeTextLabel = new Label();
+            StudentAgeLabel = new Label();
+            StudentNameTextLabel = new Label();
+            UserButtonGroupBox = new GroupBox();
             CurrentMathProblemGroupBox = new GroupBox();
             StudentAnswerLabel = new Label();
             SecondNumberLabel = new Label();
@@ -54,10 +54,14 @@
             MultiplyRadioButton = new RadioButton();
             SubtractRadioButton = new RadioButton();
             AddRadioButton = new RadioButton();
+            menuStrip1 = new MenuStrip();
+            toolsToolStripMenuItem = new ToolStripMenuItem();
+            manualValidateToolStripMenuItem = new ToolStripMenuItem();
             StudentInformationGroupBox.SuspendLayout();
             UserButtonGroupBox.SuspendLayout();
             CurrentMathProblemGroupBox.SuspendLayout();
             MathProblemTypeGroupBox.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // StudentNameTextBox
@@ -69,30 +73,6 @@
             toolTip1.SetToolTip(StudentNameTextBox, "Enter student's name");
             StudentNameTextBox.TextChanged += Text_Changed;
             // 
-            // StudentInformationGroupBox
-            // 
-            StudentInformationGroupBox.Controls.Add(StudentGradeTextLabel);
-            StudentInformationGroupBox.Controls.Add(StudentGradeTextBox);
-            StudentInformationGroupBox.Controls.Add(StudentAgeLabel);
-            StudentInformationGroupBox.Controls.Add(StudentAgeTextBox);
-            StudentInformationGroupBox.Controls.Add(StudentNameTextLabel);
-            StudentInformationGroupBox.Controls.Add(StudentNameTextBox);
-            StudentInformationGroupBox.Location = new Point(12, 12);
-            StudentInformationGroupBox.Name = "StudentInformationGroupBox";
-            StudentInformationGroupBox.Size = new Size(449, 124);
-            StudentInformationGroupBox.TabIndex = 0;
-            StudentInformationGroupBox.TabStop = false;
-            StudentInformationGroupBox.Text = "Student Information";
-            // 
-            // StudentGradeTextLabel
-            //
-            StudentGradeTextLabel.AutoSize = true;
-            StudentGradeTextLabel.Location = new Point(341, 55);
-            StudentGradeTextLabel.Name = "StudentGradeTextLabel";
-            StudentGradeTextLabel.Size = new Size(59, 25);
-            StudentGradeTextLabel.TabIndex = 5;
-            StudentGradeTextLabel.Text = "Grade";
-            // 
             // StudentGradeTextBox
             // 
             StudentGradeTextBox.Location = new Point(341, 83);
@@ -100,17 +80,7 @@
             StudentGradeTextBox.Size = new Size(102, 31);
             StudentGradeTextBox.TabIndex = 2;
             toolTip1.SetToolTip(StudentGradeTextBox, "Enter student's grade level (1-4)");
-            // Evaluates user data when not focused... when user is done typing
             StudentGradeTextBox.TextChanged += Text_Changed;
-            // 
-            // StudentAgeLabel
-            // 
-            StudentAgeLabel.AutoSize = true;
-            StudentAgeLabel.Location = new Point(203, 55);
-            StudentAgeLabel.Name = "StudentAgeLabel";
-            StudentAgeLabel.Size = new Size(44, 25);
-            StudentAgeLabel.TabIndex = 4;
-            StudentAgeLabel.Text = "Age";
             // 
             // StudentAgeTextBox
             // 
@@ -119,28 +89,7 @@
             StudentAgeTextBox.Size = new Size(102, 31);
             StudentAgeTextBox.TabIndex = 1;
             toolTip1.SetToolTip(StudentAgeTextBox, "Enter Student's age (7-11)");
-            StudentAgeTextBox.TextChanged += Text_Changed;            
-            // 
-            // StudentNameTextLabel
-            // 
-            StudentNameTextLabel.AutoSize = true;
-            StudentNameTextLabel.Location = new Point(6, 55);
-            StudentNameTextLabel.Name = "StudentNameTextLabel";
-            StudentNameTextLabel.Size = new Size(125, 25);
-            StudentNameTextLabel.TabIndex = 1;
-            StudentNameTextLabel.Text = "Student Name";
-            // 
-            // UserButtonGroupBox
-            // 
-            UserButtonGroupBox.Controls.Add(ExitButton);
-            UserButtonGroupBox.Controls.Add(SummaryButton);
-            UserButtonGroupBox.Controls.Add(ClearButton);
-            UserButtonGroupBox.Controls.Add(SubmitButton);
-            UserButtonGroupBox.Location = new Point(467, 12);
-            UserButtonGroupBox.Name = "UserButtonGroupBox";
-            UserButtonGroupBox.Size = new Size(321, 426);
-            UserButtonGroupBox.TabIndex = 1;
-            UserButtonGroupBox.TabStop = false;
+            StudentAgeTextBox.TextChanged += Text_Changed;
             // 
             // ExitButton
             // 
@@ -190,6 +139,60 @@
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
             // 
+            // StudentInformationGroupBox
+            // 
+            StudentInformationGroupBox.Controls.Add(StudentGradeTextLabel);
+            StudentInformationGroupBox.Controls.Add(StudentGradeTextBox);
+            StudentInformationGroupBox.Controls.Add(StudentAgeLabel);
+            StudentInformationGroupBox.Controls.Add(StudentAgeTextBox);
+            StudentInformationGroupBox.Controls.Add(StudentNameTextLabel);
+            StudentInformationGroupBox.Controls.Add(StudentNameTextBox);
+            StudentInformationGroupBox.Location = new Point(12, 75);
+            StudentInformationGroupBox.Name = "StudentInformationGroupBox";
+            StudentInformationGroupBox.Size = new Size(449, 124);
+            StudentInformationGroupBox.TabIndex = 0;
+            StudentInformationGroupBox.TabStop = false;
+            StudentInformationGroupBox.Text = "Student Information";
+            // 
+            // StudentGradeTextLabel
+            // 
+            StudentGradeTextLabel.AutoSize = true;
+            StudentGradeTextLabel.Location = new Point(341, 55);
+            StudentGradeTextLabel.Name = "StudentGradeTextLabel";
+            StudentGradeTextLabel.Size = new Size(59, 25);
+            StudentGradeTextLabel.TabIndex = 5;
+            StudentGradeTextLabel.Text = "Grade";
+            // 
+            // StudentAgeLabel
+            // 
+            StudentAgeLabel.AutoSize = true;
+            StudentAgeLabel.Location = new Point(203, 55);
+            StudentAgeLabel.Name = "StudentAgeLabel";
+            StudentAgeLabel.Size = new Size(44, 25);
+            StudentAgeLabel.TabIndex = 4;
+            StudentAgeLabel.Text = "Age";
+            // 
+            // StudentNameTextLabel
+            // 
+            StudentNameTextLabel.AutoSize = true;
+            StudentNameTextLabel.Location = new Point(6, 55);
+            StudentNameTextLabel.Name = "StudentNameTextLabel";
+            StudentNameTextLabel.Size = new Size(125, 25);
+            StudentNameTextLabel.TabIndex = 1;
+            StudentNameTextLabel.Text = "Student Name";
+            // 
+            // UserButtonGroupBox
+            // 
+            UserButtonGroupBox.Controls.Add(ExitButton);
+            UserButtonGroupBox.Controls.Add(SummaryButton);
+            UserButtonGroupBox.Controls.Add(ClearButton);
+            UserButtonGroupBox.Controls.Add(SubmitButton);
+            UserButtonGroupBox.Location = new Point(467, 75);
+            UserButtonGroupBox.Name = "UserButtonGroupBox";
+            UserButtonGroupBox.Size = new Size(321, 426);
+            UserButtonGroupBox.TabIndex = 1;
+            UserButtonGroupBox.TabStop = false;
+            // 
             // CurrentMathProblemGroupBox
             // 
             CurrentMathProblemGroupBox.Controls.Add(StudentAnswerLabel);
@@ -198,7 +201,7 @@
             CurrentMathProblemGroupBox.Controls.Add(StudentAnswerTextBox);
             CurrentMathProblemGroupBox.Controls.Add(SecondNumberTextBox);
             CurrentMathProblemGroupBox.Controls.Add(FirstNumberTextBox);
-            CurrentMathProblemGroupBox.Location = new Point(12, 142);
+            CurrentMathProblemGroupBox.Location = new Point(12, 205);
             CurrentMathProblemGroupBox.Name = "CurrentMathProblemGroupBox";
             CurrentMathProblemGroupBox.Size = new Size(220, 296);
             CurrentMathProblemGroupBox.TabIndex = 2;
@@ -264,7 +267,7 @@
             MathProblemTypeGroupBox.Controls.Add(MultiplyRadioButton);
             MathProblemTypeGroupBox.Controls.Add(SubtractRadioButton);
             MathProblemTypeGroupBox.Controls.Add(AddRadioButton);
-            MathProblemTypeGroupBox.Location = new Point(238, 142);
+            MathProblemTypeGroupBox.Location = new Point(238, 205);
             MathProblemTypeGroupBox.Name = "MathProblemTypeGroupBox";
             MathProblemTypeGroupBox.Size = new Size(223, 296);
             MathProblemTypeGroupBox.TabIndex = 3;
@@ -315,15 +318,41 @@
             AddRadioButton.Text = "Add";
             AddRadioButton.UseVisualStyleBackColor = true;
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { toolsToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 33);
+            menuStrip1.TabIndex = 4;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // toolsToolStripMenuItem
+            // 
+            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manualValidateToolStripMenuItem });
+            toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            toolsToolStripMenuItem.Size = new Size(69, 29);
+            toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // manualValidateToolStripMenuItem
+            // 
+            manualValidateToolStripMenuItem.Name = "manualValidateToolStripMenuItem";
+            manualValidateToolStripMenuItem.Size = new Size(270, 34);
+            manualValidateToolStripMenuItem.Text = "Manual Validate";
+            manualValidateToolStripMenuItem.Click += manualValidateToolStripMenuItem_Click;
+            // 
             // MathContestForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 513);
             Controls.Add(MathProblemTypeGroupBox);
             Controls.Add(CurrentMathProblemGroupBox);
             Controls.Add(UserButtonGroupBox);
             Controls.Add(StudentInformationGroupBox);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "MathContestForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Math Contest";
@@ -334,7 +363,10 @@
             CurrentMathProblemGroupBox.PerformLayout();
             MathProblemTypeGroupBox.ResumeLayout(false);
             MathProblemTypeGroupBox.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -364,5 +396,8 @@
         private Label StudentAnswerLabel;
         private Label SecondNumberLabel;
         private Label FirstNumberLabel;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem toolsToolStripMenuItem;
+        private ToolStripMenuItem manualValidateToolStripMenuItem;
     }
 }

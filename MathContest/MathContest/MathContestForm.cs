@@ -9,7 +9,7 @@ namespace MathContest
         private bool GradeIsValidated;
         public MathContestForm()
         {
-            InitializeComponent();            
+            InitializeComponent();
             setDefaults();
             //if (StudentNameTextBox.Text != "" && StudentAgeTextBox.Text != "" && StudentGradeTextBox.Text != "")
             //{
@@ -30,8 +30,8 @@ namespace MathContest
             StudentGradeTextBox.Text = "";
             StudentGradeTextBox.BackColor = Color.White;
 
-            FirstNumberTextBox.Text = "";          
-            SecondNumberTextBox.Text = "";            
+            FirstNumberTextBox.Text = "";
+            SecondNumberTextBox.Text = "";
             StudentAnswerTextBox.Text = "";
 
             AddRadioButton.Checked = true;
@@ -63,7 +63,7 @@ namespace MathContest
             int _grade;
             int _age;
 
-           
+            // Student's Grade Level should be a number between 3-5 AND NOT empty
             if (StudentGradeTextBox.Text == "")
             {
                 allFieldsAreValid = false;
@@ -74,10 +74,10 @@ namespace MathContest
                 try
                 {
                     _grade = int.Parse(StudentGradeTextBox.Text);
-                    if (_grade <= 3 || _grade >= 5)
+                    if (_grade >= 3 && _grade <= 5)
                     {
-                        allFieldsAreValid = false;
-                        StudentAgeTextBox.BackColor = Color.LightYellow;
+                        allFieldsAreValid = true;
+                        StudentAgeTextBox.BackColor = Color.White;
                     }
                 }
                 catch (Exception)
@@ -93,15 +93,15 @@ namespace MathContest
                 allFieldsAreValid = false;
                 StudentAgeTextBox.BackColor = Color.LightYellow;
             }
-            else if (StudentAgeTextBox.Text != "")
+            else
             {
                 try
                 {
                     _age = int.Parse(StudentAgeTextBox.Text);
-                    if (_age <= 7 || _age >= 11)
+                    if (_age >= 7 && _age <= 11)
                     {
-                        allFieldsAreValid = false;
-                        StudentAgeTextBox.BackColor = Color.LightYellow;
+                        allFieldsAreValid = true;
+                        StudentAgeTextBox.BackColor = Color.White;
                     }
                 }
                 catch (Exception)
@@ -111,17 +111,27 @@ namespace MathContest
                 }
             }
 
+            // Student's name should not be empty
+            if (string.IsNullOrEmpty(StudentNameTextBox.Text))
+            {
+                allFieldsAreValid = false;
+                StudentNameTextBox.BackColor = Color.LightYellow;
+            }
+            else
+            {
+                allFieldsAreValid = true;
+                StudentNameTextBox.BackColor = Color.White;
+            }
 
 
-            return allFieldsAreValid;
+                return allFieldsAreValid;
         }
-        
+
         // Event Handlers --------------------------------------------------------------
         private void Text_Changed(object sender, EventArgs e)
         {
             ValidateInputFields();
         }
-
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             // Enters/saves user inputs
@@ -140,6 +150,11 @@ namespace MathContest
         private void SummaryButton_Click(object sender, EventArgs e)
         {
             // Display summary
+        }
+
+        private void manualValidateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ValidateInputFields();
         }
     }
 }
