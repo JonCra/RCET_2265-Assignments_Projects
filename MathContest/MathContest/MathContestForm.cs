@@ -124,15 +124,11 @@ namespace MathContest
             // Verifies all fields are valid before returning final bool value and enabling Submit button
             if (GradeIsValid == true && AgeIsValid == true && NameIsValid == true)
             {
-                allFieldsAreValid = true;
-                SubmitButton.Enabled = true;
-                MathProblemTypeGroupBox.Enabled = true;
+                allFieldsAreValid = SubmitButton.Enabled = MathProblemTypeGroupBox.Enabled = true;
             }
             else
             {
-                allFieldsAreValid = false;
-                SubmitButton.Enabled = false;
-                MathProblemTypeGroupBox.Enabled = false;
+                allFieldsAreValid = SubmitButton.Enabled = MathProblemTypeGroupBox.Enabled = false;
             }
 
                 return allFieldsAreValid;
