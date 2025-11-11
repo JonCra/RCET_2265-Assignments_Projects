@@ -64,7 +64,7 @@ namespace MathContest
             int _age;
 
             // Student's Grade Level should be a number between 3-5 AND NOT empty
-            if (StudentGradeTextBox.Text == "")
+            if (string.IsNullOrEmpty(StudentGradeTextBox.Text))
             {
                 allFieldsAreValid = false;
                 StudentNameTextBox.BackColor = Color.LightYellow;
@@ -79,6 +79,11 @@ namespace MathContest
                         allFieldsAreValid = true;
                         StudentAgeTextBox.BackColor = Color.White;
                     }
+                    else
+                    {
+                        allFieldsAreValid = false;
+                        StudentAgeTextBox.BackColor = Color.LightYellow;
+                    }
                 }
                 catch (Exception)
                 {
@@ -88,7 +93,7 @@ namespace MathContest
             }
 
             // Student's age should be an integer number between 7-11 AND NOT empty
-            if (StudentAgeTextBox.Text == "")
+            if (string.IsNullOrEmpty(StudentAgeTextBox.Text))
             {
                 allFieldsAreValid = false;
                 StudentAgeTextBox.BackColor = Color.LightYellow;
@@ -102,6 +107,11 @@ namespace MathContest
                     {
                         allFieldsAreValid = true;
                         StudentAgeTextBox.BackColor = Color.White;
+                    }
+                    else
+                    {
+                        allFieldsAreValid = false;
+                        StudentAgeTextBox.BackColor = Color.LightYellow;
                     }
                 }
                 catch (Exception)
@@ -122,7 +132,6 @@ namespace MathContest
                 allFieldsAreValid = true;
                 StudentNameTextBox.BackColor = Color.White;
             }
-
 
                 return allFieldsAreValid;
         }
