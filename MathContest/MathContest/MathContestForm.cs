@@ -4,17 +4,11 @@ namespace MathContest
 {
     public partial class MathContestForm : Form
     {
-        private bool NameIsValidated;
-        private bool AgeIsValidated;
-        private bool GradeIsValidated;
+        private bool allFieldsAreValid;
         public MathContestForm()
         {
             InitializeComponent();
             setDefaults();
-            //if (StudentNameTextBox.Text != "" && StudentAgeTextBox.Text != "" && StudentGradeTextBox.Text != "")
-            //{
-            //    VerifyFieldsAreValid();
-            //}
         }
 
         // Program Logic ---------------------------------------------------------------
@@ -53,17 +47,19 @@ namespace MathContest
         }
 
         // Triggers independantly when text changes
-
         bool ValidateInputFields()
         {
-            bool allFieldsAreValid = true;
+            bool allFieldsAreValid = false;
+            bool GradeIsValid = false;
+            bool AgeIsValid = false;
+            bool NameIsValid = false;
             int _grade;
             int _age;
 
             // Student's Grade Level should be a number between 3-5 AND NOT empty
             if (string.IsNullOrEmpty(StudentGradeTextBox.Text))
             {
-                allFieldsAreValid = false;
+                GradeIsValid = false;
                 StudentGradeTextBox.BackColor = Color.LightYellow;
             }
             else
@@ -73,12 +69,12 @@ namespace MathContest
                     _grade = int.Parse(StudentGradeTextBox.Text);
                     if (_grade >= 3 && _grade <= 5)
                     {
-                        allFieldsAreValid = true;
+                        GradeIsValid = true;
                         StudentGradeTextBox.BackColor = Color.White;
                     }
                     else
                     {
-                        allFieldsAreValid = false;
+                        GradeIsValid = false;
                         StudentGradeTextBox.BackColor = Color.LightYellow;
                     }
                 }
@@ -92,7 +88,7 @@ namespace MathContest
             // Student's age should be an integer number between 7-11 AND NOT empty
             if (string.IsNullOrEmpty(StudentAgeTextBox.Text))
             {
-                allFieldsAreValid = false;
+                AgeIsValid = false;
                 StudentAgeTextBox.BackColor = Color.LightYellow;
             }
             else
@@ -102,18 +98,18 @@ namespace MathContest
                     _age = int.Parse(StudentAgeTextBox.Text);
                     if (_age >= 7 && _age <= 11)
                     {
-                        allFieldsAreValid = true;
+                        AgeIsValid = true;
                         StudentAgeTextBox.BackColor = Color.White;
                     }
                     else
                     {
-                        allFieldsAreValid = false;
+                        AgeIsValid = false;
                         StudentAgeTextBox.BackColor = Color.LightYellow;
                     }
                 }
                 catch (Exception)
                 {
-                    allFieldsAreValid = false;
+                    AgeIsValid = false;
                     StudentAgeTextBox.BackColor = Color.LightYellow;
                 }
             }
@@ -121,38 +117,55 @@ namespace MathContest
             // Student's name should not be empty
             if (string.IsNullOrEmpty(StudentNameTextBox.Text))
             {
-                allFieldsAreValid = false;
+                NameIsValid = false;
                 StudentNameTextBox.BackColor = Color.LightYellow;
             }
             else
             {
-                allFieldsAreValid = true;
+                NameIsValid = true;
                 StudentNameTextBox.BackColor = Color.White;
+            }
+
+            // Verifies all fields are valid before returning final bool value and enabling Submit button
+            if (GradeIsValid == true && AgeIsValid == true && NameIsValid == true)
+            {
+                allFieldsAreValid = true;
+                SubmitButton.Enabled = true;
+            }
+            else
+            {
+                allFieldsAreValid = false;
+                SubmitButton.Enabled = false;
             }
 
                 return allFieldsAreValid;
         }
+
 
         // Event Handlers --------------------------------------------------------------
         private void Text_Changed(object sender, EventArgs e)
         {
             ValidateInputFields();
         }
+
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             // Enters/saves user inputs
         }
+
         private void ExitButton_Click(object sender, EventArgs e)
         {
             // Close program/solution
             this.Close();
         }
+
         private void ClearButton_Click(object sender, EventArgs e)
         {
             // Clear all text fields
             setDefaults();
             setDefaults();
         }
+
         private void SummaryButton_Click(object sender, EventArgs e)
         {
             // Display summary
