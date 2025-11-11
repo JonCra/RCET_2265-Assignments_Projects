@@ -5,6 +5,9 @@ namespace MathContest
     public partial class MathContestForm : Form
     {
         private bool allFieldsAreValid;
+        private int FirstNumber;
+        private int SecondNumber;
+        public int CorrectAnswer;
 
         // Error list:
             public string ErrorMessage = "";
@@ -21,11 +24,7 @@ namespace MathContest
 
             private string AnswerError0 = "Answer_Error0: Answer cannot be blank";
             private string AnswerError1 = "Answer_Error1: Answer must be a number";
-
-        private int FirstNumber;
-        private int SecondNumber;
-        public int CorrectAnswer;
-        
+                
         public MathContestForm()
         {
             InitializeComponent();
@@ -277,7 +276,7 @@ namespace MathContest
 
         private void SummaryButton_Click(object sender, EventArgs e)
         {
-            // Display summary
+            // Display summary - MessageBox or "pop-up"?
         }
 
         private void manualValidateToolStripMenuItem_Click(object sender, EventArgs e)
