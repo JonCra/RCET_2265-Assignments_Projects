@@ -28,17 +28,12 @@ namespace MathContest
             SecondNumberTextBox.Text = "";
             StudentAnswerTextBox.Text = "";
 
+            MathProblemTypeGroupBox.Enabled = false;
+
             AddRadioButton.Checked = true;
-            AddRadioButton.Enabled = false;
-
             SubtractRadioButton.Checked = false;
-            SubtractRadioButton.Enabled = false;
-
             MultiplyRadioButton.Checked = false;
-            MultiplyRadioButton.Enabled = false;
-
             DivideRadioButton.Checked = false;
-            DivideRadioButton.Enabled = false;
 
             SubmitButton.Enabled = false;
             ClearButton.Enabled = true;
@@ -131,11 +126,13 @@ namespace MathContest
             {
                 allFieldsAreValid = true;
                 SubmitButton.Enabled = true;
+                MathProblemTypeGroupBox.Enabled = true;
             }
             else
             {
                 allFieldsAreValid = false;
                 SubmitButton.Enabled = false;
+                MathProblemTypeGroupBox.Enabled = false;
             }
 
                 return allFieldsAreValid;

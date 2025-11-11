@@ -147,7 +147,7 @@
             StudentInformationGroupBox.Controls.Add(StudentAgeTextBox);
             StudentInformationGroupBox.Controls.Add(StudentNameTextLabel);
             StudentInformationGroupBox.Controls.Add(StudentNameTextBox);
-            StudentInformationGroupBox.Location = new Point(12, 75);
+            StudentInformationGroupBox.Location = new Point(12, 36);
             StudentInformationGroupBox.Name = "StudentInformationGroupBox";
             StudentInformationGroupBox.Size = new Size(449, 124);
             StudentInformationGroupBox.TabIndex = 0;
@@ -187,7 +187,7 @@
             UserButtonGroupBox.Controls.Add(SummaryButton);
             UserButtonGroupBox.Controls.Add(ClearButton);
             UserButtonGroupBox.Controls.Add(SubmitButton);
-            UserButtonGroupBox.Location = new Point(467, 75);
+            UserButtonGroupBox.Location = new Point(467, 36);
             UserButtonGroupBox.Name = "UserButtonGroupBox";
             UserButtonGroupBox.Size = new Size(321, 426);
             UserButtonGroupBox.TabIndex = 1;
@@ -201,7 +201,7 @@
             CurrentMathProblemGroupBox.Controls.Add(StudentAnswerTextBox);
             CurrentMathProblemGroupBox.Controls.Add(SecondNumberTextBox);
             CurrentMathProblemGroupBox.Controls.Add(FirstNumberTextBox);
-            CurrentMathProblemGroupBox.Location = new Point(12, 205);
+            CurrentMathProblemGroupBox.Location = new Point(12, 166);
             CurrentMathProblemGroupBox.Name = "CurrentMathProblemGroupBox";
             CurrentMathProblemGroupBox.Size = new Size(220, 296);
             CurrentMathProblemGroupBox.TabIndex = 2;
@@ -267,7 +267,7 @@
             MathProblemTypeGroupBox.Controls.Add(MultiplyRadioButton);
             MathProblemTypeGroupBox.Controls.Add(SubtractRadioButton);
             MathProblemTypeGroupBox.Controls.Add(AddRadioButton);
-            MathProblemTypeGroupBox.Location = new Point(238, 205);
+            MathProblemTypeGroupBox.Location = new Point(238, 166);
             MathProblemTypeGroupBox.Name = "MathProblemTypeGroupBox";
             MathProblemTypeGroupBox.Size = new Size(223, 296);
             MathProblemTypeGroupBox.TabIndex = 3;
@@ -346,7 +346,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 513);
+            ClientSize = new Size(800, 469);
             Controls.Add(MathProblemTypeGroupBox);
             Controls.Add(CurrentMathProblemGroupBox);
             Controls.Add(UserButtonGroupBox);
