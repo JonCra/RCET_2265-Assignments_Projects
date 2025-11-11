@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices.Marshalling;
+using System.Security.Cryptography;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MathContest
@@ -8,6 +10,7 @@ namespace MathContest
         private int FirstNumber;
         private int SecondNumber;
         public int CorrectAnswer;
+        private int DrawValue;
 
         // Error list:
             public string ErrorMessage = "";
@@ -170,9 +173,7 @@ namespace MathContest
 
         private void MathContestor()
         {
-            // Generate two integers
-            FirstNumberGenerator();
-            SecondNumberGenerator();
+            QuestionDisplay();
 
             // Calculate correct answer
             if (AddRadioButton.Checked)
@@ -196,14 +197,56 @@ namespace MathContest
             AnswerValidator();
         }
 
-        private void FirstNumberGenerator()
+        private void QuestionDisplay()
         {
-            FirstNumber = 0;
+            // Generate random number to draw from pool
+            RandomNumberGenerator();
+
+            if (SubtractRadioButton.Checked)
+            {
+                SubtNumberGen();
+            }
+            else if (MultiplyRadioButton.Checked)
+            {
+                MultiNumberGen();
+            }
+            else if (DivideRadioButton.Checked)
+            {
+                DiviNumberGen();
+            }
+            else
+            {
+                AddNumberGen();
+            }
+        }
+        
+        int RandomNumberGenerator()
+        {
+            int DrawValue = 0;
+
+            // Produces a random number to draw from a pool of questions
+
+            return DrawValue;
         }
 
-        private void SecondNumberGenerator()
+        private void AddNumberGen()
         {
-            SecondNumber = 0;
+            // 
+        }
+
+        private void SubtNumberGen()
+        {
+            
+        }
+
+        private void MultiNumberGen()
+        {
+
+        }
+
+        private void DiviNumberGen()
+        {
+
         }
 
         private void AnswerValidator()
@@ -244,6 +287,11 @@ namespace MathContest
         }
 
         // Event Handlers --------------------------------------------------------------
+        private void MathFunctionChanged(object sender, EventArgs e)
+        {
+            QuestionDisplay();
+        }
+
         private void Text_Changed(object sender, EventArgs e)
         {
             ValidateInputFields();
