@@ -2,6 +2,8 @@
 {
     partial class MathContestForm
     {
+        private const bool V = false;
+
         /// <summary>
         ///  Required designer variable.
         /// </summary>
@@ -242,6 +244,7 @@
             StudentAnswerTextBox.Name = "StudentAnswerTextBox";
             StudentAnswerTextBox.Size = new Size(208, 31);
             StudentAnswerTextBox.TabIndex = 1;
+            toolTip1.SetToolTip(StudentAnswerTextBox, "Answer must be a whole number (integer)");
             StudentAnswerTextBox.TextChanged += Answer_Changed;
             // 
             // SecondNumberTextBox
@@ -345,14 +348,14 @@
             // 
             manualValidateToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { showErrorsToolStripMenuItem });
             manualValidateToolStripMenuItem.Name = "manualValidateToolStripMenuItem";
-            manualValidateToolStripMenuItem.Size = new Size(270, 34);
+            manualValidateToolStripMenuItem.Size = new Size(239, 34);
             manualValidateToolStripMenuItem.Text = "Manual Validate";
             manualValidateToolStripMenuItem.Click += manualValidateToolStripMenuItem_Click;
             // 
             // showErrorsToolStripMenuItem
             // 
             showErrorsToolStripMenuItem.Name = "showErrorsToolStripMenuItem";
-            showErrorsToolStripMenuItem.Size = new Size(270, 34);
+            showErrorsToolStripMenuItem.Size = new Size(209, 34);
             showErrorsToolStripMenuItem.Text = "Show Errors";
             // 
             // MathContestForm

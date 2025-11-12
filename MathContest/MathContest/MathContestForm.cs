@@ -98,7 +98,7 @@ namespace MathContest
                 try
                 {
                     _grade = int.Parse(StudentGradeTextBox.Text);
-                    if (_grade >= 3 && _grade <= 5)
+                    if (_grade >= 3 && _grade <= 4)
                     {
                         GradeIsValid = true;
                         StudentGradeTextBox.BackColor = Color.White;
@@ -257,8 +257,8 @@ namespace MathContest
                         }
                     case 3:
                         {
-                            FirstNumber = 0;
-                            SecondNumber = 0;
+                            FirstNumber = 2;
+                            SecondNumber = 3;
                             break;
                         }
                     case 4:
@@ -362,6 +362,10 @@ namespace MathContest
         {
             // Enters/saves user inputs
             ContestJudge();
+
+            // Draws a new question
+            QuestionDisplay();
+
             SummaryButton.Enabled = true;
         }
 
