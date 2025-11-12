@@ -28,28 +28,28 @@ namespace MathContest
     public partial class MathContestForm : Form
     {
         private bool allFieldsAreValid;
-        private int FirstNumber;
-        private int SecondNumber;
+        private int FirstNumber = 0;
+        private int SecondNumber = 0;
         private int CorrectAnswer;
         private int CorrectTally = 0;
         private int AttemptTally = 0;
 
         // Error list:
-            public string ErrorMessage = "";
+        public string ErrorMessage = "";
 
-            private string GradeError0 = "Grade_Error0: Student grade level must not be blank";
-            private string GradeError1 = "Grade_Error1: Student grade level must be a number";
-            private string GradeError2 = "Grade_Error2: Student grade level must be a number between 3 and 5";
+        private string GradeError0 = "Grade_Error0: Student grade level must not be blank\n";
+        private string GradeError1 = "Grade_Error1: Student grade level must be a number\n";
+        private string GradeError2 = "Grade_Error2: Student grade level must be a number between 3 and 5\n";
 
-            private string AgeError0 = "Age_Error0: Student age must not be blank";
-            private string AgeError1 = "Age_Error1: Student age must be a number.";
-            private string AgeError2 = "Age_Error2: Student age must be a between 7 and 11.";
+        private string AgeError0 = "Age_Error0: Student age must not be blank\n";
+        private string AgeError1 = "Age_Error1: Student age must be a number.\n";
+        private string AgeError2 = "Age_Error2: Student age must be a between 7 and 11.\n";
 
-            private string NameError = "Name_Error: Name must not be blank.";
+        private string NameError = "Name_Error: Name must not be blank.\n";
 
-            private string AnswerError0 = "Answer_Error0: Answer cannot be blank";
-            private string AnswerError1 = "Answer_Error1: Answer must be a number";
-                
+        private string AnswerError0 = "Answer_Error0: Answer cannot be blank\n";
+        private string AnswerError1 = "Answer_Error1: Answer must be a number\n";
+
         public MathContestForm()
         {
             InitializeComponent();
@@ -72,7 +72,7 @@ namespace MathContest
             SecondNumberTextBox.Text = "";
             StudentAnswerTextBox.Text = "";
 
-            StudentAnswerTextBox.Enabled = MathProblemTypeGroupBox.Enabled = false;            
+            StudentAnswerTextBox.Enabled = MathProblemTypeGroupBox.Enabled = false;
 
             AddRadioButton.Checked = true;
             SubtractRadioButton.Checked = false;
@@ -165,12 +165,18 @@ namespace MathContest
             }
 
             // Student's name should not be empty
+            // POTENTIAL BUG: Name is validated if there is blanks or spaces
             if (string.IsNullOrEmpty(StudentNameTextBox.Text))
             {
                 NameIsValid = false;
                 StudentNameTextBox.BackColor = Color.LightYellow;
                 ErrorMessage += NameError;
             }
+            // Attempt to register a FALSE if there is any "White Spaces" in name
+            //else if (char.IsWhiteSpace(StudentNameTextBox))
+            //{
+
+            //}
             else
             {
                 NameIsValid = true;
@@ -189,7 +195,7 @@ namespace MathContest
                 allFieldsAreValid = SubmitButton.Enabled = StudentAnswerTextBox.Enabled = MathProblemTypeGroupBox.Enabled = false;
             }
 
-                return allFieldsAreValid;
+            return allFieldsAreValid;
         }
 
         private void MathContestor()
@@ -240,7 +246,7 @@ namespace MathContest
                 AddNumberGen();
             }
         }
-        
+
         private void RandomNumberGenerator()
         {
             int DrawValue = 0;
@@ -321,7 +327,6 @@ namespace MathContest
 
         private void AnswerValidator()
         {
-            // POTENTIAL BUG: Only accepts whole number (integer) answers
             if (string.IsNullOrEmpty(StudentAnswerTextBox.Text))
             {
                 // Student answer is blank
@@ -420,11 +425,17 @@ namespace MathContest
         {
             ValidateInputFields();
         }
-
+                
         private void showErrorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Allow user to view error list
-            //ErrorMessage.ToString() = MessageBox;
+            if (string.IsNullOrEmpty(ErrorMessage))
+            {
+                MessageBox.Show("No errors detected.", "Error List");
+            }
+            else
+            {
+                MessageBox.Show(ErrorMessage, "Error List");
+            }
         }
     }
 }

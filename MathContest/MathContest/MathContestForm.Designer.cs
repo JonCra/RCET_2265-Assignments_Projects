@@ -40,6 +40,12 @@
             ClearButton = new Button();
             SubmitButton = new Button();
             StudentAnswerTextBox = new TextBox();
+            SecondNumberTextBox = new TextBox();
+            FirstNumberTextBox = new TextBox();
+            DivideRadioButton = new RadioButton();
+            MultiplyRadioButton = new RadioButton();
+            SubtractRadioButton = new RadioButton();
+            AddRadioButton = new RadioButton();
             StudentInformationGroupBox = new GroupBox();
             StudentGradeTextLabel = new Label();
             StudentAgeLabel = new Label();
@@ -49,17 +55,11 @@
             StudentAnswerLabel = new Label();
             SecondNumberLabel = new Label();
             FirstNumberLabel = new Label();
-            SecondNumberTextBox = new TextBox();
-            FirstNumberTextBox = new TextBox();
             MathProblemTypeGroupBox = new GroupBox();
-            DivideRadioButton = new RadioButton();
-            MultiplyRadioButton = new RadioButton();
-            SubtractRadioButton = new RadioButton();
-            AddRadioButton = new RadioButton();
             menuStrip1 = new MenuStrip();
             toolsToolStripMenuItem = new ToolStripMenuItem();
             manualValidateToolStripMenuItem = new ToolStripMenuItem();
-            showErrorsToolStripMenuItem = new ToolStripMenuItem();
+            showErrorsToolStripMenuItem1 = new ToolStripMenuItem();
             StudentInformationGroupBox.SuspendLayout();
             UserButtonGroupBox.SuspendLayout();
             CurrentMathProblemGroupBox.SuspendLayout();
@@ -150,6 +150,79 @@
             StudentAnswerTextBox.TabIndex = 1;
             toolTip1.SetToolTip(StudentAnswerTextBox, "Answer must be a whole number (integer)");
             StudentAnswerTextBox.TextChanged += Answer_Changed;
+            // 
+            // SecondNumberTextBox
+            // 
+            SecondNumberTextBox.Location = new Point(6, 158);
+            SecondNumberTextBox.Name = "SecondNumberTextBox";
+            SecondNumberTextBox.ReadOnly = true;
+            SecondNumberTextBox.Size = new Size(208, 31);
+            SecondNumberTextBox.TabIndex = 0;
+            SecondNumberTextBox.TabStop = false;
+            toolTip1.SetToolTip(SecondNumberTextBox, "Second number");
+            // 
+            // FirstNumberTextBox
+            // 
+            FirstNumberTextBox.AccessibleRole = AccessibleRole.None;
+            FirstNumberTextBox.Location = new Point(6, 68);
+            FirstNumberTextBox.Name = "FirstNumberTextBox";
+            FirstNumberTextBox.ReadOnly = true;
+            FirstNumberTextBox.Size = new Size(208, 31);
+            FirstNumberTextBox.TabIndex = 0;
+            FirstNumberTextBox.TabStop = false;
+            toolTip1.SetToolTip(FirstNumberTextBox, "First number");
+            // 
+            // DivideRadioButton
+            // 
+            DivideRadioButton.AutoSize = true;
+            DivideRadioButton.Location = new Point(6, 173);
+            DivideRadioButton.Name = "DivideRadioButton";
+            DivideRadioButton.Size = new Size(87, 29);
+            DivideRadioButton.TabIndex = 3;
+            DivideRadioButton.TabStop = true;
+            DivideRadioButton.Text = "Divide";
+            toolTip1.SetToolTip(DivideRadioButton, "First number (\\div\\) Second number");
+            DivideRadioButton.UseVisualStyleBackColor = true;
+            DivideRadioButton.CheckedChanged += MathFunctionChanged;
+            // 
+            // MultiplyRadioButton
+            // 
+            MultiplyRadioButton.AutoSize = true;
+            MultiplyRadioButton.Location = new Point(6, 138);
+            MultiplyRadioButton.Name = "MultiplyRadioButton";
+            MultiplyRadioButton.Size = new Size(101, 29);
+            MultiplyRadioButton.TabIndex = 2;
+            MultiplyRadioButton.TabStop = true;
+            MultiplyRadioButton.Text = "Multiply";
+            toolTip1.SetToolTip(MultiplyRadioButton, "First number * Second Number");
+            MultiplyRadioButton.UseVisualStyleBackColor = true;
+            MultiplyRadioButton.CheckedChanged += MathFunctionChanged;
+            // 
+            // SubtractRadioButton
+            // 
+            SubtractRadioButton.AutoSize = true;
+            SubtractRadioButton.Location = new Point(6, 103);
+            SubtractRadioButton.Name = "SubtractRadioButton";
+            SubtractRadioButton.Size = new Size(103, 29);
+            SubtractRadioButton.TabIndex = 1;
+            SubtractRadioButton.TabStop = true;
+            SubtractRadioButton.Text = "Subtract";
+            toolTip1.SetToolTip(SubtractRadioButton, "First number - Second Number");
+            SubtractRadioButton.UseVisualStyleBackColor = true;
+            SubtractRadioButton.CheckedChanged += MathFunctionChanged;
+            // 
+            // AddRadioButton
+            // 
+            AddRadioButton.AutoSize = true;
+            AddRadioButton.Location = new Point(6, 68);
+            AddRadioButton.Name = "AddRadioButton";
+            AddRadioButton.Size = new Size(71, 29);
+            AddRadioButton.TabIndex = 0;
+            AddRadioButton.TabStop = true;
+            AddRadioButton.Text = "Add";
+            toolTip1.SetToolTip(AddRadioButton, "First number + Second number");
+            AddRadioButton.UseVisualStyleBackColor = true;
+            AddRadioButton.CheckedChanged += MathFunctionChanged;
             // 
             // StudentInformationGroupBox
             // 
@@ -247,27 +320,6 @@
             FirstNumberLabel.TabIndex = 3;
             FirstNumberLabel.Text = "First Number";
             // 
-            // SecondNumberTextBox
-            // 
-            SecondNumberTextBox.Location = new Point(6, 158);
-            SecondNumberTextBox.Name = "SecondNumberTextBox";
-            SecondNumberTextBox.ReadOnly = true;
-            SecondNumberTextBox.Size = new Size(208, 31);
-            SecondNumberTextBox.TabIndex = 0;
-            SecondNumberTextBox.TabStop = false;
-            toolTip1.SetToolTip(SecondNumberTextBox, "Second number");
-            // 
-            // FirstNumberTextBox
-            // 
-            FirstNumberTextBox.AccessibleRole = AccessibleRole.None;
-            FirstNumberTextBox.Location = new Point(6, 68);
-            FirstNumberTextBox.Name = "FirstNumberTextBox";
-            FirstNumberTextBox.ReadOnly = true;
-            FirstNumberTextBox.Size = new Size(208, 31);
-            FirstNumberTextBox.TabIndex = 0;
-            FirstNumberTextBox.TabStop = false;
-            toolTip1.SetToolTip(FirstNumberTextBox, "First number");
-            // 
             // MathProblemTypeGroupBox
             // 
             MathProblemTypeGroupBox.Controls.Add(DivideRadioButton);
@@ -281,58 +333,6 @@
             MathProblemTypeGroupBox.TabStop = false;
             MathProblemTypeGroupBox.Text = "Math Problem Type";
             // 
-            // DivideRadioButton
-            // 
-            DivideRadioButton.AutoSize = true;
-            DivideRadioButton.Location = new Point(6, 173);
-            DivideRadioButton.Name = "DivideRadioButton";
-            DivideRadioButton.Size = new Size(87, 29);
-            DivideRadioButton.TabIndex = 3;
-            DivideRadioButton.TabStop = true;
-            DivideRadioButton.Text = "Divide";
-            toolTip1.SetToolTip(DivideRadioButton, "First number (\\div\\) Second number");
-            DivideRadioButton.UseVisualStyleBackColor = true;
-            DivideRadioButton.CheckedChanged += MathFunctionChanged;
-            // 
-            // MultiplyRadioButton
-            // 
-            MultiplyRadioButton.AutoSize = true;
-            MultiplyRadioButton.Location = new Point(6, 138);
-            MultiplyRadioButton.Name = "MultiplyRadioButton";
-            MultiplyRadioButton.Size = new Size(101, 29);
-            MultiplyRadioButton.TabIndex = 2;
-            MultiplyRadioButton.TabStop = true;
-            MultiplyRadioButton.Text = "Multiply";
-            toolTip1.SetToolTip(MultiplyRadioButton, "First number * Second Number");
-            MultiplyRadioButton.UseVisualStyleBackColor = true;
-            MultiplyRadioButton.CheckedChanged += MathFunctionChanged;
-            // 
-            // SubtractRadioButton
-            // 
-            SubtractRadioButton.AutoSize = true;
-            SubtractRadioButton.Location = new Point(6, 103);
-            SubtractRadioButton.Name = "SubtractRadioButton";
-            SubtractRadioButton.Size = new Size(103, 29);
-            SubtractRadioButton.TabIndex = 1;
-            SubtractRadioButton.TabStop = true;
-            SubtractRadioButton.Text = "Subtract";
-            toolTip1.SetToolTip(SubtractRadioButton, "First number - Second Number");
-            SubtractRadioButton.UseVisualStyleBackColor = true;
-            SubtractRadioButton.CheckedChanged += MathFunctionChanged;
-            // 
-            // AddRadioButton
-            // 
-            AddRadioButton.AutoSize = true;
-            AddRadioButton.Location = new Point(6, 68);
-            AddRadioButton.Name = "AddRadioButton";
-            AddRadioButton.Size = new Size(71, 29);
-            AddRadioButton.TabIndex = 0;
-            AddRadioButton.TabStop = true;
-            AddRadioButton.Text = "Add";
-            toolTip1.SetToolTip(AddRadioButton, "First number + Second number");
-            AddRadioButton.UseVisualStyleBackColor = true;
-            AddRadioButton.CheckedChanged += MathFunctionChanged;
-            // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(24, 24);
@@ -345,24 +345,24 @@
             // 
             // toolsToolStripMenuItem
             // 
-            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manualValidateToolStripMenuItem });
+            toolsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { manualValidateToolStripMenuItem, showErrorsToolStripMenuItem1 });
             toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             toolsToolStripMenuItem.Size = new Size(69, 29);
             toolsToolStripMenuItem.Text = "Tools";
             // 
             // manualValidateToolStripMenuItem
             // 
-            manualValidateToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { showErrorsToolStripMenuItem });
             manualValidateToolStripMenuItem.Name = "manualValidateToolStripMenuItem";
-            manualValidateToolStripMenuItem.Size = new Size(239, 34);
+            manualValidateToolStripMenuItem.Size = new Size(270, 34);
             manualValidateToolStripMenuItem.Text = "Manual Validate";
             manualValidateToolStripMenuItem.Click += manualValidateToolStripMenuItem_Click;
             // 
-            // showErrorsToolStripMenuItem
+            // showErrorsToolStripMenuItem1
             // 
-            showErrorsToolStripMenuItem.Name = "showErrorsToolStripMenuItem";
-            showErrorsToolStripMenuItem.Size = new Size(209, 34);
-            showErrorsToolStripMenuItem.Text = "Show Errors";
+            showErrorsToolStripMenuItem1.Name = "showErrorsToolStripMenuItem1";
+            showErrorsToolStripMenuItem1.Size = new Size(270, 34);
+            showErrorsToolStripMenuItem1.Text = "Show Errors";
+            showErrorsToolStripMenuItem1.Click += showErrorsToolStripMenuItem1_Click;
             // 
             // MathContestForm
             // 
@@ -421,6 +421,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem toolsToolStripMenuItem;
         private ToolStripMenuItem manualValidateToolStripMenuItem;
-        private ToolStripMenuItem showErrorsToolStripMenuItem;
+        private ToolStripMenuItem showErrorsToolStripMenuItem1;
     }
 }
