@@ -18,7 +18,7 @@ namespace MathContest
         private int SecondNumber;
         private int CorrectAnswer;
         private int CorrectTally = 0;
-        private int AttemptTally = 1;
+        private int AttemptTally = 0;
 
         // Error list:
             public string ErrorMessage = "";
@@ -343,11 +343,6 @@ namespace MathContest
             if (StudentAnswerTextBox.Text == CorrectAnswer.ToString())
             {
                 CorrectTally++;
-                AttemptTally++;
-            }
-            else
-            {
-                AttemptTally++;
             }
         }
 
@@ -378,6 +373,7 @@ namespace MathContest
             // Draws a new question
             QuestionDisplay();
 
+            AttemptTally++;
             SummaryButton.Enabled = true;
         }
 
@@ -397,6 +393,7 @@ namespace MathContest
         private void SummaryButton_Click(object sender, EventArgs e)
         {
             // Display summary - MessageBox or "pop-up"?
+            MessageBox.Show($"You got {CorrectTally} out of {AttemptTally} answers correct!");
         }
 
         private void manualValidateToolStripMenuItem_Click(object sender, EventArgs e)
