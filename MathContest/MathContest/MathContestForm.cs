@@ -1,4 +1,4 @@
-/*
+/* 
  * Jonas Cram
  * RCET 2265
  * Robotics and Comm. Systems Engineering Techn.
@@ -227,7 +227,7 @@ namespace MathContest
             }
         }
         
-        int RandomNumberGenerator()
+        private void RandomNumberGenerator()
         {
             int DrawValue = 0;
 
@@ -239,32 +239,70 @@ namespace MathContest
                 {
                     case 0:
                         {
-
+                            FirstNumber = 9;
+                            SecondNumber = 9;
+                            break;
+                        }
+                    case 1:
+                        {
+                            FirstNumber = 2;
+                            SecondNumber = 5;
+                            break;
+                        }
+                    case 2:
+                        {
+                            FirstNumber = 8;
+                            SecondNumber = 5;
+                            break;
+                        }
+                    case 3:
+                        {
+                            FirstNumber = 0;
+                            SecondNumber = 0;
+                            break;
+                        }
+                    case 4:
+                        {
+                            FirstNumber = 2;
+                            SecondNumber = 7;
+                            break;
+                        }
+                    case 5:
+                        {
+                            FirstNumber = 4;
+                            SecondNumber = 3;
+                            break;
                         }
                 }
             }
-
-                return DrawValue;
         }
 
         private void AddNumberGen()
         {
-            // 
+            FirstNumberTextBox.Text = FirstNumber.ToString();
+            SecondNumberTextBox.Text = SecondNumber.ToString();
+            CorrectAnswer = (FirstNumber + SecondNumber);
         }
 
         private void SubtNumberGen()
         {
-            
+            FirstNumberTextBox.Text = FirstNumber.ToString();
+            SecondNumberTextBox.Text = SecondNumber.ToString();
+            CorrectAnswer = (FirstNumber - SecondNumber);
         }
 
         private void MultiNumberGen()
         {
-
+            FirstNumberTextBox.Text = FirstNumber.ToString();
+            SecondNumberTextBox.Text = SecondNumber.ToString();
+            CorrectAnswer = (FirstNumber * SecondNumber);
         }
 
         private void DiviNumberGen()
         {
-
+            FirstNumberTextBox.Text = FirstNumber.ToString();
+            SecondNumberTextBox.Text = SecondNumber.ToString();
+            CorrectAnswer = (FirstNumber / SecondNumber);
         }
 
         private void AnswerValidator()
