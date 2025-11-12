@@ -16,13 +16,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
     [X] Lock the Submit button until all required fields are filled in correctly
     [X] Lock the Summary button until the Submit button has been clicked at least once
     [X] If the clear button is clicked, reset all fields to their default state
-    [ ] If any of the student information fields are changed reset the summary to its default state and consider it a new student
+    [X] If any of the student information fields are changed reset the summary to its default state and consider it a new student
     [X] Generate new random numbers for each problem or whenever the problem type is changed
     [X] Do not allow the user to enter their own numbers
     [X] Allow the contestant to enter their answer and submit
     [X] Show a congratulations message if correct, or the correct answer if not
     [X] Keep a total of correct/incorrect responses for the current student and show a summary when requested
-
  */
 namespace MathContest
 {
@@ -375,6 +374,7 @@ namespace MathContest
         private void Text_Changed(object sender, EventArgs e)
         {
             ValidateInputFields();
+            CorrectTally = AttemptTally = 0;
         }
 
         private void Answer_Changed(object sender, EventArgs e)
