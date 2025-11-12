@@ -225,8 +225,19 @@ namespace MathContest
             int DrawValue = 0;
 
             // Produces a random number to draw from a pool of questions
+            Random roll = new Random();
+            for (int i = 0; i < 1; i++)
+            {
+                switch (roll.Next(0, 6))
+                {
+                    case 0:
+                        {
 
-            return DrawValue;
+                        }
+                }
+            }
+
+                return DrawValue;
         }
 
         private void AddNumberGen()
