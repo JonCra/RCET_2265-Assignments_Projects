@@ -8,7 +8,22 @@
 using System.Runtime.InteropServices.Marshalling;
 using System.Security.Cryptography;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+/*
+ TODO:
+    [X] Enter the child's name, grade (1-4), and age (7-11)
+    [X] Choose a math problem type (add, subtract, multiply, divide) using radio buttons (add selected by default)
+    [X] Validate all required information. Change the textbox color to light yellow for missing/incorrect fields
+    [X] Lock the Submit button until all required fields are filled in correctly
+    [X] Lock the Summary button until the Submit button has been clicked at least once
+    [X] If the clear button is clicked, reset all fields to their default state
+    [ ] If any of the student information fields are changed reset the summary to its default state and consider it a new student
+    [X] Generate new random numbers for each problem or whenever the problem type is changed
+    [X] Do not allow the user to enter their own numbers
+    [X] Allow the contestant to enter their answer and submit
+    [X] Show a congratulations message if correct, or the correct answer if not
+    [X] Keep a total of correct/incorrect responses for the current student and show a summary when requested
 
+ */
 namespace MathContest
 {
     public partial class MathContestForm : Form
@@ -343,6 +358,11 @@ namespace MathContest
             if (StudentAnswerTextBox.Text == CorrectAnswer.ToString())
             {
                 CorrectTally++;
+                MessageBox.Show("Correct!");
+            }
+            else
+            {
+                MessageBox.Show($"Sorry, that isn't correct. The correct answer is: {CorrectAnswer}.");
             }
         }
 
