@@ -98,7 +98,7 @@ namespace MathContest
                 try
                 {
                     _grade = int.Parse(StudentGradeTextBox.Text);
-                    if (_grade >= 3 && _grade <= 4)
+                    if (_grade >= 1 && _grade <= 4)
                     {
                         GradeIsValid = true;
                         StudentGradeTextBox.BackColor = Color.White;
@@ -172,7 +172,7 @@ namespace MathContest
             }
             else
             {
-                allFieldsAreValid = SubmitButton.Enabled = MathProblemTypeGroupBox.Enabled = false;
+                allFieldsAreValid = SubmitButton.Enabled = StudentAnswerTextBox.Enabled = MathProblemTypeGroupBox.Enabled = false;
             }
 
                 return allFieldsAreValid;
@@ -362,6 +362,9 @@ namespace MathContest
         {
             // Enters/saves user inputs
             ContestJudge();
+
+            // Resets student's answer
+            StudentAnswerTextBox.Clear();
 
             // Draws a new question
             QuestionDisplay();

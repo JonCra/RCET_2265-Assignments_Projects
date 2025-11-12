@@ -39,6 +39,7 @@
             SummaryButton = new Button();
             ClearButton = new Button();
             SubmitButton = new Button();
+            StudentAnswerTextBox = new TextBox();
             StudentInformationGroupBox = new GroupBox();
             StudentGradeTextLabel = new Label();
             StudentAgeLabel = new Label();
@@ -48,7 +49,6 @@
             StudentAnswerLabel = new Label();
             SecondNumberLabel = new Label();
             FirstNumberLabel = new Label();
-            StudentAnswerTextBox = new TextBox();
             SecondNumberTextBox = new TextBox();
             FirstNumberTextBox = new TextBox();
             MathProblemTypeGroupBox = new GroupBox();
@@ -141,6 +141,15 @@
             toolTip1.SetToolTip(SubmitButton, "Record/submit answer and student information");
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButton_Click;
+            // 
+            // StudentAnswerTextBox
+            // 
+            StudentAnswerTextBox.Location = new Point(6, 259);
+            StudentAnswerTextBox.Name = "StudentAnswerTextBox";
+            StudentAnswerTextBox.Size = new Size(208, 31);
+            StudentAnswerTextBox.TabIndex = 1;
+            toolTip1.SetToolTip(StudentAnswerTextBox, "Answer must be a whole number (integer)");
+            StudentAnswerTextBox.TextChanged += Answer_Changed;
             // 
             // StudentInformationGroupBox
             // 
@@ -238,15 +247,6 @@
             FirstNumberLabel.TabIndex = 3;
             FirstNumberLabel.Text = "First Number";
             // 
-            // StudentAnswerTextBox
-            // 
-            StudentAnswerTextBox.Location = new Point(6, 259);
-            StudentAnswerTextBox.Name = "StudentAnswerTextBox";
-            StudentAnswerTextBox.Size = new Size(208, 31);
-            StudentAnswerTextBox.TabIndex = 1;
-            toolTip1.SetToolTip(StudentAnswerTextBox, "Answer must be a whole number (integer)");
-            StudentAnswerTextBox.TextChanged += Answer_Changed;
-            // 
             // SecondNumberTextBox
             // 
             SecondNumberTextBox.Location = new Point(6, 158);
@@ -255,6 +255,7 @@
             SecondNumberTextBox.Size = new Size(208, 31);
             SecondNumberTextBox.TabIndex = 0;
             SecondNumberTextBox.TabStop = false;
+            toolTip1.SetToolTip(SecondNumberTextBox, "Second number");
             // 
             // FirstNumberTextBox
             // 
@@ -265,6 +266,7 @@
             FirstNumberTextBox.Size = new Size(208, 31);
             FirstNumberTextBox.TabIndex = 0;
             FirstNumberTextBox.TabStop = false;
+            toolTip1.SetToolTip(FirstNumberTextBox, "First number");
             // 
             // MathProblemTypeGroupBox
             // 
@@ -288,6 +290,7 @@
             DivideRadioButton.TabIndex = 3;
             DivideRadioButton.TabStop = true;
             DivideRadioButton.Text = "Divide";
+            toolTip1.SetToolTip(DivideRadioButton, "First number (\\div\\) Second number");
             DivideRadioButton.UseVisualStyleBackColor = true;
             DivideRadioButton.CheckedChanged += MathFunctionChanged;
             // 
@@ -300,6 +303,7 @@
             MultiplyRadioButton.TabIndex = 2;
             MultiplyRadioButton.TabStop = true;
             MultiplyRadioButton.Text = "Multiply";
+            toolTip1.SetToolTip(MultiplyRadioButton, "First number * Second Number");
             MultiplyRadioButton.UseVisualStyleBackColor = true;
             MultiplyRadioButton.CheckedChanged += MathFunctionChanged;
             // 
@@ -312,6 +316,7 @@
             SubtractRadioButton.TabIndex = 1;
             SubtractRadioButton.TabStop = true;
             SubtractRadioButton.Text = "Subtract";
+            toolTip1.SetToolTip(SubtractRadioButton, "First number - Second Number");
             SubtractRadioButton.UseVisualStyleBackColor = true;
             SubtractRadioButton.CheckedChanged += MathFunctionChanged;
             // 
@@ -324,6 +329,7 @@
             AddRadioButton.TabIndex = 0;
             AddRadioButton.TabStop = true;
             AddRadioButton.Text = "Add";
+            toolTip1.SetToolTip(AddRadioButton, "First number + Second number");
             AddRadioButton.UseVisualStyleBackColor = true;
             AddRadioButton.CheckedChanged += MathFunctionChanged;
             // 
