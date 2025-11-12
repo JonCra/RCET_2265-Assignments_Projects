@@ -16,8 +16,9 @@ namespace MathContest
         private bool allFieldsAreValid;
         private int FirstNumber;
         private int SecondNumber;
-        public int CorrectAnswer;
-        private int DrawValue;
+        private int CorrectAnswer;
+        private int CorrectTally = 0;
+        private int AttemptTally = 1;
 
         // Error list:
             public string ErrorMessage = "";
@@ -44,7 +45,6 @@ namespace MathContest
         // Program Logic ---------------------------------------------------------------
         void setDefaults()
         {
-            // Clears and disables specified items
             StudentNameTextBox.Text = "";
             StudentNameTextBox.BackColor = Color.White;
 
@@ -340,6 +340,15 @@ namespace MathContest
         private void ContestJudge()
         {
             // Record correct answers vs number of provided questions
+            if (StudentAnswerTextBox.Text == CorrectAnswer.ToString())
+            {
+                CorrectTally++;
+                AttemptTally++;
+            }
+            else
+            {
+                AttemptTally++;
+            }
         }
 
         // Event Handlers --------------------------------------------------------------
