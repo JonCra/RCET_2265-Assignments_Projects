@@ -362,7 +362,7 @@
             showErrorsToolStripMenuItem1.Name = "showErrorsToolStripMenuItem1";
             showErrorsToolStripMenuItem1.Size = new Size(270, 34);
             showErrorsToolStripMenuItem1.Text = "Show Errors";
-            showErrorsToolStripMenuItem1.Click += showErrorsToolStripMenuItem1_Click;
+            showErrorsToolStripMenuItem1.Click += showErrorsToolStripMenuItem_Click;
             // 
             // MathContestForm
             // 
