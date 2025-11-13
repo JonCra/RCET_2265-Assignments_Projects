@@ -70,7 +70,9 @@ namespace MathContest
 
             FirstNumberTextBox.Text = "";
             SecondNumberTextBox.Text = "";
+
             StudentAnswerTextBox.Text = "";
+            StudentAnswerTextBox.BackColor = Color.White;
 
             StudentAnswerTextBox.Enabled = MathProblemTypeGroupBox.Enabled = false;
 
@@ -366,7 +368,7 @@ namespace MathContest
             }
             else
             {
-                MessageBox.Show($"Sorry, that isn't correct. The correct answer is: {CorrectAnswer}.");
+                MessageBox.Show($"Sorry, that isn't correct. The correct answer is {CorrectAnswer}.");
             }
         }
 
