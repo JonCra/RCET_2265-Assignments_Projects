@@ -37,18 +37,18 @@ namespace MathContest
         // Error list:
         public string ErrorMessage = "";
 
-        private string GradeError0 = "Grade_Error0: Student grade level must not be blank\n";
-        private string GradeError1 = "Grade_Error1: Student grade level must be a number\n";
-        private string GradeError2 = "Grade_Error2: Student grade level must be a number between 3 and 5\n";
+        private string GradeError0 = "Grade_Error0: Student grade level must not be blank.\n";
+        private string GradeError1 = "Grade_Error1: Student grade level must be a number.\n";
+        private string GradeError2 = "Grade_Error2: Student grade level must be a number between 1 and 4.\n";
 
-        private string AgeError0 = "Age_Error0: Student age must not be blank\n";
+        private string AgeError0 = "Age_Error0: Student age must not be blank.\n";
         private string AgeError1 = "Age_Error1: Student age must be a number.\n";
         private string AgeError2 = "Age_Error2: Student age must be a between 7 and 11.\n";
 
         private string NameError = "Name_Error: Name must not be blank.\n";
 
-        private string AnswerError0 = "Answer_Error0: Answer cannot be blank\n";
-        private string AnswerError1 = "Answer_Error1: Answer must be a number\n";
+        private string AnswerError0 = "Answer_Error0: Answer cannot be blank.\n";
+        private string AnswerError1 = "Answer_Error1: Answer must be a number.\n";
 
         public MathContestForm()
         {
