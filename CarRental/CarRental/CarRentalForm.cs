@@ -36,6 +36,10 @@ namespace CarRental
 
         }
 
+        private double kmToMiles(double kilometers)
+        {
+            return kilometers * 0.62;
+        }
 
         // Event Handlers ----------------------------------------
         private void CalculateButton_Click(object sender, EventArgs e)
@@ -51,6 +55,11 @@ namespace CarRental
              * seniors get 3% discount
              * CAN GET BOTH DISCOUNTS; DO NOT ACCOUNT FOR UNTIL CACLULATE BUTTON IS CLICKED
              */
+
+            if (KM_RadioButton.Checked)
+            {
+                kmToMiles();
+            }
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
