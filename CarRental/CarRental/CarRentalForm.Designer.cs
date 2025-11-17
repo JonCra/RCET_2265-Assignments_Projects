@@ -35,10 +35,13 @@
             CalculateButton = new Button();
             button2 = new Button();
             DiscountGroupBox = new GroupBox();
-            AAA_DiscountCheckBox = new CheckBox();
             SeniorDiscountCheckBox = new CheckBox();
+            AAA_DiscountCheckBox = new CheckBox();
             OdometerUnitGroupBox = new GroupBox();
+            MilesRadioButton = new RadioButton();
+            KM_RadioButton = new RadioButton();
             DiscountGroupBox.SuspendLayout();
+            OdometerUnitGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // ClearButton
@@ -85,41 +88,66 @@
             // 
             DiscountGroupBox.Controls.Add(SeniorDiscountCheckBox);
             DiscountGroupBox.Controls.Add(AAA_DiscountCheckBox);
-            DiscountGroupBox.Location = new Point(488, 158);
+            DiscountGroupBox.Location = new Point(417, 283);
             DiscountGroupBox.Name = "DiscountGroupBox";
             DiscountGroupBox.Size = new Size(300, 150);
             DiscountGroupBox.TabIndex = 4;
             DiscountGroupBox.TabStop = false;
             DiscountGroupBox.Text = "Discounts";
             // 
-            // AAA_DiscountCheckBox
-            // 
-            AAA_DiscountCheckBox.AutoSize = true;
-            AAA_DiscountCheckBox.Location = new Point(35, 38);
-            AAA_DiscountCheckBox.Name = "AAA_DiscountCheckBox";
-            AAA_DiscountCheckBox.Size = new Size(149, 29);
-            AAA_DiscountCheckBox.TabIndex = 0;
-            AAA_DiscountCheckBox.Text = "AAA Discount";
-            AAA_DiscountCheckBox.UseVisualStyleBackColor = true;
-            // 
             // SeniorDiscountCheckBox
             // 
             SeniorDiscountCheckBox.AutoSize = true;
-            SeniorDiscountCheckBox.Location = new Point(34, 87);
+            SeniorDiscountCheckBox.Location = new Point(34, 95);
             SeniorDiscountCheckBox.Name = "SeniorDiscountCheckBox";
             SeniorDiscountCheckBox.Size = new Size(227, 29);
             SeniorDiscountCheckBox.TabIndex = 1;
             SeniorDiscountCheckBox.Text = "Senior Citizen Checkbox";
             SeniorDiscountCheckBox.UseVisualStyleBackColor = true;
             // 
+            // AAA_DiscountCheckBox
+            // 
+            AAA_DiscountCheckBox.AutoSize = true;
+            AAA_DiscountCheckBox.Location = new Point(35, 46);
+            AAA_DiscountCheckBox.Name = "AAA_DiscountCheckBox";
+            AAA_DiscountCheckBox.Size = new Size(149, 29);
+            AAA_DiscountCheckBox.TabIndex = 0;
+            AAA_DiscountCheckBox.Text = "AAA Discount";
+            AAA_DiscountCheckBox.UseVisualStyleBackColor = true;
+            // 
             // OdometerUnitGroupBox
             // 
-            OdometerUnitGroupBox.Location = new Point(34, 218);
+            OdometerUnitGroupBox.Controls.Add(KM_RadioButton);
+            OdometerUnitGroupBox.Controls.Add(MilesRadioButton);
+            OdometerUnitGroupBox.Location = new Point(49, 283);
             OdometerUnitGroupBox.Name = "OdometerUnitGroupBox";
-            OdometerUnitGroupBox.Size = new Size(339, 150);
+            OdometerUnitGroupBox.Size = new Size(261, 150);
             OdometerUnitGroupBox.TabIndex = 5;
             OdometerUnitGroupBox.TabStop = false;
-            OdometerUnitGroupBox.Text = "Is Odometer in Miles or Kilometers?";
+            OdometerUnitGroupBox.Text = "Odometer Measurement Unit";
+            // 
+            // MilesRadioButton
+            // 
+            MilesRadioButton.AutoSize = true;
+            MilesRadioButton.Checked = true;
+            MilesRadioButton.Location = new Point(38, 46);
+            MilesRadioButton.Name = "MilesRadioButton";
+            MilesRadioButton.Size = new Size(78, 29);
+            MilesRadioButton.TabIndex = 0;
+            MilesRadioButton.TabStop = true;
+            MilesRadioButton.Text = "Miles";
+            MilesRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // KM_RadioButton
+            // 
+            KM_RadioButton.AutoSize = true;
+            KM_RadioButton.Location = new Point(38, 95);
+            KM_RadioButton.Name = "KM_RadioButton";
+            KM_RadioButton.Size = new Size(120, 29);
+            KM_RadioButton.TabIndex = 1;
+            KM_RadioButton.TabStop = true;
+            KM_RadioButton.Text = "Kilometers";
+            KM_RadioButton.UseVisualStyleBackColor = true;
             // 
             // CarRentalForm
             // 
@@ -137,6 +165,8 @@
             Text = "Form1";
             DiscountGroupBox.ResumeLayout(false);
             DiscountGroupBox.PerformLayout();
+            OdometerUnitGroupBox.ResumeLayout(false);
+            OdometerUnitGroupBox.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -151,5 +181,7 @@
         private CheckBox SeniorDiscountCheckBox;
         private CheckBox AAA_DiscountCheckBox;
         private GroupBox OdometerUnitGroupBox;
+        private RadioButton MilesRadioButton;
+        private RadioButton KM_RadioButton;
     }
 }
