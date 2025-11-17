@@ -34,12 +34,12 @@
             SummaryButton = new Button();
             CalculateButton = new Button();
             button2 = new Button();
-            DiscountGroupBox = new GroupBox();
             SeniorDiscountCheckBox = new CheckBox();
             AAA_DiscountCheckBox = new CheckBox();
-            OdometerUnitGroupBox = new GroupBox();
-            MilesRadioButton = new RadioButton();
             KM_RadioButton = new RadioButton();
+            MilesRadioButton = new RadioButton();
+            DiscountGroupBox = new GroupBox();
+            OdometerUnitGroupBox = new GroupBox();
             DiscountGroupBox.SuspendLayout();
             OdometerUnitGroupBox.SuspendLayout();
             SuspendLayout();
@@ -51,6 +51,7 @@
             ClearButton.Size = new Size(112, 34);
             ClearButton.TabIndex = 1;
             ClearButton.Text = "Clear";
+            toolTip1.SetToolTip(ClearButton, "Clear input fields");
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
@@ -61,6 +62,7 @@
             SummaryButton.Size = new Size(112, 34);
             SummaryButton.TabIndex = 2;
             SummaryButton.Text = "Summary";
+            toolTip1.SetToolTip(SummaryButton, "Display summary and totals");
             SummaryButton.UseVisualStyleBackColor = true;
             SummaryButton.Click += SummaryButton_Click;
             // 
@@ -71,6 +73,7 @@
             CalculateButton.Size = new Size(112, 34);
             CalculateButton.TabIndex = 0;
             CalculateButton.Text = "Calculate";
+            toolTip1.SetToolTip(CalculateButton, "Calculate total expenses");
             CalculateButton.UseVisualStyleBackColor = true;
             CalculateButton.Click += CalculateButton_Click;
             // 
@@ -81,8 +84,56 @@
             button2.Size = new Size(112, 34);
             button2.TabIndex = 3;
             button2.Text = "Exit";
+            toolTip1.SetToolTip(button2, "Exit program");
             button2.UseVisualStyleBackColor = true;
             button2.Click += ExitButton_Click;
+            // 
+            // SeniorDiscountCheckBox
+            // 
+            SeniorDiscountCheckBox.AutoSize = true;
+            SeniorDiscountCheckBox.Location = new Point(34, 95);
+            SeniorDiscountCheckBox.Name = "SeniorDiscountCheckBox";
+            SeniorDiscountCheckBox.Size = new Size(227, 29);
+            SeniorDiscountCheckBox.TabIndex = 1;
+            SeniorDiscountCheckBox.Text = "Senior Citizen Checkbox";
+            toolTip1.SetToolTip(SeniorDiscountCheckBox, "3% Discount for Senior Citizens");
+            SeniorDiscountCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // AAA_DiscountCheckBox
+            // 
+            AAA_DiscountCheckBox.AutoSize = true;
+            AAA_DiscountCheckBox.Location = new Point(35, 46);
+            AAA_DiscountCheckBox.Name = "AAA_DiscountCheckBox";
+            AAA_DiscountCheckBox.Size = new Size(149, 29);
+            AAA_DiscountCheckBox.TabIndex = 0;
+            AAA_DiscountCheckBox.Text = "AAA Discount";
+            toolTip1.SetToolTip(AAA_DiscountCheckBox, "5% Discount for AAA members");
+            AAA_DiscountCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // KM_RadioButton
+            // 
+            KM_RadioButton.AutoSize = true;
+            KM_RadioButton.Location = new Point(38, 95);
+            KM_RadioButton.Name = "KM_RadioButton";
+            KM_RadioButton.Size = new Size(120, 29);
+            KM_RadioButton.TabIndex = 1;
+            KM_RadioButton.TabStop = true;
+            KM_RadioButton.Text = "Kilometers";
+            toolTip1.SetToolTip(KM_RadioButton, "Odometer display is in \"km\"");
+            KM_RadioButton.UseVisualStyleBackColor = true;
+            // 
+            // MilesRadioButton
+            // 
+            MilesRadioButton.AutoSize = true;
+            MilesRadioButton.Checked = true;
+            MilesRadioButton.Location = new Point(38, 46);
+            MilesRadioButton.Name = "MilesRadioButton";
+            MilesRadioButton.Size = new Size(78, 29);
+            MilesRadioButton.TabIndex = 0;
+            MilesRadioButton.TabStop = true;
+            MilesRadioButton.Text = "Miles";
+            toolTip1.SetToolTip(MilesRadioButton, "Odometer display is in \"mi\"");
+            MilesRadioButton.UseVisualStyleBackColor = true;
             // 
             // DiscountGroupBox
             // 
@@ -95,26 +146,6 @@
             DiscountGroupBox.TabStop = false;
             DiscountGroupBox.Text = "Discounts";
             // 
-            // SeniorDiscountCheckBox
-            // 
-            SeniorDiscountCheckBox.AutoSize = true;
-            SeniorDiscountCheckBox.Location = new Point(34, 95);
-            SeniorDiscountCheckBox.Name = "SeniorDiscountCheckBox";
-            SeniorDiscountCheckBox.Size = new Size(227, 29);
-            SeniorDiscountCheckBox.TabIndex = 1;
-            SeniorDiscountCheckBox.Text = "Senior Citizen Checkbox";
-            SeniorDiscountCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // AAA_DiscountCheckBox
-            // 
-            AAA_DiscountCheckBox.AutoSize = true;
-            AAA_DiscountCheckBox.Location = new Point(35, 46);
-            AAA_DiscountCheckBox.Name = "AAA_DiscountCheckBox";
-            AAA_DiscountCheckBox.Size = new Size(149, 29);
-            AAA_DiscountCheckBox.TabIndex = 0;
-            AAA_DiscountCheckBox.Text = "AAA Discount";
-            AAA_DiscountCheckBox.UseVisualStyleBackColor = true;
-            // 
             // OdometerUnitGroupBox
             // 
             OdometerUnitGroupBox.Controls.Add(KM_RadioButton);
@@ -125,29 +156,6 @@
             OdometerUnitGroupBox.TabIndex = 5;
             OdometerUnitGroupBox.TabStop = false;
             OdometerUnitGroupBox.Text = "Odometer Measurement Unit";
-            // 
-            // MilesRadioButton
-            // 
-            MilesRadioButton.AutoSize = true;
-            MilesRadioButton.Checked = true;
-            MilesRadioButton.Location = new Point(38, 46);
-            MilesRadioButton.Name = "MilesRadioButton";
-            MilesRadioButton.Size = new Size(78, 29);
-            MilesRadioButton.TabIndex = 0;
-            MilesRadioButton.TabStop = true;
-            MilesRadioButton.Text = "Miles";
-            MilesRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // KM_RadioButton
-            // 
-            KM_RadioButton.AutoSize = true;
-            KM_RadioButton.Location = new Point(38, 95);
-            KM_RadioButton.Name = "KM_RadioButton";
-            KM_RadioButton.Size = new Size(120, 29);
-            KM_RadioButton.TabIndex = 1;
-            KM_RadioButton.TabStop = true;
-            KM_RadioButton.Text = "Kilometers";
-            KM_RadioButton.UseVisualStyleBackColor = true;
             // 
             // CarRentalForm
             // 
