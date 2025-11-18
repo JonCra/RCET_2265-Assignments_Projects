@@ -238,12 +238,6 @@ namespace CarRental
             return allFieldsValid;
         }
 
-        private double kmToMiles()
-        {
-            miles = distance * 0.62;
-            return miles;
-        }
-
         // Event Handlers ----------------------------------------
         private void CalculateButton_Click(object sender, EventArgs e)
         {
@@ -277,7 +271,7 @@ namespace CarRental
         {
             if (KM_RadioButton.Checked == true)
             {
-                kmToMiles();
+                miles = distance * 0.62;
             }
             else
             {
