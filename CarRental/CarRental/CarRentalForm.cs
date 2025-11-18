@@ -65,7 +65,7 @@ namespace CarRental
             StateComboBox.SelectedIndex = 0;
         }
 
-        bool ValidateInputs()
+        bool ValidateInputs() // Maybe make each field individual...?
         {
             bool allFieldsValid = false;
             bool NameValid = false;
