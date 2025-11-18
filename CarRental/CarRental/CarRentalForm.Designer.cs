@@ -79,7 +79,7 @@
             ClearButton.Location = new Point(381, 571);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(112, 34);
-            ClearButton.TabIndex = 1;
+            ClearButton.TabIndex = 5;
             ClearButton.Text = "&Clear";
             toolTip1.SetToolTip(ClearButton, "Clear input fields");
             ClearButton.UseVisualStyleBackColor = true;
@@ -90,7 +90,7 @@
             SummaryButton.Location = new Point(263, 571);
             SummaryButton.Name = "SummaryButton";
             SummaryButton.Size = new Size(112, 34);
-            SummaryButton.TabIndex = 2;
+            SummaryButton.TabIndex = 4;
             SummaryButton.Text = "&Summary";
             toolTip1.SetToolTip(SummaryButton, "Display summary and totals");
             SummaryButton.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@
             CalculateButton.Location = new Point(145, 571);
             CalculateButton.Name = "CalculateButton";
             CalculateButton.Size = new Size(112, 34);
-            CalculateButton.TabIndex = 0;
+            CalculateButton.TabIndex = 3;
             CalculateButton.Text = "Calculate";
             toolTip1.SetToolTip(CalculateButton, "Calculate total expenses");
             CalculateButton.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             ExitButton.Location = new Point(499, 571);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(112, 34);
-            ExitButton.TabIndex = 3;
+            ExitButton.TabIndex = 6;
             ExitButton.Text = "E&xit";
             toolTip1.SetToolTip(ExitButton, "Exit program");
             ExitButton.UseVisualStyleBackColor = true;
@@ -124,7 +124,7 @@
             SeniorDiscountCheckBox.Location = new Point(34, 95);
             SeniorDiscountCheckBox.Name = "SeniorDiscountCheckBox";
             SeniorDiscountCheckBox.Size = new Size(227, 29);
-            SeniorDiscountCheckBox.TabIndex = 1;
+            SeniorDiscountCheckBox.TabIndex = 2;
             SeniorDiscountCheckBox.Text = "Senior Citizen Checkbox";
             toolTip1.SetToolTip(SeniorDiscountCheckBox, "3% Discount for Senior Citizens");
             SeniorDiscountCheckBox.UseVisualStyleBackColor = true;
@@ -135,7 +135,7 @@
             AAA_DiscountCheckBox.Location = new Point(35, 46);
             AAA_DiscountCheckBox.Name = "AAA_DiscountCheckBox";
             AAA_DiscountCheckBox.Size = new Size(149, 29);
-            AAA_DiscountCheckBox.TabIndex = 0;
+            AAA_DiscountCheckBox.TabIndex = 1;
             AAA_DiscountCheckBox.Text = "AAA Discount";
             toolTip1.SetToolTip(AAA_DiscountCheckBox, "5% Discount for AAA members");
             AAA_DiscountCheckBox.UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@
             KM_RadioButton.Location = new Point(38, 95);
             KM_RadioButton.Name = "KM_RadioButton";
             KM_RadioButton.Size = new Size(120, 29);
-            KM_RadioButton.TabIndex = 1;
+            KM_RadioButton.TabIndex = 2;
             KM_RadioButton.TabStop = true;
             KM_RadioButton.Text = "Kilometers";
             toolTip1.SetToolTip(KM_RadioButton, "Odometer display is in \"km\"");
@@ -159,7 +159,7 @@
             MilesRadioButton.Location = new Point(38, 46);
             MilesRadioButton.Name = "MilesRadioButton";
             MilesRadioButton.Size = new Size(78, 29);
-            MilesRadioButton.TabIndex = 0;
+            MilesRadioButton.TabIndex = 1;
             MilesRadioButton.TabStop = true;
             MilesRadioButton.Text = "Miles";
             toolTip1.SetToolTip(MilesRadioButton, "Odometer display is in \"mi\"");
@@ -170,7 +170,7 @@
             CustomerNameTextBox.Location = new Point(251, 44);
             CustomerNameTextBox.Name = "CustomerNameTextBox";
             CustomerNameTextBox.Size = new Size(166, 31);
-            CustomerNameTextBox.TabIndex = 6;
+            CustomerNameTextBox.TabIndex = 0;
             toolTip1.SetToolTip(CustomerNameTextBox, "Customer's name");
             // 
             // DiscountGroupBox
@@ -180,7 +180,7 @@
             DiscountGroupBox.Location = new Point(426, 396);
             DiscountGroupBox.Name = "DiscountGroupBox";
             DiscountGroupBox.Size = new Size(300, 150);
-            DiscountGroupBox.TabIndex = 4;
+            DiscountGroupBox.TabIndex = 2;
             DiscountGroupBox.TabStop = false;
             DiscountGroupBox.Text = "Discounts";
             // 
@@ -191,7 +191,7 @@
             OdometerUnitGroupBox.Location = new Point(79, 396);
             OdometerUnitGroupBox.Name = "OdometerUnitGroupBox";
             OdometerUnitGroupBox.Size = new Size(261, 150);
-            OdometerUnitGroupBox.TabIndex = 5;
+            OdometerUnitGroupBox.TabIndex = 1;
             OdometerUnitGroupBox.TabStop = false;
             OdometerUnitGroupBox.Text = "Odometer Measurement Unit";
             // 
@@ -200,35 +200,35 @@
             AddressTextBox.Location = new Point(251, 81);
             AddressTextBox.Name = "AddressTextBox";
             AddressTextBox.Size = new Size(166, 31);
-            AddressTextBox.TabIndex = 7;
+            AddressTextBox.TabIndex = 1;
             // 
             // CityTextBox
             // 
             CityTextBox.Location = new Point(251, 118);
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(165, 31);
-            CityTextBox.TabIndex = 8;
+            CityTextBox.TabIndex = 2;
             // 
             // ZipCodeTextBox
             // 
             ZipCodeTextBox.Location = new Point(251, 192);
             ZipCodeTextBox.Name = "ZipCodeTextBox";
             ZipCodeTextBox.Size = new Size(165, 31);
-            ZipCodeTextBox.TabIndex = 10;
+            ZipCodeTextBox.TabIndex = 4;
             // 
             // InitialOdometerTextBox
             // 
             InitialOdometerTextBox.Location = new Point(251, 229);
             InitialOdometerTextBox.Name = "InitialOdometerTextBox";
             InitialOdometerTextBox.Size = new Size(165, 31);
-            InitialOdometerTextBox.TabIndex = 11;
+            InitialOdometerTextBox.TabIndex = 5;
             // 
             // FinalOdometerTextBox
             // 
             FinalOdometerTextBox.Location = new Point(251, 266);
             FinalOdometerTextBox.Name = "FinalOdometerTextBox";
             FinalOdometerTextBox.Size = new Size(165, 31);
-            FinalOdometerTextBox.TabIndex = 12;
+            FinalOdometerTextBox.TabIndex = 6;
             // 
             // CustomerInfoGroupBox
             // 
@@ -251,7 +251,7 @@
             CustomerInfoGroupBox.Location = new Point(12, 12);
             CustomerInfoGroupBox.Name = "CustomerInfoGroupBox";
             CustomerInfoGroupBox.Size = new Size(435, 361);
-            CustomerInfoGroupBox.TabIndex = 14;
+            CustomerInfoGroupBox.TabIndex = 0;
             CustomerInfoGroupBox.TabStop = false;
             CustomerInfoGroupBox.Text = "Customer Information";
             // 
@@ -260,22 +260,18 @@
             DaysTextBox.Location = new Point(252, 303);
             DaysTextBox.Name = "DaysTextBox";
             DaysTextBox.Size = new Size(164, 31);
-            DaysTextBox.TabIndex = 22;
+            DaysTextBox.TabIndex = 7;
             // 
             // StateComboBox
             // 
+            StateComboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            StateComboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
             StateComboBox.FormattingEnabled = true;
-            StateComboBox.Items.AddRange(new object[] { "(Select a State)", "Alabama", "Alaska",
-                "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida",
-                "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana",
-                "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana",
-                "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina",
-                "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota",
-                "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"});
+            StateComboBox.Items.AddRange(new object[] { "(Select a State)", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" });
             StateComboBox.Location = new Point(251, 155);
             StateComboBox.Name = "StateComboBox";
             StateComboBox.Size = new Size(165, 33);
-            StateComboBox.TabIndex = 16;
+            StateComboBox.TabIndex = 3;
             // 
             // DaysLabel
             // 
@@ -364,7 +360,7 @@
             ResultGroupBox.Location = new Point(453, 93);
             ResultGroupBox.Name = "ResultGroupBox";
             ResultGroupBox.Size = new Size(335, 239);
-            ResultGroupBox.TabIndex = 15;
+            ResultGroupBox.TabIndex = 7;
             ResultGroupBox.TabStop = false;
             ResultGroupBox.Text = "Results";
             // 

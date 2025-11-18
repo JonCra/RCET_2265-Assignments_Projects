@@ -33,10 +33,9 @@ namespace CarRental
                 DistanceTextBox.Enabled = MileageChargeTextBox.Enabled = DayChargeTextBox.Enabled =
                 CreditTextBox.Enabled = BalanceTotalTextBox.Enabled = false;
 
-            // Loads blank text/empty for the following:
-            //CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = StateTextBox.Text = 
-            //    ZipCodeTextBox.Text = InitialOdometerTextBox.Text = 
-            //    FinalOdometerTextBox.Text = DaysTextBox.Text = "";
+            // Loads blank text / empty for the following:
+            CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = ZipCodeTextBox.Text =
+                InitialOdometerTextBox.Text = FinalOdometerTextBox.Text = DaysTextBox.Text = "";
 
             DistanceTextBox.Text = MileageChargeTextBox.Text = DayChargeTextBox.Text =
                 CreditTextBox.Text = BalanceTotalTextBox.Text = "";
@@ -52,9 +51,8 @@ namespace CarRental
             MilesRadioButton.Checked = true;
             KM_RadioButton.Checked = AAA_DiscountCheckBox.Checked = SeniorDiscountCheckBox.Checked = false;
 
-            CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = StateTextBox.Text =
-                ZipCodeTextBox.Text = InitialOdometerTextBox.Text =
-                FinalOdometerTextBox.Text = DaysTextBox.Text = "";
+            CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = ZipCodeTextBox.Text =
+                InitialOdometerTextBox.Text = FinalOdometerTextBox.Text = DaysTextBox.Text = "";
 
             StateComboBox.SelectedIndex = 0;
         }
