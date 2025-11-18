@@ -2,11 +2,11 @@ namespace CarRental
 {
     /*
     TODO (Details in appropriate object/method):
-        [ ] Input Validation
+        [X] Input Validation
         [ ] Calculations
-        [ ] Ouptut Display
+        [X] Ouptut Display
         [ ] Summary
-        [ ] Clear Form
+        [X] Clear Form
         [X] Yes/No confirm closing program
     */
 
@@ -18,6 +18,9 @@ namespace CarRental
         double InitOdometer;
         double FinalOdometer;
         double Days;
+        double Discount1;
+        double Discount2;
+        double Discount;
         double Total;
 
         public CarRentalForm()
@@ -260,7 +263,7 @@ namespace CarRental
             RateCalculator(); // Mileage Charge calculated here
 
             // Calculate days
-            Total += Days;
+            //Total += Days;
                         
             Discounter(); // Discount calculated here
 
@@ -269,15 +272,15 @@ namespace CarRental
 
         private void DistanceConverter()
         {
+            distance = FinalOdometer - InitOdometer;
             if (KM_RadioButton.Checked == true)
             {
                 miles = distance * 0.62;
             }
-            else
+            else if (MilesRadioButton.Checked == true)
             {
                 miles = distance;
             }
-            distance = FinalOdometer - InitOdometer;
             DistanceTextBox.Text = distance.ToString();
         }
 
@@ -300,8 +303,34 @@ namespace CarRental
         }
 
         private void Discounter()
-        {
+        {            
+            DiscountedSenior();
+            DiscountedMember();
+            Discount = Discount1 + Discount2;   
+        }
 
+        private void DiscountedSenior()
+        {
+            if (SeniorDiscountCheckBox.Checked = true)
+            {
+                Discount1 = .03;
+            }
+            else
+            {
+                Discount1 = 0;
+            }
+        }
+
+        private void DiscountedMember()
+        {
+            if (AAA_DiscountCheckBox.Checked = true)
+            {
+                Discount2 = .05;
+            }
+            else
+            {
+                Discount2 = 0;
+            }
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
