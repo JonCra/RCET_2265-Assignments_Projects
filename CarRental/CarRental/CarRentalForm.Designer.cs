@@ -33,7 +33,7 @@
             ClearButton = new Button();
             SummaryButton = new Button();
             CalculateButton = new Button();
-            button2 = new Button();
+            ExitButton = new Button();
             SeniorDiscountCheckBox = new CheckBox();
             AAA_DiscountCheckBox = new CheckBox();
             KM_RadioButton = new RadioButton();
@@ -47,6 +47,7 @@
             InitialOdometerTextBox = new TextBox();
             FinalOdometerTextBox = new TextBox();
             CustomerInfoGroupBox = new GroupBox();
+            DaysTextBox = new TextBox();
             StateComboBox = new ComboBox();
             DaysLabel = new Label();
             FinalOdometerLabel = new Label();
@@ -67,7 +68,6 @@
             DayChargeLabel = new Label();
             MileageChargeLabel = new Label();
             DistanceLabel = new Label();
-            DaysTextBox = new TextBox();
             DiscountGroupBox.SuspendLayout();
             OdometerUnitGroupBox.SuspendLayout();
             CustomerInfoGroupBox.SuspendLayout();
@@ -107,16 +107,16 @@
             CalculateButton.UseVisualStyleBackColor = true;
             CalculateButton.Click += CalculateButton_Click;
             // 
-            // button2
+            // ExitButton
             // 
-            button2.Location = new Point(499, 571);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 3;
-            button2.Text = "E&xit";
-            toolTip1.SetToolTip(button2, "Exit program");
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += ExitButton_Click;
+            ExitButton.Location = new Point(499, 571);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(112, 34);
+            ExitButton.TabIndex = 3;
+            ExitButton.Text = "E&xit";
+            toolTip1.SetToolTip(ExitButton, "Exit program");
+            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
             // SeniorDiscountCheckBox
             // 
@@ -255,10 +255,23 @@
             CustomerInfoGroupBox.TabStop = false;
             CustomerInfoGroupBox.Text = "Customer Information";
             // 
+            // DaysTextBox
+            // 
+            DaysTextBox.Location = new Point(252, 303);
+            DaysTextBox.Name = "DaysTextBox";
+            DaysTextBox.Size = new Size(164, 31);
+            DaysTextBox.TabIndex = 22;
+            // 
             // StateComboBox
             // 
             StateComboBox.FormattingEnabled = true;
-            StateComboBox.Items.AddRange(new object[] { "(Select a US State)", "Alabama", "", "Alaska", "", "Arizona", "", "Arkansas", "", "California", "", "Colorado", "", "Connecticut", "", "Delaware", "", "Florida", "", "Georgia", "", "Hawaii", "", "Idaho", "", "Illinois", "", "Indiana", "", "Iowa", "", "Kansas", "", "Kentucky", "", "Louisiana", "", "Maine", "", "Maryland", "", "Massachusetts", "", "Michigan", "", "Minnesota", "", "Mississippi", "", "Missouri", "", "Montana", "", "Nebraska", "", "Nevada", "", "New Hampshire", "", "New Jersey", "", "New Mexico", "", "New York", "", "North Carolina", "", "North Dakota", "", "Ohio", "", "Oklahoma", "", "Oregon", "", "Pennsylvania", "", "Rhode Island", "", "South Carolina", "", "South Dakota", "", "Tennessee", "", "Texas", "", "Utah", "", "Vermont", "", "Virginia", "", "Washington", "", "West Virginia", "", "Wisconsin", "", "Wyoming" });
+            StateComboBox.Items.AddRange(new object[] { "(Select a State)", "Alabama", "Alaska",
+                "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida",
+                "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana",
+                "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana",
+                "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina",
+                "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota",
+                "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"});
             StateComboBox.Location = new Point(251, 155);
             StateComboBox.Name = "StateComboBox";
             StateComboBox.Size = new Size(165, 33);
@@ -435,13 +448,6 @@
             DistanceLabel.TabIndex = 0;
             DistanceLabel.Text = "Distance in Miles";
             // 
-            // DaysTextBox
-            // 
-            DaysTextBox.Location = new Point(252, 303);
-            DaysTextBox.Name = "DaysTextBox";
-            DaysTextBox.Size = new Size(164, 31);
-            DaysTextBox.TabIndex = 22;
-            // 
             // CarRentalForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -451,7 +457,7 @@
             Controls.Add(CustomerInfoGroupBox);
             Controls.Add(OdometerUnitGroupBox);
             Controls.Add(DiscountGroupBox);
-            Controls.Add(button2);
+            Controls.Add(ExitButton);
             Controls.Add(SummaryButton);
             Controls.Add(CalculateButton);
             Controls.Add(ClearButton);
@@ -475,7 +481,7 @@
         private Button ClearButton;
         private Button SummaryButton;
         private Button CalculateButton;
-        private Button button2;
+        private Button ExitButton;
         private GroupBox DiscountGroupBox;
         private CheckBox SeniorDiscountCheckBox;
         private CheckBox AAA_DiscountCheckBox;

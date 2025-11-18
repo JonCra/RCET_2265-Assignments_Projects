@@ -34,12 +34,14 @@ namespace CarRental
                 CreditTextBox.Enabled = BalanceTotalTextBox.Enabled = false;
 
             // Loads blank text/empty for the following:
-            CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = StateTextBox.Text =
-                ZipCodeTextBox.Text = InitialOdometerTextBox.Text =
-                FinalOdometerTextBox.Text = DaysTextBox.Text = "";
+            //CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = StateTextBox.Text = 
+            //    ZipCodeTextBox.Text = InitialOdometerTextBox.Text = 
+            //    FinalOdometerTextBox.Text = DaysTextBox.Text = "";
 
             DistanceTextBox.Text = MileageChargeTextBox.Text = DayChargeTextBox.Text =
-                CreditTextBox.Text = BalanceTotalTextBox.Text = "";            
+                CreditTextBox.Text = BalanceTotalTextBox.Text = "";
+
+            StateComboBox.SelectedIndex = 0;
         }
 
         private void ClearForm()
@@ -53,6 +55,8 @@ namespace CarRental
             CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = StateTextBox.Text =
                 ZipCodeTextBox.Text = InitialOdometerTextBox.Text =
                 FinalOdometerTextBox.Text = DaysTextBox.Text = "";
+
+            StateComboBox.SelectedIndex = 0;
         }
 
         private void ValidateInputs()
@@ -98,7 +102,15 @@ namespace CarRental
                 CityValid = true;
             }
 
-            // State is limited to 
+            // State is selected
+            if (StateComboBox.SelectedIndex == 0)
+            {
+                StateValid = false;
+            }
+            else
+            {
+                StateValid = true;
+            }
         }
 
         //private double kmToMiles()
