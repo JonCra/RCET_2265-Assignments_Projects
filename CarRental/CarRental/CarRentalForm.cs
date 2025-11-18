@@ -312,7 +312,7 @@ namespace CarRental
 
         private void DiscountedSenior()
         {
-            if (SeniorDiscountCheckBox.Checked = true)
+            if (SeniorDiscountCheckBox.Checked == true)
             {
                 Discount1 = .03;
             }
@@ -324,7 +324,7 @@ namespace CarRental
 
         private void DiscountedMember()
         {
-            if (AAA_DiscountCheckBox.Checked = true)
+            if (AAA_DiscountCheckBox.Checked == true)
             {
                 Discount2 = .05;
             }
