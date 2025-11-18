@@ -212,6 +212,7 @@
             // ZipCodeTextBox
             // 
             ZipCodeTextBox.Location = new Point(251, 192);
+            ZipCodeTextBox.MaxLength = 5;
             ZipCodeTextBox.Name = "ZipCodeTextBox";
             ZipCodeTextBox.Size = new Size(165, 31);
             ZipCodeTextBox.TabIndex = 4;

@@ -68,6 +68,7 @@ namespace CarRental
             bool Odo1Valid;
             bool Odo2Valid;
             bool DaysValid;
+            int _Zip;
 
             // Name should not be empty
             if (string.IsNullOrEmpty(CustomerNameTextBox.Text))
@@ -78,36 +79,73 @@ namespace CarRental
             else
             {
                 NameValid = true;
+                CustomerNameTextBox.BackColor = Color.White;
             }
 
             // Address should not be empty
             if (string.IsNullOrEmpty(AddressTextBox.Text))
             {
                 AddressValid = false;
+                AddressTextBox.BackColor = Color.LightYellow;
             }
             else
             {
                 AddressValid = true;
+                AddressTextBox.BackColor = Color.White;
             }
 
             // City should not be empty
             if (string.IsNullOrEmpty(CityTextBox.Text))
             {
                 CityValid = false;
+                CityTextBox.BackColor = Color.LightYellow;
             }
             else
             {
                 CityValid = true;
+                CityTextBox.BackColor = Color.White;
             }
 
             // State is selected
             if (StateComboBox.SelectedIndex == 0)
             {
                 StateValid = false;
+                StateComboBox.BackColor = Color.LightYellow;
             }
             else
             {
                 StateValid = true;
+                StateComboBox.BackColor = Color.White;
+            }
+
+            // Zip Code is valid
+            if (string.IsNullOrEmpty(ZipCodeTextBox.Text))
+            {
+                ZipValid = false;
+                ZipCodeTextBox.BackColor = Color.LightYellow;
+            }
+            else
+            {
+                try
+                {
+                    // Convert string to integer
+                    _Zip = int.Parse(ZipCodeTextBox.Text);
+                    if (ZipCodeTextBox.TextLength < 5)
+                    {
+                        ZipValid = false;
+                        ZipCodeTextBox.BackColor = Color.LightYellow;
+                    }
+                    else
+                    {
+                        ZipValid = true;
+                        ZipCodeTextBox.BackColor = Color.White;
+                    }
+                }
+                catch (Exception)
+                {
+                    ZipValid = false;
+                    ZipCodeTextBox.BackColor = Color.LightYellow;
+                }
             }
         }
 
