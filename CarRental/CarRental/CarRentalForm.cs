@@ -67,15 +67,15 @@ namespace CarRental
 
         bool ValidateInputs()
         {
-            bool allFieldsValid;
-            bool NameValid;
-            bool AddressValid;
-            bool CityValid;
-            bool StateValid;
-            bool ZipValid;
-            bool Odo1Valid;
-            bool Odo2Valid;
-            bool DaysValid;
+            bool allFieldsValid = false;
+            bool NameValid = false;
+            bool AddressValid = false;
+            bool CityValid = false;
+            bool StateValid = false;
+            bool ZipValid = false;
+            bool Odo1Valid = false;
+            bool Odo2Valid = false;
+            bool DaysValid = false;
             int _Zip;
 
             // Name should not be empty
@@ -120,7 +120,7 @@ namespace CarRental
                 StateValid = false;
                 StateComboBox.BackColor = Color.LightYellow;
             }
-            else
+            else if (StateComboBox.SelectedIndex != 0)
             {
                 StateValid = true;
                 StateComboBox.BackColor = Color.White;
