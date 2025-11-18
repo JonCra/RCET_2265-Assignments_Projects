@@ -12,6 +12,9 @@ namespace CarRental
 
     public partial class CarRentalForm : Form
     {
+        // Variables
+        double distance;
+
         public CarRentalForm()
         {
             InitializeComponent();
@@ -21,9 +24,21 @@ namespace CarRental
         // Program Logic -----------------------------------------
         private void SetDefaults()
         {
+            // Enables the following:
             MilesRadioButton.Checked = true;
-            KM_RadioButton.Checked = AAA_DiscountCheckBox.Checked = SeniorDiscountCheckBox.Checked = false;
             
+            // Disables the following:
+            KM_RadioButton.Checked = AAA_DiscountCheckBox.Checked = SeniorDiscountCheckBox.Checked =
+                DistanceTextBox.Enabled = MileageChargeTextBox.Enabled = DayChargeTextBox.Enabled =
+                CreditTextBox.Enabled = BalanceTotalTextBox.Enabled = false;
+
+            // Loads blank text/empty for the following:
+            CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = StateTextBox.Text =
+                ZipCodeTextBox.Text = InitialOdometerTextBox.Text = FinalOdometerTextBox.Text =
+                NumberOfDaysTextBox.Text = "";
+
+            DistanceTextBox.Text = MileageChargeTextBox.Text = DayChargeTextBox.Text =
+                CreditTextBox.Text = BalanceTotalTextBox.Text = "";            
         }
 
         private void ClearForm()
@@ -32,13 +47,21 @@ namespace CarRental
             // DO NOT CLEAR SUMMARY
 
             MilesRadioButton.Checked = true;
-            KM_RadioButton.Checked = false;
+            KM_RadioButton.Checked = AAA_DiscountCheckBox.Checked = SeniorDiscountCheckBox.Checked = false;
+
+            CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = StateTextBox.Text =
+                ZipCodeTextBox.Text = InitialOdometerTextBox.Text = FinalOdometerTextBox.Text =
+                NumberOfDaysTextBox.Text = "";
+        }
+
+        private void ValidateInputs()
+        {
 
         }
 
-        private double kmToMiles(double kilometers)
+        private double kmToMiles()
         {
-            return kilometers * 0.62;
+            return distance * 0.62;
         }
 
         // Event Handlers ----------------------------------------
@@ -56,16 +79,29 @@ namespace CarRental
              * CAN GET BOTH DISCOUNTS; DO NOT ACCOUNT FOR UNTIL CACLULATE BUTTON IS CLICKED
              */
 
-            if (KM_RadioButton.Checked)
+            // Day Charge calculated here
+
+            // Mileage converted/calculatd here
+            if (KM_RadioButton.Checked == true && MilesRadioButton.Checked == false)
             {
-                kmToMiles();
+                //kmToMiles();
             }
+            else 
+            {
+
+            }
+
+
+            // Mileage Charge calculated here
+
+            // Discount calculated here
+
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
             // User-confirmed program close
-            var result = MessageBox.Show("Are you sure you want to quit?", "Quit program", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("Are you sure you want to quit?", "Quit program?", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 this.Close();
@@ -75,7 +111,7 @@ namespace CarRental
         private void ClearButton_Click(object sender, EventArgs e)
         {
             // DO NOT CLEAR SUMMARY DETAILS
-            SetDefaults();
+            ClearForm();
         }
 
         private void SummaryButton_Click(object sender, EventArgs e)
@@ -91,6 +127,11 @@ namespace CarRental
             */
 
             ClearForm();
+        }
+
+        private void InputTextChanged(object sender, EventArgs e)
+        {
+            ValidateInputs();
         }
     }
 }
