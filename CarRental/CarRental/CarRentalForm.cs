@@ -17,6 +17,8 @@ namespace CarRental
         double miles;
         double InitOdometer;
         double FinalOdometer;
+        double Days;
+        double Total;
 
         public CarRentalForm()
         {
@@ -215,6 +217,7 @@ namespace CarRental
                     double.Parse(DaysTextBox.Text);
                     DaysValid = true;
                     DaysTextBox.BackColor = Color.White;
+                    DaysTextBox.Text += Days;
                 }
                 catch (Exception)
                 {
@@ -235,10 +238,11 @@ namespace CarRental
             return allFieldsValid;
         }
 
-        //private double kmToMiles()
-        //{
-        //    miles = distance * 0.62;
-        //}
+        private double kmToMiles()
+        {
+            miles = distance * 0.62;
+            return miles;
+        }
 
         // Event Handlers ----------------------------------------
         private void CalculateButton_Click(object sender, EventArgs e)
@@ -256,21 +260,53 @@ namespace CarRental
              */
 
             // Day Charge calculated here
+                        
+            DistanceConverter(); // Convert km to mi
 
-            // Mileage converted/calculatd here
+            RateCalculator(); // Mileage Charge calculated here
+
+            // Calculate days
+            Total += Days;
+                        
+            Discounter(); // Discount calculated here
+
+            BalanceTotalTextBox.Text = Total.ToString();
+        }
+
+        private void DistanceConverter()
+        {
             if (KM_RadioButton.Checked == true)
             {
-                //kmToMiles();
+                kmToMiles();
             }
-            else 
+            else
             {
-
+                miles = distance;
             }
+            distance = FinalOdometer - InitOdometer;
+            DistanceTextBox.Text = distance.ToString();
+        }
 
+        private void RateCalculator()
+        {
+            if (miles <= 200)
+            {
+                // First 200 miles are free!
+            }
+            else if (miles <= 500)
+            {
+                MileageChargeTextBox.Text = (miles * 0.1).ToString();
+                Total = miles * 0.12;
+            }
+            else if (miles >= 500)
+            {
+                MileageChargeTextBox.Text = (miles * 0.1).ToString();
+                Total = miles * 0.10;
+            }
+        }
 
-            // Mileage Charge calculated here
-
-            // Discount calculated here
+        private void Discounter()
+        {
 
         }
 
