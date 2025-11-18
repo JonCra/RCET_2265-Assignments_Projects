@@ -18,6 +18,7 @@ namespace CarRental
         double InitOdometer;
         double FinalOdometer;
         double Days;
+        double DailyCharge = 0;
         double Discount1;
         double Discount2;
         double Discount;
@@ -220,7 +221,7 @@ namespace CarRental
                     double.Parse(DaysTextBox.Text);
                     DaysValid = true;
                     DaysTextBox.BackColor = Color.White;
-                    DaysTextBox.Text += Days;
+                    Days = double.Parse(DaysTextBox.Text);
                 }
                 catch (Exception)
                 {
@@ -256,18 +257,18 @@ namespace CarRental
              * CAN GET BOTH DISCOUNTS; DO NOT ACCOUNT FOR UNTIL CACLULATE BUTTON IS CLICKED
              */
 
-            // Day Charge calculated here
+            DailyChargeCalculator(); // Calculates daily charge
                         
             DistanceConverter(); // Convert km to mi
 
-            RateCalculator(); // Mileage Charge calculated here
-
-            // Calculate days
-            //Total += Days;
+            RateCalculator(); // Calculate milage charge
                         
-            Discounter(); // Discount calculated here
+            Discounter(); // Calculate discount
+        }
 
-            BalanceTotalTextBox.Text = Total.ToString();
+        private void DailyChargeCalculator()
+        {
+            DailyCharge = Days * 15;
         }
 
         private void DistanceConverter()
