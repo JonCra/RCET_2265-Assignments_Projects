@@ -15,6 +15,8 @@ namespace CarRental
         // Variables
         double distance;
         double miles;
+        double InitOdometer;
+        double FinalOdometer;
 
         public CarRentalForm()
         {
@@ -57,7 +59,7 @@ namespace CarRental
             StateComboBox.SelectedIndex = 0;
         }
 
-        private void ValidateInputs()
+        bool ValidateInputs()
         {
             bool allFieldsValid;
             bool NameValid;
@@ -118,7 +120,7 @@ namespace CarRental
                 StateComboBox.BackColor = Color.White;
             }
 
-            // Zip Code is valid
+            // Zip Code is 5 numbers long AND not empty
             if (string.IsNullOrEmpty(ZipCodeTextBox.Text))
             {
                 ZipValid = false;
@@ -147,6 +149,90 @@ namespace CarRental
                     ZipCodeTextBox.BackColor = Color.LightYellow;
                 }
             }
+
+            // Initial Odometer is a number AND not empty
+            if (string.IsNullOrEmpty(InitialOdometerTextBox.Text))
+            {
+                Odo1Valid = false;
+                InitialOdometerTextBox.BackColor = Color.LightYellow;
+            }
+            else
+            {
+                try
+                {
+                    // POTENTIAL BUG: May not convert correctly
+                    double.Parse(InitialOdometerTextBox.Text);
+                    Odo1Valid = true;
+                    InitialOdometerTextBox.Text += InitOdometer;
+                }
+                catch (Exception)
+                {
+                    Odo1Valid = false;
+                    InitialOdometerTextBox.BackColor = Color.LightYellow;
+                }
+            }
+
+            // Final Odometer is a number AND not empty AND greater than the initial odometer
+            if (string.IsNullOrEmpty(FinalOdometerTextBox.Text))
+            {
+                Odo2Valid = false;
+                FinalOdometerTextBox.BackColor = Color.LightYellow;
+            }
+            else
+            {
+                try
+                {
+                    double.Parse(FinalOdometerTextBox.Text);
+                    FinalOdometerTextBox.Text += FinalOdometer;
+                    if (FinalOdometer < InitOdometer)
+                    {
+                        Odo2Valid = true;
+                        FinalOdometerTextBox.BackColor = Color.White;
+                    }
+                    else
+                    {
+                        Odo2Valid = false;
+                        FinalOdometerTextBox.BackColor = Color.LightYellow;
+                    }
+                }
+                catch (Exception)
+                {
+                    Odo2Valid = false;
+                    FinalOdometerTextBox.BackColor = Color.LightYellow;
+                }
+            }
+
+            // Days are not empty and must be a number
+            if (string.IsNullOrEmpty(DaysTextBox.Text))
+            {
+                DaysValid = false;
+                DaysTextBox.BackColor = Color.LightYellow;
+            }
+            else
+            {
+                try
+                {
+                    double.Parse(DaysTextBox.Text);
+                    DaysValid = true;
+                    DaysTextBox.BackColor = Color.White;
+                }
+                catch (Exception)
+                {
+                    DaysValid = false;
+                    DaysTextBox.BackColor = Color.LightYellow;
+                }
+            }
+
+            // All fields are valid
+            if (NameValid && AddressValid && CityValid && StateValid && ZipValid && Odo1Valid && Odo2Valid && DaysValid)
+            {
+                allFieldsValid = true;
+            }
+            else
+            {
+                allFieldsValid = false;
+            }
+            return allFieldsValid;
         }
 
         //private double kmToMiles()
