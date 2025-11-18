@@ -38,17 +38,16 @@
             AAA_DiscountCheckBox = new CheckBox();
             KM_RadioButton = new RadioButton();
             MilesRadioButton = new RadioButton();
+            CustomerNameTextBox = new TextBox();
             DiscountGroupBox = new GroupBox();
             OdometerUnitGroupBox = new GroupBox();
-            CustomerNameTextBox = new TextBox();
             AddressTextBox = new TextBox();
             CityTextBox = new TextBox();
-            StateTextBox = new TextBox();
             ZipCodeTextBox = new TextBox();
             InitialOdometerTextBox = new TextBox();
             FinalOdometerTextBox = new TextBox();
-            NumberOfDaysTextBox = new TextBox();
             CustomerInfoGroupBox = new GroupBox();
+            StateComboBox = new ComboBox();
             DaysLabel = new Label();
             FinalOdometerLabel = new Label();
             InitialOdometerLabel = new Label();
@@ -68,6 +67,7 @@
             DayChargeLabel = new Label();
             MileageChargeLabel = new Label();
             DistanceLabel = new Label();
+            DaysTextBox = new TextBox();
             DiscountGroupBox.SuspendLayout();
             OdometerUnitGroupBox.SuspendLayout();
             CustomerInfoGroupBox.SuspendLayout();
@@ -165,6 +165,14 @@
             toolTip1.SetToolTip(MilesRadioButton, "Odometer display is in \"mi\"");
             MilesRadioButton.UseVisualStyleBackColor = true;
             // 
+            // CustomerNameTextBox
+            // 
+            CustomerNameTextBox.Location = new Point(251, 44);
+            CustomerNameTextBox.Name = "CustomerNameTextBox";
+            CustomerNameTextBox.Size = new Size(166, 31);
+            CustomerNameTextBox.TabIndex = 6;
+            toolTip1.SetToolTip(CustomerNameTextBox, "Customer's name");
+            // 
             // DiscountGroupBox
             // 
             DiscountGroupBox.Controls.Add(SeniorDiscountCheckBox);
@@ -187,65 +195,45 @@
             OdometerUnitGroupBox.TabStop = false;
             OdometerUnitGroupBox.Text = "Odometer Measurement Unit";
             // 
-            // CustomerNameTextBox
-            // 
-            CustomerNameTextBox.Location = new Point(267, 44);
-            CustomerNameTextBox.Name = "CustomerNameTextBox";
-            CustomerNameTextBox.Size = new Size(150, 31);
-            CustomerNameTextBox.TabIndex = 6;
-            toolTip1.SetToolTip(CustomerNameTextBox, "Customer's name");
-            // 
             // AddressTextBox
             // 
-            AddressTextBox.Location = new Point(267, 81);
+            AddressTextBox.Location = new Point(251, 81);
             AddressTextBox.Name = "AddressTextBox";
-            AddressTextBox.Size = new Size(150, 31);
+            AddressTextBox.Size = new Size(166, 31);
             AddressTextBox.TabIndex = 7;
             // 
             // CityTextBox
             // 
-            CityTextBox.Location = new Point(266, 118);
+            CityTextBox.Location = new Point(251, 118);
             CityTextBox.Name = "CityTextBox";
-            CityTextBox.Size = new Size(150, 31);
+            CityTextBox.Size = new Size(165, 31);
             CityTextBox.TabIndex = 8;
-            // 
-            // StateTextBox
-            // 
-            StateTextBox.Location = new Point(267, 155);
-            StateTextBox.Name = "StateTextBox";
-            StateTextBox.Size = new Size(150, 31);
-            StateTextBox.TabIndex = 9;
             // 
             // ZipCodeTextBox
             // 
-            ZipCodeTextBox.Location = new Point(266, 192);
+            ZipCodeTextBox.Location = new Point(251, 192);
             ZipCodeTextBox.Name = "ZipCodeTextBox";
-            ZipCodeTextBox.Size = new Size(150, 31);
+            ZipCodeTextBox.Size = new Size(165, 31);
             ZipCodeTextBox.TabIndex = 10;
             // 
             // InitialOdometerTextBox
             // 
-            InitialOdometerTextBox.Location = new Point(266, 229);
+            InitialOdometerTextBox.Location = new Point(251, 229);
             InitialOdometerTextBox.Name = "InitialOdometerTextBox";
-            InitialOdometerTextBox.Size = new Size(150, 31);
+            InitialOdometerTextBox.Size = new Size(165, 31);
             InitialOdometerTextBox.TabIndex = 11;
             // 
             // FinalOdometerTextBox
             // 
-            FinalOdometerTextBox.Location = new Point(266, 266);
+            FinalOdometerTextBox.Location = new Point(251, 266);
             FinalOdometerTextBox.Name = "FinalOdometerTextBox";
-            FinalOdometerTextBox.Size = new Size(150, 31);
+            FinalOdometerTextBox.Size = new Size(165, 31);
             FinalOdometerTextBox.TabIndex = 12;
-            // 
-            // NumberOfDaysTextBox
-            // 
-            NumberOfDaysTextBox.Location = new Point(266, 303);
-            NumberOfDaysTextBox.Name = "NumberOfDaysTextBox";
-            NumberOfDaysTextBox.Size = new Size(150, 31);
-            NumberOfDaysTextBox.TabIndex = 13;
             // 
             // CustomerInfoGroupBox
             // 
+            CustomerInfoGroupBox.Controls.Add(DaysTextBox);
+            CustomerInfoGroupBox.Controls.Add(StateComboBox);
             CustomerInfoGroupBox.Controls.Add(DaysLabel);
             CustomerInfoGroupBox.Controls.Add(FinalOdometerLabel);
             CustomerInfoGroupBox.Controls.Add(InitialOdometerLabel);
@@ -254,20 +242,27 @@
             CustomerInfoGroupBox.Controls.Add(CityLabel);
             CustomerInfoGroupBox.Controls.Add(AddressLabel);
             CustomerInfoGroupBox.Controls.Add(CustomerNameLabel);
-            CustomerInfoGroupBox.Controls.Add(NumberOfDaysTextBox);
             CustomerInfoGroupBox.Controls.Add(CustomerNameTextBox);
             CustomerInfoGroupBox.Controls.Add(FinalOdometerTextBox);
             CustomerInfoGroupBox.Controls.Add(AddressTextBox);
             CustomerInfoGroupBox.Controls.Add(InitialOdometerTextBox);
             CustomerInfoGroupBox.Controls.Add(CityTextBox);
             CustomerInfoGroupBox.Controls.Add(ZipCodeTextBox);
-            CustomerInfoGroupBox.Controls.Add(StateTextBox);
             CustomerInfoGroupBox.Location = new Point(12, 12);
             CustomerInfoGroupBox.Name = "CustomerInfoGroupBox";
             CustomerInfoGroupBox.Size = new Size(435, 361);
             CustomerInfoGroupBox.TabIndex = 14;
             CustomerInfoGroupBox.TabStop = false;
             CustomerInfoGroupBox.Text = "Customer Information";
+            // 
+            // StateComboBox
+            // 
+            StateComboBox.FormattingEnabled = true;
+            StateComboBox.Items.AddRange(new object[] { "(Select a US State)", "Alabama", "", "Alaska", "", "Arizona", "", "Arkansas", "", "California", "", "Colorado", "", "Connecticut", "", "Delaware", "", "Florida", "", "Georgia", "", "Hawaii", "", "Idaho", "", "Illinois", "", "Indiana", "", "Iowa", "", "Kansas", "", "Kentucky", "", "Louisiana", "", "Maine", "", "Maryland", "", "Massachusetts", "", "Michigan", "", "Minnesota", "", "Mississippi", "", "Missouri", "", "Montana", "", "Nebraska", "", "Nevada", "", "New Hampshire", "", "New Jersey", "", "New Mexico", "", "New York", "", "North Carolina", "", "North Dakota", "", "Ohio", "", "Oklahoma", "", "Oregon", "", "Pennsylvania", "", "Rhode Island", "", "South Carolina", "", "South Dakota", "", "Tennessee", "", "Texas", "", "Utah", "", "Vermont", "", "Virginia", "", "Washington", "", "West Virginia", "", "Wisconsin", "", "Wyoming" });
+            StateComboBox.Location = new Point(251, 155);
+            StateComboBox.Name = "StateComboBox";
+            StateComboBox.Size = new Size(165, 33);
+            StateComboBox.TabIndex = 16;
             // 
             // DaysLabel
             // 
@@ -440,6 +435,13 @@
             DistanceLabel.TabIndex = 0;
             DistanceLabel.Text = "Distance in Miles";
             // 
+            // DaysTextBox
+            // 
+            DaysTextBox.Location = new Point(252, 303);
+            DaysTextBox.Name = "DaysTextBox";
+            DaysTextBox.Size = new Size(164, 31);
+            DaysTextBox.TabIndex = 22;
+            // 
             // CarRentalForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -487,7 +489,6 @@
         private TextBox ZipCodeTextBox;
         private TextBox InitialOdometerTextBox;
         private TextBox FinalOdometerTextBox;
-        private TextBox NumberOfDaysTextBox;
         private GroupBox CustomerInfoGroupBox;
         private GroupBox ResultGroupBox;
         private Label CustomerNameLabel;
@@ -508,5 +509,7 @@
         private TextBox DayChargeTextBox;
         private TextBox MileageChargeTextBox;
         private TextBox DistanceTextBox;
+        private ComboBox StateComboBox;
+        private TextBox DaysTextBox;
     }
 }

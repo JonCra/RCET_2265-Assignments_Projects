@@ -14,6 +14,7 @@ namespace CarRental
     {
         // Variables
         double distance;
+        double miles;
 
         public CarRentalForm()
         {
@@ -34,8 +35,8 @@ namespace CarRental
 
             // Loads blank text/empty for the following:
             CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = StateTextBox.Text =
-                ZipCodeTextBox.Text = InitialOdometerTextBox.Text = FinalOdometerTextBox.Text =
-                NumberOfDaysTextBox.Text = "";
+                ZipCodeTextBox.Text = InitialOdometerTextBox.Text =
+                FinalOdometerTextBox.Text = DaysTextBox.Text = "";
 
             DistanceTextBox.Text = MileageChargeTextBox.Text = DayChargeTextBox.Text =
                 CreditTextBox.Text = BalanceTotalTextBox.Text = "";            
@@ -50,19 +51,60 @@ namespace CarRental
             KM_RadioButton.Checked = AAA_DiscountCheckBox.Checked = SeniorDiscountCheckBox.Checked = false;
 
             CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = StateTextBox.Text =
-                ZipCodeTextBox.Text = InitialOdometerTextBox.Text = FinalOdometerTextBox.Text =
-                NumberOfDaysTextBox.Text = "";
+                ZipCodeTextBox.Text = InitialOdometerTextBox.Text =
+                FinalOdometerTextBox.Text = DaysTextBox.Text = "";
         }
 
         private void ValidateInputs()
         {
+            bool allFieldsValid;
+            bool NameValid;
+            bool AddressValid;
+            bool CityValid;
+            bool StateValid;
+            bool ZipValid;
+            bool Odo1Valid;
+            bool Odo2Valid;
+            bool DaysValid;
 
+            // Name should not be empty
+            if (string.IsNullOrEmpty(CustomerNameTextBox.Text))
+            {
+                NameValid = false;
+                CustomerNameTextBox.BackColor = Color.LightYellow;
+            }
+            else
+            {
+                NameValid = true;
+            }
+
+            // Address should not be empty
+            if (string.IsNullOrEmpty(AddressTextBox.Text))
+            {
+                AddressValid = false;
+            }
+            else
+            {
+                AddressValid = true;
+            }
+
+            // City should not be empty
+            if (string.IsNullOrEmpty(CityTextBox.Text))
+            {
+                CityValid = false;
+            }
+            else
+            {
+                CityValid = true;
+            }
+
+            // State is limited to 
         }
 
-        private double kmToMiles()
-        {
-            return distance * 0.62;
-        }
+        //private double kmToMiles()
+        //{
+        //    miles = distance * 0.62;
+        //}
 
         // Event Handlers ----------------------------------------
         private void CalculateButton_Click(object sender, EventArgs e)
@@ -82,7 +124,7 @@ namespace CarRental
             // Day Charge calculated here
 
             // Mileage converted/calculatd here
-            if (KM_RadioButton.Checked == true && MilesRadioButton.Checked == false)
+            if (KM_RadioButton.Checked == true)
             {
                 //kmToMiles();
             }
