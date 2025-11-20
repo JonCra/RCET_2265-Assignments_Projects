@@ -210,7 +210,7 @@ namespace CarRental
                 }
             }
 
-            // Days are not empty and must be a number
+            // Days are not empty and must be a number greater than 0
             if (string.IsNullOrEmpty(DaysTextBox.Text))
             {
                 DaysValid = false;
@@ -221,9 +221,17 @@ namespace CarRental
                 try
                 {
                     double.Parse(DaysTextBox.Text);
-                    DaysValid = true;
-                    DaysTextBox.BackColor = Color.White;
-                    Days = double.Parse(DaysTextBox.Text);
+                    if (Days > 0)
+                    {
+                        DaysValid = true;
+                        DaysTextBox.BackColor = Color.White;
+                        Days = double.Parse(DaysTextBox.Text);
+                    }
+                    else
+                    {
+                        DaysValid = false;
+                        DaysTextBox.BackColor = Color.LightYellow;
+                    }
                 }
                 catch (Exception)
                 {
