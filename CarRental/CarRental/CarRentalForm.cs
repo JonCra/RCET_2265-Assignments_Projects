@@ -13,18 +13,18 @@ namespace CarRental
     public partial class CarRentalForm : Form
     {
         // Variables
-        double distance;
-        double miles;
-        double InitOdometer;
-        double FinalOdometer;
-        double Days;
+        double distance = 0;
+        double miles = 0;
+        double InitOdometer = 0;
+        double FinalOdometer = 0;
+        double Days = 0;
         double DailyCharge = 0;
         double MileageCharge = 0;
-        double Discount1;
-        double Discount2;
-        double Discount;
-        double NetTotal;
-        double Total;
+        double Discount1 = 0;
+        double Discount2 = 0;
+        double Discount = 0;
+        double NetTotal = 0;
+        double Total = 0;
         bool allFieldsValid;
 
         public CarRentalForm()
@@ -170,8 +170,8 @@ namespace CarRental
                 {
                     // POTENTIAL BUG: May not convert correctly
                     double.Parse(InitialOdometerTextBox.Text);
-                    Odo1Valid = true;
                     InitOdometer = double.Parse(InitialOdometerTextBox.Text);
+                    Odo1Valid = true;
                 }
                 catch (Exception)
                 {
