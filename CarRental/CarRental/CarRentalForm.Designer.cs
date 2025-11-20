@@ -468,7 +468,7 @@
             Controls.Add(ClearButton);
             Name = "CarRentalForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Auto Hacks";
+            Text = "U-Drive Auto Rentals";
             DiscountGroupBox.ResumeLayout(false);
             DiscountGroupBox.PerformLayout();
             OdometerUnitGroupBox.ResumeLayout(false);

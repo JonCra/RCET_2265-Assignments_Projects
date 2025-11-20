@@ -19,9 +19,11 @@ namespace CarRental
         double FinalOdometer;
         double Days;
         double DailyCharge = 0;
+        double MileageCharge = 0;
         double Discount1;
         double Discount2;
         double Discount;
+        double NetTotal;
         double Total;
 
         public CarRentalForm()
@@ -120,7 +122,7 @@ namespace CarRental
                 StateValid = false;
                 StateComboBox.BackColor = Color.LightYellow;
             }
-            else if (StateComboBox.SelectedIndex != 0)
+            else if (StateComboBox.SelectedIndex > 0)
             {
                 StateValid = true;
                 StateComboBox.BackColor = Color.White;
@@ -169,7 +171,7 @@ namespace CarRental
                     // POTENTIAL BUG: May not convert correctly
                     double.Parse(InitialOdometerTextBox.Text);
                     Odo1Valid = true;
-                    InitialOdometerTextBox.Text += InitOdometer;
+                    InitOdometer = double.Parse(InitialOdometerTextBox.Text);
                 }
                 catch (Exception)
                 {
@@ -189,11 +191,11 @@ namespace CarRental
                 try
                 {
                     double.Parse(FinalOdometerTextBox.Text);
-                    FinalOdometerTextBox.Text += FinalOdometer;
                     if (FinalOdometer < InitOdometer)
                     {
                         Odo2Valid = true;
                         FinalOdometerTextBox.BackColor = Color.White;
+                        FinalOdometer = double.Parse(FinalOdometerTextBox.Text);
                     }
                     else
                     {
@@ -257,13 +259,13 @@ namespace CarRental
              * CAN GET BOTH DISCOUNTS; DO NOT ACCOUNT FOR UNTIL CACLULATE BUTTON IS CLICKED
              */
 
-            DailyChargeCalculator(); // Calculates daily charge
+            DailyChargeCalculator(); // Calculates daily charge, ready to test
                         
-            DistanceConverter(); // Convert km to mi
+            DistanceConverter(); // Convert km to mi, ready to test
+                        
+            Discounter(); // Calculate discount, ready to test
 
-            RateCalculator(); // Calculate milage charge
-                        
-            Discounter(); // Calculate discount
+            TotalAmount();
         }
 
         private void DailyChargeCalculator()
@@ -283,6 +285,8 @@ namespace CarRental
                 miles = distance;
             }
             DistanceTextBox.Text = distance.ToString();
+
+            RateCalculator(); // Calculates charge for mileage
         }
 
         private void RateCalculator()
@@ -290,24 +294,28 @@ namespace CarRental
             if (miles <= 200)
             {
                 // First 200 miles are free!
+                MileageCharge = 0;
             }
             else if (miles <= 500)
             {
-                MileageChargeTextBox.Text = (miles * 0.1).ToString();
-                Total = miles * 0.12;
+                MileageCharge = miles * 0.12;
             }
             else if (miles >= 500)
             {
-                MileageChargeTextBox.Text = (miles * 0.1).ToString();
-                Total = miles * 0.10;
+                MileageCharge = miles * 0.10;
             }
+            MileageChargeTextBox.Text = MileageCharge.ToString();
         }
 
         private void Discounter()
-        {            
+        {
+            Total = DailyCharge + MileageCharge;
+
             DiscountedSenior();
             DiscountedMember();
-            Discount = Discount1 + Discount2;   
+
+            Discount = Total * (Discount1 + Discount2);
+            CreditTextBox.Text = Discount.ToString();            
         }
 
         private void DiscountedSenior()
@@ -332,6 +340,12 @@ namespace CarRental
             {
                 Discount2 = 0;
             }
+        }
+
+        private void TotalAmount()
+        {
+            NetTotal = Total - Discount;
+            BalanceTotalTextBox.Text = NetTotal.ToString();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
