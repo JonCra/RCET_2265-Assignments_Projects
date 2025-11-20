@@ -117,8 +117,7 @@ namespace CarRental
             }
 
             // State is selected
-            // BUG: Does not validate sometimes
-            if (StateComboBox.SelectedItem != "Select a State")
+            if (StateComboBox.SelectedIndex <= 0)
             {
                 StateValid = false;
                 StateComboBox.BackColor = Color.LightYellow;
