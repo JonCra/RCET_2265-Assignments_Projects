@@ -25,6 +25,7 @@ namespace CarRental
         double Discount;
         double NetTotal;
         double Total;
+        bool allFieldsValid;
 
         public CarRentalForm()
         {
@@ -67,9 +68,8 @@ namespace CarRental
             StateComboBox.SelectedIndex = 0;
         }
 
-        private void ValidateInputs() // BUG: SEE NOTE
+        private void ValidateInputs()
         {
-            bool allFieldsValid;
             bool NameValid;
             bool AddressValid;
             bool CityValid;
@@ -221,6 +221,7 @@ namespace CarRental
                 try
                 {
                     double.Parse(DaysTextBox.Text);
+                    Days = double.Parse(DaysTextBox.Text);
                     if (Days > 0)
                     {
                         DaysValid = true;
