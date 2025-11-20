@@ -280,7 +280,7 @@
             StateComboBox.Name = "StateComboBox";
             StateComboBox.Size = new Size(165, 33);
             StateComboBox.TabIndex = 3;
-            StateComboBox.TabIndexChanged += InputTextChanged;
+            StateComboBox.SelectedIndexChanged += InputTextChanged;
             // 
             // DaysLabel
             // 

@@ -81,7 +81,7 @@ namespace CarRental
             int _Zip;
 
             // Name should not be empty
-            if (string.IsNullOrEmpty(CustomerNameTextBox.Text))
+            if (string.IsNullOrEmpty(CustomerNameTextBox.Text) || string.IsNullOrWhiteSpace(CustomerNameTextBox.Text))
             {
                 NameValid = false;
                 CustomerNameTextBox.BackColor = Color.LightYellow;
@@ -93,7 +93,7 @@ namespace CarRental
             }
 
             // Address should not be empty
-            if (string.IsNullOrEmpty(AddressTextBox.Text))
+            if (string.IsNullOrEmpty(AddressTextBox.Text) || string.IsNullOrWhiteSpace(AddressTextBox.Text))
             {
                 AddressValid = false;
                 AddressTextBox.BackColor = Color.LightYellow;
@@ -105,7 +105,7 @@ namespace CarRental
             }
 
             // City should not be empty
-            if (string.IsNullOrEmpty(CityTextBox.Text))
+            if (string.IsNullOrEmpty(CityTextBox.Text) || string.IsNullOrWhiteSpace(CityTextBox.Text))
             {
                 CityValid = false;
                 CityTextBox.BackColor = Color.LightYellow;
@@ -129,7 +129,7 @@ namespace CarRental
             }
 
             // Zip Code is 5 numbers long AND not empty
-            if (string.IsNullOrEmpty(ZipCodeTextBox.Text))
+            if (string.IsNullOrEmpty(ZipCodeTextBox.Text) || string.IsNullOrWhiteSpace(ZipCodeTextBox.Text))
             {
                 ZipValid = false;
                 ZipCodeTextBox.BackColor = Color.LightYellow;
@@ -159,7 +159,7 @@ namespace CarRental
             }
 
             // Initial Odometer is a number AND not empty
-            if (string.IsNullOrEmpty(InitialOdometerTextBox.Text))
+            if (string.IsNullOrEmpty(InitialOdometerTextBox.Text) || string.IsNullOrWhiteSpace(InitialOdometerTextBox.Text))
             {
                 Odo1Valid = false;
                 InitialOdometerTextBox.BackColor = Color.LightYellow;
@@ -181,7 +181,7 @@ namespace CarRental
             }
 
             // Final Odometer is a number AND not empty AND greater than the initial odometer
-            if (string.IsNullOrEmpty(FinalOdometerTextBox.Text))
+            if (string.IsNullOrEmpty(FinalOdometerTextBox.Text) || string.IsNullOrWhiteSpace(FinalOdometerTextBox.Text))
             {
                 Odo2Valid = false;
                 FinalOdometerTextBox.BackColor = Color.LightYellow;
@@ -211,7 +211,7 @@ namespace CarRental
             }
 
             // Days are not empty and must be a number greater than 0
-            if (string.IsNullOrEmpty(DaysTextBox.Text))
+            if (string.IsNullOrEmpty(DaysTextBox.Text) || string.IsNullOrWhiteSpace(DaysTextBox.Text))
             {
                 DaysValid = false;
                 DaysTextBox.BackColor = Color.LightYellow;
