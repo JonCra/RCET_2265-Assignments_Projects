@@ -67,17 +67,17 @@ namespace CarRental
             StateComboBox.SelectedIndex = 0;
         }
 
-        bool ValidateInputs() // Maybe make each field individual...?
+        private void ValidateInputs() // BUG: SEE NOTE
         {
-            bool allFieldsValid = false;
-            bool NameValid = false;
-            bool AddressValid = false;
-            bool CityValid = false;
-            bool StateValid = false;
-            bool ZipValid = false;
-            bool Odo1Valid = false;
+            bool allFieldsValid;
+            bool NameValid;
+            bool AddressValid;
+            bool CityValid;
+            bool StateValid;
+            bool ZipValid;
+            bool Odo1Valid;
             bool Odo2Valid = false;
-            bool DaysValid = false;
+            bool DaysValid;
             int _Zip;
 
             // Name should not be empty
@@ -117,7 +117,8 @@ namespace CarRental
             }
 
             // State is selected
-            if (StateComboBox.SelectedIndex == 0)
+            // BUG: Does not validate sometimes
+            if (StateComboBox.SelectedItem != "Select a State")
             {
                 StateValid = false;
                 StateComboBox.BackColor = Color.LightYellow;
@@ -244,12 +245,13 @@ namespace CarRental
             if (NameValid && AddressValid && CityValid && StateValid && ZipValid && Odo1Valid && Odo2Valid && DaysValid)
             {
                 allFieldsValid = true;
+                CalculateButton.Enabled = true;
             }
             else
             {
                 allFieldsValid = false;
+                CalculateButton.Enabled = false;
             }
-            return allFieldsValid;
         }
 
         // Event Handlers ----------------------------------------
