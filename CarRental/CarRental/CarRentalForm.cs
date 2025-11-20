@@ -403,9 +403,39 @@ namespace CarRental
             ClearForm();
         }
 
-        private void InputTextChanged(object sender, EventArgs e)
+
+        // Event Validators ------------------------------------------
+        private void NameTextChanged(object sender, EventArgs e)
         {
-            ValidateInputs();
+            NameIsValid();
+        }
+        private void AddressTextChanged(object sender, EventArgs e)
+        {
+            AddressIsValid();
+        }
+        private void CityTextChanged(object sender, EventArgs e)
+        {
+            CityIsValid();
+        }
+        private void StateChanged(object sender, EventArgs e)
+        {
+            StateIsValid();
+        }
+        private void ZipTextChanged(object sender, EventArgs e)
+        {
+            ZipIsValid();
+        }
+        private void InitOdoTextChanged(object sender, EventArgs e)
+        {
+            InitOdoValid();
+        }
+        private void FinalOdoTextChanged(object sender, EventArgs e)
+        {
+            FinalOdoValid();
+        }
+        private void DayTextChanged(object sender, EventArgs e)
+        {
+            DaysAreValid();
         }
     }
 }
