@@ -4,7 +4,7 @@ namespace CarRental
     TODO (Details in appropriate object/method):
         [X] Input Validation
         [ ] Calculations
-        [X] Ouptut Display
+        [ ] Ouptut Display
         [ ] Summary
         [X] Clear Form
         [X] Yes/No confirm closing program
@@ -26,6 +26,16 @@ namespace CarRental
         double NetTotal;
         double Total;
 
+        bool allFieldsValid = false;
+        bool NameValid = false;
+        bool AddressValid = false;
+        bool CityValid = false;
+        bool StateValid = false;
+        bool ZipValid = false;
+        bool Odo1Valid = false;
+        bool Odo2Valid = false;
+        bool DaysValid = false;
+
         public CarRentalForm()
         {
             InitializeComponent();
@@ -41,7 +51,7 @@ namespace CarRental
             // Disables the following:
             KM_RadioButton.Checked = AAA_DiscountCheckBox.Checked = SeniorDiscountCheckBox.Checked =
                 DistanceTextBox.Enabled = MileageChargeTextBox.Enabled = DayChargeTextBox.Enabled =
-                CreditTextBox.Enabled = BalanceTotalTextBox.Enabled = false;
+                CreditTextBox.Enabled = BalanceTotalTextBox.Enabled = CalculateButton.Enabled = false;
 
             // Loads blank text / empty for the following:
             CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = ZipCodeTextBox.Text =
@@ -67,19 +77,23 @@ namespace CarRental
             StateComboBox.SelectedIndex = 0;
         }
 
-        bool ValidateInputs() // Maybe make each field individual...?
+        private void ValidateInputs()
         {
-            bool allFieldsValid = false;
-            bool NameValid = false;
-            bool AddressValid = false;
-            bool CityValid = false;
-            bool StateValid = false;
-            bool ZipValid = false;
-            bool Odo1Valid = false;
-            bool Odo2Valid = false;
-            bool DaysValid = false;
-            int _Zip;
+            // All fields are valid
+            if (NameValid && AddressValid && CityValid && StateValid && ZipValid && Odo1Valid && Odo2Valid && DaysValid)
+            {
+                allFieldsValid = true;
+                CalculateButton.Enabled = true;
+            }
+            else
+            {
+                allFieldsValid = false;
+                CalculateButton.Enabled = false;
+            }
+        }
 
+        private void NameIsValid()
+        {
             // Name should not be empty
             if (string.IsNullOrEmpty(CustomerNameTextBox.Text))
             {
@@ -91,7 +105,10 @@ namespace CarRental
                 NameValid = true;
                 CustomerNameTextBox.BackColor = Color.White;
             }
+        }
 
+        private void AddressIsValid()
+        {
             // Address should not be empty
             if (string.IsNullOrEmpty(AddressTextBox.Text))
             {
@@ -103,7 +120,10 @@ namespace CarRental
                 AddressValid = true;
                 AddressTextBox.BackColor = Color.White;
             }
+        }
 
+        private void CityIsValid()
+        {
             // City should not be empty
             if (string.IsNullOrEmpty(CityTextBox.Text))
             {
@@ -115,19 +135,25 @@ namespace CarRental
                 CityValid = true;
                 CityTextBox.BackColor = Color.White;
             }
+        }
 
+        private void StateIsValid()
+        {
             // State is selected
             if (StateComboBox.SelectedIndex == 0)
             {
                 StateValid = false;
                 StateComboBox.BackColor = Color.LightYellow;
             }
-            else if (StateComboBox.SelectedIndex > 0)
+            else
             {
                 StateValid = true;
                 StateComboBox.BackColor = Color.White;
             }
+        }
 
+        private void ZipIsValid()
+        {
             // Zip Code is 5 numbers long AND not empty
             if (string.IsNullOrEmpty(ZipCodeTextBox.Text))
             {
@@ -157,7 +183,10 @@ namespace CarRental
                     ZipCodeTextBox.BackColor = Color.LightYellow;
                 }
             }
+        }
 
+        private void InitOdoValid()
+        {
             // Initial Odometer is a number AND not empty
             if (string.IsNullOrEmpty(InitialOdometerTextBox.Text))
             {
@@ -179,7 +208,10 @@ namespace CarRental
                     InitialOdometerTextBox.BackColor = Color.LightYellow;
                 }
             }
+        }
 
+        private void FinalOdoValid()
+        {
             // Final Odometer is a number AND not empty AND greater than the initial odometer
             if (string.IsNullOrEmpty(FinalOdometerTextBox.Text))
             {
@@ -191,13 +223,13 @@ namespace CarRental
                 try
                 {
                     double.Parse(FinalOdometerTextBox.Text);
-                    if (FinalOdometer < InitOdometer)
+                    if (FinalOdometer <= InitOdometer)
                     {
                         Odo2Valid = true;
                         FinalOdometerTextBox.BackColor = Color.White;
                         FinalOdometer = double.Parse(FinalOdometerTextBox.Text);
                     }
-                    else
+                    else if (FinalOdometer >= InitOdometer)
                     {
                         Odo2Valid = false;
                         FinalOdometerTextBox.BackColor = Color.LightYellow;
@@ -209,7 +241,10 @@ namespace CarRental
                     FinalOdometerTextBox.BackColor = Color.LightYellow;
                 }
             }
+        }
 
+        private void DaysAreValid()
+        {
             // Days are not empty and must be a number
             if (string.IsNullOrEmpty(DaysTextBox.Text))
             {
@@ -231,17 +266,6 @@ namespace CarRental
                     DaysTextBox.BackColor = Color.LightYellow;
                 }
             }
-
-            // All fields are valid
-            if (NameValid && AddressValid && CityValid && StateValid && ZipValid && Odo1Valid && Odo2Valid && DaysValid)
-            {
-                allFieldsValid = true;
-            }
-            else
-            {
-                allFieldsValid = false;
-            }
-            return allFieldsValid;
         }
 
         // Event Handlers ----------------------------------------
