@@ -167,11 +167,11 @@ namespace CarRental
             }
             else
             {
-                InitOdometer = double.Parse(InitialOdometerTextBox.Text);
+                //InitOdometer = double.Parse(InitialOdometerTextBox.Text);
                 try
                 {
-                    // POTENTIAL BUG: May not convert correctly
-                    double.Parse(InitialOdometerTextBox.Text);
+                        // POTENTIAL BUG: May not convert correctly
+                    InitialOdometerTextBox.BackColor = Color.White;
                     InitOdometer = double.Parse(InitialOdometerTextBox.Text);
                     Odo1Valid = true;
                 }
@@ -373,6 +373,7 @@ namespace CarRental
         private void ClearButton_Click(object sender, EventArgs e)
         {
             // DO NOT CLEAR SUMMARY DETAILS
+            ClearForm();
             ClearForm();
         }
 
