@@ -273,8 +273,8 @@ namespace CarRental
             {
                 miles = distance;
             }
+            Math.Round(miles, 2);
             DistanceTextBox.Text = miles.ToString();
-
             RateCalculator(); // Calculates charge for mileage
         }
 
@@ -293,6 +293,7 @@ namespace CarRental
             {
                 MileageCharge = miles * 0.10;
             }
+            Math.Round(MileageCharge, 2);
             MileageChargeTextBox.Text = MileageCharge.ToString();
         }
 
@@ -304,6 +305,7 @@ namespace CarRental
             DiscountedMember();
 
             Discount = Total * (Discount1 + Discount2);
+            Math.Round(Discount, 2);
             CreditTextBox.Text = Discount.ToString();            
         }
 
@@ -334,6 +336,7 @@ namespace CarRental
         private void TotalAmount()
         {
             NetTotal = Total - Discount;
+            Math.Round(NetTotal, 2);
             BalanceTotalTextBox.Text = NetTotal.ToString();
         }
 
