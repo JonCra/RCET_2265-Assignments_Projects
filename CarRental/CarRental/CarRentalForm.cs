@@ -344,6 +344,18 @@ namespace CarRental
         }
 
         // Event Handlers ----------------------------------------
+        private void InputTextChanged(object sender, EventArgs e)
+        {
+            ValidateInputs();
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            // DO NOT CLEAR SUMMARY DETAILS
+            ClearForm();
+            ClearForm();
+        }
+
         private void CalculateButton_Click(object sender, EventArgs e)
         {
             // Calculate based on user input
@@ -367,23 +379,6 @@ namespace CarRental
             TotalAmount();
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            // User-confirmed program close
-            var result = MessageBox.Show("Are you sure you want to quit?", "Quit program?", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
-        private void ClearButton_Click(object sender, EventArgs e)
-        {
-            // DO NOT CLEAR SUMMARY DETAILS
-            ClearForm();
-            ClearForm();
-        }
-
         private void SummaryButton_Click(object sender, EventArgs e)
         {
             /* Disabled until AT LEAST ONE rental has been completed
@@ -399,9 +394,14 @@ namespace CarRental
             ClearForm();
         }
 
-        private void InputTextChanged(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
         {
-            ValidateInputs();
+            // User-confirmed program close
+            var result = MessageBox.Show("Are you sure you want to quit?", "Quit program?", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }
