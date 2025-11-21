@@ -268,6 +268,7 @@ namespace CarRental
             if (KM_RadioButton.Checked == true && MilesRadioButton.Checked == false)
             {
                 miles = (distance * 0.62);
+                Math.Round(miles, 2);
             }
             else if (MilesRadioButton.Checked == true && KM_RadioButton.Checked == false)
             {
@@ -288,10 +289,12 @@ namespace CarRental
             else if (miles <= 500)
             {
                 MileageCharge = miles * 0.12;
+                Math.Round(MileageCharge, 2);
             }
             else if (miles >= 500)
             {
                 MileageCharge = miles * 0.10;
+                Math.Round(MileageCharge, 2);
             }
             Math.Round(MileageCharge, 2);
             MileageChargeTextBox.Text = MileageCharge.ToString();
