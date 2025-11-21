@@ -12,7 +12,7 @@ namespace CarRental
 
     public partial class CarRentalForm : Form
     {
-        // Variables
+        // Variables -------------------------------------------
         double distance = 0;
         double miles = 0;
         double InitOdometer = 0;
@@ -265,15 +265,15 @@ namespace CarRental
         private void DistanceConverter()
         {
             distance = FinalOdometer - InitOdometer;
-            if (KM_RadioButton.Checked == true)
+            if (KM_RadioButton.Checked == true && MilesRadioButton.Checked == false)
             {
-                miles = distance * 0.62;
+                miles = (distance * 0.62);
             }
-            else if (MilesRadioButton.Checked == true)
+            else if (MilesRadioButton.Checked == true && KM_RadioButton.Checked == false)
             {
                 miles = distance;
             }
-            DistanceTextBox.Text = distance.ToString();
+            DistanceTextBox.Text = miles.ToString();
 
             RateCalculator(); // Calculates charge for mileage
         }
