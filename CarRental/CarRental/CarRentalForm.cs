@@ -2,9 +2,9 @@ namespace CarRental
 {
     /*
     TODO (Details in appropriate object/method):
-        [ ] Input Validation
+        [X] Input Validation
         [ ] Calculations
-        [ ] Ouptut Display
+        [X] Ouptut Display
         [ ] Summary
         [X] Clear Form
         [X] Yes/No confirm closing program
@@ -283,6 +283,7 @@ namespace CarRental
         private void DailyChargeCalculator()
         {
             DailyCharge = Days * 15;
+            DayChargeTextBox.Text = DailyCharge.ToString();
         }
 
         private void DistanceConverter()
