@@ -3,7 +3,7 @@ namespace CarRental
     /*
     TODO (Details in appropriate object/method):
         [X] Input Validation
-        [ ] Calculations
+        [X] Calculations
         [X] Ouptut Display
         [ ] Summary
         [X] Clear Form
@@ -259,7 +259,7 @@ namespace CarRental
         private void DailyChargeCalculator()
         {
             DailyCharge = Days * 15;
-            DayChargeTextBox.Text = DailyCharge.ToString();
+            DayChargeTextBox.Text = DailyCharge.ToString("#.##");
         }
 
         private void DistanceConverter()
@@ -275,7 +275,7 @@ namespace CarRental
                 miles = distance;
             }
             Math.Round(miles, 2);
-            DistanceTextBox.Text = miles.ToString();
+            DistanceTextBox.Text = miles.ToString("#.##");
             RateCalculator(); // Calculates charge for mileage
         }
 
@@ -297,7 +297,7 @@ namespace CarRental
                 Math.Round(MileageCharge, 2);
             }
             Math.Round(MileageCharge, 2);
-            MileageChargeTextBox.Text = MileageCharge.ToString();
+            MileageChargeTextBox.Text = MileageCharge.ToString("#.##");
         }
 
         private void Discounter()
@@ -309,7 +309,7 @@ namespace CarRental
 
             Discount = Total * (Discount1 + Discount2);
             Math.Round(Discount, 2);
-            CreditTextBox.Text = Discount.ToString();            
+            CreditTextBox.Text = Discount.ToString("#.##");            
         }
 
         private void DiscountedSenior()
@@ -336,11 +336,11 @@ namespace CarRental
             }
         }
 
-        private void TotalAmount()
+        private void TotalAmount() // Total value occasionally has trailing zeros
         {
             NetTotal = Total - Discount;
             Math.Round(NetTotal, 2);
-            BalanceTotalTextBox.Text = NetTotal.ToString();
+            BalanceTotalTextBox.Text = NetTotal.ToString("#.##");
         }
 
         // Event Handlers ----------------------------------------
