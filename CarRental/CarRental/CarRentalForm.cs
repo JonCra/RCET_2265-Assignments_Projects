@@ -2,7 +2,7 @@ namespace CarRental
 {
     /*
     TODO (Details in appropriate object/method):
-        [X] Input Validation
+        [ ] Input Validation
         [ ] Calculations
         [ ] Ouptut Display
         [ ] Summary
@@ -159,6 +159,7 @@ namespace CarRental
             }
 
             // Initial Odometer is a number AND not empty
+            // BUG: Initial odometer input does not validate correctly
             if (string.IsNullOrEmpty(InitialOdometerTextBox.Text) || string.IsNullOrWhiteSpace(InitialOdometerTextBox.Text))
             {
                 Odo1Valid = false;
@@ -166,6 +167,7 @@ namespace CarRental
             }
             else
             {
+                InitOdometer = double.Parse(InitialOdometerTextBox.Text);
                 try
                 {
                     // POTENTIAL BUG: May not convert correctly
@@ -190,12 +192,12 @@ namespace CarRental
             {
                 try
                 {
-                    double.Parse(FinalOdometerTextBox.Text);
-                    if (FinalOdometer <= InitOdometer)
+                    FinalOdometer = double.Parse(FinalOdometerTextBox.Text);
+                    if (FinalOdometer >= InitOdometer)
                     {
                         Odo2Valid = true;
                         FinalOdometerTextBox.BackColor = Color.White;
-                        FinalOdometer = double.Parse(FinalOdometerTextBox.Text);
+                        //FinalOdometer = double.Parse(FinalOdometerTextBox.Text);
                     }
                     else if (FinalOdometer >= InitOdometer)
                     {
