@@ -59,21 +59,6 @@ namespace CarRental
             StateComboBox.SelectedIndex = 0;
         }
 
-        private void ClearForm()
-        {
-            // Clear all input/output text boxes, discount boxes, select miles checkbox
-            // DO NOT CLEAR SUMMARY
-
-            MilesRadioButton.Checked = true;
-            KM_RadioButton.Checked = AAA_DiscountCheckBox.Checked = SeniorDiscountCheckBox.Checked =
-                SummaryButton.Enabled = false;
-
-            CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = ZipCodeTextBox.Text =
-                InitialOdometerTextBox.Text = FinalOdometerTextBox.Text = DaysTextBox.Text = "";
-
-            StateComboBox.SelectedIndex = 0;
-        }
-
         private void ValidateInputs()
         {
             bool NameValid;
@@ -230,7 +215,7 @@ namespace CarRental
                 {
                     double.Parse(DaysTextBox.Text);
                     Days = double.Parse(DaysTextBox.Text);
-                    if (Days > 0)
+                    if (Days > 0 && Days <= 45)
                     {
                         DaysValid = true;
                         DaysTextBox.BackColor = Color.White;
@@ -364,9 +349,7 @@ namespace CarRental
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            // DO NOT CLEAR SUMMARY DETAILS
-            ClearForm();
-            ClearForm();
+            SetDefaults();
         }
 
         private void CalculateButton_Click(object sender, EventArgs e)
@@ -412,7 +395,7 @@ namespace CarRental
             Make it into a 2D Array??
             */
 
-            ClearForm();
+            SetDefaults();
             SummaryTally();
         }
 
