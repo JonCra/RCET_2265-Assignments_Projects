@@ -251,7 +251,7 @@ namespace CarRental
         private void DailyChargeCalculator()
         {
             DailyCharge = Days * 15;
-            DayChargeTextBox.Text = DailyCharge.ToString("#.##");
+            DayChargeTextBox.Text = DailyCharge.ToString("C2");
         }
 
         private void DistanceConverter()
@@ -267,7 +267,7 @@ namespace CarRental
                 miles = distance;
             }
             Math.Round(miles, 2);
-            DistanceTextBox.Text = miles.ToString("#.##");
+            DistanceTextBox.Text = miles.ToString("N2");
             RateCalculator(); // Calculates charge for mileage
         }
 
@@ -289,7 +289,7 @@ namespace CarRental
                 Math.Round(MileageCharge, 2);
             }
             Math.Round(MileageCharge, 2);
-            MileageChargeTextBox.Text = MileageCharge.ToString("$#.##");
+            MileageChargeTextBox.Text = MileageCharge.ToString("C2");
         }
 
         private void Discounter()
@@ -301,7 +301,7 @@ namespace CarRental
 
             Discount = Total * (Discount1 + Discount2);
             Math.Round(Discount, 2);
-            CreditTextBox.Text = Discount.ToString("$#.##");            
+            CreditTextBox.Text = Discount.ToString("C2");            
         }
 
         private void DiscountedSenior()
@@ -332,14 +332,14 @@ namespace CarRental
         {
             NetTotal = Total - Discount;
             Math.Round(NetTotal, 2);
-            BalanceTotalTextBox.Text = NetTotal.ToString("$#.##");
+            BalanceTotalTextBox.Text = NetTotal.ToString("C2");
         }
 
         private void SummaryTally()
         {
             MessageBox.Show($"Total Customers: {customers}\n" +
-                $"Total Mileage: {totalMileage}\n" +
-                $"Total Charges: {totalCharges}", "Transaction Summary");
+                $"Total Mileage: {totalMileage.ToString("N2")} mi\n" +
+                $"Total Charges: ${totalCharges.ToString("C2")}", "Transaction Summary");
         }
 
         // Event Handlers ----------------------------------------
@@ -355,23 +355,13 @@ namespace CarRental
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
-            // Calculate based on user input
-            /*
-             * Charge is $15/day
-             * first 200 miles is free
-             * all miles between 201-500 $0.12/mi
-             * 500+ miles = $0.10/mi
-             * 1km = 0.62mi
-             * AAA gets 5% discount
-             * seniors get 3% discount
-             * CAN GET BOTH DISCOUNTS; DO NOT ACCOUNT FOR UNTIL CACLULATE BUTTON IS CLICKED
-             */
+            CalculateButton.Enabled = false;
 
-            DailyChargeCalculator(); // Calculates daily charge, ready to test
+            DailyChargeCalculator(); // Calculates daily charge
                         
-            DistanceConverter(); // Convert km to mi, ready to test
+            DistanceConverter(); // Convert km to mi
                         
-            Discounter(); // Calculate discount, ready to test
+            Discounter(); // Calculate discount
 
             TotalAmount();
 
