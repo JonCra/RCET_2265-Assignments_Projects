@@ -1,5 +1,10 @@
+/*
+ * Jonas Cram
+ * RCET 2265
+ * Robotics and Comm. Systems Engineering Technology
+ * Fall 2025
+ */
 using System.Numerics;
-
 namespace CarRental
 {
     public partial class CarRentalForm : Form
@@ -57,22 +62,10 @@ namespace CarRental
                 CreditTextBox.Text = BalanceTotalTextBox.Text = "";
 
             StateComboBox.SelectedIndex = 0;
+            StateComboBox.BackColor = Color.White;
         }
 
         // User-Input Validators:
-        private void ValidateAll()
-        {
-            // Triggers when the days input has changed, to ensure all fields are valid
-            NameIsValid();
-            AddressIsValid();
-            CityIsValid();
-            StateIsValid();
-            ZipIsValid();
-            InitOdoIsValid();
-            FinalOdoIsValid();
-            DaysAreValid();
-        }
-
         private void NameIsValid()
         {
             // Name should not be empty
@@ -271,6 +264,7 @@ namespace CarRental
 
         private void ValidateInputs()
         {
+            ValidateAll();
             // All fields are valid
             if (NameValid && AddressValid && CityValid && StateValid && ZipValid && Odo1Valid && Odo2Valid && DaysValid)
             {
@@ -282,6 +276,19 @@ namespace CarRental
                 allFieldsValid = false;
                 CalculateButton.Enabled = false;
             }
+        }
+
+        private void ValidateAll()
+        {
+            // Triggers when the days input has changed, to ensure all fields are valid
+            NameIsValid();
+            AddressIsValid();
+            CityIsValid();
+            StateIsValid();
+            ZipIsValid();
+            InitOdoIsValid();
+            FinalOdoIsValid();
+            DaysAreValid();
         }
 
         // Calculation Logic:
@@ -420,7 +427,6 @@ namespace CarRental
         private void DaysChanged(object sender, EventArgs e)
         {
             DaysAreValid();
-            ValidateAll();
         }
 
         // Button Events:
@@ -452,16 +458,6 @@ namespace CarRental
 
         private void SummaryButton_Click(object sender, EventArgs e)
         {
-            /* Disabled until AT LEAST ONE rental has been completed
-                Display summary in pop up
-                Total number of customers.
-                Total distance driven in miles.
-                Total charges.
-                Perform all “Clearing the Form” actions
-                Do not clear the summary totals.
-            Make it into a 2D Array??
-            */
-
             SetDefaults();
             SummaryTally();
         }
