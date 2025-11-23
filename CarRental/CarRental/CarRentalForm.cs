@@ -351,7 +351,9 @@ namespace CarRental
 
         private void SummaryTally()
         {
-
+            MessageBox.Show($"Customers: {customers}\n" +
+                $"Total Mileage: {totalMileage}\n" +
+                $"Total Charges: {totalCharges}", "Transaction Summary");
         }
 
         // Event Handlers ----------------------------------------
