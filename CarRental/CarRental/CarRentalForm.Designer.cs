@@ -172,7 +172,7 @@
             CustomerNameTextBox.Size = new Size(166, 31);
             CustomerNameTextBox.TabIndex = 0;
             toolTip1.SetToolTip(CustomerNameTextBox, "Customer's name");
-            CustomerNameTextBox.TextChanged += InputTextChanged;
+            CustomerNameTextBox.TextChanged += NameChanged;
             // 
             // DiscountGroupBox
             // 
@@ -202,7 +202,7 @@
             AddressTextBox.Name = "AddressTextBox";
             AddressTextBox.Size = new Size(166, 31);
             AddressTextBox.TabIndex = 1;
-            AddressTextBox.TextChanged += InputTextChanged;
+            AddressTextBox.TextChanged += AddressChanged;
             // 
             // CityTextBox
             // 
@@ -210,7 +210,7 @@
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(165, 31);
             CityTextBox.TabIndex = 2;
-            CityTextBox.TextChanged += InputTextChanged;
+            CityTextBox.TextChanged += CityChanged;
             // 
             // ZipCodeTextBox
             // 
@@ -219,7 +219,7 @@
             ZipCodeTextBox.Name = "ZipCodeTextBox";
             ZipCodeTextBox.Size = new Size(165, 31);
             ZipCodeTextBox.TabIndex = 4;
-            ZipCodeTextBox.TextChanged += InputTextChanged;
+            ZipCodeTextBox.TextChanged += ZipChanged;
             // 
             // InitialOdometerTextBox
             // 
@@ -227,7 +227,7 @@
             InitialOdometerTextBox.Name = "InitialOdometerTextBox";
             InitialOdometerTextBox.Size = new Size(165, 31);
             InitialOdometerTextBox.TabIndex = 5;
-            InitialOdometerTextBox.TextChanged += InputTextChanged;
+            InitialOdometerTextBox.TextChanged += InitOdoChanged;
             // 
             // FinalOdometerTextBox
             // 
@@ -235,7 +235,7 @@
             FinalOdometerTextBox.Name = "FinalOdometerTextBox";
             FinalOdometerTextBox.Size = new Size(165, 31);
             FinalOdometerTextBox.TabIndex = 6;
-            FinalOdometerTextBox.TextChanged += InputTextChanged;
+            FinalOdometerTextBox.TextChanged += FinalOdoChanged;
             // 
             // CustomerInfoGroupBox
             // 
@@ -268,7 +268,7 @@
             DaysTextBox.Name = "DaysTextBox";
             DaysTextBox.Size = new Size(164, 31);
             DaysTextBox.TabIndex = 7;
-            DaysTextBox.TextChanged += InputTextChanged;
+            DaysTextBox.TextChanged += DaysChanged;
             // 
             // StateComboBox
             // 
@@ -280,7 +280,7 @@
             StateComboBox.Name = "StateComboBox";
             StateComboBox.Size = new Size(165, 33);
             StateComboBox.TabIndex = 3;
-            StateComboBox.SelectedIndexChanged += InputTextChanged;
+            StateComboBox.SelectedIndexChanged += StateChanged;
             // 
             // DaysLabel
             // 
