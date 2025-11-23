@@ -1,3 +1,5 @@
+using System.Numerics;
+
 namespace CarRental
 {
     /*
@@ -26,6 +28,9 @@ namespace CarRental
         double NetTotal = 0;
         double Total = 0;
         bool allFieldsValid;
+        int customers = 0;
+        double totalMileage = 0;
+        double totalCharges = 0;
 
         public CarRentalForm()
         {
@@ -42,7 +47,7 @@ namespace CarRental
             // Disables the following:
             KM_RadioButton.Checked = AAA_DiscountCheckBox.Checked = SeniorDiscountCheckBox.Checked =
                 DistanceTextBox.Enabled = MileageChargeTextBox.Enabled = DayChargeTextBox.Enabled =
-                CreditTextBox.Enabled = BalanceTotalTextBox.Enabled = false;
+                CreditTextBox.Enabled = BalanceTotalTextBox.Enabled = SummaryButton.Enabled = false;
 
             // Loads blank text / empty for the following:
             CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = ZipCodeTextBox.Text =
@@ -60,7 +65,8 @@ namespace CarRental
             // DO NOT CLEAR SUMMARY
 
             MilesRadioButton.Checked = true;
-            KM_RadioButton.Checked = AAA_DiscountCheckBox.Checked = SeniorDiscountCheckBox.Checked = false;
+            KM_RadioButton.Checked = AAA_DiscountCheckBox.Checked = SeniorDiscountCheckBox.Checked =
+                SummaryButton.Enabled = false;
 
             CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = ZipCodeTextBox.Text =
                 InitialOdometerTextBox.Text = FinalOdometerTextBox.Text = DaysTextBox.Text = "";
@@ -343,6 +349,11 @@ namespace CarRental
             BalanceTotalTextBox.Text = NetTotal.ToString("#.##");
         }
 
+        private void SummaryTally()
+        {
+
+        }
+
         // Event Handlers ----------------------------------------
         private void InputTextChanged(object sender, EventArgs e)
         {
@@ -377,6 +388,14 @@ namespace CarRental
             Discounter(); // Calculate discount, ready to test
 
             TotalAmount();
+
+            customers++;
+
+            totalMileage += miles;
+
+            totalCharges += NetTotal;
+
+            SummaryButton.Enabled = true;
         }
 
         private void SummaryButton_Click(object sender, EventArgs e)
@@ -392,6 +411,7 @@ namespace CarRental
             */
 
             ClearForm();
+            SummaryTally();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
