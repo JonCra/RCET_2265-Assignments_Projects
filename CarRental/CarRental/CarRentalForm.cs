@@ -59,6 +59,7 @@ namespace CarRental
             StateComboBox.SelectedIndex = 0;
         }
 
+        // TODO: Make all validations individual
         private void ValidateInputs()
         {
             bool NameValid;
@@ -288,7 +289,7 @@ namespace CarRental
                 Math.Round(MileageCharge, 2);
             }
             Math.Round(MileageCharge, 2);
-            MileageChargeTextBox.Text = MileageCharge.ToString("#.##");
+            MileageChargeTextBox.Text = MileageCharge.ToString("$#.##");
         }
 
         private void Discounter()
@@ -300,7 +301,7 @@ namespace CarRental
 
             Discount = Total * (Discount1 + Discount2);
             Math.Round(Discount, 2);
-            CreditTextBox.Text = Discount.ToString("#.##");            
+            CreditTextBox.Text = Discount.ToString("$#.##");            
         }
 
         private void DiscountedSenior()
@@ -331,7 +332,7 @@ namespace CarRental
         {
             NetTotal = Total - Discount;
             Math.Round(NetTotal, 2);
-            BalanceTotalTextBox.Text = NetTotal.ToString("#.##");
+            BalanceTotalTextBox.Text = NetTotal.ToString("$#.##");
         }
 
         private void SummaryTally()
