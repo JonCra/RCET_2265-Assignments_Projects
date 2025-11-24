@@ -66,7 +66,7 @@ namespace CarRental
         }
 
         // User-Input Validators:
-        private void NameIsValid()
+        private void ValidateInputs()
         {
             // Name should not be empty
             if (string.IsNullOrEmpty(CustomerNameTextBox.Text) || string.IsNullOrWhiteSpace(CustomerNameTextBox.Text))
@@ -80,11 +80,7 @@ namespace CarRental
                 NameValid = true;
                 CustomerNameTextBox.BackColor = Color.White;
             }
-            ValidateInputs();
-        }
 
-        private void AddressIsValid()
-        {
             // Address should not be empty
             if (string.IsNullOrEmpty(AddressTextBox.Text) || string.IsNullOrWhiteSpace(AddressTextBox.Text))
             {
@@ -97,11 +93,7 @@ namespace CarRental
                 AddressValid = true;
                 AddressTextBox.BackColor = Color.White;
             }
-            ValidateInputs();
-        }
 
-        private void CityIsValid()
-        {
             // City should not be empty
             if (string.IsNullOrEmpty(CityTextBox.Text) || string.IsNullOrWhiteSpace(CityTextBox.Text))
             {
@@ -114,11 +106,7 @@ namespace CarRental
                 CityValid = true;
                 CityTextBox.BackColor = Color.White;
             }
-            ValidateInputs();
-        }
 
-        private void StateIsValid()
-        {
             // State is selected
             if (StateComboBox.SelectedIndex <= 0)
             {
@@ -131,14 +119,9 @@ namespace CarRental
                 StateValid = true;
                 StateComboBox.BackColor = Color.White;
             }
-            ValidateInputs();
-        }
 
-        private void ZipIsValid()
-        {
-            int _Zip; 
-            
             // Zip Code is 5 numbers long AND not empty
+            int _Zip;
             if (string.IsNullOrEmpty(ZipCodeTextBox.Text) || string.IsNullOrWhiteSpace(ZipCodeTextBox.Text))
             {
                 ZipValid = false;
@@ -168,11 +151,7 @@ namespace CarRental
                     ZipCodeTextBox.BackColor = Color.LightYellow;
                 }
             }
-            ValidateInputs();
-        }
 
-        private void InitOdoIsValid()
-        {
             // Initial Odometer is a number AND not empty
             if (string.IsNullOrEmpty(InitialOdometerTextBox.Text) || string.IsNullOrWhiteSpace(InitialOdometerTextBox.Text))
             {
@@ -197,11 +176,7 @@ namespace CarRental
                     InitialOdometerTextBox.Focus();
                 }
             }
-            ValidateInputs();
-        }
 
-        private void FinalOdoIsValid()
-        {
             // Final Odometer is a number AND not empty AND greater than the initial odometer
             if (string.IsNullOrEmpty(FinalOdometerTextBox.Text) || string.IsNullOrWhiteSpace(FinalOdometerTextBox.Text))
             {
@@ -234,11 +209,7 @@ namespace CarRental
                     FinalOdometerTextBox.Focus();
                 }
             }
-            ValidateInputs();
-        }
 
-        private void DaysAreValid()
-        {
             // Days are not empty and 0 < Days <= 45
             if (string.IsNullOrEmpty(DaysTextBox.Text) || string.IsNullOrWhiteSpace(DaysTextBox.Text))
             {
@@ -272,11 +243,7 @@ namespace CarRental
                     DaysTextBox.Focus();
                 }
             }
-            ValidateInputs();
-        }
 
-        private void ValidateInputs()
-        {
             // All fields are valid
             if (NameValid && AddressValid && CityValid && StateValid && ZipValid && Odo1Valid && Odo2Valid && DaysValid)
             {
@@ -287,22 +254,8 @@ namespace CarRental
             {
                 allFieldsValid = false;
                 CalculateButton.Enabled = false;
-                ValidateAll();
+                //ValidateAll();
             }
-        }
-
-        private void ValidateAll()
-        {
-            // Triggers when the days input has changed, to ensure all fields are valid
-            NameIsValid();
-            AddressIsValid();
-            CityIsValid();
-            StateIsValid();
-            ZipIsValid();
-            InitOdoIsValid();
-            FinalOdoIsValid();
-            DaysAreValid();
-            ValidateInputs();
         }
 
         // Calculation Logic:
@@ -403,47 +356,11 @@ namespace CarRental
         // Event Handlers ----------------------------------------
 
         // User-input Field Validation Triggers:
-        private void NameChanged(object sender, EventArgs e)
+        private void TextChanged(object sender, EventArgs e)
         {
-            NameIsValid();
+            ValidateInputs();
         }
 
-        private void AddressChanged(object sender, EventArgs e)
-        {
-            AddressIsValid();
-        }
-
-        private void CityChanged(object sender, EventArgs e)
-        {
-            CityIsValid();
-        }
-
-        private void StateChanged(object sender, EventArgs e)
-        {
-            StateIsValid();
-        }
-
-        private void ZipChanged(object sender, EventArgs e)
-        {
-            ZipIsValid();
-        }
-
-        private void InitOdoChanged(object sender, EventArgs e)
-        {
-            InitOdoIsValid();
-        }
-
-        private void FinalOdoChanged(object sender, EventArgs e)
-        {
-            FinalOdoIsValid();
-        }
-
-        private void DaysChanged(object sender, EventArgs e)
-        {
-            DaysAreValid();
-        }
-
-        // Button Events:
         private void ClearButton_Click(object sender, EventArgs e)
         {
             SetDefaults();
