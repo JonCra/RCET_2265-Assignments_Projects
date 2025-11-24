@@ -354,16 +354,15 @@ namespace CarRental
         }
 
         // Event Handlers ----------------------------------------
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            SetDefaults();
+        }
 
         // User-input Field Validation Triggers:
         private void TextChanged(object sender, EventArgs e)
         {
             ValidateInputs();
-        }
-
-        private void ClearButton_Click(object sender, EventArgs e)
-        {
-            SetDefaults();
         }
 
         private void CalculateButton_Click(object sender, EventArgs e)
