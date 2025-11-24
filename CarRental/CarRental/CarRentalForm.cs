@@ -9,7 +9,7 @@ namespace CarRental
 {
     public partial class CarRentalForm : Form
     {
-        // Variables -------------------------------------------
+        // "Global" Variables:
         double distance = 0;
         double miles = 0;
         double InitOdometer = 0;
@@ -22,7 +22,6 @@ namespace CarRental
         double Discount = 0;
         double NetTotal = 0;
         double Total = 0;
-        bool allFieldsValid;
         int customers = 0;
         double totalMileage = 0;
         double totalCharges = 0;
@@ -56,16 +55,18 @@ namespace CarRental
 
             // Loads blank text / empty for the following:
             CustomerNameTextBox.Text = AddressTextBox.Text = CityTextBox.Text = ZipCodeTextBox.Text =
-                InitialOdometerTextBox.Text = FinalOdometerTextBox.Text = DaysTextBox.Text = "";
-
-            DistanceTextBox.Text = MileageChargeTextBox.Text = DayChargeTextBox.Text =
+                InitialOdometerTextBox.Text = FinalOdometerTextBox.Text = DaysTextBox.Text = 
+                DistanceTextBox.Text = MileageChargeTextBox.Text = DayChargeTextBox.Text =
                 CreditTextBox.Text = BalanceTotalTextBox.Text = "";
 
             StateComboBox.SelectedIndex = 0;
-            StateComboBox.BackColor = Color.White;
+            
+            // Sets back color to white:
+            CustomerNameTextBox.BackColor = AddressTextBox.BackColor = CityTextBox.BackColor =
+                StateComboBox.BackColor = ZipCodeTextBox.BackColor = InitialOdometerTextBox.BackColor = 
+                FinalOdometerTextBox.BackColor = DaysTextBox.BackColor = Color.White;
         }
 
-        // User-Input Validators:
         private void ValidateInputs()
         {
             // Name should not be empty
@@ -161,10 +162,8 @@ namespace CarRental
             }
             else
             {
-                //InitOdometer = double.Parse(InitialOdometerTextBox.Text);
                 try
                 {
-                    // POTENTIAL BUG: May not convert correctly
                     InitialOdometerTextBox.BackColor = Color.White;
                     InitOdometer = double.Parse(InitialOdometerTextBox.Text);
                     Odo1Valid = true;
@@ -247,14 +246,11 @@ namespace CarRental
             // All fields are valid
             if (NameValid && AddressValid && CityValid && StateValid && ZipValid && Odo1Valid && Odo2Valid && DaysValid)
             {
-                allFieldsValid = true;
                 CalculateButton.Enabled = true;
             }
             else
             {
-                allFieldsValid = false;
                 CalculateButton.Enabled = false;
-                //ValidateAll();
             }
         }
 
