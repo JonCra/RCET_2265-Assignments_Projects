@@ -73,6 +73,7 @@ namespace CarRental
             {
                 NameValid = false;
                 CustomerNameTextBox.BackColor = Color.LightYellow;
+                CustomerNameTextBox.Focus();
             }
             else
             {
@@ -89,6 +90,7 @@ namespace CarRental
             {
                 AddressValid = false;
                 AddressTextBox.BackColor = Color.LightYellow;
+                AddressTextBox.Focus();
             }
             else
             {
@@ -105,6 +107,7 @@ namespace CarRental
             {
                 CityValid = false;
                 CityTextBox.BackColor = Color.LightYellow;
+                CityTextBox.Focus();
             }
             else
             {
@@ -121,6 +124,7 @@ namespace CarRental
             {
                 StateValid = false;
                 StateComboBox.BackColor = Color.LightYellow;
+                StateComboBox.Focus();
             }
             else
             {
@@ -139,6 +143,7 @@ namespace CarRental
             {
                 ZipValid = false;
                 ZipCodeTextBox.BackColor = Color.LightYellow;
+                ZipCodeTextBox.Focus();
             }
             else
             {
@@ -173,6 +178,7 @@ namespace CarRental
             {
                 Odo1Valid = false;
                 InitialOdometerTextBox.BackColor = Color.LightYellow;
+                InitialOdometerTextBox.Focus();
             }
             else
             {
@@ -188,6 +194,7 @@ namespace CarRental
                 {
                     Odo1Valid = false;
                     InitialOdometerTextBox.BackColor = Color.LightYellow;
+                    InitialOdometerTextBox.Focus();
                 }
             }
             ValidateInputs();
@@ -200,6 +207,7 @@ namespace CarRental
             {
                 Odo2Valid = false;
                 FinalOdometerTextBox.BackColor = Color.LightYellow;
+                FinalOdometerTextBox.Focus();
             }
             else
             {
@@ -216,12 +224,14 @@ namespace CarRental
                     {
                         Odo2Valid = false;
                         FinalOdometerTextBox.BackColor = Color.LightYellow;
+                        FinalOdometerTextBox.Focus();
                     }
                 }
                 catch (Exception)
                 {
                     Odo2Valid = false;
                     FinalOdometerTextBox.BackColor = Color.LightYellow;
+                    FinalOdometerTextBox.Focus();
                 }
             }
             ValidateInputs();
@@ -234,6 +244,7 @@ namespace CarRental
             {
                 DaysValid = false;
                 DaysTextBox.BackColor = Color.LightYellow;
+                DaysTextBox.Focus();
             }
             else
             {
@@ -251,12 +262,14 @@ namespace CarRental
                     {
                         DaysValid = false;
                         DaysTextBox.BackColor = Color.LightYellow;
+                        DaysTextBox.Focus();
                     }
                 }
                 catch (Exception)
                 {
                     DaysValid = false;
                     DaysTextBox.BackColor = Color.LightYellow;
+                    DaysTextBox.Focus();
                 }
             }
             ValidateInputs();
@@ -264,7 +277,6 @@ namespace CarRental
 
         private void ValidateInputs()
         {
-            ValidateAll();
             // All fields are valid
             if (NameValid && AddressValid && CityValid && StateValid && ZipValid && Odo1Valid && Odo2Valid && DaysValid)
             {
@@ -275,6 +287,7 @@ namespace CarRental
             {
                 allFieldsValid = false;
                 CalculateButton.Enabled = false;
+                ValidateAll();
             }
         }
 
@@ -289,6 +302,7 @@ namespace CarRental
             InitOdoIsValid();
             FinalOdoIsValid();
             DaysAreValid();
+            ValidateInputs();
         }
 
         // Calculation Logic:
