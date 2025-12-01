@@ -9,6 +9,12 @@ namespace Etch_O_Sketch
 {
     public partial class EtchOSketchForm : Form
     {
+        // "Global" Variables
+        int oldX;
+        int oldY;
+        Color foreGround = Color.Black;
+        int penWidth = 3;
+
         // Initializers -------------------------------------
         public EtchOSketchForm()
         {
@@ -22,6 +28,23 @@ namespace Etch_O_Sketch
         }
 
         // Program Logic ------------------------------------
+        void MouseDraw(int x, int y)
+        {
+            Graphics g = this.CreateGraphics();
+            Pen MousePen = new Pen(this.foreGround, this.penWidth);
+
+            g.DrawLine(MousePen, this.oldX, this.oldY, x, y);
+
+            // "Releases" the pen
+            g.Dispose();
+            MousePen.Dispose();
+        }
+
+        void UpdateStatusLabel()
+        {
+            StatusLabel.Text = $"Etch-O-Sketch | Color: {this.foreGround.Name} | Width: {this.penWidth}";
+        }
+
         private void ClearForm()
         {
 
