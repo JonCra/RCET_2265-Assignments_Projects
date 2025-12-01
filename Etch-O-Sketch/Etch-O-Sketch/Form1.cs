@@ -1,10 +1,15 @@
 namespace Etch_O_Sketch
 {
-    public partial class Form1 : Form
+    public partial class EtchOSketchForm : Form
     {
-        public Form1()
+        public EtchOSketchForm()
         {
             InitializeComponent();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
