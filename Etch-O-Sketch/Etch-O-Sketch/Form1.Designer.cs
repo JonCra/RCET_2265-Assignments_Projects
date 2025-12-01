@@ -51,9 +51,9 @@
             // 
             // DisplayPictureBox
             // 
-            DisplayPictureBox.Location = new Point(12, 63);
+            DisplayPictureBox.Location = new Point(12, 36);
             DisplayPictureBox.Name = "DisplayPictureBox";
-            DisplayPictureBox.Size = new Size(784, 308);
+            DisplayPictureBox.Size = new Size(784, 356);
             DisplayPictureBox.TabIndex = 0;
             DisplayPictureBox.TabStop = false;
             toolTip1.SetToolTip(DisplayPictureBox, "Draw here!");
@@ -84,8 +84,8 @@
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(141, 34);
-            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Size = new Size(270, 34);
+            exitToolStripMenuItem.Text = "E&xit";
             exitToolStripMenuItem.Click += ExitProgram;
             // 
             // hToolStripMenuItem
@@ -132,7 +132,7 @@
             // 
             // ColorButton
             // 
-            ColorButton.Location = new Point(49, 394);
+            ColorButton.Location = new Point(49, 398);
             ColorButton.Name = "ColorButton";
             ColorButton.Size = new Size(126, 34);
             ColorButton.TabIndex = 3;
@@ -143,7 +143,7 @@
             // 
             // WaveformButton
             // 
-            WaveformButton.Location = new Point(209, 394);
+            WaveformButton.Location = new Point(209, 398);
             WaveformButton.Name = "WaveformButton";
             WaveformButton.Size = new Size(152, 34);
             WaveformButton.TabIndex = 4;
@@ -154,7 +154,7 @@
             // 
             // ClearButton
             // 
-            ClearButton.Location = new Point(411, 394);
+            ClearButton.Location = new Point(411, 398);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(112, 34);
             ClearButton.TabIndex = 5;
@@ -165,7 +165,7 @@
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(590, 394);
+            ExitButton.Location = new Point(590, 398);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(112, 34);
             ExitButton.TabIndex = 6;
