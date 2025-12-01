@@ -86,7 +86,7 @@
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             exitToolStripMenuItem.Size = new Size(141, 34);
             exitToolStripMenuItem.Text = "Exit";
-            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            exitToolStripMenuItem.Click += ExitProgram;
             // 
             // hToolStripMenuItem
             // 
@@ -100,18 +100,21 @@
             selectColorToolStripMenuItem.Name = "selectColorToolStripMenuItem";
             selectColorToolStripMenuItem.Size = new Size(270, 34);
             selectColorToolStripMenuItem.Text = "&Select Color";
+            selectColorToolStripMenuItem.Click += ColorSelect;
             // 
             // drawWaveformsToolStripMenuItem
             // 
             drawWaveformsToolStripMenuItem.Name = "drawWaveformsToolStripMenuItem";
             drawWaveformsToolStripMenuItem.Size = new Size(270, 34);
             drawWaveformsToolStripMenuItem.Text = "&Draw Waveforms";
+            drawWaveformsToolStripMenuItem.Click += WaveformDraw;
             // 
             // clearToolStripMenuItem
             // 
             clearToolStripMenuItem.Name = "clearToolStripMenuItem";
             clearToolStripMenuItem.Size = new Size(270, 34);
             clearToolStripMenuItem.Text = "&Clear";
+            clearToolStripMenuItem.Click += FormClear;
             // 
             // helpToolStripMenuItem
             // 
@@ -123,8 +126,9 @@
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(270, 34);
+            aboutToolStripMenuItem.Size = new Size(164, 34);
             aboutToolStripMenuItem.Text = "&About";
+            aboutToolStripMenuItem.Click += AboutDisplay;
             // 
             // ColorButton
             // 
@@ -135,6 +139,7 @@
             ColorButton.Text = "&Select Button";
             toolTip1.SetToolTip(ColorButton, "Open color palette for selection");
             ColorButton.UseVisualStyleBackColor = true;
+            ColorButton.Click += ColorSelect;
             // 
             // WaveformButton
             // 
@@ -145,6 +150,7 @@
             WaveformButton.Text = "&Draw Waveform";
             toolTip1.SetToolTip(WaveformButton, "Draws a waveform");
             WaveformButton.UseVisualStyleBackColor = true;
+            WaveformButton.Click += WaveformDraw;
             // 
             // ClearButton
             // 
@@ -155,7 +161,7 @@
             ClearButton.Text = "&Clear";
             toolTip1.SetToolTip(ClearButton, "Clear drawing");
             ClearButton.UseVisualStyleBackColor = true;
-            ClearButton.Click += ClearButton_Click;
+            ClearButton.Click += FormClear;
             // 
             // ExitButton
             // 
@@ -166,6 +172,7 @@
             ExitButton.Text = "E&xit";
             toolTip1.SetToolTip(ExitButton, "Exit program");
             ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitProgram;
             // 
             // EtchOSketchForm
             // 
