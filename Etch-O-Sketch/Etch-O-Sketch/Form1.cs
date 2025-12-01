@@ -11,5 +11,10 @@ namespace Etch_O_Sketch
         {
             this.Close();
         }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

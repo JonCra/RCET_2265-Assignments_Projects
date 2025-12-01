@@ -53,9 +53,10 @@
             // 
             DisplayPictureBox.Location = new Point(12, 63);
             DisplayPictureBox.Name = "DisplayPictureBox";
-            DisplayPictureBox.Size = new Size(776, 308);
+            DisplayPictureBox.Size = new Size(784, 308);
             DisplayPictureBox.TabIndex = 0;
             DisplayPictureBox.TabStop = false;
+            toolTip1.SetToolTip(DisplayPictureBox, "Draw here!");
             // 
             // contextMenuStrip1
             // 
@@ -69,7 +70,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, hToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 33);
+            menuStrip1.Size = new Size(808, 33);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -127,9 +128,9 @@
             // 
             // ColorButton
             // 
-            ColorButton.Location = new Point(72, 394);
+            ColorButton.Location = new Point(49, 394);
             ColorButton.Name = "ColorButton";
-            ColorButton.Size = new Size(112, 34);
+            ColorButton.Size = new Size(126, 34);
             ColorButton.TabIndex = 3;
             ColorButton.Text = "&Select Button";
             toolTip1.SetToolTip(ColorButton, "Open color palette for selection");
@@ -137,27 +138,28 @@
             // 
             // WaveformButton
             // 
-            WaveformButton.Location = new Point(206, 394);
+            WaveformButton.Location = new Point(209, 394);
             WaveformButton.Name = "WaveformButton";
-            WaveformButton.Size = new Size(157, 34);
+            WaveformButton.Size = new Size(152, 34);
             WaveformButton.TabIndex = 4;
             WaveformButton.Text = "&Draw Waveform";
-            toolTip1.SetToolTip(WaveformButton, "Draws a ");
+            toolTip1.SetToolTip(WaveformButton, "Draws a waveform");
             WaveformButton.UseVisualStyleBackColor = true;
             // 
             // ClearButton
             // 
-            ClearButton.Location = new Point(380, 394);
+            ClearButton.Location = new Point(411, 394);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(112, 34);
             ClearButton.TabIndex = 5;
             ClearButton.Text = "&Clear";
             toolTip1.SetToolTip(ClearButton, "Clear drawing");
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(569, 394);
+            ExitButton.Location = new Point(590, 394);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(112, 34);
             ExitButton.TabIndex = 6;
@@ -169,7 +171,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(808, 444);
             Controls.Add(ExitButton);
             Controls.Add(ClearButton);
             Controls.Add(WaveformButton);
