@@ -45,7 +45,7 @@ namespace Etch_O_Sketch
         void UpdateStatusLabel()
         {
             // Updates status label
-            StatusLabel.Text = $"Coordinates:  | Color: {this.foreGround.Name} | Width: {this.penWidth}";
+            StatusLabel.Text = $"Coordinates: X, Y | Color: {this.foreGround.Name} | Width: {this.penWidth}";
         }
 
         private void ClearForm()

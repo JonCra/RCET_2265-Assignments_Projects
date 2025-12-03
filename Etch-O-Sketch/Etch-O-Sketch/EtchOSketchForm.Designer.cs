@@ -140,7 +140,7 @@
             ColorButton.Name = "ColorButton";
             ColorButton.Size = new Size(126, 34);
             ColorButton.TabIndex = 3;
-            ColorButton.Text = "&Select Button";
+            ColorButton.Text = "&Select Color";
             toolTip1.SetToolTip(ColorButton, "Open color palette for selection");
             ColorButton.UseVisualStyleBackColor = true;
             ColorButton.Click += ColorSelect;
@@ -208,6 +208,7 @@
             Controls.Add(DisplayPictureBox);
             MainMenuStrip = menuStrip1;
             Name = "EtchOSketchForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Etch-O-Sketch";
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
             menuStrip1.ResumeLayout(false);
