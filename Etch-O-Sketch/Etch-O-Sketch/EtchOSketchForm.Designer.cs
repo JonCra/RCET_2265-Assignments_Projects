@@ -45,8 +45,12 @@
             ClearButton = new Button();
             ExitButton = new Button();
             toolTip1 = new ToolTip(components);
+            statusStrip1 = new StatusStrip();
+            StatusLabel = new ToolStripStatusLabel();
+            colorDialog1 = new ColorDialog();
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             menuStrip1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // DisplayPictureBox
@@ -84,7 +88,7 @@
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(270, 34);
+            exitToolStripMenuItem.Size = new Size(141, 34);
             exitToolStripMenuItem.Text = "E&xit";
             exitToolStripMenuItem.Click += ExitProgram;
             // 
@@ -98,21 +102,21 @@
             // selectColorToolStripMenuItem
             // 
             selectColorToolStripMenuItem.Name = "selectColorToolStripMenuItem";
-            selectColorToolStripMenuItem.Size = new Size(270, 34);
+            selectColorToolStripMenuItem.Size = new Size(250, 34);
             selectColorToolStripMenuItem.Text = "&Select Color";
             selectColorToolStripMenuItem.Click += ColorSelect;
             // 
             // drawWaveformsToolStripMenuItem
             // 
             drawWaveformsToolStripMenuItem.Name = "drawWaveformsToolStripMenuItem";
-            drawWaveformsToolStripMenuItem.Size = new Size(270, 34);
+            drawWaveformsToolStripMenuItem.Size = new Size(250, 34);
             drawWaveformsToolStripMenuItem.Text = "&Draw Waveforms";
             drawWaveformsToolStripMenuItem.Click += WaveformDraw;
             // 
             // clearToolStripMenuItem
             // 
             clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            clearToolStripMenuItem.Size = new Size(270, 34);
+            clearToolStripMenuItem.Size = new Size(250, 34);
             clearToolStripMenuItem.Text = "&Clear";
             clearToolStripMenuItem.Click += FormClear;
             // 
@@ -174,11 +178,28 @@
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitProgram;
             // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(24, 24);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { StatusLabel });
+            statusStrip1.Location = new Point(0, 443);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(808, 32);
+            statusStrip1.TabIndex = 7;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // StatusLabel
+            // 
+            StatusLabel.Name = "StatusLabel";
+            StatusLabel.Size = new Size(179, 25);
+            StatusLabel.Text = "toolStripStatusLabel1";
+            // 
             // EtchOSketchForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(808, 444);
+            ClientSize = new Size(808, 475);
+            Controls.Add(statusStrip1);
             Controls.Add(ExitButton);
             Controls.Add(ClearButton);
             Controls.Add(WaveformButton);
@@ -191,6 +212,8 @@
             ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -213,5 +236,8 @@
         private Button ClearButton;
         private Button ExitButton;
         private ToolTip toolTip1;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel StatusLabel;
+        private ColorDialog colorDialog1;
     }
 }

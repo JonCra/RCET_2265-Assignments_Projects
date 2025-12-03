@@ -5,6 +5,8 @@
  * Robotics and Comm. Systems Engineering Technology
  * https://github.com/JonCra/RCET_2265-Assignments_Projects.git
  */
+using System.Windows.Forms;
+
 namespace Etch_O_Sketch
 {
     public partial class EtchOSketchForm : Form
@@ -42,7 +44,8 @@ namespace Etch_O_Sketch
 
         void UpdateStatusLabel()
         {
-            StatusLabel.Text = $"Etch-O-Sketch | Color: {this.foreGround.Name} | Width: {this.penWidth}";
+            // Updates status label
+            StatusLabel.Text = $"Coordinates:  | Color: {this.foreGround.Name} | Width: {this.penWidth}";
         }
 
         private void ClearForm()
@@ -63,7 +66,7 @@ namespace Etch_O_Sketch
 
         private void AboutDisplay(object sender, EventArgs e)
         {
-            // Display "About" page
+            // Display "About" page/form
         }
 
         private void WaveformDraw(object sender, EventArgs e)
@@ -73,7 +76,9 @@ namespace Etch_O_Sketch
 
         private void ColorSelect(object sender, EventArgs e)
         {
-
+            colorDialog1.ShowDialog();
+            this.foreGround = colorDialog1.Color;
+            UpdateStatusLabel();
         }
     }
 }
