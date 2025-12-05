@@ -48,6 +48,8 @@
             StatusLabel = new ToolStripStatusLabel();
             colorDialog1 = new ColorDialog();
             Canvas = new PictureBox();
+            selectColorToolStripMenuItem1 = new ToolStripMenuItem();
+            contextMenuStrip1.SuspendLayout();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Canvas).BeginInit();
@@ -56,8 +58,9 @@
             // contextMenuStrip1
             // 
             contextMenuStrip1.ImageScalingSize = new Size(24, 24);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { selectColorToolStripMenuItem1 });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
+            contextMenuStrip1.Size = new Size(241, 69);
             // 
             // menuStrip1
             // 
@@ -193,6 +196,13 @@
             Canvas.Size = new Size(784, 356);
             Canvas.TabIndex = 8;
             Canvas.TabStop = false;
+            toolTip1.SetToolTip(Canvas, "Draw here!");
+            // 
+            // selectColorToolStripMenuItem1
+            // 
+            selectColorToolStripMenuItem1.Name = "selectColorToolStripMenuItem1";
+            selectColorToolStripMenuItem1.Size = new Size(240, 32);
+            selectColorToolStripMenuItem1.Text = "Select Color";
             // 
             // EtchOSketchForm
             // 
@@ -213,6 +223,7 @@
             MouseDown += Canvas_MouseMove;
             MouseMove += Canvas_MouseMove;
             MouseWheel += GraphicsForm_MouseWheel;
+            contextMenuStrip1.ResumeLayout(false);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             statusStrip1.ResumeLayout(false);
@@ -242,5 +253,6 @@
         private ToolStripStatusLabel StatusLabel;
         private ColorDialog colorDialog1;
         private PictureBox Canvas;
+        private ToolStripMenuItem selectColorToolStripMenuItem1;
     }
 }

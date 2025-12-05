@@ -7,6 +7,14 @@
  */
 using System.Windows.Forms;
 
+/*
+ * TODO:
+ * [ ] Proper tab order
+ * [ ] "Draw Waveform" button as Enter button
+ * [ ] "Clear" button as the cancel button (Esc)
+ * [ ] 
+ */
+
 namespace Etch_O_Sketch
 {
     public partial class EtchOSketchForm : Form
