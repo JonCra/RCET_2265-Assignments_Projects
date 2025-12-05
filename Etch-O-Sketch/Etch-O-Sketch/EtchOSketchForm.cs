@@ -28,7 +28,7 @@ namespace Etch_O_Sketch
         // Program Logic ------------------------------------
         void MouseDraw(int x, int y)
         {
-            Graphics g = this.CreateGraphics();
+            Graphics g = Canvas.CreateGraphics();
             Pen MousePen = new Pen(this.foreGround, this.penWidth);
 
             g.DrawLine(MousePen, this.oldX, this.oldY, x, y);
@@ -38,7 +38,7 @@ namespace Etch_O_Sketch
             MousePen.Dispose();
         }
 
-        private void GraphicsForm_MouseMove(object sender, MouseEventArgs e)
+        private void Canvas_MouseMove(object sender, MouseEventArgs e)
         {
             // Changes form title to display the coords of the mouse position in relation to the form
             Header = $"X: {e.X.ToString()}, Y: {e.Y.ToString()}";
@@ -82,14 +82,6 @@ namespace Etch_O_Sketch
             StatusLabel.Text = $"Color: {this.foreGround.Name} | Width: {this.penWidth} | Position: {Header}";
         }
 
-        private void ClearForm()
-        {
-            // "Hard reset" for digital canvas
-            this.Refresh();
-
-            UpdateStatusLabel();
-        }
-
         // Event Handlers -----------------------------------
         private void ExitProgram(object sender, EventArgs e)
         {
@@ -98,7 +90,8 @@ namespace Etch_O_Sketch
 
         private void FormClear(object sender, EventArgs e)
         {
-            ClearForm();
+            Canvas.Refresh(); // "Hard reset" for digital canvas
+            UpdateStatusLabel();
         }
 
         private void AboutDisplay(object sender, EventArgs e)

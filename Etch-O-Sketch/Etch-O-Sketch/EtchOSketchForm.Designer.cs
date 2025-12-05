@@ -47,8 +47,10 @@
             statusStrip1 = new StatusStrip();
             StatusLabel = new ToolStripStatusLabel();
             colorDialog1 = new ColorDialog();
+            Canvas = new PictureBox();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Canvas).BeginInit();
             SuspendLayout();
             // 
             // contextMenuStrip1
@@ -183,11 +185,21 @@
             StatusLabel.Size = new Size(179, 25);
             StatusLabel.Text = "toolStripStatusLabel1";
             // 
+            // Canvas
+            // 
+            Canvas.BorderStyle = BorderStyle.FixedSingle;
+            Canvas.Location = new Point(12, 36);
+            Canvas.Name = "Canvas";
+            Canvas.Size = new Size(784, 356);
+            Canvas.TabIndex = 8;
+            Canvas.TabStop = false;
+            // 
             // EtchOSketchForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(808, 475);
+            Controls.Add(Canvas);
             Controls.Add(statusStrip1);
             Controls.Add(ExitButton);
             Controls.Add(ClearButton);
@@ -198,13 +210,14 @@
             Name = "EtchOSketchForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Etch-O-Sketch";
-            MouseDown += GraphicsForm_MouseMove;
-            MouseMove += GraphicsForm_MouseMove;
+            MouseDown += Canvas_MouseMove;
+            MouseMove += Canvas_MouseMove;
             MouseWheel += GraphicsForm_MouseWheel;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Canvas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -228,5 +241,6 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel StatusLabel;
         private ColorDialog colorDialog1;
+        private PictureBox Canvas;
     }
 }
