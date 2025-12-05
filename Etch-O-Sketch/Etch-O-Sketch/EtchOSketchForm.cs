@@ -16,17 +16,13 @@ namespace Etch_O_Sketch
         int oldY;
         Color foreGround = Color.Black;
         int penWidth = 3;
+        string Header = "";
 
         // Initializers -------------------------------------
         public EtchOSketchForm()
         {
             InitializeComponent();
-            SetDefaults();
-        }
-
-        private void SetDefaults()
-        {
-
+            UpdateStatusLabel();
         }
 
         // Program Logic ------------------------------------
@@ -42,15 +38,56 @@ namespace Etch_O_Sketch
             MousePen.Dispose();
         }
 
+        private void GraphicsForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            // Changes form title to display the coords of the mouse position in relation to the form
+            Header = $"X: {e.X.ToString()}, Y: {e.Y.ToString()}";
+
+            if (e.Button == MouseButtons.Left)
+            {
+                // Only draws when LMB is clicked
+                MouseDraw(e.X, e.Y);
+            }
+            else if (e.Button == MouseButtons.Middle)
+            {
+                // Displays Color Palette when MMB is pressed
+                colorDialog1.ShowDialog();
+                this.foreGround = colorDialog1.Color;
+            }
+            UpdateStatusLabel();
+
+            // Updates mouse coords all the time
+            this.oldX = e.X;
+            this.oldY = e.Y;
+        }
+
+        private void GraphicsForm_MouseWheel(object sender, MouseEventArgs e)
+        {
+            this.Text = e.Delta.ToString();
+
+            if (penWidth > 1 && e.Delta < 0)
+            {
+                this.penWidth--;
+            }
+            else if (e.Delta > 0)
+            {
+                this.penWidth++;
+            }
+            UpdateStatusLabel();
+        }
+
         void UpdateStatusLabel()
         {
             // Updates status label
-            StatusLabel.Text = $"Coordinates: X, Y | Color: {this.foreGround.Name} | Width: {this.penWidth}";
+            StatusLabel.Text = $"Color: {this.foreGround.Name} | Width: {this.penWidth} | Position: {Header}";
         }
 
         private void ClearForm()
         {
+            // "Hard reset" for digital canvas
+            this.Refresh();
 
+            UpdateStatusLabel();
         }
 
         // Event Handlers -----------------------------------

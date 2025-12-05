@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DisplayPictureBox = new PictureBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
@@ -48,19 +47,9 @@
             statusStrip1 = new StatusStrip();
             StatusLabel = new ToolStripStatusLabel();
             colorDialog1 = new ColorDialog();
-            ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).BeginInit();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // DisplayPictureBox
-            // 
-            DisplayPictureBox.Location = new Point(12, 36);
-            DisplayPictureBox.Name = "DisplayPictureBox";
-            DisplayPictureBox.Size = new Size(784, 356);
-            DisplayPictureBox.TabIndex = 0;
-            DisplayPictureBox.TabStop = false;
-            toolTip1.SetToolTip(DisplayPictureBox, "Draw here!");
             // 
             // contextMenuStrip1
             // 
@@ -205,12 +194,13 @@
             Controls.Add(WaveformButton);
             Controls.Add(ColorButton);
             Controls.Add(menuStrip1);
-            Controls.Add(DisplayPictureBox);
             MainMenuStrip = menuStrip1;
             Name = "EtchOSketchForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Etch-O-Sketch";
-            ((System.ComponentModel.ISupportInitialize)DisplayPictureBox).EndInit();
+            MouseDown += GraphicsForm_MouseMove;
+            MouseMove += GraphicsForm_MouseMove;
+            MouseWheel += GraphicsForm_MouseWheel;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             statusStrip1.ResumeLayout(false);
@@ -220,8 +210,6 @@
         }
 
         #endregion
-
-        private PictureBox DisplayPictureBox;
         private ContextMenuStrip contextMenuStrip1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
