@@ -12,8 +12,7 @@ using System.Windows.Forms;
  * [ ] Proper tab order
  * [ ] "Draw Waveform" button as Enter button
  * [ ] "Clear" button as the cancel button (Esc)
- * [ ] Form should "shake" when cleared
- * 
+ * [X] Form should "shake" when cleared
  * [ ] When "Draw Waveform" btn is pressed:
  *      [ ] Picture box is erased
  *      [ ] 10x10 scope graticule is drawn, EVENLY spaced in picture box
@@ -41,7 +40,9 @@ namespace Etch_O_Sketch
         // Program Logic ------------------------------------
         void MouseDraw(int x, int y)
         {
+            // Specifies drawing area
             Graphics g = Canvas.CreateGraphics();
+
             Pen MousePen = new Pen(this.foreGround, this.penWidth);
 
             g.DrawLine(MousePen, this.oldX, this.oldY, x, y);
@@ -78,10 +79,12 @@ namespace Etch_O_Sketch
         {
             this.Text = e.Delta.ToString();
 
+            // Scroll DOWN decreases pen size
             if (penWidth > 1 && e.Delta < 0)
             {
                 this.penWidth--;
             }
+            // Scroll UP increases pen size
             else if (e.Delta > 0)
             {
                 this.penWidth++;
@@ -91,7 +94,6 @@ namespace Etch_O_Sketch
 
         void UpdateStatusLabel()
         {
-            // Updates status label
             StatusLabel.Text = $"Color: {this.foreGround.Name} | Width: {this.penWidth} | Position: {Header}";
         }
 
@@ -104,6 +106,7 @@ namespace Etch_O_Sketch
             int oldY = this.Left;
             int oldX = this.Top;
 
+            // Move form diagnally up/down 5x
             for (int i =0; i < 5; i++)
             {
                 this.Top = oldX + offset;
@@ -139,13 +142,27 @@ namespace Etch_O_Sketch
         }
 
         private void WaveformDraw(object sender, EventArgs e)
-        {
+        {            
+            Canvas.Refresh();   // Clear form
+
+            // Draw O-Scope graticule
+
+
+            // Draw Cosine Wave
+
+
+            // Draw Sine Wave
+
+
+            // Draw Tangent Wave
 
         }
 
         private void ColorSelect(object sender, EventArgs e)
         {
-            colorDialog1.ShowDialog();
+            colorDialog1.ShowDialog();  // Shows color Pallete
+
+            // Updates display for selected color
             this.foreGround = colorDialog1.Color;
             UpdateStatusLabel();
         }
