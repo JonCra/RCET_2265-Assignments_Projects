@@ -7,11 +7,10 @@
  */
 using System.Windows.Forms;
 
-/*
- * TODO:
+/* TODO:
  * [ ] Proper tab order
  * [ ] "Draw Waveform" button as Enter button
- * [ ] "Clear" button as the cancel button (Esc)
+ * [X] "Clear" button as the cancel button (Esc)
  * [X] Form should "shake" when cleared
  * [ ] When "Draw Waveform" btn is pressed:
  *      [X] Picture box is erased
@@ -56,7 +55,6 @@ namespace Etch_O_Sketch
 
             // Draw O-Scope graticule
 
-
             // Draw Cosine Wave
 
 
@@ -65,6 +63,8 @@ namespace Etch_O_Sketch
 
             // Draw Tangent Wave
 
+
+            MessageBox.Show("Waveform Drawn!");
         }
 
         void MouseDraw(int x, int y)
@@ -136,7 +136,7 @@ namespace Etch_O_Sketch
             int oldX = this.Top;
 
             // Move form diagnally up/down 5x
-            for (int i =0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 this.Top = oldX + offset;
                 this.Left = oldY + offset;
@@ -184,12 +184,14 @@ namespace Etch_O_Sketch
 
         private void FormKeyBind(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter) // BUG: Does not trigger correctly/at all
             {
+                // If Enter key is pressed:
                 Draw_Waveforms();
             }
             else if (e.KeyCode == Keys.Escape)
             {
+                // If Escape key is pressed:
                 ResetForm();
             }
         }
