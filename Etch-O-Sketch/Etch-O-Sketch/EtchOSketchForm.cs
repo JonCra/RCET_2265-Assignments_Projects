@@ -14,9 +14,12 @@ using System.Windows.Forms;
  * [ ] "Clear" button as the cancel button (Esc)
  * [X] Form should "shake" when cleared
  * [ ] When "Draw Waveform" btn is pressed:
- *      [ ] Picture box is erased
+ *      [X] Picture box is erased
  *      [ ] 10x10 scope graticule is drawn, EVENLY spaced in picture box
- *      [ ] Draw one cycle of Sin, Cos, and Tan waves vertically filling the picture box
+ *      [ ] Draw one cycle of the following, vertically filling the picture box:
+ *          [ ] Sine Wave
+ *          [ ] Cosine Wave
+ *          [ ] Tangent Wave
  */
 
 namespace Etch_O_Sketch
@@ -33,11 +36,37 @@ namespace Etch_O_Sketch
         // Initializers -------------------------------------
         public EtchOSketchForm()
         {
+            this.KeyPreview = true;
             InitializeComponent();
             UpdateStatusLabel();
         }
 
         // Program Logic ------------------------------------
+        void ResetForm()
+        {
+            Canvas.Refresh(); // "Hard reset" for digital canvas
+            UpdateStatusLabel();
+            FormShaker();
+        }
+
+        void Draw_Waveforms()
+        {
+            Canvas.Refresh();   // Clear form
+            UpdateStatusLabel();
+
+            // Draw O-Scope graticule
+
+
+            // Draw Cosine Wave
+
+
+            // Draw Sine Wave
+
+
+            // Draw Tangent Wave
+
+        }
+
         void MouseDraw(int x, int y)
         {
             // Specifies drawing area
@@ -131,9 +160,7 @@ namespace Etch_O_Sketch
 
         private void FormClear(object sender, EventArgs e)
         {
-            Canvas.Refresh(); // "Hard reset" for digital canvas
-            UpdateStatusLabel();
-            FormShaker();
+            ResetForm();
         }
 
         private void AboutDisplay(object sender, EventArgs e)
@@ -142,20 +169,8 @@ namespace Etch_O_Sketch
         }
 
         private void WaveformDraw(object sender, EventArgs e)
-        {            
-            Canvas.Refresh();   // Clear form
-
-            // Draw O-Scope graticule
-
-
-            // Draw Cosine Wave
-
-
-            // Draw Sine Wave
-
-
-            // Draw Tangent Wave
-
+        {
+            Draw_Waveforms();
         }
 
         private void ColorSelect(object sender, EventArgs e)
@@ -165,6 +180,18 @@ namespace Etch_O_Sketch
             // Updates display for selected color
             this.foreGround = colorDialog1.Color;
             UpdateStatusLabel();
+        }
+
+        private void FormKeyBind(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Draw_Waveforms();
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                ResetForm();
+            }
         }
     }
 }

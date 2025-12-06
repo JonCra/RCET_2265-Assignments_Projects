@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             CanvasContextMenuStrip = new ContextMenuStrip(components);
             selectColorToolStripMenuItem1 = new ToolStripMenuItem();
+            drawWaveformToolStripMenuItem = new ToolStripMenuItem();
+            clearToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
@@ -49,8 +51,6 @@
             statusStrip1 = new StatusStrip();
             StatusLabel = new ToolStripStatusLabel();
             colorDialog1 = new ColorDialog();
-            drawWaveformToolStripMenuItem = new ToolStripMenuItem();
-            clearToolStripMenuItem1 = new ToolStripMenuItem();
             CanvasContextMenuStrip.SuspendLayout();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Canvas).BeginInit();
@@ -62,13 +62,25 @@
             CanvasContextMenuStrip.ImageScalingSize = new Size(24, 24);
             CanvasContextMenuStrip.Items.AddRange(new ToolStripItem[] { selectColorToolStripMenuItem1, drawWaveformToolStripMenuItem, clearToolStripMenuItem1 });
             CanvasContextMenuStrip.Name = "contextMenuStrip1";
-            CanvasContextMenuStrip.Size = new Size(241, 133);
+            CanvasContextMenuStrip.Size = new Size(213, 100);
             // 
             // selectColorToolStripMenuItem1
             // 
             selectColorToolStripMenuItem1.Name = "selectColorToolStripMenuItem1";
-            selectColorToolStripMenuItem1.Size = new Size(240, 32);
+            selectColorToolStripMenuItem1.Size = new Size(212, 32);
             selectColorToolStripMenuItem1.Text = "&Select Color";
+            // 
+            // drawWaveformToolStripMenuItem
+            // 
+            drawWaveformToolStripMenuItem.Name = "drawWaveformToolStripMenuItem";
+            drawWaveformToolStripMenuItem.Size = new Size(212, 32);
+            drawWaveformToolStripMenuItem.Text = "&Draw Waveform";
+            // 
+            // clearToolStripMenuItem1
+            // 
+            clearToolStripMenuItem1.Name = "clearToolStripMenuItem1";
+            clearToolStripMenuItem1.Size = new Size(212, 32);
+            clearToolStripMenuItem1.Text = "&Clear";
             // 
             // menuStrip1
             // 
@@ -207,22 +219,12 @@
             StatusLabel.Size = new Size(179, 25);
             StatusLabel.Text = "toolStripStatusLabel1";
             // 
-            // drawWaveformToolStripMenuItem
-            // 
-            drawWaveformToolStripMenuItem.Name = "drawWaveformToolStripMenuItem";
-            drawWaveformToolStripMenuItem.Size = new Size(240, 32);
-            drawWaveformToolStripMenuItem.Text = "&Draw Waveform";
-            // 
-            // clearToolStripMenuItem1
-            // 
-            clearToolStripMenuItem1.Name = "clearToolStripMenuItem1";
-            clearToolStripMenuItem1.Size = new Size(240, 32);
-            clearToolStripMenuItem1.Text = "&Clear";
-            // 
             // EtchOSketchForm
             // 
+            AcceptButton = WaveformButton;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = ClearButton;
             ClientSize = new Size(808, 475);
             Controls.Add(Canvas);
             Controls.Add(statusStrip1);
