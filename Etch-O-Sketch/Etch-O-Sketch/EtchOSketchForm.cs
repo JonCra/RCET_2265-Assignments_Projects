@@ -5,6 +5,7 @@
  * Robotics and Comm. Systems Engineering Technology
  * https://github.com/JonCra/RCET_2265-Assignments_Projects.git
  */
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 /* TODO:
@@ -31,6 +32,9 @@ namespace Etch_O_Sketch
         Color foreGround = Color.Black;
         int penWidth = 3;
         string Header = "";
+        int CanvasLength;
+        int CanvasHeight;
+        
 
         // Initializers -------------------------------------
         public EtchOSketchForm()
@@ -50,21 +54,35 @@ namespace Etch_O_Sketch
 
         void Draw_Waveforms()
         {
+            // Gets and stores Canvas dimensions
+            CanvasHeight = Canvas.Size.Height;
+            CanvasLength = Canvas.Size.Width;
+
             Canvas.Refresh();   // Clear form
             UpdateStatusLabel();
 
             // Draw O-Scope graticule
+            
+            DrawCos();                        
+            DrawSin();                        
+            DrawTan();
+                     
+            MessageBox.Show($"Waveforms Drawn! | H: {CanvasHeight}, W: {CanvasLength}");
+        }
 
-            // Draw Cosine Wave
+        private void DrawCos()
+        {
+            
+        }
 
+        private void DrawSin()
+        {
+        
+        }
 
-            // Draw Sine Wave
+        private void DrawTan()
+        {
 
-
-            // Draw Tangent Wave
-
-
-            MessageBox.Show("Waveform Drawn!");
         }
 
         void MouseDraw(int x, int y)
