@@ -102,7 +102,7 @@
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(141, 34);
+            exitToolStripMenuItem.Size = new Size(270, 34);
             exitToolStripMenuItem.Text = "E&xit";
             exitToolStripMenuItem.Click += ExitProgram;
             // 
@@ -153,7 +153,7 @@
             ColorButton.Location = new Point(49, 398);
             ColorButton.Name = "ColorButton";
             ColorButton.Size = new Size(126, 34);
-            ColorButton.TabIndex = 3;
+            ColorButton.TabIndex = 0;
             ColorButton.Text = "&Select Color";
             toolTip1.SetToolTip(ColorButton, "Open color palette for selection");
             ColorButton.UseVisualStyleBackColor = true;
@@ -164,7 +164,7 @@
             WaveformButton.Location = new Point(209, 398);
             WaveformButton.Name = "WaveformButton";
             WaveformButton.Size = new Size(152, 34);
-            WaveformButton.TabIndex = 4;
+            WaveformButton.TabIndex = 1;
             WaveformButton.Text = "&Draw Waveform";
             toolTip1.SetToolTip(WaveformButton, "Draws a waveform");
             WaveformButton.UseVisualStyleBackColor = true;
@@ -175,7 +175,7 @@
             ClearButton.Location = new Point(411, 398);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(112, 34);
-            ClearButton.TabIndex = 5;
+            ClearButton.TabIndex = 2;
             ClearButton.Text = "&Clear";
             toolTip1.SetToolTip(ClearButton, "Clear drawing");
             ClearButton.UseVisualStyleBackColor = true;
@@ -186,7 +186,7 @@
             ExitButton.Location = new Point(590, 398);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(112, 34);
-            ExitButton.TabIndex = 6;
+            ExitButton.TabIndex = 3;
             ExitButton.Text = "E&xit";
             toolTip1.SetToolTip(ExitButton, "Exit program");
             ExitButton.UseVisualStyleBackColor = true;
