@@ -12,7 +12,12 @@ using System.Windows.Forms;
  * [ ] Proper tab order
  * [ ] "Draw Waveform" button as Enter button
  * [ ] "Clear" button as the cancel button (Esc)
- * [ ] 
+ * [ ] Form should "shake" when cleared
+ * 
+ * [ ] When "Draw Waveform" btn is pressed:
+ *      [ ] Picture box is erased
+ *      [ ] 10x10 scope graticule is drawn, EVENLY spaced in picture box
+ *      [ ] Draw one cycle of Sin, Cos, and Tan waves vertically filling the picture box
  */
 
 namespace Etch_O_Sketch
