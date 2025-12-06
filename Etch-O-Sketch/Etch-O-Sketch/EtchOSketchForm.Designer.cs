@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            contextMenuStrip1 = new ContextMenuStrip(components);
+            CanvasContextMenuStrip = new ContextMenuStrip(components);
+            selectColorToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
@@ -44,23 +45,30 @@
             ClearButton = new Button();
             ExitButton = new Button();
             toolTip1 = new ToolTip(components);
+            Canvas = new PictureBox();
             statusStrip1 = new StatusStrip();
             StatusLabel = new ToolStripStatusLabel();
             colorDialog1 = new ColorDialog();
-            Canvas = new PictureBox();
-            selectColorToolStripMenuItem1 = new ToolStripMenuItem();
-            contextMenuStrip1.SuspendLayout();
+            drawWaveformToolStripMenuItem = new ToolStripMenuItem();
+            clearToolStripMenuItem1 = new ToolStripMenuItem();
+            CanvasContextMenuStrip.SuspendLayout();
             menuStrip1.SuspendLayout();
-            statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Canvas).BeginInit();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // contextMenuStrip1
+            // CanvasContextMenuStrip
             // 
-            contextMenuStrip1.ImageScalingSize = new Size(24, 24);
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { selectColorToolStripMenuItem1 });
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(241, 69);
+            CanvasContextMenuStrip.ImageScalingSize = new Size(24, 24);
+            CanvasContextMenuStrip.Items.AddRange(new ToolStripItem[] { selectColorToolStripMenuItem1, drawWaveformToolStripMenuItem, clearToolStripMenuItem1 });
+            CanvasContextMenuStrip.Name = "contextMenuStrip1";
+            CanvasContextMenuStrip.Size = new Size(241, 133);
+            // 
+            // selectColorToolStripMenuItem1
+            // 
+            selectColorToolStripMenuItem1.Name = "selectColorToolStripMenuItem1";
+            selectColorToolStripMenuItem1.Size = new Size(240, 32);
+            selectColorToolStripMenuItem1.Text = "&Select Color";
             // 
             // menuStrip1
             // 
@@ -172,6 +180,17 @@
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitProgram;
             // 
+            // Canvas
+            // 
+            Canvas.BorderStyle = BorderStyle.FixedSingle;
+            Canvas.ContextMenuStrip = CanvasContextMenuStrip;
+            Canvas.Location = new Point(12, 36);
+            Canvas.Name = "Canvas";
+            Canvas.Size = new Size(784, 356);
+            Canvas.TabIndex = 8;
+            Canvas.TabStop = false;
+            toolTip1.SetToolTip(Canvas, "Draw here!");
+            // 
             // statusStrip1
             // 
             statusStrip1.ImageScalingSize = new Size(24, 24);
@@ -188,21 +207,17 @@
             StatusLabel.Size = new Size(179, 25);
             StatusLabel.Text = "toolStripStatusLabel1";
             // 
-            // Canvas
+            // drawWaveformToolStripMenuItem
             // 
-            Canvas.BorderStyle = BorderStyle.FixedSingle;
-            Canvas.Location = new Point(12, 36);
-            Canvas.Name = "Canvas";
-            Canvas.Size = new Size(784, 356);
-            Canvas.TabIndex = 8;
-            Canvas.TabStop = false;
-            toolTip1.SetToolTip(Canvas, "Draw here!");
+            drawWaveformToolStripMenuItem.Name = "drawWaveformToolStripMenuItem";
+            drawWaveformToolStripMenuItem.Size = new Size(240, 32);
+            drawWaveformToolStripMenuItem.Text = "&Draw Waveform";
             // 
-            // selectColorToolStripMenuItem1
+            // clearToolStripMenuItem1
             // 
-            selectColorToolStripMenuItem1.Name = "selectColorToolStripMenuItem1";
-            selectColorToolStripMenuItem1.Size = new Size(240, 32);
-            selectColorToolStripMenuItem1.Text = "Select Color";
+            clearToolStripMenuItem1.Name = "clearToolStripMenuItem1";
+            clearToolStripMenuItem1.Size = new Size(240, 32);
+            clearToolStripMenuItem1.Text = "&Clear";
             // 
             // EtchOSketchForm
             // 
@@ -223,18 +238,18 @@
             MouseDown += Canvas_MouseMove;
             MouseMove += Canvas_MouseMove;
             MouseWheel += GraphicsForm_MouseWheel;
-            contextMenuStrip1.ResumeLayout(false);
+            CanvasContextMenuStrip.ResumeLayout(false);
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Canvas).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)Canvas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private ContextMenuStrip contextMenuStrip1;
+        private ContextMenuStrip CanvasContextMenuStrip;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem hToolStripMenuItem;
@@ -254,5 +269,7 @@
         private ColorDialog colorDialog1;
         private PictureBox Canvas;
         private ToolStripMenuItem selectColorToolStripMenuItem1;
+        private ToolStripMenuItem drawWaveformToolStripMenuItem;
+        private ToolStripMenuItem clearToolStripMenuItem1;
     }
 }
