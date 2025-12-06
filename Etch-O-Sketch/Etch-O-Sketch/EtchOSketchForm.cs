@@ -95,6 +95,31 @@ namespace Etch_O_Sketch
             StatusLabel.Text = $"Color: {this.foreGround.Name} | Width: {this.penWidth} | Position: {Header}";
         }
 
+        private void FormShaker()
+        {
+            int offset = 25;    // Pixel offset
+            int WaitTime = 250; // Pause time in milliseconds
+
+            // Get/store form position
+            int oldY = this.Left;
+            int oldX = this.Top;
+
+            for (int i =0; i < 5; i++)
+            {
+                this.Top = oldX + offset;
+                this.Left = oldY + offset;
+                System.Threading.Thread.Sleep(WaitTime);
+
+                this.Top = oldX - offset;
+                this.Left = oldY - offset;
+                System.Threading.Thread.Sleep(WaitTime);
+            }
+
+            // Reset to original position
+            this.Top = oldX;
+            this.Left = oldY;
+        }
+
         // Event Handlers -----------------------------------
         private void ExitProgram(object sender, EventArgs e)
         {
@@ -105,6 +130,7 @@ namespace Etch_O_Sketch
         {
             Canvas.Refresh(); // "Hard reset" for digital canvas
             UpdateStatusLabel();
+            FormShaker();
         }
 
         private void AboutDisplay(object sender, EventArgs e)
