@@ -61,13 +61,17 @@ namespace Etch_O_Sketch
             Canvas.Refresh();   // Clear form
             UpdateStatusLabel();
 
-            // Draw O-Scope graticule
-            
+            DrawGraticule();
             DrawCos();                        
             DrawSin();                        
             DrawTan();
                      
             MessageBox.Show($"Waveforms Drawn! | H: {CanvasHeight}, W: {CanvasLength}");
+        }
+
+        private void DrawGraticule()
+        {
+
         }
 
         private void DrawCos()
