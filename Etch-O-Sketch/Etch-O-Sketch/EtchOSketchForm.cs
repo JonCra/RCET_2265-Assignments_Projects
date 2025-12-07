@@ -82,7 +82,19 @@ namespace Etch_O_Sketch
 
         private void DrawCos()
         {
-            
+            // Defines WHERE the drawing will take place
+            Graphics g = Canvas.CreateGraphics();
+
+            // Defines pen color and pixel width
+            Pen pen = new Pen(Color.LightBlue, 2);
+
+            // Defines starting point (time zero, zero AC signal)
+            PointF previousPoint = new PointF(0, Voffset);
+
+            for (int x = 1; x < CanvasLength; x++)
+            {
+
+            }
         }
 
         private void DrawSin()
@@ -91,7 +103,7 @@ namespace Etch_O_Sketch
             Graphics g = Canvas.CreateGraphics();
 
             // Defines pen color and pixel width
-            Pen pen = new Pen(Color.Black, 2);
+            Pen pen = new Pen(Color.Red, 2);
 
             // Defines starting point (time zero, zero AC signal)
             PointF previousPoint = new PointF(0, Voffset);
@@ -114,7 +126,19 @@ namespace Etch_O_Sketch
 
         private void DrawTan()
         {
+            // Defines WHERE the drawing will take place
+            Graphics g = Canvas.CreateGraphics();
 
+            // Defines pen color and pixel width
+            Pen pen = new Pen(Color.Magenta, 2);
+
+            // Defines starting point (time zero, zero AC signal)
+            PointF previousPoint = new PointF(0, Voffset);
+
+            for (int x = 1; x < CanvasLength; x++)
+            {
+
+            }
         }
 
         void MouseDraw(int x, int y)
