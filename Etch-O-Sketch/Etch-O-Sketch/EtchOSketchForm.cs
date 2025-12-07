@@ -38,8 +38,6 @@ namespace Etch_O_Sketch
         float freq = .00969f;
         float ampl;
         float Voffset;
-        
-        
 
         // Initializers -------------------------------------
         public EtchOSketchForm()
