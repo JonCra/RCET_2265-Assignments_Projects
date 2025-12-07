@@ -62,14 +62,14 @@ namespace Etch_O_Sketch
             // Gets and stores Canvas dimensions
             CanvasHeight = Canvas.Size.Height;
             CanvasLength = Canvas.Size.Width;
-            Voffset = ampl = (CanvasHeight / 2);
+            Voffset = ampl = (CanvasHeight / 2) - 2;
 
             Canvas.Refresh();   // Clear form
             UpdateStatusLabel();
 
             DrawGraticule();
-            DrawCos();                        
-            DrawSin();                        
+            DrawCos();
+            DrawSin();
             DrawTan();
                      
             MessageBox.Show($"Waveforms Drawn! | H: {CanvasHeight}, W: {CanvasLength}");
@@ -84,20 +84,24 @@ namespace Etch_O_Sketch
         {
             Graphics g = Canvas.CreateGraphics();
 
-            // y = A*cos(((2*pi)/(2*pi*f))*(
+            // Defines pen color and pixel width
             Pen pen = new Pen(Color.Black, 2);
 
             // Defines starting point (time zero, zero AC signal)
             PointF previousPoint = new PointF(0, Voffset);
 
-            for (int x =1; x < CanvasLength; x++)
+            for (int x = 1; x < CanvasLength; x++)
             {
-                float y = (float)((ampl * Math.Sin(x * freq)) + Voffset);
+                // Sine wave formula
+                float y = (float)(ampl * Math.Sin(x * freq) + Voffset);
 
+                // Defines where the pen is
                 PointF currentPoint = new PointF(x, y);
 
+                // Draw between where the pen was and now is
                 g.DrawLine(pen, previousPoint, currentPoint);
 
+                // Shifts the previous points
                 previousPoint = currentPoint;
             }
         }
