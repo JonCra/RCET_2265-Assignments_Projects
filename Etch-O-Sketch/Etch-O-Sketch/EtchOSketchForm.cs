@@ -82,6 +82,12 @@ namespace Etch_O_Sketch
 
         private void DrawCos()
         {
+            
+        }
+
+        private void DrawSin()
+        {
+            // Defines WHERE the drawing will take place
             Graphics g = Canvas.CreateGraphics();
 
             // Defines pen color and pixel width
@@ -104,12 +110,6 @@ namespace Etch_O_Sketch
                 // Shifts the previous points
                 previousPoint = currentPoint;
             }
-        }
-
-        private void DrawSin()
-        {
-            // y = A*sin(2*pi*time)
-            // SinWave = (CanvasHeight / 2) * Math.Sin(2*Math.PI*CanvasLength);
         }
 
         private void DrawTan()
