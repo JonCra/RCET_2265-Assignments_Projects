@@ -5,6 +5,7 @@
  * Robotics and Comm. Systems Engineering Technology
  * https://github.com/JonCra/RCET_2265-Assignments_Projects.git
  */
+using System.Drawing.Configuration;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
@@ -34,6 +35,10 @@ namespace Etch_O_Sketch
         string Header = "";
         int CanvasLength;
         int CanvasHeight;
+        float freq = .01f;
+        float ampl;
+        float Voffset;
+        
         
 
         // Initializers -------------------------------------
@@ -57,6 +62,7 @@ namespace Etch_O_Sketch
             // Gets and stores Canvas dimensions
             CanvasHeight = Canvas.Size.Height;
             CanvasLength = Canvas.Size.Width;
+            Voffset = ampl = (CanvasHeight / 2);
 
             Canvas.Refresh();   // Clear form
             UpdateStatusLabel();
@@ -76,12 +82,30 @@ namespace Etch_O_Sketch
 
         private void DrawCos()
         {
-            
+            Graphics g = Canvas.CreateGraphics();
+
+            // y = A*cos(((2*pi)/(2*pi*f))*(
+            Pen pen = new Pen(Color.Black, 2);
+
+            // Defines starting point (time zero, zero AC signal)
+            PointF previousPoint = new PointF(0, Voffset);
+
+            for (int x =1; x < CanvasLength; x++)
+            {
+                float y = (float)((ampl * Math.Sin(x * freq)) + Voffset);
+
+                PointF currentPoint = new PointF(x, y);
+
+                g.DrawLine(pen, previousPoint, currentPoint);
+
+                previousPoint = currentPoint;
+            }
         }
 
         private void DrawSin()
         {
-        
+            // y = A*sin(2*pi*time)
+            // SinWave = (CanvasHeight / 2) * Math.Sin(2*Math.PI*CanvasLength);
         }
 
         private void DrawTan()
