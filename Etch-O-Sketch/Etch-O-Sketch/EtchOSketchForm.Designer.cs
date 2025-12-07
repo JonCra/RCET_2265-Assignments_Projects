@@ -88,7 +88,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, hToolStripMenuItem, helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(808, 33);
+            menuStrip1.Size = new Size(937, 33);
             menuStrip1.TabIndex = 2;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -150,7 +150,7 @@
             // 
             // ColorButton
             // 
-            ColorButton.Location = new Point(49, 398);
+            ColorButton.Location = new Point(40, 411);
             ColorButton.Name = "ColorButton";
             ColorButton.Size = new Size(126, 34);
             ColorButton.TabIndex = 0;
@@ -161,7 +161,7 @@
             // 
             // WaveformButton
             // 
-            WaveformButton.Location = new Point(209, 398);
+            WaveformButton.Location = new Point(200, 411);
             WaveformButton.Name = "WaveformButton";
             WaveformButton.Size = new Size(152, 34);
             WaveformButton.TabIndex = 1;
@@ -172,7 +172,7 @@
             // 
             // ClearButton
             // 
-            ClearButton.Location = new Point(411, 398);
+            ClearButton.Location = new Point(402, 411);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(112, 34);
             ClearButton.TabIndex = 2;
@@ -183,7 +183,7 @@
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(590, 398);
+            ExitButton.Location = new Point(581, 411);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(112, 34);
             ExitButton.TabIndex = 3;
@@ -196,9 +196,10 @@
             // 
             Canvas.BorderStyle = BorderStyle.FixedSingle;
             Canvas.ContextMenuStrip = CanvasContextMenuStrip;
+            Canvas.Cursor = Cursors.Cross;
             Canvas.Location = new Point(12, 36);
             Canvas.Name = "Canvas";
-            Canvas.Size = new Size(784, 356);
+            Canvas.Size = new Size(650, 360);
             Canvas.TabIndex = 8;
             Canvas.TabStop = false;
             toolTip1.SetToolTip(Canvas, "Draw here!");
@@ -207,9 +208,9 @@
             // 
             statusStrip1.ImageScalingSize = new Size(24, 24);
             statusStrip1.Items.AddRange(new ToolStripItem[] { StatusLabel });
-            statusStrip1.Location = new Point(0, 443);
+            statusStrip1.Location = new Point(0, 457);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(808, 32);
+            statusStrip1.Size = new Size(937, 32);
             statusStrip1.TabIndex = 7;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -225,7 +226,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = ClearButton;
-            ClientSize = new Size(808, 475);
+            ClientSize = new Size(937, 489);
             Controls.Add(Canvas);
             Controls.Add(statusStrip1);
             Controls.Add(ExitButton);

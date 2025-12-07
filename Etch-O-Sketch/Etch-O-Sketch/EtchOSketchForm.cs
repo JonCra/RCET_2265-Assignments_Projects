@@ -35,7 +35,7 @@ namespace Etch_O_Sketch
         string Header = "";
         int CanvasLength;
         int CanvasHeight;
-        float freq = .01f;
+        float freq = .00969f;
         float ampl;
         float Voffset;
         
@@ -83,7 +83,7 @@ namespace Etch_O_Sketch
             // Defines pen color and pixel width
             Pen pen = new Pen(Color.Black, 2);
 
-
+            g.DrawLine(pen, 0, (Voffset), Canvas.Right, (Voffset));
         }
 
         private void DrawCos()
@@ -149,7 +149,13 @@ namespace Etch_O_Sketch
 
         void MouseDraw(int x, int y)
         {
-            
+            Graphics g = Canvas.CreateGraphics();
+            Pen MousePen = new Pen(this.foreGround, this.penWidth);
+
+            g.DrawLine(MousePen, this.oldX, this.oldY, x, y);
+
+            g.Dispose();
+            MousePen.Dispose();
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
@@ -174,7 +180,7 @@ namespace Etch_O_Sketch
                 oldX = -1;
                 oldY = -1;
             }
-                UpdateStatusLabel();
+            UpdateStatusLabel();
 
             // Updates mouse coords all the time
             this.oldX = e.X;
