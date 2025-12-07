@@ -10,15 +10,15 @@ using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 /* TODO:
- * [ ] Proper tab order
- * [ ] "Draw Waveform" button as Enter button
+ * [X] Proper tab order
+ * [?] "Draw Waveform" button as Enter button
  * [X] "Clear" button as the cancel button (Esc)
  * [X] Form should "shake" when cleared
  * [ ] When "Draw Waveform" btn is pressed:
  *      [X] Picture box is erased
  *      [ ] 10x10 scope graticule is drawn, EVENLY spaced in picture box
  *      [ ] Draw one cycle of the following, vertically filling the picture box:
- *          [ ] Sine Wave
+ *          [X] Sine Wave
  *          [ ] Cosine Wave
  *          [ ] Tangent Wave
  */
@@ -77,6 +77,12 @@ namespace Etch_O_Sketch
 
         private void DrawGraticule()
         {
+            // Defines WHERE the drawing will take place
+            Graphics g = Canvas.CreateGraphics();
+
+            // Defines pen color and pixel width
+            Pen pen = new Pen(Color.Black, 2);
+
 
         }
 
@@ -143,16 +149,7 @@ namespace Etch_O_Sketch
 
         void MouseDraw(int x, int y)
         {
-            // Specifies drawing area
-            Graphics g = Canvas.CreateGraphics();
-
-            Pen MousePen = new Pen(this.foreGround, this.penWidth);
-
-            g.DrawLine(MousePen, this.oldX, this.oldY, x, y);
-
-            // "Releases" the pen
-            g.Dispose();
-            MousePen.Dispose();
+            
         }
 
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
@@ -171,7 +168,13 @@ namespace Etch_O_Sketch
                 colorDialog1.ShowDialog();
                 this.foreGround = colorDialog1.Color;
             }
-            UpdateStatusLabel();
+            else
+            {
+                // Resets previous point to avoid unwanted connections
+                oldX = -1;
+                oldY = -1;
+            }
+                UpdateStatusLabel();
 
             // Updates mouse coords all the time
             this.oldX = e.X;
