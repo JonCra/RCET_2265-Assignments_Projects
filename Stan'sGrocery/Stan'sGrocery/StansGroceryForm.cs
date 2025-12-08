@@ -18,7 +18,7 @@ namespace Stan_sGrocery
      *      [ ] Always have "Show All" as default.
      *      [ ] Show unique aisle numbers in descending order when FilterRadioButton is checked.
      *      [ ] Show alphabetical unique category names when FilterByCategoryRadioButton is checked.
-     *      [ ] 
+     *      [ ] Selected option displays all items based on Radio Button selection in the display box.
      * [ ] DisplayLabel format: "You will find {item} on aisle {aisleNumber} with the {similarItem}.
      * [ ] If the item is not found, tell the customer.
      * [ ] When "zzz"/"ZZZ" is typed in search box, program stops.
@@ -51,12 +51,29 @@ namespace Stan_sGrocery
         }
 
         // Program Logic --------------------
+        private void SearchQuery()
+        {
+            if (SearchTextBox.Text == "zzz" || SearchTextBox.Text == "ZZZ")
+            {
+                ProgramEnd();
+            }
 
+        }
+
+        private void ProgramEnd()
+        {
+            this.Close();
+        }
 
         // Event Handlers -------------------
         private void ExitProgram(object sender, EventArgs e)
         {
-            this.Close();
+            ProgramEnd();
+        }
+
+        private void SearchTextChanged(object sender, EventArgs e)
+        {
+            SearchQuery();
         }
     }
 }

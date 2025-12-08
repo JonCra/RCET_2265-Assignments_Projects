@@ -59,6 +59,7 @@
             SearchTextBox.Size = new Size(150, 31);
             SearchTextBox.TabIndex = 0;
             MainToolTip.SetToolTip(SearchTextBox, "Text search query");
+            SearchTextBox.TextChanged += SearchTextChanged;
             // 
             // SearchButton
             // 
