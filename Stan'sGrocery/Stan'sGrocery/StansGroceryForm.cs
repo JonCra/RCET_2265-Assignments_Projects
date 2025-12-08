@@ -31,9 +31,9 @@ namespace Stan_sGrocery
      * [ ] SearchTextBox and SearchButton should update the DisplayListBox and DisplayLabel appropriately.
      * [ ] DisplayLabel should always reflect the currently selected item in the DisplayListBox
      */
-    public partial class GrocerySearchForm : Form
+    public partial class StansGroceryForm : Form
     {
-        public GrocerySearchForm()
+        public StansGroceryForm()
         {
             InitializeComponent();
         }
