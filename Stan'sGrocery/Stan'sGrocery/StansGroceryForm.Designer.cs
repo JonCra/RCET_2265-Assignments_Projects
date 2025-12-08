@@ -58,6 +58,7 @@
             SearchTextBox.Name = "SearchTextBox";
             SearchTextBox.Size = new Size(150, 31);
             SearchTextBox.TabIndex = 0;
+            MainToolTip.SetToolTip(SearchTextBox, "Text search query");
             // 
             // SearchButton
             // 
@@ -66,6 +67,7 @@
             SearchButton.Size = new Size(112, 34);
             SearchButton.TabIndex = 1;
             SearchButton.Text = "Seach";
+            MainToolTip.SetToolTip(SearchButton, "Confirm search query");
             SearchButton.UseVisualStyleBackColor = true;
             // 
             // FilterComboBox
@@ -84,6 +86,7 @@
             DisplayListBox.Name = "DisplayListBox";
             DisplayListBox.Size = new Size(180, 129);
             DisplayListBox.TabIndex = 3;
+            MainToolTip.SetToolTip(DisplayListBox, "Items found within search");
             // 
             // DisplayLabel
             // 
@@ -114,6 +117,7 @@
             FilterByCategoryRadioButton.TabIndex = 6;
             FilterByCategoryRadioButton.TabStop = true;
             FilterByCategoryRadioButton.Text = "Filter by Category";
+            MainToolTip.SetToolTip(FilterByCategoryRadioButton, "Filter items categorically");
             FilterByCategoryRadioButton.UseVisualStyleBackColor = true;
             // 
             // FilterByAisleRadioButton
@@ -125,6 +129,7 @@
             FilterByAisleRadioButton.TabIndex = 6;
             FilterByAisleRadioButton.TabStop = true;
             FilterByAisleRadioButton.Text = "Filter by Aisle";
+            MainToolTip.SetToolTip(FilterByAisleRadioButton, "Filter items by aisle number");
             FilterByAisleRadioButton.UseVisualStyleBackColor = true;
             // 
             // TopMenuStrip
