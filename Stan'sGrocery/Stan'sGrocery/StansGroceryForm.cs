@@ -47,12 +47,16 @@ namespace Stan_sGrocery
         {
             FilterByAisleRadioButton.Checked = true;
             FilterByCategoryRadioButton.Checked = false;
+            DisplayListBox.Text = "";
         }
 
         // Program Logic --------------------
 
 
         // Event Handlers -------------------
-
+        private void ExitProgram(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

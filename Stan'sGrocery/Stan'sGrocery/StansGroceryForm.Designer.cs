@@ -152,14 +152,15 @@
             // searchToolStripMenuItem
             // 
             searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            searchToolStripMenuItem.Size = new Size(166, 34);
+            searchToolStripMenuItem.Size = new Size(270, 34);
             searchToolStripMenuItem.Text = "Search";
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(166, 34);
+            exitToolStripMenuItem.Size = new Size(270, 34);
             exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += ExitProgram;
             // 
             // helpToolStripMenuItem
             // 
@@ -192,6 +193,7 @@
             exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
             exitToolStripMenuItem1.Size = new Size(136, 32);
             exitToolStripMenuItem1.Text = "Exit";
+            exitToolStripMenuItem1.Click += ExitProgram;
             // 
             // StansGroceryForm
             // 
