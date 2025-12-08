@@ -81,7 +81,24 @@ namespace Etch_O_Sketch
             // Defines pen color and pixel width
             Pen pen = new Pen(Color.Black, 2);
 
-            g.DrawLine(pen, 0, (Voffset), Canvas.Right, (Voffset));
+            float GraphLength = CanvasLength;
+            float GraphHeight = CanvasHeight;
+
+            // Format: (pen, Xstart, Ystart, Xend, Yend)
+            
+            // Horizontal dividers
+            for (int i = 1; i <= 10; i++)
+            {
+                float y = GraphLength * 0.1f * i;
+                g.DrawLine(pen, y, 0f, y, GraphHeight);
+            }
+
+            // Vertical dividers
+            for (int i = 1; i <= 10; i++)
+            {
+                float x = GraphHeight * 0.1f * i;
+                g.DrawLine(pen, x, 0f, x, GraphLength);
+            }
         }
 
         private void DrawCos()
