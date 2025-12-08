@@ -36,6 +36,7 @@ namespace Stan_sGrocery
         public StansGroceryForm()
         {
             InitializeComponent();
+            SetDefaults();
         }
 
         // "Global" Variables ---------------
@@ -44,7 +45,8 @@ namespace Stan_sGrocery
         // Initializers ---------------------
         private void SetDefaults()
         {
-
+            FilterByAisleRadioButton.Checked = true;
+            FilterByCategoryRadioButton.Checked = false;
         }
 
         // Program Logic --------------------
