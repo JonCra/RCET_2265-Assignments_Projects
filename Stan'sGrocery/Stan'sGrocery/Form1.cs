@@ -7,6 +7,30 @@
  */
 namespace Stan_sGrocery
 {
+    /* TODO:
+     * [ ] Load item data from disk file into data structure.
+     * [ ] Allow item search via:
+     *      [ ] Text box
+     *      [ ] Combo box
+     *      [ ] List box
+     * [ ] DiplayListbox should be alphabetized, filtered by current selection.
+     * [ ] FilterCombobox should have:
+     *      [ ] Always have "Show All" as default.
+     *      [ ] Show unique aisle numbers in descending order when FilterRadioButton is checked.
+     *      [ ] Show alphabetical unique category names when FilterByCategoryRadioButton is checked.
+     *      [ ] 
+     * [ ] DisplayLabel format: "You will find {item} on aisle {aisleNumber} with the {similarItem}.
+     * [ ] If the item is not found, tell the customer.
+     * [ ] When "zzz"/"ZZZ" is typed in search box, program stops.
+     * 
+     * Additional Requirements:
+     * [ ] Add the data file "Grocery.txt" to the project folder and load it at startup.
+     * [ ] Use a temp array to parse/load the data into main data structure.
+     * [ ] DisplayListbox should update based on filter and search criteria.
+     * [ ] FilterComboBox and Radio buttons should interact as described above.
+     * [ ] SearchTextBox and SearchButton should update the DisplayListBox and DisplayLabel appropriately.
+     * [ ] DisplayLabel should always reflect the currently selected item in the DisplayListBox
+     */
     public partial class GrocerySearchForm : Form
     {
         public GrocerySearchForm()

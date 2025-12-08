@@ -37,7 +37,6 @@
             ClientSize = new Size(800, 450);
             Name = "GrocerySearchForm";
             Text = "Stan's Grocery Search";
-            Load += GrocerySearchForm_Load;
             ResumeLayout(false);
         }
 
