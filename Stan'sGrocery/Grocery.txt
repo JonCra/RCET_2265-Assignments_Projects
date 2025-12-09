@@ -1,0 +1,18 @@
+---Category, Aisle, Name---
+Beverages, 2, Orange Juice
+Beverages, 2, Soda
+Produce, 5, Brusselsprouts
+Produce, 5, Carrots
+Produce, 5, Peas
+Produce, 5, Potatoes
+Dairy, 1, Yogurt
+Dairy, 1, Cheese
+Dairy, 1, Creamer
+Produce, 5, Apples
+Snacks, 3, Potato Chips
+Snacks, 3, Cookies
+Snacks, 3, Popcorn
+Baking, 4, Flour
+Baking, 4, Sugar
+Baking, 4, Corn Starch
+Baking, 4, Baking Soda

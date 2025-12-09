@@ -38,6 +38,7 @@ namespace Stan_sGrocery
         // "Global" Variables ---------------
         SplashScreenForm sf = new SplashScreenForm();
         AboutForm af = new AboutForm();
+        string[,] GroceryInventory;
 
         public StansGroceryForm()
         {
@@ -66,8 +67,27 @@ namespace Stan_sGrocery
 
         private void LoadFile()
         {
-            // Load/index file data into appropriate data holder
+            // User message if file not found
+            var path = "Grocery.txt";
+            if (!File.Exists(path))
+            {
+                MessageBox.Show($"ERROR: Data file not found {path}",
+                    "File Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
+            // User message if file is empty
+            var lines = File.ReadAllLines(path);
+            if (lines.Length == 0)
+            {
+                MessageBox.Show("Data file is empty.", "No data",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+            // Load/index file data into appropriate data holder
+            GroceryInventory = File.ReadAllLines("Grocery.txt");
+            DisplayListBox.Text = GroceryInventory[].ToString;
         }
 
         // Program Logic --------------------
