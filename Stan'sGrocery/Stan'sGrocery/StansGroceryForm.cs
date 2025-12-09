@@ -45,7 +45,7 @@ namespace Stan_sGrocery
             sf.Show();
 
             // Wait time in milliseconds
-            Thread.Sleep(2500);
+            Thread.Sleep(25);
 
             // Close splash screen (frees up any resources used)
             sf.Dispose();
@@ -55,14 +55,13 @@ namespace Stan_sGrocery
             LoadFile();
         }
 
-
-
         // Initializers ---------------------
         private void SetDefaults()
         {
             FilterByAisleRadioButton.Checked = true;
             FilterByCategoryRadioButton.Checked = false;
             DisplayListBox.Text = "";
+            FilterComboBox.SelectedIndex = 0;
         }
 
         private void LoadFile()
@@ -78,6 +77,7 @@ namespace Stan_sGrocery
             {
                 this.Close();
             }
+
             // Search item list
 
         }
