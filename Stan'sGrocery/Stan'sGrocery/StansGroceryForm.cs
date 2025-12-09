@@ -6,6 +6,7 @@
  * https://github.com/JonCra/RCET_2265-Assignments_Projects.git
  */
 using StansGrocery;
+using System.Data.Common;
 
 namespace Stan_sGrocery
 {
@@ -67,6 +68,11 @@ namespace Stan_sGrocery
 
         private void LoadFile()
         {
+            // File format: Category, Aisle, Name
+
+            DbDataRecord GroceryItem(string Category, string Aisle, string Name);
+            List<GroceryItem> GroceryInventory = new();
+
             // User message if file not found
             var path = "Grocery.txt";
             if (!File.Exists(path))
@@ -76,18 +82,24 @@ namespace Stan_sGrocery
             }
 
             // User message if file is empty
-            var lines = File.ReadAllLines(path);
+            var lines = File.ReadAllLines(path).Where(l => !string.IsNullOrWhiteSpace(l))
+                            .ToArray();
             if (lines.Length == 0)
             {
                 MessageBox.Show("Data file is empty.", "No data",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            var temp = lines.Select(l => l.Split(',').Select(s => s.Trim()).ToArray()).ToArray();
 
-
-            // Load/index file data into appropriate data holder
-            GroceryInventory = File.ReadAllLines("Grocery.txt");
-            DisplayListBox.Text = GroceryInventory[].ToString;
+            foreach (var cols in temp)
+            {
+                var cat = cols.Length > 0 ? cols[0] : "";
+                var aisle = cols.Length > 1 ? cols[1] : "";
+                var name = cols.Length > 2 ? cols[2] : "";
+                if (!string.IsNullOrWhiteSpace(name))
+                    GroceryInventory.Add(new GroceryItem(cat, aisle, name));
+            }
         }
 
         // Program Logic --------------------
