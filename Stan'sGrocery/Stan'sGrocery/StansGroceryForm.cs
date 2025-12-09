@@ -5,6 +5,8 @@
  * Robotics and Comm. Systems Engineering Technology
  * https://github.com/JonCra/RCET_2265-Assignments_Projects.git
  */
+using StansGrocery;
+
 namespace Stan_sGrocery
 {
     /* TODO:
@@ -33,13 +35,26 @@ namespace Stan_sGrocery
      */
     public partial class StansGroceryForm : Form
     {
+        // "Global" Variables ---------------
+        SplashScreenForm sf = new SplashScreenForm();
+        AboutForm af = new AboutForm();
+
         public StansGroceryForm()
         {
+            // Show splash screen
+            sf.Show();
+
+            // Wait time in milliseconds
+            Thread.Sleep(2500);
+
+            // Close splash screen (frees up any resources used)
+            sf.Dispose();
+
             InitializeComponent();
             SetDefaults();
+            LoadFile();
         }
 
-        // "Global" Variables ---------------
 
 
         // Initializers ---------------------
@@ -50,25 +65,27 @@ namespace Stan_sGrocery
             DisplayListBox.Text = "";
         }
 
+        private void LoadFile()
+        {
+            // Load/index file data into appropriate data holder
+
+        }
+
         // Program Logic --------------------
         private void SearchQuery()
         {
             if (SearchTextBox.Text == "zzz" || SearchTextBox.Text == "ZZZ")
             {
-                ProgramEnd();
+                this.Close();
             }
+            // Search item list
 
-        }
-
-        private void ProgramEnd()
-        {
-            this.Close();
         }
 
         // Event Handlers -------------------
         private void ExitProgram(object sender, EventArgs e)
         {
-            ProgramEnd();
+            this.Close();
         }
 
         private void SearchTextChanged(object sender, EventArgs e)
