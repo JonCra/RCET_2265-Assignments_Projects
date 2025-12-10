@@ -31,7 +31,7 @@ namespace ShuffleTheDeck
             do
             {
                 Display();
-                Console.WriteLine($"The count is {count}");
+                Console.WriteLine($"\nThe count is {count}");
                 if (count != 0)
                 {
                     Console.WriteLine($"You drew {NameOfCard}");
@@ -133,31 +133,28 @@ namespace ShuffleTheDeck
             Random RandomNumber = new Random();
             return RandomNumber.Next(min, max + 1);
         }
-
-        //static string RandomCardBetween(string A, string K)
-        //{
-        //    Random RandomCard = new Random();
-        //    return RandomCard.Next(A, K);
-        //}
         
         static void Display()
         {
-            string currentLocation = "  ";  //show spaces for not drawn, number for drawn
-            int padding = 3;    //Right justify amount
-            string vDivider = " |"; //Column seperator
-            int totalWidth = 5 * (padding + vDivider.Length);   //Calculate total width
-            string hDivider = new string('-', totalWidth);  //Dynamic length horizontal divider
+            string currentLocation;
+
+            // Column seperator
+            string vDivider = " |";
+            
+            // Right justify amount
+            int padding = (cardSuit.Length + vDivider.Length);            
+
+            // Calculate total width
+            int totalWidth = 5 * (padding + vDivider.Length);
+            
+            // Dynamic length horizontal divider
+            string hDivider = new string('-', totalWidth);
 
             for (int i = 0; i < cardSuit.Length; i++)
             {
-                Console.Write(cardSuit[i]);
-                
-                if (i < 3)
-                {
-                    Console.Write(" | ");
-                }
+                Console.Write($"{cardSuit[i]}{vDivider} ");
             }
-            Console.WriteLine();
+            Console.WriteLine();            
 
             // Display card matrix
             for (int row = 0; row < 13; row++)
