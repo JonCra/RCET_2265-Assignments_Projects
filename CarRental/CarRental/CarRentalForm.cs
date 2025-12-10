@@ -7,6 +7,19 @@
 using System.Numerics;
 namespace CarRental
 {
+    /*
+     * TODO:
+     * [X] Remove invalid data from any affected text box
+     * [X] Set focus to first affected box in tab order
+     * [X] Input validation for all text boxes
+     * [X] Validations:
+     *      [X] No empty/blank customer info
+     *      [X] Beginning Odo must be less than Ending Odo
+     *      [X] Rental Days = 0 < Days < 45
+     * [X] Do not perform any calculations unless user input is valid
+     * [X] Use a single message box to display any improper input
+     * [X] Do not display the message box until the calculate button is clicked
+     */
     public partial class CarRentalForm : Form
     {
         // "Global" Variables:
@@ -25,6 +38,7 @@ namespace CarRental
         int customers = 0;
         double totalMileage = 0;
         double totalCharges = 0;
+        string ErrorMessage;
 
         // Validator Variables:
         bool NameValid;
@@ -35,6 +49,7 @@ namespace CarRental
         bool Odo1Valid;
         bool Odo2Valid = false;
         bool DaysValid;
+        bool AllInputsValid;
 
         public CarRentalForm()
         {
@@ -46,7 +61,7 @@ namespace CarRental
         private void SetDefaults()
         {
             // Enables the following:
-            MilesRadioButton.Checked = true;
+            MilesRadioButton.Checked = CalculateButton.Enabled = true;
             
             // Disables the following:
             KM_RadioButton.Checked = AAA_DiscountCheckBox.Checked = SeniorDiscountCheckBox.Checked =
@@ -74,7 +89,7 @@ namespace CarRental
             {
                 NameValid = false;
                 CustomerNameTextBox.BackColor = Color.LightYellow;
-                CustomerNameTextBox.Focus();
+                ErrorMessage += "Name input not valid.\n";
             }
             else
             {
@@ -87,7 +102,7 @@ namespace CarRental
             {
                 AddressValid = false;
                 AddressTextBox.BackColor = Color.LightYellow;
-                AddressTextBox.Focus();
+                ErrorMessage += "Address input not valid.\n";
             }
             else
             {
@@ -100,7 +115,7 @@ namespace CarRental
             {
                 CityValid = false;
                 CityTextBox.BackColor = Color.LightYellow;
-                CityTextBox.Focus();
+                ErrorMessage += "City input not valid.\n";
             }
             else
             {
@@ -113,7 +128,7 @@ namespace CarRental
             {
                 StateValid = false;
                 StateComboBox.BackColor = Color.LightYellow;
-                StateComboBox.Focus();
+                ErrorMessage += "State input not valid.\n";
             }
             else
             {
@@ -127,7 +142,7 @@ namespace CarRental
             {
                 ZipValid = false;
                 ZipCodeTextBox.BackColor = Color.LightYellow;
-                ZipCodeTextBox.Focus();
+                ErrorMessage += "Zip Code input not valid.\n";
             }
             else
             {
@@ -139,6 +154,7 @@ namespace CarRental
                     {
                         ZipValid = false;
                         ZipCodeTextBox.BackColor = Color.LightYellow;
+                        ErrorMessage += "Zip Code input not valid.\n";
                     }
                     else
                     {
@@ -150,6 +166,7 @@ namespace CarRental
                 {
                     ZipValid = false;
                     ZipCodeTextBox.BackColor = Color.LightYellow;
+                    ErrorMessage += "Zip Code input not valid.\n";
                 }
             }
 
@@ -158,7 +175,7 @@ namespace CarRental
             {
                 Odo1Valid = false;
                 InitialOdometerTextBox.BackColor = Color.LightYellow;
-                InitialOdometerTextBox.Focus();
+                ErrorMessage += "First Odometer input not valid.\n";
             }
             else
             {
@@ -172,7 +189,7 @@ namespace CarRental
                 {
                     Odo1Valid = false;
                     InitialOdometerTextBox.BackColor = Color.LightYellow;
-                    InitialOdometerTextBox.Focus();
+                    ErrorMessage += "First Odometer input not valid.\n";
                 }
             }
 
@@ -181,7 +198,7 @@ namespace CarRental
             {
                 Odo2Valid = false;
                 FinalOdometerTextBox.BackColor = Color.LightYellow;
-                FinalOdometerTextBox.Focus();
+                ErrorMessage += "Second Odometer input not valid.\n";
             }
             else
             {
@@ -198,14 +215,14 @@ namespace CarRental
                     {
                         Odo2Valid = false;
                         FinalOdometerTextBox.BackColor = Color.LightYellow;
-                        FinalOdometerTextBox.Focus();
+                        ErrorMessage += "Second Odometer input not valid.\n";
                     }
                 }
                 catch (Exception)
                 {
                     Odo2Valid = false;
                     FinalOdometerTextBox.BackColor = Color.LightYellow;
-                    FinalOdometerTextBox.Focus();
+                    ErrorMessage += "Second Odometer input not valid.\n";
                 }
             }
 
@@ -214,7 +231,7 @@ namespace CarRental
             {
                 DaysValid = false;
                 DaysTextBox.BackColor = Color.LightYellow;
-                DaysTextBox.Focus();
+                ErrorMessage += "Rental Days input not valid.";
             }
             else
             {
@@ -232,25 +249,25 @@ namespace CarRental
                     {
                         DaysValid = false;
                         DaysTextBox.BackColor = Color.LightYellow;
-                        DaysTextBox.Focus();
+                        ErrorMessage += "Rental Days input not valid.";
                     }
                 }
                 catch (Exception)
                 {
                     DaysValid = false;
                     DaysTextBox.BackColor = Color.LightYellow;
-                    DaysTextBox.Focus();
+                    ErrorMessage += "Rental Days input not valid.";
                 }
             }
 
-            // All fields are valid
+            // All inputs valid boolean argument
             if (NameValid && AddressValid && CityValid && StateValid && ZipValid && Odo1Valid && Odo2Valid && DaysValid)
             {
-                CalculateButton.Enabled = true;
+                AllInputsValid = true;
             }
             else
             {
-                CalculateButton.Enabled = false;
+                AllInputsValid = false;
             }
         }
 
@@ -355,31 +372,76 @@ namespace CarRental
             SetDefaults();
         }
 
-        // User-input Field Validation Triggers:
-        private void TextChanged(object sender, EventArgs e)
-        {
-            ValidateInputs();
-        }
-
         private void CalculateButton_Click(object sender, EventArgs e)
         {
-            CalculateButton.Enabled = false;
+            ValidateInputs();
 
-            DailyChargeCalculator(); // Calculates daily charge
-                        
-            DistanceConverter(); // Convert km to mi
-                        
-            Discounter(); // Calculate discount
+            if (!AllInputsValid)
+            {
+                MessageBox.Show($"ERROR:\n{ErrorMessage}", "Invalid inputs");
 
-            TotalAmount();
+                // If user inputs are NOT valid, clear and focus on them
+                if (!NameValid)
+                {
+                    CustomerNameTextBox.Text = "";
+                    CustomerNameTextBox.Focus();
+                }
+                else if (!AddressValid)
+                {
+                    AddressTextBox.Text = "";
+                    AddressTextBox.Focus();
+                }
+                else if (!CityValid)
+                {
+                    CityTextBox.Text = "";
+                    CityTextBox.Focus();
+                }
+                else if (!StateValid)
+                {
+                    StateComboBox.SelectedIndex = 0;
+                    StateComboBox.Focus();
+                }
+                else if (!ZipValid)
+                {
+                    ZipCodeTextBox.Text = "";
+                    ZipCodeTextBox.Focus();
+                }
+                else if (!Odo1Valid)
+                {
+                    InitialOdometerTextBox.Text = "";
+                    InitialOdometerTextBox.Focus();
+                }
+                else if (!Odo2Valid)
+                {
+                    FinalOdometerTextBox.Text = "";
+                    FinalOdometerTextBox.Focus();
+                }
+                else if (!DaysValid)
+                {
+                    DaysTextBox.Text = "";
+                    DaysTextBox.Focus();
+                }
+            }
+            // If ALL user inputs are VALID perform calculations
+            else
+            {
+                DailyChargeCalculator(); // Calculates daily charge
 
-            customers++;
+                DistanceConverter(); // Convert km to mi
 
-            totalMileage += miles;
+                Discounter(); // Calculate discount
 
-            totalCharges += NetTotal;
+                TotalAmount();
 
-            SummaryButton.Enabled = true;
+                customers++;
+
+                totalMileage += miles;
+
+                totalCharges += NetTotal;
+
+                SummaryButton.Enabled = true;
+            }
+
         }
 
         private void SummaryButton_Click(object sender, EventArgs e)

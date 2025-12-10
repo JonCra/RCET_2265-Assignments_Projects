@@ -172,7 +172,6 @@
             CustomerNameTextBox.Size = new Size(166, 31);
             CustomerNameTextBox.TabIndex = 0;
             toolTip1.SetToolTip(CustomerNameTextBox, "Customer's name");
-            CustomerNameTextBox.TextChanged += TextChanged;
             // 
             // DiscountGroupBox
             // 
@@ -202,7 +201,6 @@
             AddressTextBox.Name = "AddressTextBox";
             AddressTextBox.Size = new Size(166, 31);
             AddressTextBox.TabIndex = 1;
-            AddressTextBox.TextChanged += TextChanged;
             // 
             // CityTextBox
             // 
@@ -210,7 +208,6 @@
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(165, 31);
             CityTextBox.TabIndex = 2;
-            CityTextBox.TextChanged += TextChanged;
             // 
             // ZipCodeTextBox
             // 
@@ -219,7 +216,6 @@
             ZipCodeTextBox.Name = "ZipCodeTextBox";
             ZipCodeTextBox.Size = new Size(165, 31);
             ZipCodeTextBox.TabIndex = 4;
-            ZipCodeTextBox.TextChanged += TextChanged;
             // 
             // InitialOdometerTextBox
             // 
@@ -227,7 +223,6 @@
             InitialOdometerTextBox.Name = "InitialOdometerTextBox";
             InitialOdometerTextBox.Size = new Size(165, 31);
             InitialOdometerTextBox.TabIndex = 5;
-            InitialOdometerTextBox.TextChanged += TextChanged;
             // 
             // FinalOdometerTextBox
             // 
@@ -235,7 +230,6 @@
             FinalOdometerTextBox.Name = "FinalOdometerTextBox";
             FinalOdometerTextBox.Size = new Size(165, 31);
             FinalOdometerTextBox.TabIndex = 6;
-            FinalOdometerTextBox.TextChanged += TextChanged;
             // 
             // CustomerInfoGroupBox
             // 
@@ -268,19 +262,23 @@
             DaysTextBox.Name = "DaysTextBox";
             DaysTextBox.Size = new Size(164, 31);
             DaysTextBox.TabIndex = 7;
-            DaysTextBox.TextChanged += TextChanged;
             // 
             // StateComboBox
             // 
             StateComboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             StateComboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
             StateComboBox.FormattingEnabled = true;
-            StateComboBox.Items.AddRange(new object[] { "(Select a State)", "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" });
+            StateComboBox.Items.AddRange(new object[] { "(Select a State)", "Alabama", "Alaska", "Arizona",
+                "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii",
+                "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland",
+                "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada",
+                "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
+                "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee",
+                "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" });
             StateComboBox.Location = new Point(251, 155);
             StateComboBox.Name = "StateComboBox";
             StateComboBox.Size = new Size(165, 33);
             StateComboBox.TabIndex = 3;
-            StateComboBox.SelectedIndexChanged += TextChanged;
             // 
             // DaysLabel
             // 
