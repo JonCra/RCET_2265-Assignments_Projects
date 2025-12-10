@@ -7,19 +7,6 @@
 using System.Numerics;
 namespace CarRental
 {
-    /*
-     * TODO:
-     * [X] Remove invalid data from any affected text box
-     * [X] Set focus to first affected box in tab order
-     * [X] Input validation for all text boxes
-     * [X] Validations:
-     *      [X] No empty/blank customer info
-     *      [X] Beginning Odo must be less than Ending Odo
-     *      [X] Rental Days = 0 < Days < 45
-     * [X] Do not perform any calculations unless user input is valid
-     * [X] Use a single message box to display any improper input
-     * [X] Do not display the message box until the calculate button is clicked
-     */
     public partial class CarRentalForm : Form
     {
         // "Global" Variables:
