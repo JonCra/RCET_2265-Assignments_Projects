@@ -18,13 +18,13 @@ namespace Stan_sGrocery
      *      [ ] List box
      * [ ] DiplayListbox should be alphabetized, filtered by current selection.
      * [ ] FilterCombobox should have:
-     *      [ ] Always have "Show All" as default.
+     *      [X] Always have "Show All" as default.
      *      [ ] Show unique aisle numbers in descending order when FilterRadioButton is checked.
      *      [ ] Show alphabetical unique category names when FilterByCategoryRadioButton is checked.
      *      [ ] Selected option displays all items based on Radio Button selection in the display box.
      * [ ] DisplayLabel format: "You will find {item} on aisle {aisleNumber} with the {similarItem}.
      * [ ] If the item is not found, tell the customer.
-     * [ ] When "zzz"/"ZZZ" is typed in search box, program stops.
+     * [X] When "zzz"/"ZZZ" is typed in search box, program stops.
      * 
      * Additional Requirements:
      * [ ] Add the data file "Grocery.txt" to the project folder and load it at startup.
@@ -70,9 +70,6 @@ namespace Stan_sGrocery
         {
             // File format: Category, Aisle, Name
 
-            DbDataRecord GroceryItem(string Category, string Aisle, string Name);
-            List<GroceryItem> GroceryInventory = new();
-
             // User message if file not found
             var path = "Grocery.txt";
             if (!File.Exists(path))
@@ -82,23 +79,10 @@ namespace Stan_sGrocery
             }
 
             // User message if file is empty
-            var lines = File.ReadAllLines(path).Where(l => !string.IsNullOrWhiteSpace(l))
-                            .ToArray();
-            if (lines.Length == 0)
+            if (File.)
             {
                 MessageBox.Show("Data file is empty.", "No data",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            var temp = lines.Select(l => l.Split(',').Select(s => s.Trim()).ToArray()).ToArray();
-
-            foreach (var cols in temp)
-            {
-                var cat = cols.Length > 0 ? cols[0] : "";
-                var aisle = cols.Length > 1 ? cols[1] : "";
-                var name = cols.Length > 2 ? cols[2] : "";
-                if (!string.IsNullOrWhiteSpace(name))
-                    GroceryInventory.Add(new GroceryItem(cat, aisle, name));
             }
         }
 
