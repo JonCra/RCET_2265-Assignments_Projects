@@ -7,13 +7,6 @@
 */
 namespace ShuffleTheDeck
 {
-    /*
-     TODO:
-        [X] Create a 52 card deck to draw from
-        [ ] The card should be a random suit (spades, clubs, hearts, diamonds) and value (2-10, J, Q, K, A).
-        [X] Use a multidimensional array to track if the card has already been dealt. If so, draw another random card.
-        [X] Shuffle the deck when there are no more cards left or anytime the user chooses.
-     */
     internal class Program
     {
         private static bool[,] deck = new bool[13, 4];
@@ -24,7 +17,7 @@ namespace ShuffleTheDeck
         static void Main(string[] args)
         {
             Console.Title = "Shuffle the Deck";
-            string userInput = "";
+            string userInput;
             bool userQuit = false;
             int count = 0;
 
