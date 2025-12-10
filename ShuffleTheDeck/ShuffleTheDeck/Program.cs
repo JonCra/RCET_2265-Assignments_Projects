@@ -17,7 +17,7 @@ namespace ShuffleTheDeck
     internal class Program
     {
         private static bool[,] deck = new bool[13, 4];
-        private static string[] cardValue = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+        private static string[] cardValue = { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
         private static string[] cardSuit = { "Spades", "Clubs", "Hearts", "Diamonds" };
         private static string NameOfCard = "";
         
@@ -115,7 +115,7 @@ namespace ShuffleTheDeck
             // Mark drawn card as true
             deck[row, column] = true;
 
-            string cardName = $"{cardValue[row]} of {cardValue[column]}";
+            string cardName = $"{cardValue[row]} of {cardSuit[column]}";
             NameOfCard = cardName;
         }
         
