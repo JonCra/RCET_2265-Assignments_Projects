@@ -9,9 +9,9 @@ namespace ShuffleTheDeck
 {
     /*
      TODO:
-        [ ] Create a 52 card deck to draw from
+        [X] Create a 52 card deck to draw from
         [ ] The card should be a random suit (spades, clubs, hearts, diamonds) and value (2-10, J, Q, K, A).
-        [ ] Use a multidimensional array to track if the card has already been dealt. If so, draw another random card.
+        [X] Use a multidimensional array to track if the card has already been dealt. If so, draw another random card.
         [ ] Shuffle the deck when there are no more cards left or anytime the user chooses.
      */
     internal class Program
@@ -20,8 +20,10 @@ namespace ShuffleTheDeck
         private static string[] cardValue = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
         private static string[] cardSuit = { "Spades", "Clubs", "Hearts", "Diamonds" };
         private static string NameOfCard = "";
+        
         static void Main(string[] args)
         {
+            Console.Title = "Shuffle the Deck";
             string userInput = "";
             bool userQuit = false;
             int count = 0;
@@ -30,7 +32,10 @@ namespace ShuffleTheDeck
             {
                 Display();
                 Console.WriteLine($"The count is {count}");
-                Console.WriteLine($"You drew {NameOfCard}");
+                if (count != 0)
+                {
+                    Console.WriteLine($"You drew {NameOfCard}");
+                }
                 userInput = Console.ReadLine();
 
                 if (userInput == "q" || userInput == "Q")
@@ -48,7 +53,7 @@ namespace ShuffleTheDeck
                 }
                 else
                 {
-                    if (count >= 52)
+                    if (count == 52)
                     {
                         Console.WriteLine("All cards have been drawn.\n" +
                             "Press Q to quit or C to start again.");
@@ -73,8 +78,9 @@ namespace ShuffleTheDeck
                     }
                 }
                 Console.Clear();
-            } while (userQuit == false);
+            } while (!userQuit);
         }
+        
         static bool CardIsDrawn(int row, int column)
         {
             bool status = false;
@@ -89,6 +95,7 @@ namespace ShuffleTheDeck
             }
             return status;
         }
+
         static void DrawCard()
         {
             int column = 0;
@@ -108,6 +115,7 @@ namespace ShuffleTheDeck
             string cardName = $"{cardValue[row]} of {cardValue[column]}";
             NameOfCard = cardName;
         }
+        
         static void NewDeck()
         {
             //Create a local array that has the same type, dimensions, size
@@ -115,11 +123,13 @@ namespace ShuffleTheDeck
             //Overwrite the tracker array with the default contents of the temp array
             deck = empty;
         }
+        
         static int RandomSuitBetween(int min, int max)
         {
             Random RandomNumber = new Random();
             return RandomNumber.Next(min, max + 1);
         }
+        
         static void Display()
         {
             string currentLocation = "  ";  //show spaces for not drawn, number for drawn

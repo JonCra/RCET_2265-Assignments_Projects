@@ -54,7 +54,7 @@ namespace Stan_sGrocery
 
             InitializeComponent();
             SetDefaults();
-            LoadFile();
+            //LoadFile();
         }
 
         // Initializers ---------------------
