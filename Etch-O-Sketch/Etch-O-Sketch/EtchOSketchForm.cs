@@ -16,10 +16,10 @@ using System.Windows.Forms;
  * [X] Form should "shake" when cleared
  * [ ] When "Draw Waveform" btn is pressed:
  *      [X] Picture box is erased
- *      [ ] 10x10 scope graticule is drawn, EVENLY spaced in picture box
+ *      [X] 10x10 scope graticule is drawn, EVENLY spaced in picture box
  *      [ ] Draw one cycle of the following, vertically filling the picture box:
  *          [X] Sine Wave
- *          [ ] Cosine Wave
+ *          [X] Cosine Wave
  *          [ ] Tangent Wave
  */
 
@@ -38,6 +38,13 @@ namespace Etch_O_Sketch
         float freq = .00969f;
         float ampl;
         float Voffset;
+
+        Color Cosine = Color.LightBlue;
+        Color Sine = Color.Red;
+        Color Tangent = Color.Magenta;
+
+        float CosineWave;
+        float SineWave;
 
         // Initializers -------------------------------------
         public EtchOSketchForm()
@@ -66,11 +73,12 @@ namespace Etch_O_Sketch
             UpdateStatusLabel();
 
             DrawGraticule();
-            DrawCos();
-            DrawSin();
+            //DrawCos();
+            //DrawSin();
             DrawTan();
-                     
-            MessageBox.Show($"Waveforms Drawn! | H: {CanvasHeight}, W: {CanvasLength}");
+            
+            // Testing only:
+            //MessageBox.Show($"Waveforms Drawn! | H: {CanvasHeight}, W: {CanvasLength}");
         }
 
         private void DrawGraticule()
@@ -128,14 +136,26 @@ namespace Etch_O_Sketch
             Graphics g = Canvas.CreateGraphics();
 
             // Defines pen color and pixel width
-            Pen pen = new Pen(Color.LightBlue, 2);
+            Pen pen = new Pen(Cosine, 2);
 
             // Defines starting point (time zero, zero AC signal)
             PointF previousPoint = new PointF(0, Voffset);
 
             for (int x = 1; x < CanvasLength; x++)
             {
+                // Cosine wave formula
+                float y = (float)((ampl * Math.Cos(x * freq)) + Voffset);
 
+                CosineWave = y;
+
+                // Defines where pen is
+                PointF currentPoint = new PointF(x, y);
+
+                // Draw line between where pen was and now is
+                g.DrawLine(pen, previousPoint, currentPoint);
+
+                // Shift positions
+                previousPoint = currentPoint;
             }
         }
 
@@ -145,7 +165,7 @@ namespace Etch_O_Sketch
             Graphics g = Canvas.CreateGraphics();
 
             // Defines pen color and pixel width
-            Pen pen = new Pen(Color.Red, 2);
+            Pen pen = new Pen(Sine, 2);
 
             // Defines starting point (time zero, zero AC signal)
             PointF previousPoint = new PointF(0, Voffset);
@@ -154,6 +174,7 @@ namespace Etch_O_Sketch
             {
                 // Sine wave formula
                 float y = (float)(ampl * Math.Sin(x * freq) + Voffset);
+                SineWave = y;
 
                 // Defines where the pen is
                 PointF currentPoint = new PointF(x, y);
@@ -172,14 +193,24 @@ namespace Etch_O_Sketch
             Graphics g = Canvas.CreateGraphics();
 
             // Defines pen color and pixel width
-            Pen pen = new Pen(Color.Magenta, 2);
+            Pen pen = new Pen(Tangent, 2);
 
             // Defines starting point (time zero, zero AC signal)
             PointF previousPoint = new PointF(0, Voffset);
 
             for (int x = 1; x < CanvasLength; x++)
             {
+                // Tangent wave formula
+                float y = Math.Tan((Math.Sin(x)) / (Math.Cos(x)));
 
+                // Defines where the pen is
+                PointF currentPoint = new PointF(x, y);
+
+                // Draw between where the pen was and now is
+                g.DrawLine(pen, previousPoint, currentPoint);
+
+                // Shifts the previous points
+                previousPoint = currentPoint;
             }
         }
 
