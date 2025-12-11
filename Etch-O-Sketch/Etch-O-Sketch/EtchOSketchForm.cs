@@ -78,26 +78,47 @@ namespace Etch_O_Sketch
             // Defines WHERE the drawing will take place
             Graphics g = Canvas.CreateGraphics();
 
+            int defaultPen = 2;
+            int penSize = 5;
+
             // Defines pen color and pixel width
-            Pen pen = new Pen(Color.Black, 2);
+            Pen pen = new Pen(Color.Black, defaultPen);
 
             float GraphLength = CanvasLength;
             float GraphHeight = CanvasHeight;
 
             // Format: (pen, Xstart, Ystart, Xend, Yend)
-            
-            // Horizontal dividers
+
+            // Horizontal dividers (L/R)
             for (int i = 1; i <= 10; i++)
             {
-                float y = GraphLength * 0.1f * i;
-                g.DrawLine(pen, y, 0f, y, GraphHeight);
+                if (i == 5)
+                {
+                    pen = new Pen(Color.Black, penSize);
+                }
+                else
+                {
+                    pen = new Pen(Color.Black, defaultPen);
+                }
+                
+                float y = (GraphHeight / 10) * i;
+                g.DrawLine(pen, 0f, y, GraphLength, y);
             }
 
-            // Vertical dividers
+            // Vertical dividers (Up/Dwn)
             for (int i = 1; i <= 10; i++)
             {
-                float x = GraphHeight * 0.1f * i;
-                g.DrawLine(pen, x, 0f, x, GraphLength);
+                if (i == 5)
+                {
+                    pen = new Pen(Color.Black, penSize);
+                }
+                else
+                {
+                    pen = new Pen(Color.Black, defaultPen);
+                }
+
+                float x = (GraphLength / 10) * i;
+                g.DrawLine(pen, x, 0f, x, GraphHeight);
             }
         }
 
