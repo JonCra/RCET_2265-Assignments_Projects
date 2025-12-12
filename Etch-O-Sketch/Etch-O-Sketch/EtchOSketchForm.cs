@@ -39,7 +39,7 @@ namespace Etch_O_Sketch
         float ampl;
         float Voffset;
 
-        Color Cosine = Color.LightBlue;
+        Color Cosine = Color.Blue;
         Color Sine = Color.Red;
         Color Tangent = Color.Magenta;
 
@@ -73,9 +73,9 @@ namespace Etch_O_Sketch
             UpdateStatusLabel();
 
             DrawGraticule();
-            //DrawCos();
-            //DrawSin();
-            DrawTan();
+            DrawCos();
+            DrawSin();
+            //DrawTan();
             
             // Testing only:
             //MessageBox.Show($"Waveforms Drawn! | H: {CanvasHeight}, W: {CanvasLength}");
@@ -139,7 +139,8 @@ namespace Etch_O_Sketch
             Pen pen = new Pen(Cosine, 2);
 
             // Defines starting point (time zero, zero AC signal)
-            PointF previousPoint = new PointF(0, Voffset);
+                // Set start point to bottom of canvas; would "draw" a connecting vertical line 
+            PointF previousPoint = new PointF(0, Canvas.Bottom);
 
             for (int x = 1; x < CanvasLength; x++)
             {
