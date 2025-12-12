@@ -235,6 +235,12 @@ namespace Etch_O_Sketch
 
             if (e.Button == MouseButtons.Left)
             {
+                if (oldX < 0 || oldY < 0)
+                {
+                    oldX = e.X;
+                    oldY = e.Y;
+                }
+
                 // Only draws when LMB is clicked
                 MouseDraw(e.X, e.Y);
 
@@ -289,6 +295,10 @@ namespace Etch_O_Sketch
             int offset = 25;    // Pixel offset
             int WaitTime = 250; // Pause time in milliseconds
 
+            // Disable buttons
+            ExitButton.Enabled = ClearButton.Enabled = WaveformButton.Enabled
+                = ColorButton.Enabled = menuStrip1.Enabled = false;
+
             // Get/store form position
             int oldY = this.Left;
             int oldX = this.Top;
@@ -308,6 +318,10 @@ namespace Etch_O_Sketch
             // Reset to original position
             this.Top = oldX;
             this.Left = oldY;
+
+            // Enable buttons
+            ExitButton.Enabled = ClearButton.Enabled = WaveformButton.Enabled
+                = ColorButton.Enabled = menuStrip1.Enabled = true;
         }
 
         // Event Handlers -----------------------------------
