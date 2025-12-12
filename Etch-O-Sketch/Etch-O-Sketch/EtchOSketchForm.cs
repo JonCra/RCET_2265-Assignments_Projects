@@ -237,12 +237,17 @@ namespace Etch_O_Sketch
             {
                 // Only draws when LMB is clicked
                 MouseDraw(e.X, e.Y);
+
+                oldX = e.X;
+                oldY = e.Y;
             }
             else if (e.Button == MouseButtons.Middle)
             {
                 // Displays Color Palette when MMB is pressed
-                colorDialog1.ShowDialog();
-                this.foreGround = colorDialog1.Color;
+                if (colorDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    this.foreGround = colorDialog1.Color;
+                }
             }
             else
             {
@@ -259,7 +264,7 @@ namespace Etch_O_Sketch
 
         private void GraphicsForm_MouseWheel(object sender, MouseEventArgs e)
         {
-            this.Text = e.Delta.ToString();
+            //this.Text = e.Delta.ToString();
 
             // Scroll DOWN decreases pen size
             if (penWidth > 1 && e.Delta < 0)
@@ -308,7 +313,7 @@ namespace Etch_O_Sketch
         // Event Handlers -----------------------------------
         private void ExitProgram(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void FormClear(object sender, EventArgs e)
