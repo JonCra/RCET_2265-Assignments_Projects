@@ -67,6 +67,8 @@ namespace Etch_O_Sketch
             // Gets and stores Canvas dimensions
             CanvasHeight = Canvas.Size.Height;
             CanvasLength = Canvas.Size.Width;
+
+            // Gets half of Canvas height and takes 2 pixels more for visibility
             Voffset = ampl = (CanvasHeight / 2) - 2;
 
             Canvas.Refresh();   // Clear form
@@ -214,7 +216,7 @@ namespace Etch_O_Sketch
                 previousPoint = currentPoint;
             }
         }
-
+        // BUG: DOES NOT DRAW AT ALL / WELL
         void MouseDraw(int x, int y)
         {
             Graphics g = Canvas.CreateGraphics();

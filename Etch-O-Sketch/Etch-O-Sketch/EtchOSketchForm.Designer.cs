@@ -69,18 +69,21 @@
             selectColorToolStripMenuItem1.Name = "selectColorToolStripMenuItem1";
             selectColorToolStripMenuItem1.Size = new Size(212, 32);
             selectColorToolStripMenuItem1.Text = "&Select Color";
+            selectColorToolStripMenuItem1.Click += ColorSelect;
             // 
             // drawWaveformToolStripMenuItem
             // 
             drawWaveformToolStripMenuItem.Name = "drawWaveformToolStripMenuItem";
             drawWaveformToolStripMenuItem.Size = new Size(212, 32);
             drawWaveformToolStripMenuItem.Text = "&Draw Waveform";
+            drawWaveformToolStripMenuItem.Click += WaveformDraw;
             // 
             // clearToolStripMenuItem1
             // 
             clearToolStripMenuItem1.Name = "clearToolStripMenuItem1";
             clearToolStripMenuItem1.Size = new Size(212, 32);
             clearToolStripMenuItem1.Text = "&Clear";
+            clearToolStripMenuItem1.Click += FormClear;
             // 
             // menuStrip1
             // 
