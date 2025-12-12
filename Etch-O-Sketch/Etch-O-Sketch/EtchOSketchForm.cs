@@ -197,11 +197,11 @@ namespace Etch_O_Sketch
 
             // Defines starting point (time zero, zero AC signal)
             PointF previousPoint = new PointF(0, Voffset);
-
+            
             for (int x = 1; x < CanvasLength; x++)
             {
                 // Tangent wave formula
-                float y = Math.Tan((Math.Sin(x)) / (Math.Cos(x)));
+                float y = (float)(ampl * Math.Tan((Math.PI / CanvasLength) * x));
 
                 // Defines where the pen is
                 PointF currentPoint = new PointF(x, y);
