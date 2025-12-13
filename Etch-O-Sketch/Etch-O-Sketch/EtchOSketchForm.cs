@@ -9,20 +9,6 @@ using System.Drawing.Configuration;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
-/* TODO:
- * [X] Proper tab order
- * [?] "Draw Waveform" button as Enter button
- * [X] "Clear" button as the cancel button (Esc)
- * [X] Form should "shake" when cleared
- * [X] When "Draw Waveform" btn is pressed:
- *      [X] Picture box is erased
- *      [X] 10x10 scope graticule is drawn, EVENLY spaced in picture box
- *      [X] Draw one cycle of the following, vertically filling the picture box:
- *          [X] Sine Wave
- *          [X] Cosine Wave
- *          [X] Tangent Wave
- */
-
 namespace Etch_O_Sketch
 {
     public partial class EtchOSketchForm : Form
@@ -45,6 +31,8 @@ namespace Etch_O_Sketch
 
         float CosineWave;
         float SineWave;
+
+        AboutForm AF = new AboutForm();
 
         // Initializers -------------------------------------
         public EtchOSketchForm()
@@ -245,7 +233,7 @@ namespace Etch_O_Sketch
         {
             Graphics g = Canvas.CreateGraphics();
             Pen MousePen = new Pen(this.foreGround, this.penWidth);
-
+            
             g.DrawLine(MousePen, this.oldX, this.oldY, X, Y);
 
             g.Dispose();
@@ -362,6 +350,7 @@ namespace Etch_O_Sketch
         private void AboutDisplay(object sender, EventArgs e)
         {
             // Display "About" page/form
+            AF.Show();
         }
 
         private void WaveformDraw(object sender, EventArgs e)
