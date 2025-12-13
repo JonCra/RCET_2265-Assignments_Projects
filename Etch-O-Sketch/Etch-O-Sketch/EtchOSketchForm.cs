@@ -77,7 +77,7 @@ namespace Etch_O_Sketch
             DrawGraticule();
             DrawCos();
             DrawSin();
-            //DrawTan();
+            DrawTan();
             
             // Testing only:
             //MessageBox.Show($"Waveforms Drawn! | H: {CanvasHeight}, W: {CanvasLength}");
@@ -199,18 +199,42 @@ namespace Etch_O_Sketch
             Pen pen = new Pen(Tangent, 2);
 
             // Defines starting point (time zero, zero AC signal)
-            PointF previousPoint = new PointF(0, Voffset);
+            PointF? previousPoint = null;
+
+            float centerY = CanvasHeight / 2;
+            float xScale = (float)(Math.PI / CanvasLength);
+            float yScale = CanvasHeight / 4f;
             
-            for (int x = 1; x < CanvasLength; x++)
+            for (int x = 0; x < CanvasLength; x++)
             {
+                float angle = x * xScale;
+
+                float tanValue = (float)(Math.Tan(angle));
+
+                // Binds waveform to picturebox width/length
+                if (Math.Abs(tanValue) > 10f)
+                {
+                    previousPoint = null;
+                    continue;
+                }
+
                 // Tangent wave formula
-                float y = (float)(ampl * Math.Tan((Math.PI / CanvasLength) * x));
+                float y = (centerY - tanValue * yScale);
+
+                // Binds waveform to picturebox height
+                if (y < 0 || y > CanvasHeight)
+                {
+                    previousPoint = null;
+                    continue;
+                }
 
                 // Defines where the pen is
                 PointF currentPoint = new PointF(x, y);
 
                 // Draw between where the pen was and now is
-                g.DrawLine(pen, previousPoint, currentPoint);
+                if (previousPoint != null)
+                    g.DrawLine(pen, (PointF)previousPoint, currentPoint);
+                
 
                 // Shifts the previous points
                 previousPoint = currentPoint;
