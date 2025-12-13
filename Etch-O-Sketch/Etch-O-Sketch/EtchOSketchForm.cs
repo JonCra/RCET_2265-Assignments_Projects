@@ -14,13 +14,13 @@ using System.Windows.Forms;
  * [?] "Draw Waveform" button as Enter button
  * [X] "Clear" button as the cancel button (Esc)
  * [X] Form should "shake" when cleared
- * [ ] When "Draw Waveform" btn is pressed:
+ * [X] When "Draw Waveform" btn is pressed:
  *      [X] Picture box is erased
  *      [X] 10x10 scope graticule is drawn, EVENLY spaced in picture box
- *      [ ] Draw one cycle of the following, vertically filling the picture box:
+ *      [X] Draw one cycle of the following, vertically filling the picture box:
  *          [X] Sine Wave
  *          [X] Cosine Wave
- *          [ ] Tangent Wave
+ *          [X] Tangent Wave
  */
 
 namespace Etch_O_Sketch
