@@ -13,7 +13,7 @@ namespace Etch_O_Sketch
 {
     public partial class EtchOSketchForm : Form
     {
-        // "Global" Variables
+        // "Global" Variables:
         int oldX = -1;
         int oldY = -1;
         Color foreGround = Color.Black;
@@ -228,7 +228,7 @@ namespace Etch_O_Sketch
                 previousPoint = currentPoint;
             }
         }
-        // BUG: DOES NOT DRAW AT ALL / WELL
+
         void MouseDraw(int X, int Y)
         {
             Graphics g = Canvas.CreateGraphics();
