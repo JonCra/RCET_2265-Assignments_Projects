@@ -252,6 +252,10 @@
             statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+
+            Canvas.MouseDown += Canvas_MouseMove;
+            Canvas.MouseMove += Canvas_MouseMove;
+            Canvas.MouseWheel += GraphicsForm_MouseWheel;
         }
 
         #endregion

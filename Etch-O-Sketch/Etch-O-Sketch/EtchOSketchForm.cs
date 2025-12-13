@@ -28,8 +28,8 @@ namespace Etch_O_Sketch
     public partial class EtchOSketchForm : Form
     {
         // "Global" Variables
-        int oldX;
-        int oldY;
+        int oldX = -1;
+        int oldY = -1;
         Color foreGround = Color.Black;
         int penWidth = 3;
         string Header = "";
@@ -241,12 +241,12 @@ namespace Etch_O_Sketch
             }
         }
         // BUG: DOES NOT DRAW AT ALL / WELL
-        void MouseDraw(int x, int y)
+        void MouseDraw(int X, int Y)
         {
             Graphics g = Canvas.CreateGraphics();
             Pen MousePen = new Pen(this.foreGround, this.penWidth);
 
-            g.DrawLine(MousePen, this.oldX, this.oldY, x, y);
+            g.DrawLine(MousePen, this.oldX, this.oldY, X, Y);
 
             g.Dispose();
             MousePen.Dispose();
